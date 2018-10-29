@@ -21,7 +21,7 @@
 </div>
 <!--Agregar-->
 <div class="col text-right">
- <button type="button " class="btn btn-outline-primary text-right">Agregar</button>  
+ <button type="button" class="btn btn-outline-primary text-right"><a href="./rutas/agregar.vue">Agregar</a></button>  
 </div>
         </div>
 
