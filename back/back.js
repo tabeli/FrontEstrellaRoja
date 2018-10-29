@@ -37,10 +37,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get('/', function (req, res) {
-
     console.log("called /")
     return res.json({
-        "response": "Hola Mundo"
+        "response": "Hola Equipo azul"
     });
 })
 
