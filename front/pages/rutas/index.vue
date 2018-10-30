@@ -1,29 +1,32 @@
-<template>
-    <div>
-      <div class ="row">
-          <div class="col-sm-1">
-              <Sidebar/>
+  <template>
+      <div>
+        <div class ="row">
+            <div class="col-sm-1">
+                <Sidebar/>
+            </div>
+            <div class="col-sm-11">
+                <Rutas/>
+            </div>
+            <!--Buscador-->      
+          <div class="container">
+            <div class="row">
+              <div class="col">
+        <form class="form-inline my-5 my-lg-1">
+        <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/assets/magnifier.png" width="20" height="20"></button> 
+      </form>
           </div>
-          <div class="col-sm-11">
-              <Rutas/>
-          </div>
-          <!--Buscador-->      
-        <div class="container">
-          <div class="row">
-            <div class="col">
-      <form class="form-inline my-5 my-lg-1">
-      <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
-      <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/assets/magnifier.png" width="20" height="20"></button> 
-    </form>
-        </div>
-<div class="col">
+  <div class="col">
 
-</div>
-<!--Agregar-->
-<div class="col text-right">
- <button type="button" class="btn btn-outline-primary text-right"><a href="./rutas/agregar.vue">Agregar</a></button>  
-</div>
-        </div>
+  </div>
+  <!--Agregar-->
+  <div class="col text-right">
+  <nuxt-link :to = "{name:'rutas-agregar'}" replace>
+  <button type="button" class="btn btn-outline-primary text-right">Agregar</button> 
+  </nuxt-link> 
+  </div>
+          </div>
+        
 
  
 <!--Tabla contenido-->
@@ -44,7 +47,9 @@
             <td>Puebla fascinante</td>
             <td><img src=""></td>
             <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, libero?</td>
+            <nuxt-link :to = "{name:'rutas-agregar'}" replace>
             <td><img src="@/assets/pencil.png"></td>
+            </nuxt-link>
             <td><img src="@/assets/basurero.png"></td>
           </tr>
         </tbody>
@@ -67,5 +72,9 @@
   </script>
   
   <style>
-  
+  #content {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
   </style>
