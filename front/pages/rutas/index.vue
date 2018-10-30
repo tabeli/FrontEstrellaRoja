@@ -4,11 +4,13 @@
             <div class="col-sm-1">
                 <Sidebar/>
             </div>
-            <div class="col-sm-11">
-                <Header/>
-            </div>
             <!--Buscador-->      
           <div class="container text-center mt-5 ">
+
+           <div class="col-sm-11 ">
+                <Header/>
+            </div>
+          
             <div class="row">
               <div class="col">
         <form class="form-inline my-5 my-lg-1">
@@ -17,12 +19,12 @@
       </form>
           </div>
   <div class="col">
-
+ 
   </div>
   <!--Agregar-->
   <div class="col text-right">
   <nuxt-link :to = "{name:'rutas-agregar'}" replace>
-  <button type="button" class="btn btn-info text-right">Agregar</button> 
+  <button type="button" class="btn btn-info text-right">Agregar Tour</button> 
   </nuxt-link> 
   </div>
           </div>
@@ -45,7 +47,7 @@
             <th scope="row">Puebla fascinante</th>
             <td><img src=""></td>
             <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, libero?</td>
-            <nuxt-link :to = "{name:'rutas-agregar'}" replace>
+            <nuxt-link :to = "{name:'rutas-editar'}" replace>
             <td><img src="@/static/pencil.png"></td>
             </nuxt-link>
             <td><img src="@/static/basurero.png"></td>

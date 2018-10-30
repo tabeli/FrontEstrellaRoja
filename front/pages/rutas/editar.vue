@@ -1,10 +1,16 @@
   <template>
   <div>
+
     <div class="row">
       <div class="col-sm-1">
         <sidebar/>
       </div>
       <div class ="content col-sm-11">
+      
+      <div class="Header">
+        <Header/>
+      </div>
+
         <form class="content">
             <div class="form-group my-5">
               <label for="Nombre de ruta">Nombre de ruta</label>
@@ -19,6 +25,11 @@
               <button type="button" class=" btn btn-info my-3">Aceptar</button>
             </div>
         </form>
+      
+    <div class="Footer">
+      <Footer/>
+    </div>
+
       </div>
       </div>
       </div>
@@ -27,11 +38,15 @@
     <script>
       import Sidebar from '@/components/Sidebar'
       import Rutas from '@/components/Ruta/Rutas'
+      import Header from '@/components/Header'
+      import Footer from '@/components/Footer'
     
       export default {
         components: {
           Sidebar,
-          Rutas
+          Rutas,
+          Header,
+          Footer
         }
       }
     </script>

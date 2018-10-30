@@ -1,12 +1,10 @@
 <template>
   <div id="principal" class="container">
-    <div>
-      <h2>Usuarios</h2>
-    </div>
+
       <br>
     <div>
     <!--Buscador-->
-     <div>
+     <div class="mt-5">
       <div class="row">
       <div class="col">
         <form class="form-inline">
@@ -24,7 +22,7 @@
     </div>
 
     <table class="table mt-3 col-11">
-      <thead class="thead-dark">
+      <thead class="table-bordered">
         <tr>
           <th scope="col">Nombre</th>
           <th scope="col">Apellido</th>
@@ -35,6 +33,11 @@
           <th scope="col"></th>
           <th scope="col"></th>
         </tr>
+        <tbody>
+          <tr>
+            <td>Fhashsdas</td>
+          </tr>
+        </tbody>
       </thead>
       
       <tbody>
