@@ -13,7 +13,7 @@
               <div class="col">
         <form class="form-inline my-5 my-lg-1">
         <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
-        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/assets/magnifier.png" width="20" height="20"></button> 
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
           </div>
   <div class="col">
@@ -22,7 +22,7 @@
   <!--Agregar-->
   <div class="col text-right">
   <nuxt-link :to = "{name:'rutas-agregar'}" replace>
-  <button type="button" class="btn btn-outline-primary text-right">Agregar</button> 
+  <button type="button" class="btn btn-info text-right">Agregar</button> 
   </nuxt-link> 
   </div>
           </div>
@@ -33,7 +33,6 @@
       <table class="table mt-3">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">id</th>
             <th scope="col">Nombre</th>
             <th scope="col">Imagen</th>
             <th scope="col">Descripcion</th>
@@ -43,14 +42,13 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Puebla fascinante</td>
+            <th scope="row">Puebla fascinante</th>
             <td><img src=""></td>
             <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, libero?</td>
             <nuxt-link :to = "{name:'rutas-agregar'}" replace>
-            <td><img src="@/assets/pencil.png"></td>
+            <td><img src="@/static/pencil.png"></td>
             </nuxt-link>
-            <td><img src="@/assets/basurero.png"></td>
+            <td><img src="@/static/basurero.png"></td>
           </tr>
         </tbody>
       </table>

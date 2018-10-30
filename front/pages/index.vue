@@ -23,7 +23,7 @@
       <footer class = "mt-3 pt-auto sticky-bottom" style="background-color:#686c71">
         <div class="text-center">
           <a>
-            <img src="@/assets/er.png" width="80" height="60">
+            <img src="@/static/er.png" width="80" height="60">
           </a>
           </div>
       </footer>
