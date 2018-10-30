@@ -19,24 +19,21 @@
             <button type="button" class=" btn btn-info">Ingresar</button>
           </div>
     </div>
-    <div>
-      <footer class = "mt-3 pt-auto sticky-bottom" style="background-color:#686c71">
-        <div class="text-center">
-          <a>
-            <img src="@/static/er.png" width="80" height="60">
-          </a>
-          </div>
-      </footer>
-    </div>
+      <div class="sm-11">
+        <Footer/>
+      </div>
   </div>
 </template>
 
 <script>
   import Sidebar from '@/components/Sidebar'
-
+  import Footer from '@/components/Footer'
+  import Header from '@/components/Header'
   export default {
     components: {
-      Sidebar
+      Sidebar,
+      Footer,
+      Header
     }
   }
 </script>

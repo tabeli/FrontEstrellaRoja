@@ -1,61 +1,60 @@
 <template>
-  <div class="container">
-
-        <div>
-          <h2>Usuarios</h2>
-        </div>
-
-        <br>
-<div>
-        <!--Buscador-->
-        <div>
-          <div class="row">
-            <div class="col">
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
-        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
-      </form>
+  <div id="principal" class="container">
+    <div>
+      <h2>Usuarios</h2>
+    </div>
+      <br>
+    <div>
+    <!--Buscador-->
+     <div>
+      <div class="row">
+      <div class="col">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
+          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
+        </form>
       </div>
 
-        <div class="derecha">
+      <div class="derecha">
         <nuxt-link :to="{ name: 'usuarios-create'}" replace>
-                <button class="btn btn-info" type="button">Añadir usuario</button>
-            </nuxt-link>
+          <button class="btn btn-info" type="button">Añadir usuario</button>
+        </nuxt-link>
       </div>
       </div>
-      </div>
+    </div>
 
-        <table class="table mt-3 col-11">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">Nombre</th>
-              <th scope="col">Apellido</th>
-              <th scope="col">Email</th>
-              <th scope="col">Cumpleaños</th>
-              <th scope="col">CP</th>
-              <th scope="col">Celular</th>
-              <th scope="col"></th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-           <tr v-for="user in this.$store.state.users" :key='user.id'>
-            <td>{{ user.name }}</td>
-            <td>{{ user.last_name }}</td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.birthdate }}</td>
-            <td>{{ user.postal_code }}</td>
-            <td>{{ user.phone_number }}</td>
-            <td>
-                <button class="btn btn-info" type="button" @click="editUserAction(user.id)" >Editar</button>
-            </td>
-            <td>
-                <button class="btn btn-danger" type="button" @click="deleteUserAction(user.id)" >Eliminar</button>
-            </td>
-           </tr>
-          </tbody>
-        </table>
-</div>
+    <table class="table mt-3 col-11">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Email</th>
+          <th scope="col">Cumpleaños</th>
+          <th scope="col">CP</th>
+          <th scope="col">Celular</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr v-for="user in this.$store.state.users" :key='user.id'>
+          <td>{{ user.name }}</td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.birthdate }}</td>
+          <td>{{ user.postal_code }}</td>
+          <td>{{ user.phone_number }}</td>
+          <td>
+            <button class="btn btn-info" type="button" @click="editUserAction(user.id)" >Editar</button>
+          </td>
+          <td>
+            <button class="btn btn-danger" type="button" @click="deleteUserAction(user.id)" >Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   </div>
 </template>
 

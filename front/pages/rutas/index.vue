@@ -5,10 +5,10 @@
                 <Sidebar/>
             </div>
             <div class="col-sm-11">
-                <Rutas/>
+                <Header/>
             </div>
             <!--Buscador-->      
-          <div class="container">
+          <div class="container text-center mt-5 ">
             <div class="row">
               <div class="col">
         <form class="form-inline my-5 my-lg-1">
@@ -54,25 +54,32 @@
       </table>
       </div>
       </div>
+            <div class="sm-11">
+            <Footer/>
+          </div>
     </div>
   </template>
   
   <script>
-    import Sidebar from '@/components/Sidebar'
-    import Rutas from '@/components/Ruta/Rutas'
-  
-    export default {
-      components: {
-        Sidebar,
-        Rutas
-      }
-    }
-  </script>
+import Sidebar from "@/components/Sidebar";
+import Rutas from "@/components/Ruta/Rutas";
+import Footer from "@/components/Footer"
+import Header from "@/components/Header"
+
+export default {
+  components: {
+    Sidebar,
+    Rutas,
+    Footer,
+    Header
+  }
+};
+</script>
   
   <style>
-  #content {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
+#content {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
 }
-  </style>
+</style>

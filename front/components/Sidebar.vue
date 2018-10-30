@@ -40,7 +40,7 @@ export default {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color:#FCB600 ;
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -49,7 +49,7 @@ export default {
     padding: 6px 8px 6px 5px;
     text-decoration: none;
     font-size: 15px;
-    color: #818181;
+    color: #ffffff;
     display: inline-block;
 }
 

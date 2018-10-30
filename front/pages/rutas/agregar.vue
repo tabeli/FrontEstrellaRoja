@@ -15,23 +15,28 @@
               <br/>
               <label for="Nombre de ruta">Introduzca path de la imagen</label>
               <input class="form-control" type="text"> 
-              
+
               <button type="button" class=" btn btn-info my-3">Aceptar</button>
             </div>
         </form>
       </div>
       </div>
+        <div class="sm-11">
+          <Footer/>
+        </div>
       </div>
     </template>
     
     <script>
       import Sidebar from '@/components/Sidebar'
       import Rutas from '@/components/Ruta/Rutas'
+      import Footer from '@/components/Footer'
     
       export default {
         components: {
           Sidebar,
-          Rutas
+          Rutas,
+          Footer
         }
       }
     </script>
