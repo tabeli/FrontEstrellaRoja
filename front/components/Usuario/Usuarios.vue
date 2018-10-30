@@ -20,27 +20,29 @@
       </div>
       </div>
     </div>
-
+    <div>
     <table class="table mt-3 col-11">
-      <thead class="table-bordered">
+      <thead class="bg-success">
         <tr>
+          <th scope="col">Tipo de usuario</th>
           <th scope="col">Nombre</th>
           <th scope="col">Apellido</th>
           <th scope="col">Email</th>
           <th scope="col">Cumpleaños</th>
           <th scope="col">CP</th>
           <th scope="col">Celular</th>
-          <th scope="col"></th>
-          <th scope="col"></th>
+          <th scope="col">Editar</th>
+          <th scope="col">Borrar</th>
         </tr>
+        </thead>
         <tbody>
           <tr>
             <td>Fhashsdas</td>
           </tr>
         </tbody>
-      </thead>
       
-      <tbody>
+      
+    <!--  <tbody>
         <tr v-for="user in this.$store.state.users" :key='user.id'>
           <td>{{ user.name }}</td>
           <td>{{ user.last_name }}</td>
@@ -56,7 +58,9 @@
           </td>
         </tr>
       </tbody>
+    -->
     </table>
+    </div>
   </div>
   </div>
 </template>
@@ -132,5 +136,8 @@ export default {
 .derecha{
   padding-right: 110px;
   margin-left:  160px;
+}
+.bg-success {
+  color:#FFFFFF
 }
 </style>

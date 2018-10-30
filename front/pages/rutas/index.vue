@@ -33,7 +33,7 @@
  
 <!--Tabla contenido-->
       <table class="table mt-3">
-        <thead class="thead-dark">
+        <thead class="bg-success">
           <tr>
             <th scope="col">Nombre</th>
             <th scope="col">Imagen</th>
@@ -83,5 +83,8 @@ export default {
   margin-left: 160px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
   padding: 0px 10px;
+}
+.bg-success{
+  color:#FFFFFF;
 }
 </style>

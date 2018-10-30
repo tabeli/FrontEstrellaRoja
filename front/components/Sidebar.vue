@@ -5,7 +5,7 @@
         <a>Usuarios</a>
       </nuxt-link>
       <nuxt-link :to="{ name: 'rutas'}" replace>
-        <a>Rutas</a>
+        <a>Tours</a>
       </nuxt-link>
       <nuxt-link :to="{ name: 'camiones'}" replace>
         <a>Camiones</a>
@@ -13,8 +13,24 @@
       <nuxt-link :to="{ name: 'boletos'}" replace>
         <a>Boletos</a>
       </nuxt-link>
-      
-      
+      <nuxt-link :to="{ name: 'Precios'}" replace>
+        <a>Precios</a>
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'Tickets'}" replace>
+        <a>Tickets</a>
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'Paradas'}" replace>
+        <a>Paradas</a>
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'Autobuses'}" replace>
+        <a>Autobuses</a>
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'Murales'}" replace>
+        <a>Murales</a>
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'Horarios'}" replace>
+        <a>Horarios</a>
+      </nuxt-link>
       
     </div>
   </div>
