@@ -19,7 +19,7 @@
       </form>
           </div>
   <div class="col">
- 
+    
   </div>
   <!--Agregar-->
   <div class="col text-right">

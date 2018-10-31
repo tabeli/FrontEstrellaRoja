@@ -25,12 +25,14 @@
               <button type="button" class=" btn btn-info my-3">Aceptar</button>
             </div>
         </form>
+
+
+      </div>
       
     <div class="Footer">
       <Footer/>
     </div>
 
-      </div>
       </div>
       </div>
     </template>
