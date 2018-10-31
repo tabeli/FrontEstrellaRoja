@@ -20,6 +20,7 @@
       <thead class="bg-success">
         <tr>
           <th scope="col">Id</th>
+          <th scope="col">Tour</th>
            <th scope="col">Capacidad</th>
           <th scope="col">Tickets vendidos</th>
           <th scope="col">Editar</th>
@@ -29,6 +30,7 @@
         <tbody>
           <tr>
             <th scope="row">5</th>
+            <th></th>
             <td>20</td>
             <td>4</td>
             <nuxt-link :to="{ name: '' }">
