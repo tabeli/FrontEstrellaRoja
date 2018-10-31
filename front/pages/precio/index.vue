@@ -1,30 +1,16 @@
   <template>
-  <div>
-    <div class="row">
-    
-    <!--Sidebar-->
-      <div class="col-sm-1">
-        <Sidebar/>
+    <div>
+      <div class ="row">
+          <div class="col-sm-1">
+              <Sidebar/>
+          </div>
+          <div class="col-11">
+            <Header/>
+            <Precios/>
+            <Footer/>
+          </div>
       </div>
-
-    <!--Header-->
-    <div class="col-sm-11">
-      <Header/>
     </div>
-
-    <!--Precios.vue-->
-    <div class="container mt-5">
-      <Precios/>
-    </div>
-
-    </div>
-
-    <!--Footer-->
-    <div class="Footer sm-11 mt-5">
-      <Footer/>
-    </div>
-
-  </div>
     
   </template>
 
