@@ -1,5 +1,7 @@
 <template>
     <div class="container">
+      <br>
+      <div class="mt-5">
     <div class="row">
     <!--Buscador-->
     <div class="col">
@@ -39,6 +41,7 @@
         </tbody>
     </table>
   </div> 
+    </div>
   </template>
   
   <script>
