@@ -38,6 +38,16 @@
         <tbody>
           <tr>
             <td>Fhashsdas</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <nuxt-link :to="{ name: 'usuarios-create' }">
+            <td><img src="@/static/pencil.png"></td>
+            </nuxt-link>
+            <td><img src="@/static/basurero.png"></td>
           </tr>
         </tbody>
       

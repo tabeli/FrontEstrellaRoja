@@ -4,22 +4,27 @@
           <div class="col-sm-1">
               <Sidebar/>
           </div>
-          <div class="col-sm-11">
-              <Camiones/>
+          <div class="col-11">
+            <Header/>
+            <Camiones/>
+            <Footer/>
           </div>
       </div>
-      
     </div>
   </template>
   
   <script>
     import Sidebar from '@/components/Sidebar'
     import Camiones from '@/components/Camion/Camiones'
+    import Header from '@/components/Header'
+    import Footer from '@/components/Footer'
   
     export default {
       components: {
         Sidebar,
-        Camiones
+        Camiones,
+        Header,
+        Footer
       }
     }
   </script>
