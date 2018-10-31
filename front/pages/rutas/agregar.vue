@@ -2,7 +2,7 @@
   <div>
     <div class="row">
       <div class="col-sm-1">
-        <sidebar/>
+        <Sidebar/>
       </div>
       <div class ="content col-sm-11">
         <div class="Header">

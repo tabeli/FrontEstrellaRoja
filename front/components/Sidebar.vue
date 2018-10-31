@@ -13,7 +13,7 @@
       <nuxt-link :to="{ name: 'boletos'}" replace>
         <a>Boletos</a>
       </nuxt-link>
-      <nuxt-link :to="{ name: 'Precios'}" replace>
+      <nuxt-link :to="{ name: 'precio'}" replace>
         <a>Precios</a>
       </nuxt-link>
       <nuxt-link :to="{ name: 'Tickets'}" replace>
