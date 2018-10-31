@@ -34,7 +34,7 @@
             <td>20</td>
             <td>4</td>
             <nuxt-link :to="{ name: '' }">
-            <td><img src="@/static/pencil.png"></td>
+            <td><img src="@/static/pencilrutas-editar.png"></td>
             </nuxt-link>
             <td><img src="@/static/basurero.png"></td>
           </tr>
