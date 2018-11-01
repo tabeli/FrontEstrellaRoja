@@ -110,6 +110,5 @@ export default {
 
 .sidenav li{
   border: 1px solid #FCB600;
-  
 }
 </style>
