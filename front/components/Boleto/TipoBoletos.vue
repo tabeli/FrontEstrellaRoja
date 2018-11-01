@@ -22,6 +22,8 @@
       <thead class="bg-success">
         <tr>
           <th scope="col">Nombre</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Borrar</th>
         </tr>
       </thead>
         <tbody>
