@@ -40,7 +40,7 @@
             <td>8:00</td>
             <td>20:00</td>
             <td>60min</td>
-            <td>En servicio</td>
+            <td>En servicio </td>
             <nuxt-link :to="{ name: 'precio-editar' }">
             <td><img src="@/static/pencil.png"></td>
             </nuxt-link>
