@@ -38,7 +38,7 @@
       </nuxt-link>
         </li>
         <li>
-      <nuxt-link :to="{ name: 'Murales'}" replace>
+      <nuxt-link :to="{ name: 'mural'}" replace>
         <a><img src="@/static/paint.png" height="25"> Murales</a>
       </nuxt-link>
         </li>
