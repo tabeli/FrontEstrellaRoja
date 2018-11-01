@@ -43,7 +43,7 @@
       </nuxt-link>
         </li>
         <li>
-      <nuxt-link :to="{ name: 'Horarios'}" replace>
+      <nuxt-link :to="{ name: 'horario'}" replace>
         <a><img src="@/static/clock.png" height="20"> Horarios</a>
       </nuxt-link>
         </li>
