@@ -22,6 +22,7 @@
         <a><img src="@/static/ticket.png" height="25"> Boletos</a>
       </nuxt-link>
         </li>
+        <li>
       <nuxt-link :to="{ name: 'precio'}" replace>
         <a><img src="@/static/money.png" height="20"> Precios</a>
       </nuxt-link>
