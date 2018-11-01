@@ -1,5 +1,20 @@
     <template>
-        <h1>Inicio de sesion</h1>
+        <div class="container text-center mt-5">
+         <div class="form-group">
+           <h2>Iniciar sesion</h2>
+           <br>
+           <br>
+                <label for="usr">Usuario:</label>
+                <input type="text" class="form-control" id="usr">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="contr">Contraseña:</label>
+                <input type="password" class="form-control" id="contr">
+            </div>
+            <br>
+            <button type="button" class=" btn btn-info">Ingresar</button>
+        </div>
     </template>
     
     <script>

@@ -37,13 +37,13 @@
         </thead>
         <tbody>
           <tr>
-            <td>Fhashsdas</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>Cliente</td>
+            <td>Ron</td>
+            <td>Weasley</td>
+            <td>hp98@hotmail.com</td>
+            <td>22/04/98</td>
+            <td>91040</td>
+            <td>2281975563</td>
             <nuxt-link :to="{ name: 'usuarios-create' }">
             <td><img src="@/static/pencil.png"></td>
             </nuxt-link>
