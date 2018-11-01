@@ -72,7 +72,8 @@ export default {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color:#FCB600 ;
+    background-color: #F99E3D;
+    background-image: linear-gradient(315deg, #F99E3D 0%, #ffcc2f 74%);
     overflow-x: hidden;
     padding-top: 20px;
     
@@ -109,5 +110,6 @@ export default {
 
 .sidenav li{
   border: 1px solid #FCB600;
+  
 }
 </style>
