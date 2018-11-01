@@ -12,7 +12,7 @@
     </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'precio-agregar' }" replace>
+        <nuxt-link :to="{ name: 'camiones-Agregar' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -35,7 +35,7 @@
             <th></th>
             <td>20</td>
             <td>4</td>
-            <nuxt-link :to="{ name: 'rutas-editar' }">
+            <nuxt-link :to="{ name: 'camiones-Editar' }">
             <td><img src="@/static/pencil.png"></td>
             </nuxt-link>
             <td><img src="@/static/basurero.png"></td>
