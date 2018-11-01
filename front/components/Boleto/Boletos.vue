@@ -10,6 +10,12 @@
         <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
     </div>
+    <!--Tipo de boletos-->
+      <div class = "col text-center">
+        <nuxt-link :to="{ name: 'boletos-tipoboleto'}" replace>     
+        <button type="button" class="btn btn-warning">Tipo de boleto</button>
+        </nuxt-link> 
+      </div>
     <!--Agregar-->
       <div class = "col text-right">
         <nuxt-link :to="{ name: 'precio-agregar' }" replace>
