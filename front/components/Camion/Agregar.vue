@@ -21,8 +21,8 @@
             </div>
         <!--Vendidos-->
             <div class="form-group">
-                <label for="precios">Tickets Vendidos</label>
-                <textarea class="form-control" id="inputPrecio" rows="1"></textarea>
+                <label for="Tickets venidos">Tickets Vendidos:</label>
+                <label for="mostrar tickets vendidos"> 5</label>
             </div>
         </form>
     <!--Termina la form-->
