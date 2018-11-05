@@ -42,6 +42,10 @@
                        <label>Fecha final</label>
                         <date-picker v-model="date" :config="options"></date-picker>
                     </div>
+                    <div class="col-md-4">
+                        <label>Tiempo Inicial</label>
+                        <time-picker v-model="time" :show-meridian="false"/>
+                    </div>
                 </div>
             </b-card>
             </b-collapse>
@@ -71,6 +75,7 @@
   export default {    
     data () {
       return {
+        time: new Date(),
         date: new Date(),
         options: {
           format: 'DD/MM/YYYY',
