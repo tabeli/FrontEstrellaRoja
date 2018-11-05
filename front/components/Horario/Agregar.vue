@@ -33,7 +33,14 @@
             <b-btn v-b-toggle.collapse1 variant="success">Añadir intervalos</b-btn>
             <b-collapse id="collapse1" class="mt-2">
             <b-card>
-                <p class="card-text">Collapse contents Here</p>
+                <div class="row">
+<div class="input-group clockpicker">
+    <input type="text" class="form-control" value="09:30">
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-time"></span>
+    </span>
+</div>
+                </div>
             </b-card>
             </b-collapse>
         </div>
@@ -50,12 +57,11 @@
     </div>   
 </template>
 
-<script>
 
+<script type="text/javascript">
+$('.clockpicker').clockpicker();
 </script>
-export default {
 
-};
 <style>
 .container {
     margin-left: 160px;
