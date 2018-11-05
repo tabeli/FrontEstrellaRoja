@@ -34,7 +34,12 @@
             <b-collapse id="collapse1" class="mt-2">
             <b-card>
                 <div class="row">
-                   <div class="col-md-12">
+                   <div class="col-md-2">
+                       <label>Fecha inicial</label>
+                        <date-picker v-model="date" :config="options"></date-picker>
+                    </div>
+                     <div class="col-md-2">
+                       <label>Fecha final</label>
                         <date-picker v-model="date" :config="options"></date-picker>
                     </div>
                 </div>
@@ -44,7 +49,6 @@
         <!--Intervalo horas y fechas-->
             <div class="collapse" id="collapseExample">
                 <div class="card card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
                 </div>
             </div>
     <!--Termina la form-->
