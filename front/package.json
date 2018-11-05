@@ -17,11 +17,13 @@
     "bootstrap-vue": "^2.0.0-beta",
     "cross-env": "^5.2.0",
     "express": "^4.16.3",
-    "jquery": "^1.9.1",
+    "flatpickr": "^4.5.2",
+    "jquery": "^1.12.4",
     "npm": "^6.4.1",
     "nuxt": "^2.0.0",
     "nuxt-cli": "0.0.1",
     "tempusdominus-bootstrap-4": "^5.1.2",
+    "vue-bootstrap-datetimepicker": "^5.0.1",
     "vue-sidebar-menu": "^1.0.4"
   },
   "devDependencies": {

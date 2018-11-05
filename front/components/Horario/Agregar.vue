@@ -33,23 +33,9 @@
             <b-btn v-b-toggle.collapse1 variant="success">Añadir intervalos</b-btn>
             <b-collapse id="collapse1" class="mt-2">
             <b-card>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
-                                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                                    </div>
-                                </div>
-                             </div>
-                            <script type="text/javascript">
-                                $(function () {
-                                    $('#datetimepicker1').datetimepicker();
-                                });
-                            </script>
-                        </div>
+                <div class="row">
+                   <div class="col-md-12">
+                        <date-picker v-model="date" :config="options"></date-picker>
                     </div>
                 </div>
             </b-card>
@@ -68,6 +54,31 @@
     </div>   
 </template>
 
+<script>
+  // Import required dependencies 
+  import 'bootstrap/dist/css/bootstrap.css';
+  
+  // Import this component
+  import datePicker from 'vue-bootstrap-datetimepicker';
+  
+  // Import date picker css
+  import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
+   
+  export default {    
+    data () {
+      return {
+        date: new Date(),
+        options: {
+          format: 'DD/MM/YYYY',
+          useCurrent: false,
+        }       
+      }
+    },
+    components: {
+      datePicker
+    }
+  }
+</script> 
 
 
 <style>
