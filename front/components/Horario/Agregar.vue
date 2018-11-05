@@ -76,7 +76,11 @@
     data () {
       return {
         time: new Date(),
-        date: null      
+        date: new Date(),
+        options: {
+          format: 'DD/MM/YYYY',
+          useCurrent: false,    
+        }
       }
     },
     components: {
