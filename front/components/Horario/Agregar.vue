@@ -29,11 +29,20 @@
                 </select>
             </div>
         <!--Boton de agregar intervalos-->
-        <div>
-            <b-btn v-b-toggle.collapse1 variant="success">Añadir intervalos</b-btn>
-            <b-collapse id="collapse1" class="mt-2">
-            <b-card>
-                <div class="row">
+
+    <div>
+        <label>Añadir intervalo</label>
+        <br>
+     <!-- Using modifiers -->
+         <b-btn v-b-toggle.collapse2 class="m-1">Fecha</b-btn>
+
+     <!-- Using value -->
+         <b-btn v-b-toggle="'collapse3'" class="m-1">Hora</b-btn>
+
+     <!-- element to collapse -->
+        <b-collapse id="collapse2">
+          <b-card>
+               <div class="row">
                    <div class="col-md-2">
                        <label>Fecha inicial</label>
                        <date-picker v-model="date" :config="options"></date-picker>
@@ -42,19 +51,25 @@
                        <label>Fecha final</label>
                         <date-picker v-model="date" :config="options"></date-picker>
                     </div>
-                    <div class="col-md-3">
-                        <label>Tiempo Inicial</label>
-                        <time-picker v-model="time" :show-meridian="false" :controls="false"/>
-                    </div>
-                </div>
-            </b-card>
-            </b-collapse>
-        </div>
-        <!--Intervalo horas y fechas-->
-            <div class="collapse" id="collapseExample">
-                <div class="card card-body">
-                </div>
+                 </div>
+         </b-card>
+    </b-collapse>
+
+     <b-collapse id="collapse3">
+         <b-card>
+            <div class="row">
+             <div class="col-md-2">
+                <label>Tiempo Inicial</label>
+                <time-picker v-model="time" :show-meridian="false" :controls="false"/>
+             </div>
             </div>
+        </b-card>
+    </b-collapse>
+
+</div>
+
+
+
     <!--Termina la form-->
         </form>
     <!--Boton Agregar-->
