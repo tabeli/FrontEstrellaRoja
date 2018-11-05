@@ -36,29 +36,29 @@
                 <div class="row">
                    <div class="col-md-2">
                        <label>Fecha inicial</label>
-                        <date-picker v-model="date" :config="options"></date-picker>
+                        <form class="form-inline">
+                            <dropdown class="form-group">
+                                <div class="input-group">
+                                    <input class="form-control" type="text" v-model="date">
+                                    <div class="input-group-btn">
+                                        <btn class="dropdown-toggle"><i class="glyphicon glyphicon-calendar"></i></btn>
+                                    </div>
+                                </div>
+                                <template slot="dropdown">
+                                    <li>
+                                        <date-picker v-model="date"/>
+                                    </li>
+                                </template>
+                            </dropdown>
+                        </form>
                     </div>
-                     <div class="col-md-2">
+                    <div class="col-md-3">
                        <label>Fecha final</label>
                         <date-picker v-model="date" :config="options"></date-picker>
                     </div>
                     <div class="col-md-3">
                         <label>Tiempo Inicial</label>
-                        <form class="form-inline">
-                            <dropdown class="form-group">
-                            <div class="input-group">
-                                <input class="form-control" type="text" :value="this.time.toTimeString()" readonly="readonly">
-                                <div class="input-group-btn">
-                                    <btn class="dropdown-toggle"><i class="glyphicon glyphicon-time"></i></btn>
-                                </div>
-                            </div>
-                            <template slot="dropdown">
-                                <li style="padding: 10px">
-                                    <time-picker v-model="time"/>
-                                </li>
-                            </template>
-                            </dropdown>
-                        </form>
+                        <time-picker v-model="time" :show-meridian="false" :controls="false"/>
                     </div>
                 </div>
             </b-card>
@@ -76,29 +76,13 @@
     </div>   
 </template>
 
-<script>
-  // Import required dependencies 
-  import 'bootstrap/dist/css/bootstrap.css';
-  
-  // Import this component
-  import datePicker from 'vue-bootstrap-datetimepicker';
-  
-  // Import date picker css
-  import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
-   
+<script>   
   export default {    
     data () {
       return {
         time: new Date(),
-        date: new Date(),
-        options: {
-          format: 'DD/MM/YYYY',
-          useCurrent: false,
-        }       
+        date: null      
       }
-    },
-    components: {
-      datePicker
     }
   }
 </script> 
