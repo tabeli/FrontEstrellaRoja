@@ -36,18 +36,16 @@
         </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Cliente</td>
-            <td>Ron</td>
-            <td>Weasley</td>
-            <td>hp98@hotmail.com</td>
-            <td>22/04/98</td>
-            <td>91040</td>
-            <td>2281975563</td>
-            <nuxt-link :to="{ name: 'usuarios-create' }">
-            <td><img src="@/static/pencil.png"></td>
-            </nuxt-link>
-            <td><img src="@/static/basurero.png"></td>
+          <tr v-for="user in this.$store.state.users" :key='user.id'>
+            <td>{{ user.user_type }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.last_name}}</td>
+            <td>{{ user.email}}</td>
+            <td>{{ user.birthdate}}</td>
+            <td>{{ user.postal_code}}</td>
+            <td>{{ user.phone_number}}</td>
+            <td><button><img src="@/static/pencil.png"></button></td>
+            <td><button><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
       
@@ -83,7 +81,7 @@ export default {
     async getUsers() {
       await axios({
         method: "get",
-        url: "http://localhost:8080/user"
+        url: "http://principal-arena-219118.appspot.com/api/user"
       })
         .then(
           function(response) {
@@ -104,7 +102,7 @@ export default {
       console.log("Hola");
       await axios({
         method: "delete",
-        url: "http://localhost:8080/user",
+        url: "http://principal-arena-219118.appspot.com/api/user/" + id,
         data: {
           id: id
         }
