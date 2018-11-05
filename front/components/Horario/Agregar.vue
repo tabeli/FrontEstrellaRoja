@@ -10,34 +10,47 @@
                     <option>Cholula Magico</option>
                 </select>
             </div>
-        <!--Tipo de ticket-->
+        <!--Intervalo de horario-->
             <div class="form-group">
-                <label for="tickets">Tipo de tickets</label>
+                <label for="tickets">Intervalo de horas</label>
                 <select class="form-control mt-3" id="tipoTickets">
-                    <option>Adulto</option>
-                    <option>Niño</option>
-                    <option>INAPAM</option>
+                    <option>10:00-22:00</option>
+                    <option>18:00-23:00</option>
+                    <option>9:00-21:00</option>
                 </select>
             </div>
-        <!--Precio-->
+        <!--Intervalo de fechas-->
             <div class="form-group">
-                <label for="precios">Precio</label>
-                <textarea class="form-control" id="inputPrecio" rows="1"></textarea>
+                <label for="tickets">Intervalo de fechas</label>
+                <select class="form-control mt-3" id="tipoTickets">
+                    <option>05/11/2018-20/01/2019</option>
+                    <option>29/09/2018-20/01/2019</option>
+                    <option>10/03/2019-31/12/2019</option>
+                </select>
             </div>
-        </form>
+        <!--Boton de agregar intervalos-->
+            <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                Añadir intervalos
+            </button>
+        <!--Intervalo horas y fechas-->
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                </div>
+            </div>
     <!--Termina la form-->
-
+        </form>
     <!--Boton Agregar-->
         <button type="button" class="btn btn-primary mt-3">Agregar</button>
     </div>   
 </template>
 
 <script>
-export default {
-    
-}
-</script>
 
+</script>
+export default {
+
+};
 <style>
 .container {
     margin-left: 160px;

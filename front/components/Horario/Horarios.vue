@@ -12,7 +12,7 @@
     </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'precio-agregar' }" replace>
+        <nuxt-link :to="{ name: 'horario-agregar' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
