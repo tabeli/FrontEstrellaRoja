@@ -10,15 +10,9 @@
         <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
     </div>
-    <!--Tipo de boletos-->
-      <div class = "col text-center">
-        <nuxt-link :to="{ name: 'boletos-tipoboleto'}" replace>     
-        <button type="button" class="btn btn-warning">Tipo de boleto</button>
-        </nuxt-link> 
-      </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'precio-agregar' }" replace>
+        <nuxt-link :to="{ name: 'mural-agregar' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -27,23 +21,21 @@
     <table class="table mt-3">
       <thead class="bg-success">
         <tr>
-          <th scope="col">Nombre del cliente</th>
-          <th scope="col">Apellido del cliente</th>
-          <th scope="col">Fecha del tour</th>
-          <th scope="col">Codigo QR</th>
-          <th scope="col">Total</th>
+          <th scope="col">Titulo</th>
+          <th scope="col">Nombre del autor</th>
+          <th scope="col">Apellido del autor</th>
+          <th scope="col">Descripción</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
         </tr>
       </thead>
         <tbody>
           <tr>
-            <th scope="row">Abigail</th>
+            <th scope="row">Blah</th>
+            <td>Abigail</td>
             <td>Gonzalez Hidalgo</td>
-            <td>20/01/2019</td>
-            <td></td>
-            <td>70.00</td>
-            <nuxt-link :to="{ name: 'precio-editar' }">
+            <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, ad.</td>
+            <nuxt-link :to="{ name: 'mural-editar' }">
             <td><img src="@/static/pencil.png"></td>
             </nuxt-link>
             <td><img src="@/static/basurero.png"></td>

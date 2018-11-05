@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
-      <br>
-      <div class="mt-5">
+  <div class="container">
+    <br>
+    <div class="mt-5">
     <div class="row">
     <!--Buscador-->
     <div class="col">
@@ -12,7 +12,7 @@
     </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'rutas-agregar' }" replace>
+        <nuxt-link :to="{ name: 'precio-agregar' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -21,19 +21,19 @@
     <table class="table mt-3">
       <thead class="bg-success">
         <tr>
-          <th scope="col">Nombre</th>
-            <th scope="col">Imagen</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Editar</th>
-            <th scope="col">Borrar</th>
+          <th scope="col">Ruta</th>
+          <th scope="col">Tipo de ticket</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Borrar</th>
         </tr>
       </thead>
         <tbody>
           <tr>
-            <th scope="row">Puebla</th>
-            <th></th>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ex, unde est veniam voluptatum quis laborum iure! Totam doloremque, facilis asperiores, quaerat officia similique facere mollitia reprehenderit aliquid corporis veritatis!</td>
-            <nuxt-link :to="{ name: 'rutas-editar' }">
+            <th scope="row">Puebla Fascinante</th>
+            <td>Adulto</td>
+            <td>$80</td>
+            <nuxt-link :to="{ name: 'precio-editar' }">
             <td><img src="@/static/pencil.png"></td>
             </nuxt-link>
             <td><img src="@/static/basurero.png"></td>
@@ -41,13 +41,29 @@
         </tbody>
     </table>
   </div> 
-    </div>
-  </template>
-  
-  <script>
-  
-  </script>
-  
-  <style>
-  
-  </style>
+  </div>
+</template>
+
+<script>
+  export default {
+
+  };
+</script>
+
+<style>
+.container {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 15px; /* Increased text to enable scrolling */
+    text-align: center;
+    align-content: center;
+}
+.derecha{
+  padding-right: 110px;
+  margin-left:  160px;
+}
+.bg-success {
+  color:#FFFFFF
+}
+</style>
+
+

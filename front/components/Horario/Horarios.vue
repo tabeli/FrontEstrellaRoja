@@ -10,12 +10,6 @@
         <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
     </div>
-    <!--Tipo de boletos-->
-      <div class = "col text-center">
-        <nuxt-link :to="{ name: 'boletos-tipoboleto'}" replace>     
-        <button type="button" class="btn btn-warning">Tipo de boleto</button>
-        </nuxt-link> 
-      </div>
     <!--Agregar-->
       <div class = "col text-right">
         <nuxt-link :to="{ name: 'precio-agregar' }" replace>
@@ -27,22 +21,26 @@
     <table class="table mt-3">
       <thead class="bg-success">
         <tr>
-          <th scope="col">Nombre del cliente</th>
-          <th scope="col">Apellido del cliente</th>
-          <th scope="col">Fecha del tour</th>
-          <th scope="col">Codigo QR</th>
-          <th scope="col">Total</th>
+          <th scope="col">Ruta</th>
+          <th scope="col">Fecha inicial</th>
+          <th scope="col">Fecha final</th>
+          <th scope="col">Hora inicial</th>
+          <th scope="col">Hora final</th>
+          <th scope="col">Frecuencia</th>
+          <th scope="col">Estatus</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
         </tr>
       </thead>
         <tbody>
           <tr>
-            <th scope="row">Abigail</th>
-            <td>Gonzalez Hidalgo</td>
+            <th scope="row">Puebla Fascinante</th>
+            <td>23/09/2018</td>
             <td>20/01/2019</td>
-            <td></td>
-            <td>70.00</td>
+            <td>8:00</td>
+            <td>20:00</td>
+            <td>60min</td>
+            <td>En servicio </td>
             <nuxt-link :to="{ name: 'precio-editar' }">
             <td><img src="@/static/pencil.png"></td>
             </nuxt-link>
