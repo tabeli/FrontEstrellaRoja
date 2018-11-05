@@ -28,6 +28,7 @@
                     <option>10/03/2019-31/12/2019</option>
                 </select>
             </div>
+            <br>
         <!--Boton de agregar intervalos-->
         <div>
             <b-btn v-b-toggle.collapse1 variant="success">Añadir intervalos</b-btn>
@@ -58,6 +59,7 @@
     <!--Termina la form-->
         </form>
     <!--Boton Agregar-->
+        <br>
         <button type="button" class="btn btn-primary mt-3">Agregar</button>
     </div>   
 </template>
