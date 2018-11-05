@@ -21,7 +21,7 @@
     <table class="table mt-3">
       <thead class="bg-success">
         <tr>
-          <th scope="col">Ruta</th>
+          <th scope="col">Rutas</th>
           <th scope="col">Fecha inicial</th>
           <th scope="col">Fecha final</th>
           <th scope="col">Hora inicial</th>

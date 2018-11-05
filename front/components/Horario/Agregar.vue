@@ -42,9 +42,23 @@
                        <label>Fecha final</label>
                         <date-picker v-model="date" :config="options"></date-picker>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <label>Tiempo Inicial</label>
-                        <time-picker v-model="time" :show-meridian="false"/>
+                        <form class="form-inline">
+                            <dropdown class="form-group">
+                            <div class="input-group">
+                                <input class="form-control" type="text" :value="this.time.toTimeString()" readonly="readonly">
+                                <div class="input-group-btn">
+                                    <btn class="dropdown-toggle"><i class="glyphicon glyphicon-time"></i></btn>
+                                </div>
+                            </div>
+                            <template slot="dropdown">
+                                <li style="padding: 10px">
+                                    <time-picker v-model="time"/>
+                                </li>
+                            </template>
+                            </dropdown>
+                        </form>
                     </div>
                 </div>
             </b-card>
