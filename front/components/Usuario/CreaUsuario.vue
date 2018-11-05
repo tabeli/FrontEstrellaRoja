@@ -1,6 +1,9 @@
 <template>
   <div>
+      <br>
       {{this.user}}
+      <br>
+
       <form class="container setform">
           
           <div class="form-row">
