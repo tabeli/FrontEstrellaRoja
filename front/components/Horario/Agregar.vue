@@ -29,9 +29,14 @@
                 </select>
             </div>
         <!--Boton de agregar intervalos-->
-            <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                Añadir intervalos
-            </button>
+        <div>
+            <b-btn v-b-toggle.collapse1 variant="success">Añadir intervalos</b-btn>
+            <b-collapse id="collapse1" class="mt-2">
+            <b-card>
+                <p class="card-text">Collapse contents Here</p>
+            </b-card>
+            </b-collapse>
+        </div>
         <!--Intervalo horas y fechas-->
             <div class="collapse" id="collapseExample">
                 <div class="card card-body">
