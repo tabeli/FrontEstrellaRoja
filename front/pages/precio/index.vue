@@ -6,7 +6,7 @@
           </div>
           <div class="col-11">
             <Header/>
-            <Boletos/>
+            <Precios/>
             <Footer/>
           </div>
       </div>
@@ -19,14 +19,14 @@
   import Sidebar from "@/components/Sidebar"
   import Footer from "@/components/Footer"
   import Header from "@/components/Header"
-  import Boletos from "@/components/Boleto/Boletos"
+  import Precios from "@/components/Precios/Precios"
 
   export default {
     components: {
       Sidebar,
       Header,
       Footer,
-      Boletos
+      Precios
     }
   }
   </script>

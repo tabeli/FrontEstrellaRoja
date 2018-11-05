@@ -12,7 +12,7 @@
     </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'rutas-agregar' }" replace>
+        <nuxt-link :to="{ name: 'boletos-tipoboletoeditar' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -22,18 +22,14 @@
       <thead class="bg-success">
         <tr>
           <th scope="col">Nombre</th>
-            <th scope="col">Imagen</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Editar</th>
-            <th scope="col">Borrar</th>
+          <th scope="col">Editar</th>
+          <th scope="col">Borrar</th>
         </tr>
       </thead>
         <tbody>
           <tr>
-            <th scope="row">Puebla</th>
-            <th></th>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ex, unde est veniam voluptatum quis laborum iure! Totam doloremque, facilis asperiores, quaerat officia similique facere mollitia reprehenderit aliquid corporis veritatis!</td>
-            <nuxt-link :to="{ name: 'rutas-editar' }">
+            <th scope="row">Niño</th>
+            <nuxt-link :to="{ name: 'boletos-tipoboletoeditar' }">
             <td><img src="@/static/pencil.png"></td>
             </nuxt-link>
             <td><img src="@/static/basurero.png"></td>

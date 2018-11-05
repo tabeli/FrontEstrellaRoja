@@ -1,21 +1,53 @@
 <template>
   <div>
-    <div id="sidenav">
+    <div id="sidenav" class="sidenav">
+      <ul>
+        <li>
       <nuxt-link :to="{ name: 'usuarios'}" replace>
-        <a>Usuarios</a>
+        <a><img src="@/static/user_white.png" height="20"> Usuarios</a>
       </nuxt-link>
+        </li>
+        <li>
       <nuxt-link :to="{ name: 'rutas'}" replace>
-        <a>Rutas</a>
+        <a><img src="@/static/tour_white.png" height="25"> Tours</a>
       </nuxt-link>
+        </li>
+        <li>
       <nuxt-link :to="{ name: 'camiones'}" replace>
-        <a>Camiones</a>
+        <a><img src="@/static/bus.png" height="20"> Camiones</a>
       </nuxt-link>
+        </li>
+        <li>
       <nuxt-link :to="{ name: 'boletos'}" replace>
-        <a>Boletos</a>
+        <a><img src="@/static/ticket.png" height="25"> Boletos</a>
       </nuxt-link>
-      
-      
-      
+        </li>
+        <li>
+      <nuxt-link :to="{ name: 'precio'}" replace>
+        <a><img src="@/static/money.png" height="20"> Precios</a>
+      </nuxt-link>
+        </li>
+        <li>
+      <nuxt-link :to="{ name: 'Paradas'}" replace>
+        <a><img src="@/static/placeholder.png" height="25"> Paradas</a>
+      </nuxt-link>
+        </li>
+        <li>
+      <nuxt-link :to="{ name: 'Autobuses'}" replace>
+        <a><img src="@/static/placeholderInterest.png" height="25"> Lugares</a>
+      </nuxt-link>
+        </li>
+        <li>
+      <nuxt-link :to="{ name: 'mural'}" replace>
+        <a><img src="@/static/paint.png" height="25"> Murales</a>
+      </nuxt-link>
+        </li>
+        <li>
+      <nuxt-link :to="{ name: 'horario'}" replace>
+        <a><img src="@/static/clock.png" height="20"> Horarios</a>
+      </nuxt-link>
+        </li>
+    </ul>
     </div>
   </div>
 </template>
@@ -33,33 +65,51 @@ export default {
 <style>
 
 
-#sidenav {
+.sidenav {
     height: 100%;
-    width: 8%;
+    width: 10%;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: #F99E3D;
+    background-image: linear-gradient(315deg, #F99E3D 0%, #ffcc2f 74%);
     overflow-x: hidden;
     padding-top: 20px;
+    
 }
 
-#sidenav a {
+.sidenav a {
     padding: 6px 8px 6px 5px;
     text-decoration: none;
     font-size: 15px;
-    color: #818181;
+    color: #ffffff;
     display: inline-block;
+    text-align: justify;
 }
 
-#sidenav a:hover {
+.sidenav li:hover {
     color: #f1f1f1;
+    background-color: black;
+    border-left: 5px solid #EA1B75;
 }
 
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+.margen{
+  margin-right: 5px;
+}
+
+.sidenav ul{
+  list-style:none;
+  padding:0;
+  margin: 0;
+}
+
+.sidenav li{
+  border: 1px solid #FCB600;
 }
 
 
