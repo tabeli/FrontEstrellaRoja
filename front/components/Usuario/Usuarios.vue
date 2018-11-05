@@ -44,8 +44,8 @@
             <td>{{ user.birthdate}}</td>
             <td>{{ user.postal_code}}</td>
             <td>{{ user.phone_number}}</td>
-            <td><img src="@/static/pencil.png"></td>
-            <td><img src="@/static/basurero.png"></td>
+            <td><button><img src="@/static/pencil.png"></button></td>
+            <td><button><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
       
