@@ -33,13 +33,24 @@
             <b-btn v-b-toggle.collapse1 variant="success">Añadir intervalos</b-btn>
             <b-collapse id="collapse1" class="mt-2">
             <b-card>
-                <div class="row">
-<div class="input-group clockpicker">
-    <input type="text" class="form-control" value="09:30">
-    <span class="input-group-addon">
-        <span class="glyphicon glyphicon-time"></span>
-    </span>
-</div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+                                    <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                    </div>
+                                </div>
+                             </div>
+                            <script type="text/javascript">
+                                $(function () {
+                                    $('#datetimepicker1').datetimepicker();
+                                });
+                            </script>
+                        </div>
+                    </div>
                 </div>
             </b-card>
             </b-collapse>
@@ -58,9 +69,6 @@
 </template>
 
 
-<script type="text/javascript">
-$('.clockpicker').clockpicker();
-</script>
 
 <style>
 .container {
