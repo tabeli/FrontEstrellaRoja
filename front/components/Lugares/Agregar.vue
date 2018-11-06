@@ -4,23 +4,41 @@
         <form>
         <!--Nombre-->
             <div class="form-group">
-                <label for="Nombre">Nombre de parada</label>
+                <label for="nombre">Nombre</label>
                 <textarea class="form-control" id="inputPrecio" rows="1"></textarea>
+            </div>
+        <!--Tipo de lugar-->
+            <div class="form-group">
+                <label for="tipoDeLugar">Tipo de Lugar</label>
+                <select class="form-control">
+                    <option>Punto de interes</option>
+                    <option>Parada</option>
+                </select>
             </div>
         <!--Longitud-->
             <div class="form-group">
-                <label for="Longitud">Longitud</label>
+                <label for="longitud">Longitud</label>
                 <textarea class="form-control" id="inputPrecio" rows="1"></textarea>
             </div>
         <!--Latitud-->
             <div class="Latitud">
-                <label for="apellido">Latitud</label>
+                <label for="latitud">Latitud</label>
+                <textarea class="form-control" id="inputPrecio" rows="1"></textarea>
+            </div>
+        <!--Narrativa-->
+            <div class="form-group">
+                <label for="narrativa">Narrativa</label>
                 <textarea class="form-control" id="inputPrecio" rows="1"></textarea>
             </div>
         <!--Descripcion-->
             <div class="form-group">
                 <label for="descripcion">Descripcion</label>
                 <textarea class="form-control" id="inputPrecio" rows="10"></textarea>
+            </div>
+        <!--Imagen-->
+             <div class="form-group">
+                <label for="imagen">Imagen</label>
+                <textarea class="form-control" id="inputPrecio" rows="1"></textarea>
             </div>
         </form>
     <!--Termina la form-->
