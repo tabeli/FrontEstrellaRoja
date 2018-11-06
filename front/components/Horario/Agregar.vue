@@ -52,7 +52,6 @@
                         <date-picker v-model="date" :config="options"></date-picker>
                     </div>
                     <div class="col"></div>
-<<<<<<< HEAD
                  </div>
                  <br>
                  <div class="row">
@@ -89,15 +88,6 @@
                  </div>
         </b-card>
     </b-collapse>
-
-</div>
-
-
-=======
-                </div>
-            </b-card>
-        </b-collapse>
->>>>>>> 40b356d818119b8f3435520440561741db331d83
 
         <b-collapse id="collapse3">
             <b-card>
