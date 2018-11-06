@@ -71,11 +71,19 @@
             <div class="col"></div>
              <div class="col-md-2">
                 <label>Tiempo Inicial</label>
-                <time-picker v-model="time" :show-meridian="false" :controls="false"/>
+               
+
+    <b-row class="my-1" v-for="type in types" :key="type">
+      <b-col sm="10.5"><b-form-input :id="`type-${type}`" :type="type"></b-form-input></b-col>
+    </b-row>
+
              </div>
              <div class="col-md-2 ">
                 <label class="">Tiempo Final</label>
-                <time-picker v-model="time" :show-meridian="false" :controls="false"/>
+            
+        <b-row class="my-1" v-for="type in types" :key="type">
+             <b-col sm="10.5"><b-form-input :id="`type-${type}`" :type="type"></b-form-input></b-col>
+        </b-row>
                 
              </div>
              <div class="col"></div>
@@ -110,22 +118,18 @@
   // Import date picker css
   import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
    
-  export default {    
-    data () {
-      return {
-        time: new Date(),
-        date: new Date(),
-        options: {
-          format: 'DD/MM/YYYY',
-          useCurrent: false,    
-        }
-      }
-    },
-    components: {
-      datePicker
+
+export default {
+  data () {
+    return {
+      types: [
+        'time'
+      ]
     }
   }
-</script> 
+}
+</script>
+
  
 <style>
 .container {
