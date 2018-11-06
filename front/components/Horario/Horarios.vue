@@ -13,8 +13,6 @@
     <!--Agregar-->
       <div class = "col text-right">
 <<<<<<< HEAD
-        <!-- falta el link de agregar -->
-        <nuxt-link :to="{ name: '' }" replace>
 =======
         <nuxt-link :to="{ name: 'horario-agregar' }" replace>
 >>>>>>> 2656c8347fd10f132092cc7a476f097910c4a3b8
