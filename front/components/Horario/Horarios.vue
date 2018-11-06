@@ -13,6 +13,7 @@
     <!--Agregar-->
       <div class = "col text-right">
 <<<<<<< HEAD
+        <nuxt-link :to="{ name: 'horario-agregar' }" replace>
 =======
         <nuxt-link :to="{ name: 'horario-agregar' }" replace>
 >>>>>>> 2656c8347fd10f132092cc7a476f097910c4a3b8
@@ -25,8 +26,7 @@
       <thead class="bg-success">
         <tr>
 <<<<<<< HEAD
-          <th scope="col">ID</th>
-          <th scope="col">Ruta</th>
+          <th scope="col">Rutas</th>
 =======
           <th scope="col">Rutas</th>
 >>>>>>> 2656c8347fd10f132092cc7a476f097910c4a3b8
