@@ -1,7 +1,6 @@
     <template>
         <div class="container text-center mt-5">
          <div class="form-group">
-            <alert type="danger"><b>Bimbo!</b> Quedan 25 días.</alert>
            <h2>Iniciar sesion</h2>
            <br>
            <br>

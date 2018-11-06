@@ -40,16 +40,14 @@
         </tr>
       </thead>
         <tbody>
-          <tr>
-            <th scope="row">6</th>
-            <th>Centro pokemon</th>
-            <td>51.492065</td>
-            <td>6.875778</td>
-            <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit aliquid, ratione a quo iste omnis fugit deserunt libero aperiam doloremque reiciendis consequuntur necessitatibus dolor explicabo voluptatum maxime qui beatae eligendi.</td>
-            <nuxt-link :to="{ name: 'paradas-editar' }">
-            <td><img src="@/static/pencil.png"></td>
-            </nuxt-link>
-            <td><img src="@/static/basurero.png"></td>
+          <tr v-for="stop in this.$store.state.stops" :key='stop.id'>
+            <th>{{ stop.id }}</th>
+            <th>{{ stop.name }}</th>
+            <td>{{ stop.longitude }}</td>
+            <td>{{ stop.latitute }}</td>
+            <td>{{ stop.description }}</td>
+            <td><button class="btn btn-info" type="button" @click="editStopAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deleteStopAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -58,6 +56,63 @@
   </template>
   
   <script>
+import axios from "axios";
+
+export default {
+  methods: {
+    async getStops() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/stop"
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.$store.commit({
+              type: "storeStops",
+              stops: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async deleteStop(id) {
+      console.log("Delete stop");
+      await axios({
+        method: "delete",
+        url: "http://principal-arena-219118.appspot.com/api/stop/" + id,
+        data: {
+          id: id
+        }
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.getStops();
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    editStopAction(id) {
+      //send to create view
+      this.$router.push({ name: "", params: { idStop : id } });
+    },
+    deleteStopAction(id) {
+      this.deleteStop(id);
+    }
+  },
+  created: function() {
+    this.getStops();
+  }
+};
   </script>
   
   <style>

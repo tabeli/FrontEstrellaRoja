@@ -27,12 +27,10 @@
         </tr>
       </thead>
         <tbody>
-          <tr>
-            <th scope="row">Niño</th>
-            <nuxt-link :to="{ name: 'boletos-tipoboletoeditar' }">
-            <td><img src="@/static/pencil.png"></td>
-            </nuxt-link>
-            <td><img src="@/static/basurero.png"></td>
+          <tr v-for="ticket_type in this.$store.state.ticket_types" :key='ticket_type.id'>
+            <th>{{ ticket_type.name }}</th>
+            <td><button class="btn btn-info" type="button" @click="editTicket_typeAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deleteTicket_typeAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -41,7 +39,62 @@
   </template>
   
   <script>
-  
+  import axios from "axios";
+
+export default {
+  methods: {
+    async getTicket_types() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/ticket_type"
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.$store.commit({
+              type: "storeTicket_types",
+              ticket_types: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async deleteTicket_type(id) {
+      console.log("Delete ticket type");
+      await axios({
+        method: "delete",
+        url: "http://principal-arena-219118.appspot.com/api/ticket_type/" + id,
+        data: {
+          id: id
+        }
+      })
+        .then(
+          function(response) {
+            console.log(response);
+            this.getTicket_types();
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    editTicket_typeAction(id) {
+      //send to create view
+      this.$router.push({ name: "", params: { idTicket_type: id } });
+    },
+    deleteTicket_typeAction(id) {
+      this.deleteTicket_type(id);
+    }
+  },
+  created: function() {
+    this.getTicket_types();
+  }
+};
   </script>
   
   <style>
