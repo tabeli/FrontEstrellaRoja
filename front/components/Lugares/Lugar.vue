@@ -10,14 +10,11 @@
         <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
     </div>
-    <!--Activar/Desactivar paradas-->
-      <div id="switch" class="col text-center">
-        <label>Paradas Desactivadas/Activadas</label>
-        <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-        </label>
-        
+        <!--Tipo de Lugar-->
+      <div class = "col text-center">
+        <nuxt-link :to="{ name: 'boletos-tipoboleto'}" replace>     
+        <button type="button" class="btn btn-warning">Tipo de Lugar</button>
+        </nuxt-link> 
       </div>
     <!--Agregar-->
       <div class = "col text-right">
