@@ -21,16 +21,14 @@
     <table class="table mt-3">
       <thead class="bg-success text-center">
         <tr>
-          <th scope="col">Id</th>
           <th scope="col">Nombre</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
         </tr>
       </thead>
-        <tbody>
+        <tbody class="text-center">
           <tr>
-            <th scope="row">10</th>
-            <th>Tu corazon</th>
+            <th scope="row">Tu corazon</th>
             <nuxt-link :to="{ name: 'paradas-editar' }">
             <td><img src="@/static/pencil.png"></td>
             </nuxt-link>
