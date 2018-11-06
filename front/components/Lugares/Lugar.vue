@@ -43,9 +43,9 @@
       </thead>
         <tbody>
           <tr v-for="place in this.$store.state.places" :key='place.id'>
-            <th>{{ place.id }}</th>
-            <th>{{ place.name }}</th>
-            <th v-for="place_type in $store.state.place_types" :key='place_type.id' v-if="place.place_type_id == place_type.id">{{ place_type.name }}</th>
+            <td>{{ place.id }}</td>
+            <td>{{ place.name }}</td>
+            <th v-for="place_type in $store.state.place_types" :key='place_type.id' v-if="place.place_type_id == place_type.id">{{ place_type.name }} x</th>
             <td v-for="narrative in $store.state.narratives" :key='narrative.id' v-if="place.narrative_id == narrative.id">{{ narrative.audio_path }}</td>
             <td v-for="narrative in $store.state.narratives" :key='narrative.id' v-if="place.narrative_id == narrative.id">{{ narrative.description }}</td>
             <td>{{ place.longitude }}</td>
@@ -61,8 +61,8 @@
                 {{ image.description }} 
               </div>
             </td>
-            <td><button class="btn btn-info" type="button" @click="editPlaceAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
-            <td><button class="btn btn-info" type="button" @click="deletePlaceAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="editPlaceAction(place.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deletePlaceAction(place.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -119,7 +119,7 @@ export default {
           function(response) {
             this.$store.commit({
               type: "storeNarratives",
-              hour_intervals: response.data
+              narratives: response.data
             });
           }.bind(this)
         )
