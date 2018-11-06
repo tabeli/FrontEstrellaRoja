@@ -11,18 +11,14 @@
       </form>
     </div>
         <!--Tipo de Lugar-->
-      <div class = "col text-center">
-<<<<<<< HEAD
-        <nuxt-link :to="{ name: 'lugares-agregar'}" replace>     
-=======
+      <div class = "col text-center">    
         <nuxt-link :to="{ name: 'lugares-tipolugar'}" replace>     
->>>>>>> a673d0be47f45d42b81b92df8d1968ad2a85470e
         <button type="button" class="btn btn-warning">Tipo de Lugar</button>
         </nuxt-link> 
       </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'lugares-agregar' }" replace>
+        <nuxt-link :to="{ name: 'lugares-agregar'}" replace> 
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
