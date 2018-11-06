@@ -40,7 +40,7 @@
 
      <!-- element to collapse -->
         <b-collapse  id="collapse2">
-          <b-card>
+            <b-card>
                <div class="row">
                    <div class="col"></div>
                    <div class="col-md-2 ">
@@ -48,39 +48,35 @@
                        <date-picker v-model="date" :config="options"></date-picker>
                     </div>
                     <div class="col-md-2">
-                       <label>Fecha final</label>
+                        <label>Fecha final</label>
                         <date-picker v-model="date" :config="options"></date-picker>
                     </div>
                     <div class="col"></div>
-                 </div>
-         </b-card>
-    </b-collapse>
+                </div>
+            </b-card>
+        </b-collapse>
 
-     <b-collapse id="collapse3">
-         <b-card>
-            <div class="row">
-            <div class="col"></div>
-             <div class="col-md-2">
-                <label>Tiempo Inicial</label>
-                <time-picker v-model="time" :show-meridian="false" :controls="false"/>
-             </div>
-             <div class="col-md-2">
-                <label>Tiempo Final</label>
-                <time-picker v-model="time" :show-meridian="false" :controls="false"/>
-             </div>
-             <div class="col"></div>
-            </div>
-        </b-card>
-    </b-collapse>
-
-</div>
-
-
-
+        <b-collapse id="collapse3">
+            <b-card>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-md-2">
+                        <label>Tiempo Inicial</label>
+                        <time-picker v-model="time" :show-meridian="false" :controls="false"/>
+                    </div>
+                    <div class="col-md-2">
+                        <label>Tiempo Final</label>
+                        <time-picker v-model="time" :show-meridian="false" :controls="false"/>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </b-card>
+        </b-collapse>
+    </div>
     <!--Termina la form-->
-        </form>
+    </form>
     <!--Boton Agregar-->
-        <br>
+        <br/>
         <button type="button" class="btn btn-primary mt-3">Agregar</button>
     </div>   
 </template>
