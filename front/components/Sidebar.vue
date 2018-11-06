@@ -28,7 +28,7 @@
       </nuxt-link>
         </li>
         <li>
-      <nuxt-link :to="{ name: 'Paradas'}" replace>
+      <nuxt-link :to="{ name: 'paradas'}" replace>
         <a><img src="@/static/placeholder.png" height="25"> Paradas</a>
       </nuxt-link>
         </li>

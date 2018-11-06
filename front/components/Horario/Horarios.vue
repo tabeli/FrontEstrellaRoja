@@ -12,8 +12,12 @@
     </div>
     <!--Agregar-->
       <div class = "col text-right">
+<<<<<<< HEAD
         <!-- falta el link de agregar -->
         <nuxt-link :to="{ name: '' }" replace>
+=======
+        <nuxt-link :to="{ name: 'horario-agregar' }" replace>
+>>>>>>> 2656c8347fd10f132092cc7a476f097910c4a3b8
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -22,8 +26,12 @@
     <table class="table mt-3">
       <thead class="bg-success">
         <tr>
+<<<<<<< HEAD
           <th scope="col">ID</th>
           <th scope="col">Ruta</th>
+=======
+          <th scope="col">Rutas</th>
+>>>>>>> 2656c8347fd10f132092cc7a476f097910c4a3b8
           <th scope="col">Fecha inicial</th>
           <th scope="col">Fecha final</th>
           <th scope="col">Hora inicial</th>
