@@ -35,8 +35,8 @@
         <label>Añadir intervalo</label>
         <br>
      <!--Botones de intervalos-->
-         <b-btn :pressed="false" variant="btn btn-outline-success" v-b-toggle.collapse2 class="m-1">Fecha</b-btn>
-         <b-btn :pressed="false" variant="btn btn-outline-success" v-b-toggle="'collapse3'" class="m-1">Hora</b-btn>
+         <b-btn :pressed="false" variant="btn btn-success" v-b-toggle.collapse2 class="m-1">Fecha</b-btn>
+         <b-btn :pressed="false" variant="btn btn-success" v-b-toggle="'collapse3'" class="m-1">Hora</b-btn>
 
      <!-- element to collapse -->
         <b-collapse  id="collapse2">
@@ -52,6 +52,14 @@
                         <date-picker v-model="date" :config="options"></date-picker>
                     </div>
                     <div class="col"></div>
+                 </div>
+                 <br>
+                 <div class="row">
+                     <div class="col"></div>
+                     <div class="col"></div>
+                     <button type="button" class="btn btn-warning">Añadir</button>
+                     <div class="col"></div>
+                     <div class="col"></div>
                  </div>
          </b-card>
     </b-collapse>
@@ -70,6 +78,14 @@
              </div>
              <div class="col"></div>
             </div>
+            <br>
+                 <div class="row">
+                     <div class="col"></div>
+                     <div class="col"></div>
+                     <button type="button" class="btn btn-warning">Añadir</button>
+                     <div class="col"></div>
+                     <div class="col"></div>
+                 </div>
         </b-card>
     </b-collapse>
 
