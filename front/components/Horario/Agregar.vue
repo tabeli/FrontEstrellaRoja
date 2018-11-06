@@ -88,23 +88,6 @@
                  </div>
         </b-card>
     </b-collapse>
-
-        <b-collapse id="collapse3">
-            <b-card>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-md-2">
-                        <label>Tiempo Inicial</label>
-                        <time-picker v-model="time" :show-meridian="false" :controls="false"/>
-                    </div>
-                    <div class="col-md-2">
-                        <label>Tiempo Final</label>
-                        <time-picker v-model="time" :show-meridian="false" :controls="false"/>
-                    </div>
-                    <div class="col"></div>
-                </div>
-            </b-card>
-        </b-collapse>
     </div>
     <!--Termina la form-->
     </form>
