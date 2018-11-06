@@ -96,7 +96,7 @@
         console.log(this.user)
         await axios({
           method:"post",
-          url:"http://localhost:8080/user",
+          url:"http://principal-arena-219118.appspot.com/api/user",
           data:{
             "user_type":this.user.user_type,
             "name": this.user.name,
@@ -123,7 +123,7 @@
       async editUser() {  
         await axios({
           method:"put",
-          url:"http://localhost:8080/user",
+          url:"http://principal-arena-219118.appspot.com/api/user",
           data:{
             "id":this.user.id,
             "user_type":this.user.user_type,
@@ -149,7 +149,7 @@
       async getUser(id){
         await axios({
           method:"get",
-          url:"http://localhost:8080/user/" + id,
+          url:"http://principal-arena-219118.appspot.com/api/" + id,
         })
         .then(function(response){
           console.log("response")

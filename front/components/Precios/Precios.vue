@@ -21,6 +21,7 @@
     <table class="table mt-3">
       <thead class="bg-success">
         <tr>
+          <th scope="col">ID</th>
           <th scope="col">Ruta</th>
           <th scope="col">Tipo de ticket</th>
           <th scope="col">Precio</th>
@@ -29,14 +30,13 @@
         </tr>
       </thead>
         <tbody>
-          <tr>
-            <th scope="row">Puebla Fascinante</th>
-            <td>Adulto</td>
-            <td>$80</td>
-            <nuxt-link :to="{ name: 'precio-editar' }">
-            <td><img src="@/static/pencil.png"></td>
-            </nuxt-link>
-            <td><img src="@/static/basurero.png"></td>
+          <tr v-for="price in this.$store.state.prices" :key='price.id'>
+            <th>{{ price.id }}</th>
+            <th>{{ price.tour_id }}</th>
+            <td>{{ price.ticket_type_id }}</td>
+            <td>{{ price.amount }}</td>
+            <td><button class="btn btn-info" type="button" @click="editPriceAction(price.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deletePriceAction(price.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -45,9 +45,63 @@
 </template>
 
 <script>
-  export default {
+import axios from "axios";
 
-  };
+export default {
+  methods: {
+    async getPrices() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/price"
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.$store.commit({
+              type: "storePrices",
+              prices: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async deletePrice(id) {
+      console.log("Delete price");
+      await axios({
+        method: "delete",
+        url: "http://principal-arena-219118.appspot.com/api/price/" + id,
+        data: {
+          id: id
+        }
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.getPrices();
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    editPriceAction(id) {
+      //send to create view
+      this.$router.push({ name: "", params: { idPrice: id } });
+    },
+    deletePriceAction(id) {
+      this.deletePrice(id);
+    }
+  },
+  created: function() {
+    this.getPrices();
+  }
+};
 </script>
 
 <style>

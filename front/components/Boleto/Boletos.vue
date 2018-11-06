@@ -37,16 +37,14 @@
         </tr>
       </thead>
         <tbody>
-          <tr>
-            <th scope="row">Abigail</th>
-            <td>Gonzalez Hidalgo</td>
-            <td>20/01/2019</td>
-            <td></td>
-            <td>70.00</td>
-            <nuxt-link :to="{ name: 'precio-editar' }">
-            <td><img src="@/static/pencil.png"></td>
-            </nuxt-link>
-            <td><img src="@/static/basurero.png"></td>
+          <tr v-for="ticket in this.$store.state.tickets" :key='ticket.id'>
+            <th>{{ ticket.client_name }}</th>
+            <td>{{ ticket.client_last_name}}</td>
+            <td>{{ ticket.tour_date}}</td>
+            <td>{{ ticket.qr_code}}</td>
+            <td>{{ ticket.total}}</td>
+            <td><button class="btn btn-info" type="button" @click="editTicketAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deleteTicketAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -55,9 +53,63 @@
 </template>
 
 <script>
-  export default {
+import axios from "axios";
 
-  };
+export default {
+  methods: {
+    async getTickets() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/ticket"
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.$store.commit({
+              type: "storeTickets",
+              tickets: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async deleteTicket(id) {
+      console.log("Delete ticket");
+      await axios({
+        method: "delete",
+        url: "http://principal-arena-219118.appspot.com/api/ticket/" + id,
+        data: {
+          id: id
+        }
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.getTickets();
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    editTicketAction(id) {
+      //send to create view
+      this.$router.push({ name: "", params: { idTicket: id } });
+    },
+    deleteTicketAction(id) {
+      this.deleteTicket(id);
+    }
+  },
+  created: function() {
+    this.getTickets();
+  }
+};
 </script>
 
 <style>

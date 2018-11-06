@@ -30,15 +30,13 @@
         </tr>
       </thead>
         <tbody>
-          <tr>
-            <th scope="row">Blah</th>
-            <td>Abigail</td>
-            <td>Gonzalez Hidalgo</td>
-            <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda, ad.</td>
-            <nuxt-link :to="{ name: 'mural-editar' }">
-            <td><img src="@/static/pencil.png"></td>
-            </nuxt-link>
-            <td><img src="@/static/basurero.png"></td>
+          <tr v-for="mural in this.$store.state.murals" :key='mural.id'>
+            <th>{{ mural.title }}</th>
+            <td>{{ mural.author_name }}</td>
+            <td>{{ mural.author_last_name }}</td>
+            <td>{{ mural.description }}</td>
+            <td><button class="btn btn-info" type="button" @click="editMuralAction(mural.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deleteMuralAction(mural.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -47,9 +45,63 @@
 </template>
 
 <script>
-  export default {
+import axios from "axios";
 
-  };
+export default {
+  methods: {
+    async getMurals() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/mural"
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.$store.commit({
+              type: "storeMurals",
+              murals: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async deleteMural(id) {
+      console.log("Delete mural");
+      await axios({
+        method: "delete",
+        url: "http://principal-arena-219118.appspot.com/api/mural/" + id,
+        data: {
+          id: id
+        }
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.getMurals();
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    editMuralAction(id) {
+      //send to create view
+      this.$router.push({ name: "", params: { idMural: id } });
+    },
+    deleteMuralAction(id) {
+      this.deleteMural(id);
+    }
+  },
+  created: function() {
+    this.getMurals();
+  }
+};
 </script>
 
 <style>

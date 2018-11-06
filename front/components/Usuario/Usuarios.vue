@@ -44,8 +44,8 @@
             <td>{{ user.birthdate}}</td>
             <td>{{ user.postal_code}}</td>
             <td>{{ user.phone_number}}</td>
-            <td><button><img src="@/static/pencil.png"></button></td>
-            <td><button><img src="@/static/basurero.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="editUserAction(user.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deleteUserAction(user.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
       
@@ -99,7 +99,7 @@ export default {
         });
     },
     async deleteUser(id) {
-      console.log("Hola");
+      console.log("Delete user");
       await axios({
         method: "delete",
         url: "http://principal-arena-219118.appspot.com/api/user/" + id,
@@ -109,8 +109,6 @@ export default {
       })
         .then(
           function(response) {
-            console.log("response");
-            console.log(response);
             this.getUsers();
           }.bind(this)
         )
