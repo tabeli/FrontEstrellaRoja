@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="container-fluid">
     <footer class = "mt-5 pt-auto sticky-bottom" style="background-color:#EA1B75">
         <div class="text-center">
           <a>

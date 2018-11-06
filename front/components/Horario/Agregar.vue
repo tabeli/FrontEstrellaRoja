@@ -34,17 +34,16 @@
     <div>
         <label>Añadir intervalo</label>
         <br>
-     <!-- Using modifiers -->
-         <b-btn v-b-toggle.collapse2 class="m-1">Fecha</b-btn>
-
-     <!-- Using value -->
-         <b-btn v-b-toggle="'collapse3'" class="m-1">Hora</b-btn>
+     <!--Botones de intervalos-->
+         <b-btn :pressed="false" variant="btn btn-outline-success" v-b-toggle.collapse2 class="m-1">Fecha</b-btn>
+         <b-btn :pressed="false" variant="btn btn-outline-success" v-b-toggle="'collapse3'" class="m-1">Hora</b-btn>
 
      <!-- element to collapse -->
-        <b-collapse id="collapse2">
+        <b-collapse  id="collapse2">
           <b-card>
                <div class="row">
-                   <div class="col-md-2">
+                   <div class="col"></div>
+                   <div class="col-md-2 ">
                        <label>Fecha inicial</label>
                        <date-picker v-model="date" :config="options"></date-picker>
                     </div>
@@ -52,6 +51,7 @@
                        <label>Fecha final</label>
                         <date-picker v-model="date" :config="options"></date-picker>
                     </div>
+                    <div class="col"></div>
                  </div>
          </b-card>
     </b-collapse>
@@ -59,10 +59,16 @@
      <b-collapse id="collapse3">
          <b-card>
             <div class="row">
+            <div class="col"></div>
              <div class="col-md-2">
                 <label>Tiempo Inicial</label>
                 <time-picker v-model="time" :show-meridian="false" :controls="false"/>
              </div>
+             <div class="col-md-2">
+                <label>Tiempo Final</label>
+                <time-picker v-model="time" :show-meridian="false" :controls="false"/>
+             </div>
+             <div class="col"></div>
             </div>
         </b-card>
     </b-collapse>
