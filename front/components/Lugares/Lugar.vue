@@ -12,13 +12,13 @@
     </div>
         <!--Tipo de Lugar-->
       <div class = "col text-center">
-        <nuxt-link :to="{ name: 'boletos-tipoboleto'}" replace>     
+        <nuxt-link :to="{ name: 'lugares-agregar'}" replace>     
         <button type="button" class="btn btn-warning">Tipo de Lugar</button>
         </nuxt-link> 
       </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'paradas-agregar' }" replace>
+        <nuxt-link :to="{ name: 'lugares-agregar' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
