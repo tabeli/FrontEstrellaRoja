@@ -4,7 +4,7 @@
       {{this.user}}
       <br>
 
-          
+        <div class="container mt-5">
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="name">Nombre</label>
@@ -59,11 +59,9 @@
                 <div v-if="user.id == null">Crea Usuario!</div>
                 <div v-else>Actualiza Usuario!</div>
             </button>
-
-
           </center>
 
-
+      </div>
   </div>
 </template>
 
