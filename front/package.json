@@ -18,6 +18,7 @@
     "cross-env": "^5.2.0",
     "express": "^4.16.3",
     "flatpickr": "^4.5.2",
+    "glyphicons": "^0.2.0",
     "jquery": "^1.12.4",
     "npm": "^6.4.1",
     "nuxt": "^2.0.0",
