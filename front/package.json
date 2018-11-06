@@ -1,5 +1,5 @@
 {
-  "name": "ProyectoER",
+  "name": "proyectoer",
   "version": "1.0.0",
   "description": "My groundbreaking Nuxt.js project",
   "author": "tabeli",
@@ -25,5 +25,7 @@
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
-  }
+  },
+  "main": "nuxt.config.js",
+  "license": "ISC"
 }

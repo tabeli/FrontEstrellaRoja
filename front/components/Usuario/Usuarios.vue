@@ -14,7 +14,7 @@
       </div>
 
       <div class="derecha">
-        <nuxt-link :to="{ name: 'usuarios-create'}" replace>
+        <nuxt-link :to="{ name: 'usuarios-create' }" replace>
           <button class="btn btn-info" type="button">Añadir usuario</button>
         </nuxt-link>
       </div>
@@ -39,13 +39,21 @@
           <tr v-for="user in this.$store.state.users" :key='user.id'>
             <td>{{ user.user_type }}</td>
             <td>{{ user.name }}</td>
-            <td>{{ user.last_name}}</td>
-            <td>{{ user.email}}</td>
-            <td>{{ user.birthdate}}</td>
-            <td>{{ user.postal_code}}</td>
-            <td>{{ user.phone_number}}</td>
-            <td><button><img src="@/static/pencil.png"></button></td>
-            <td><button><img src="@/static/basurero.png"></button></td>
+            <td>{{ user.last_name }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.birthdate }}</td>
+            <td>{{ user.postal_code }}</td>
+            <td>{{ user.phone_number }}</td>
+            <td>
+              <button class="buttons" type="button" @click="editUserAction(user.id)">
+                <img src="@/static/pencil.png">
+              </button>
+            </td>
+            <td>
+              <button class="buttons" type="button" @click="deleteUserAction(user.id)">
+                <img src="@/static/basurero.png">
+              </button>
+            </td>
           </tr>
         </tbody>
       
@@ -147,5 +155,9 @@ export default {
 }
 .bg-success {
   color:#FFFFFF
+}
+
+.buttons {
+  border: solid 1px #ffffff;
 }
 </style>

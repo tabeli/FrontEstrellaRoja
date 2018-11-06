@@ -1,10 +1,8 @@
 <template>
+  
   <div>
-      <br>
-      {{this.user}}
-      <br>
-
-      <form class="container setform">
+      <p>-----------------------------------------{{this.user}}</p>
+    <form class="container setform">
           
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -19,12 +17,12 @@
 
           <div class="form-row">
             <div class="form-group col-md-6">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email" v-model="user.email">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="" v-model="user.email">
             </div>
             <div class="form-group col-md-6">
-              <label for="inputPassword4">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password" v-model="user.password">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="" v-model="user.password">
             </div>
           </div>
           <div class="form-row">
@@ -32,7 +30,7 @@
               <label for="start">Cumpleaños</label>
               <input class="date" type="date" id="start" name="birthdate"
                     value="2018-07-22"
-                    min="1990-01-01" max="2018-12-31" 
+                    min="1970-01-01" max="2018-12-31" 
                     v-model="user.birthdate"/>
             </div>
           </div>
@@ -42,8 +40,8 @@
               <input type="text" class="form-control" id="phone_number" v-model="user.phone_number">
             </div>
             <div class="form-group col-md-3">
-              <label for="inputZip">Código Postal</label>
-              <input type="text" class="form-control" id="inputZip" v-model="user.postal_code">
+              <label for="postal_code">Código Postal</label>
+              <input type="text" class="form-control" id="postal_code" v-model="user.postal_code">
             </div>
             <div class="form-group col-md-4">
               <label for="inputState">Tipo de Usuario</label>
@@ -57,15 +55,13 @@
           </div>
           <center>
             <button type="submit" class="btn btn-danger" @click="userFunction()">
-                <div v-if="user.id == null">Crea Usuario!</div>
+                <div v-if="user.id == undefined">Crea Usuario!</div>
                 <div v-else>Actualiza Usuario!</div>
             </button>
-
-
           </center>
         </form>
-
   </div>
+  
 </template>
 
 <script>
@@ -83,20 +79,26 @@
     },
     methods: {
       userFunction(){
-        if(this.user.id != null){
-          console.log("edita")
+        if(this.user.id != undefined){
           this.editUser()
         }
         else{
-          console.log("crea")
           this.createUser()
         }
       },
       async createUser() {  
         console.log(this.user)
+        //alert("hola!")
+        //alert(JSON.stringify(this.user))
         await axios({
           method:"post",
-          url:"http://localhost:8080/user",
+          url:"http://principal-arena-219118.appspot.com/api/user",
+          /**/
+          headers: { 
+            'Content-Type': 'application/json'
+          },
+          timeout: 10000,
+          //url:"http://localhost:8080/hola",
           data:{
             "user_type":this.user.user_type,
             "name": this.user.name,
@@ -111,22 +113,30 @@
         .then(function(response){
           console.log("alskdjalskdj")
           console.log("response")
-          console.log(response)
-          //this.$router.push({ name: 'usuarios' })
+          console.log()
+          alert("response")
+          alert(JSON.stringify(response))
+          this.$router.push({ name: 'usuarios' })
         }.bind(this))
         .catch(function(error){
+          alert("error")
+          alert(JSON.stringify(error))
           console.log("alskdjalskdj")
           console.log("error")
           console.log(error)
         })
       },
-      async editUser() {  
+      async editUser() {
         await axios({
           method:"put",
-          url:"http://localhost:8080/user",
+          url:"http://principal-arena-219118.appspot.com/api/user/" + this.idUser,
+          headers: { 
+            'Content-Type': 'application/json'
+          },
+          timeout: 10000,
+          responseType: 'json',
           data:{
-            "id":this.user.id,
-            "user_type":this.user.user_type,
+            "user_type": this.user.user_type,
             "name": this.user.name,
             "last_name": this.user.last_name,
             "email": this.user.email,
@@ -137,24 +147,36 @@
           }
         })
         .then(function(response){
+          alert("http://principal-arena-219118.appspot.com/api/user/" + this.idUser)
           console.log("response")
+          console.log("ESTO RESPONDE")
           console.log(response)
+          alert("response")
+          alert(JSON.stringify(response))
           this.$router.push({ name: 'usuarios' })
         }.bind(this))
         .catch(function(error){
           console.log("error")
           console.log(error)
+          alert("error")
+          alert(JSON.stringify(error))
         })
       },
       async getUser(id){
         await axios({
           method:"get",
-          url:"http://localhost:8080/user/" + id,
+          url:"http://principal-arena-219118.appspot.com/api/user/" + id,
+          headers: { 
+            'Content-Type': 'application/json'
+          }
         })
         .then(function(response){
           console.log("response")
           console.log(response)
-          this.user = response.data[0]
+          this.user = response.data
+          console.log("HAZALGO")
+          console.log(this.user)
+          console.log("AVER")
         }.bind(this))
         .catch(function(error){
           console.log("error")
@@ -164,10 +186,13 @@
     },
    
     created: function(){
-      if(this.idUser != null){
+      console.log("starrt crea usuario")
+      if(this.idUser != undefined){
+        console.log("idUser is not defined lol")
         this.getUser(this.idUser)
       }
       
+
     }
   }
 </script>
