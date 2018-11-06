@@ -4,7 +4,6 @@
       {{this.user}}
       <br>
 
-      <form class="container setform">
           
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -63,7 +62,7 @@
 
 
           </center>
-        </form>
+
 
   </div>
 </template>
