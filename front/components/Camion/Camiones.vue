@@ -35,8 +35,8 @@
         <tbody>
           <tr v-for="bus in this.$store.state.buses" :key='bus.id'>
             <td>{{ bus.id }}</td>
-            <td>{{ bus.tour_id}}</td>
-            <td>{{ bus.mural_id}}</td>
+            <td v-for="tour in $store.state.tours" :key='tour.id' v-if="bus.tour_id == tour.id">{{ tour.name }}</td>
+            <td v-for="mural in $store.state.murals" :key='mural.id' v-if="bus.mural_id == mural.id">{{ mural.title }}</td>
             <td>{{ bus.capacity }}</td>
             <td>{{ bus.sold_tickets}}</td>
             <td>{{ bus.status}}</td>
@@ -74,6 +74,42 @@ export default {
           console.log(error);
         });
     },
+    async getMurals() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/mural"
+      })
+        .then(
+          function(response) {
+            console.log(response);
+            this.$store.commit({
+              type: "storeMurals",
+              murals: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    async getTours() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/tour"
+      })
+        .then(
+          function(response) {
+            console.log(response);
+            this.$store.commit({
+              type: "storeTours",
+              tours: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
     async deleteBus(id) {
       console.log("Delete bus");
       await axios({
@@ -88,6 +124,8 @@ export default {
             console.log("response");
             console.log(response);
             this.getBuses();
+            this.getMurals();
+            this.getTours();
           }.bind(this)
         )
         .catch(function(error) {
@@ -105,6 +143,8 @@ export default {
   },
   created: function() {
     this.getBuses();
+    this.getMurals();
+    this.getTours();
   }
 };
   </script>

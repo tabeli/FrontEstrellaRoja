@@ -45,7 +45,7 @@
           <tr v-for="place in this.$store.state.places" :key='place.id'>
             <td>{{ place.id }}</td>
             <td>{{ place.name }}</td>
-            <th v-for="place_type in $store.state.place_types" :key='place_type.id' v-if="place.place_type_id == place_type.id">{{ place_type.name }} x</th>
+            <th v-for="place_type in $store.state.place_types" :key='place_type.id' v-if="place.place_type_id == place_type.id">{{ place_type.name }}</th>
             <td v-for="narrative in $store.state.narratives" :key='narrative.id' v-if="place.narrative_id == narrative.id">{{ narrative.audio_path }}</td>
             <td v-for="narrative in $store.state.narratives" :key='narrative.id' v-if="place.narrative_id == narrative.id">{{ narrative.description }}</td>
             <td>{{ place.longitude }}</td>

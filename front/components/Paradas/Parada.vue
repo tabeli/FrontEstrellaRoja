@@ -44,10 +44,10 @@
             <th>{{ stop.id }}</th>
             <th>{{ stop.name }}</th>
             <td>{{ stop.longitude }}</td>
-            <td>{{ stop.latitute }}</td>
+            <td>{{ stop.latitude }}</td>
             <td>{{ stop.description }}</td>
-            <td><button class="btn btn-info" type="button" @click="editStopAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
-            <td><button class="btn btn-info" type="button" @click="deleteStopAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="editStopAction(stop.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deleteStopAction(stop.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -91,13 +91,11 @@ export default {
       })
         .then(
           function(response) {
-            console.log("response");
             console.log(response);
             this.getStops();
           }.bind(this)
         )
         .catch(function(error) {
-          console.log("error");
           console.log(error);
         });
     },
