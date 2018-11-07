@@ -179,6 +179,10 @@ export default {
             console.log("response");
             console.log(response);
             this.getSchedules();
+            this.getDate_interval();
+            this.getHour_interval();
+            this.getTour_schedules();
+            this.getTours();
           }.bind(this)
         )
         .catch(function(error) {

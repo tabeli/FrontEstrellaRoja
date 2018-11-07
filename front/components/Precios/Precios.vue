@@ -32,8 +32,8 @@
         <tbody>
           <tr v-for="price in this.$store.state.prices" :key='price.id'>
             <th>{{ price.id }}</th>
-            <th>{{ price.tour_id }}</th>
-            <td>{{ price.ticket_type_id }}</td>
+            <th v-for="tour in $store.state.tours" :key='tour.id' v-if="price.tour_id == tour.id">{{ tour.name }}</th>
+            <td v-for="ticket_type in $store.state.ticket_types" :key='ticket_type.id' v-if="price.ticket_type_id == ticket_type.id">{{ ticket_type.name }}</td>
             <td>{{ price.amount }}</td>
             <td><button class="btn btn-info" type="button" @click="editPriceAction(price.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-info" type="button" @click="deletePriceAction(price.id)"><img src="@/static/basurero.png"></button></td>
@@ -56,7 +56,6 @@ export default {
       })
         .then(
           function(response) {
-            console.log("response");
             console.log(response);
             this.$store.commit({
               type: "storePrices",
@@ -65,7 +64,42 @@ export default {
           }.bind(this)
         )
         .catch(function(error) {
-          console.log("error");
+          console.log(error);
+        });
+    },
+    async getTours() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/tour"
+      })
+        .then(
+          function(response) {
+            console.log(response);
+            this.$store.commit({
+              type: "storeTours",
+              tours: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    async getTicket_type() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/ticket_type"
+      })
+        .then(
+          function(response) {
+            console.log(response);
+            this.$store.commit({
+              type: "storeTicket_type",
+              ticket_types: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
           console.log(error);
         });
     },
@@ -83,6 +117,8 @@ export default {
             console.log("response");
             console.log(response);
             this.getPrices();
+            this.getTours();
+            this.getTicket_type();
           }.bind(this)
         )
         .catch(function(error) {
@@ -100,6 +136,8 @@ export default {
   },
   created: function() {
     this.getPrices();
+    this.getTours();
+    this.getTicket_type();
   }
 };
 </script>

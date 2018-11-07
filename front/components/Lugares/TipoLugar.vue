@@ -12,7 +12,7 @@
     </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'paradas-agregar' }" replace>
+        <nuxt-link :to="{ name: 'lugares-agregar' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -27,12 +27,10 @@
         </tr>
       </thead>
         <tbody class="text-center">
-          <tr>
-            <th scope="row">Tu corazon</th>
-            <nuxt-link :to="{ name: 'paradas-editar' }">
-            <td><img src="@/static/pencil.png"></td>
-            </nuxt-link>
-            <td><img src="@/static/basurero.png"></td>
+          <tr v-for="place_type in this.$store.state.place_types" :key='place_type.id'>
+            <th>{{ place_type.name }}</th>
+            <td><button class="btn btn-info" type="button" @click="editPlace_typeAction(place_type.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deletePlace_typeAction(place_type.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -41,6 +39,59 @@
   </template>
   
   <script>
+import axios from "axios";
+
+export default {
+  methods: {
+    async getPlace_types() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/place_type"
+      })
+        .then(
+          function(response) {
+            console.log(response);
+            this.$store.commit({
+              type: "storePlace_types",
+              place_types: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    async deletePlace_type(id) {
+      console.log("Delete place type");
+      await axios({
+        method: "delete",
+        url: "http://principal-arena-219118.appspot.com/api/place_type/" + id,
+        data: {
+          id: id
+        }
+      })
+        .then(
+          function(response) {
+            console.log(response);
+            this.getPlace_types();
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    editPlace_typeAction(id) {
+      //send to create view
+      this.$router.push({ name: "", params: { idPlace_type: id } });
+    },
+    deletePlace_typeAction(id) {
+      this.deletePlace_type(id);
+    }
+  },
+  created: function() {
+    this.getPlace_types();
+  }
+};
   </script>
   
   <style>

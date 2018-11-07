@@ -113,7 +113,7 @@
           console.log("response")
           console.log("response")
           //alert(JSON.stringify(response))
-          //this.$router.push({ name: 'usuarios' })
+          this.$router.push({ name: 'usuarios' })
         }.bind(this))
         .catch(function(error){
           /*alert("error")
@@ -148,7 +148,7 @@
           console.log(response)
           /*alert("response")
           alert(JSON.stringify(response))*/
-          //this.$router.push({ name: 'usuarios' })
+          this.$router.push({ name: 'usuarios' })
         }.bind(this))
         .catch(function(error){
           console.log("error")

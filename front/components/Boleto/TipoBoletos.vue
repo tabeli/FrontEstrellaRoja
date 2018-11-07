@@ -29,8 +29,8 @@
         <tbody>
           <tr v-for="ticket_type in this.$store.state.ticket_types" :key='ticket_type.id'>
             <th>{{ ticket_type.name }}</th>
-            <td><button class="btn btn-info" type="button" @click="editTicket_typeAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
-            <td><button class="btn btn-info" type="button" @click="deleteTicket_typeAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="editTicket_typeAction(ticket_type.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deleteTicket_typeAction(ticket_type.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
