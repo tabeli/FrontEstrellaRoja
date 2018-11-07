@@ -47,6 +47,11 @@
         <a><img src="@/static/clock.png" height="20"> Horarios</a>
       </nuxt-link>
         </li>
+        <li>
+      <nuxt-link :to="{ name: 'mapa'}" replace>
+        <a><img src="@/static/map.png" height="25"> Mapa</a>
+      </nuxt-link>
+        </li>
     </ul>
     </div>
   </div>
