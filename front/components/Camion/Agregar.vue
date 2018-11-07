@@ -14,15 +14,8 @@
             <div class="form-group">
                 <label for="tickets">Capacidad</label>
                 <select class="form-control" id="tipoTickets">
-                    <option>50</option>
-                    <option>60</option>
-                    <option>70</option>
+                    <option></option>
                 </select>
-            </div>
-        <!--Vendidos-->
-            <div class="form-group">
-                <label for="Tickets venidos">Tickets Vendidos:</label>
-                <label for="mostrar tickets vendidos"> 5</label>
             </div>
         </form>
     <!--Termina la form-->

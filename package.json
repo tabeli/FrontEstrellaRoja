@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1" ,
-    "dev": "lite-server"
+    "dev": "lite-server",
+    "prod": "nuxt build \n nuxt start"
   },
   "repository": {
     "type": "git",
