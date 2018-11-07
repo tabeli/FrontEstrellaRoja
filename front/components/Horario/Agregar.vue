@@ -44,14 +44,14 @@
             <b-card>
                <div class="row">
                    <div class="col"></div>
-                   <div class="col-md-2 ">
+                   <div class="col-md-2" sm="10.5">
                        <label>Fecha inicial</label>
                        <input class="date" type="date" id="start" name="birthdate"
                             value="2018-07-22"
                             min="2018-07-11" max="2021-07-11" 
                             />
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2" sm="10.5">
                         <label>Fecha final</label>
                         <input class="date" type="date" id="start" name="birthdate"
                             value="2018-07-22"
