@@ -46,11 +46,17 @@
                    <div class="col"></div>
                    <div class="col-md-2 ">
                        <label>Fecha inicial</label>
-                       <date-picker v-model="date" :config="options"></date-picker>
+                       <input class="date" type="date" id="start" name="birthdate"
+                            value="2018-07-22"
+                            min="2018-07-11" max="2021-07-11" 
+                            />
                     </div>
                     <div class="col-md-2">
                         <label>Fecha final</label>
-                        <date-picker v-model="date" :config="options"></date-picker>
+                        <input class="date" type="date" id="start" name="birthdate"
+                            value="2018-07-22"
+                            min="2018-07-11" max="2021-07-11" 
+                            />
                     </div>
                     <div class="col"></div>
                  </div>
@@ -109,14 +115,7 @@
 </template>
 
 <script>
-  // Import required dependencies 
-  import 'bootstrap/dist/css/bootstrap.css';
-  
-  // Import this component
-  import datePicker from 'vue-bootstrap-datetimepicker';
-  
-  // Import date picker css
-  import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css';
+
    
 
 export default {
