@@ -1,10 +1,10 @@
 <template>
-    <div class="container">
+    <div class="container setform">
     <!--Empieza la form-->
         <form>
         <!--Tour-->
             <div class="form-group">
-                <label for="usuario">Tour</label>
+                <label for="bus">Tour</label>
                 <select class="form-control" id="usuarioOpciones">
                     <option>Puebla fascinante</option>
                     <option>Cholula luminosa</option>
