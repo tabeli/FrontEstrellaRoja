@@ -1,5 +1,5 @@
 <template>
-  
+
   <div>
       <p>-----------------------------------------{{this.user}}</p>
     <form class="container setform">
@@ -54,7 +54,7 @@
             </div>
           </div>
           <center>
-            <button type="submit" class="btn btn-danger" @click="userFunction()">
+            <button type="submit" class="btn btn-danger" @click.stop.prevent="userFunction()">
                 <div v-if="user.id == undefined">Crea Usuario!</div>
                 <div v-else>Actualiza Usuario!</div>
             </button>
@@ -87,7 +87,7 @@
         }
       },
       async createUser() {  
-        console.log(this.user)
+        //console.log(this.user)
         //alert("hola!")
         //alert(JSON.stringify(this.user))
         await axios({
@@ -97,7 +97,6 @@
           headers: { 
             'Content-Type': 'application/json'
           },
-          timeout: 10000,
           //url:"http://localhost:8080/hola",
           data:{
             "user_type":this.user.user_type,
@@ -111,17 +110,15 @@
           }
         })
         .then(function(response){
-          console.log("alskdjalskdj")
           console.log("response")
-          console.log()
-          alert("response")
-          alert(JSON.stringify(response))
-          this.$router.push({ name: 'usuarios' })
+          console.log("response")
+          //alert(JSON.stringify(response))
+          //this.$router.push({ name: 'usuarios' })
         }.bind(this))
         .catch(function(error){
-          alert("error")
+          /*alert("error")
           alert(JSON.stringify(error))
-          console.log("alskdjalskdj")
+          console.log("alskdjalskdj")*/
           console.log("error")
           console.log(error)
         })
@@ -133,8 +130,6 @@
           headers: { 
             'Content-Type': 'application/json'
           },
-          timeout: 10000,
-          responseType: 'json',
           data:{
             "user_type": this.user.user_type,
             "name": this.user.name,
@@ -147,19 +142,19 @@
           }
         })
         .then(function(response){
-          alert("http://principal-arena-219118.appspot.com/api/user/" + this.idUser)
-          console.log("response")
-          console.log("ESTO RESPONDE")
-          console.log(response)
-          alert("response")
-          alert(JSON.stringify(response))
           this.$router.push({ name: 'usuarios' })
+          //alert("http://principal-arena-219118.appspot.com/api/user/" + this.idUser)
+          console.log("response")
+          console.log(response)
+          /*alert("response")
+          alert(JSON.stringify(response))*/
+          //this.$router.push({ name: 'usuarios' })
         }.bind(this))
         .catch(function(error){
           console.log("error")
           console.log(error)
-          alert("error")
-          alert(JSON.stringify(error))
+          /*alert("error")
+          alert(JSON.stringify(error))*/
         })
       },
       async getUser(id){
@@ -171,12 +166,8 @@
           }
         })
         .then(function(response){
-          console.log("response")
-          console.log(response)
           this.user = response.data
-          console.log("HAZALGO")
           console.log(this.user)
-          console.log("AVER")
         }.bind(this))
         .catch(function(error){
           console.log("error")

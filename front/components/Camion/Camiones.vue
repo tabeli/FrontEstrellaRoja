@@ -12,7 +12,8 @@
     </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'camiones-Agregar' }" replace>
+        <!-- falta el link de agregar -->
+        <nuxt-link :to="{ name: '' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -23,22 +24,24 @@
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Tour</th>
-           <th scope="col">Capacidad</th>
+          <th scope="col">Mural</th>
+          <th scope="col">Capacidad</th>
           <th scope="col">Tickets vendidos</th>
+          <th scope="col">Estatus</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
         </tr>
       </thead>
         <tbody>
-          <tr>
-            <th scope="row">5</th>
-            <th></th>
-            <td>20</td>
-            <td>4</td>
-            <nuxt-link :to="{ name: 'camiones-Editar' }">
-            <td><img src="@/static/pencil.png"></td>
-            </nuxt-link>
-            <td><img src="@/static/basurero.png"></td>
+          <tr v-for="bus in this.$store.state.buses" :key='bus.id'>
+            <td>{{ bus.id }}</td>
+            <td>{{ bus.tour_id}}</td>
+            <td>{{ bus.mural_id}}</td>
+            <td>{{ bus.capacity }}</td>
+            <td>{{ bus.sold_tickets}}</td>
+            <td>{{ bus.status}}</td>
+            <td><button class="btn btn-info" type="button" @click="editBusAction(bus.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deleteBusAction(bus.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -47,9 +50,77 @@
   </template>
   
   <script>
-  
+import axios from "axios";
+
+export default {
+  methods: {
+    async getBuses() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/bus"
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.$store.commit({
+              type: "storeBuses",
+              buses: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async deleteBus(id) {
+      console.log("Delete bus");
+      await axios({
+        method: "delete",
+        url: "http://principal-arena-219118.appspot.com/api/bus/" + id,
+        data: {
+          id: id
+        }
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.getBuses();
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    editBusAction(id) {
+      //send to create view
+      this.$router.push({ name: "camiones-Editar", params: { idBus: id } });
+    },
+    deleteBusAction(id) {
+      this.deleteBus(id);
+    }
+  },
+  created: function() {
+    this.getBuses();
+  }
+};
   </script>
   
   <style>
-  
+  .container {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 15px; /* Increased text to enable scrolling */
+    text-align: center;
+    align-content: center;
+}
+.derecha{
+  padding-right: 110px;
+  margin-left:  160px;
+}
+.bg-success {
+  color:#FFFFFF
+}
   </style>

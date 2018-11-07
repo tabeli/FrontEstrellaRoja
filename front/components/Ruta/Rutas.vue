@@ -29,14 +29,12 @@
         </tr>
       </thead>
         <tbody>
-          <tr>
-            <th scope="row">Puebla</th>
-            <th></th>
-            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ex, unde est veniam voluptatum quis laborum iure! Totam doloremque, facilis asperiores, quaerat officia similique facere mollitia reprehenderit aliquid corporis veritatis!</td>
-            <nuxt-link :to="{ name: 'rutas-editar' }">
-            <td><img src="@/static/pencil.png"></td>
-            </nuxt-link>
-            <td><img src="@/static/basurero.png"></td>
+          <tr v-for="tour in this.$store.state.tours" :key='tour.id'>
+            <th>{{ tour.name }}</th>
+            <th>{{ tour.image_path }}</th>
+            <td>{{ tour.description }}</td>
+            <td><button class="btn btn-info" type="button" @click="editTourAction(tour.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deleteTourAction(tour.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -44,8 +42,64 @@
     </div>
   </template>
   
-  <script>
-  
+<script>
+import axios from "axios";
+
+export default {
+  methods: {
+    async getTours() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/tour"
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.$store.commit({
+              type: "storeTours",
+              tours: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async deleteTour(id) {
+      console.log("Delete tour");
+      await axios({
+        method: "delete",
+        url: "http://principal-arena-219118.appspot.com/api/tour/" + id,
+        data: {
+          id: id
+        }
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.getTours();
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    editTourAction(id) {
+      //send to create view
+      this.$router.push({ name: "", params: { idTour: id } });
+    },
+    deleteTourAction(id) {
+      this.deleteTour(id);
+    }
+  },
+  created: function() {
+    this.getTours();
+  }
+};
   </script>
   
   <style>

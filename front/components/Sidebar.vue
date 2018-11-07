@@ -27,7 +27,16 @@
         <a><img src="@/static/money.png" height="20"> Precios</a>
       </nuxt-link>
         </li>
-  
+        <li>
+      <nuxt-link :to="{ name: 'paradas'}" replace>
+        <a><img src="@/static/placeholder.png" height="25"> Paradas</a>
+      </nuxt-link>
+        </li>
+        <li>
+      <nuxt-link :to="{ name: 'lugares'}" replace>
+        <a><img src="@/static/placeholderInterest.png" height="25"> Lugares</a>
+      </nuxt-link>
+        </li>
         <li>
       <nuxt-link :to="{ name: 'mural'}" replace>
         <a><img src="@/static/paint.png" height="25"> Murales</a>
