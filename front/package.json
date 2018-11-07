@@ -26,7 +26,8 @@
     "tempusdominus-bootstrap-4": "^5.1.2",
     "uiv": "^0.28.0",
     "vue-bootstrap-datetimepicker": "^5.0.1",
-    "vue-sidebar-menu": "^1.0.4"
+    "vue-sidebar-menu": "^1.0.4",
+    "vue2-google-maps": "^0.10.2"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
