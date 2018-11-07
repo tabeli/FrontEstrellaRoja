@@ -1,9 +1,7 @@
 <template>
 
-  <div>
-      <p>-----------------------------------------{{this.user}}</p>
+  <div> 
     <form class="container setform">
-          
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="name">Nombre</label>
@@ -87,19 +85,15 @@
         }
       },
       async createUser() {  
-        //console.log(this.user)
-        //alert("hola!")
         //alert(JSON.stringify(this.user))
         await axios({
           method:"post",
           url:"http://principal-arena-219118.appspot.com/api/user",
-          /**/
           headers: { 
             'Content-Type': 'application/json'
           },
-          //url:"http://localhost:8080/hola",
           data:{
-            "user_type":this.user.user_type,
+            "user_type": this.user.user_type,
             "name": this.user.name,
             "last_name": this.user.last_name,
             "email": this.user.email,
@@ -110,16 +104,11 @@
           }
         })
         .then(function(response){
-          console.log("response")
-          console.log("response")
           //alert(JSON.stringify(response))
           this.$router.push({ name: 'usuarios' })
         }.bind(this))
         .catch(function(error){
-          /*alert("error")
-          alert(JSON.stringify(error))
-          console.log("alskdjalskdj")*/
-          console.log("error")
+          /*alert(JSON.stringify(error))*/
           console.log(error)
         })
       },
@@ -146,15 +135,11 @@
           //alert("http://principal-arena-219118.appspot.com/api/user/" + this.idUser)
           console.log("response")
           console.log(response)
-          /*alert("response")
-          alert(JSON.stringify(response))*/
           this.$router.push({ name: 'usuarios' })
         }.bind(this))
         .catch(function(error){
           console.log("error")
           console.log(error)
-          /*alert("error")
-          alert(JSON.stringify(error))*/
         })
       },
       async getUser(id){
@@ -170,20 +155,17 @@
           console.log(this.user)
         }.bind(this))
         .catch(function(error){
-          console.log("error")
           console.log(error)
         })
       }
     },
    
     created: function(){
-      console.log("starrt crea usuario")
+      console.log("start crea usuario")
       if(this.idUser != undefined){
-        console.log("idUser is not defined lol")
+        console.log("idUser is not defined")
         this.getUser(this.idUser)
       }
-      
-
     }
   }
 </script>
@@ -194,5 +176,5 @@
   max-width: 90%;
   border: 10px solid #353535;
   padding: 5%;
-}
+  }
 </style>

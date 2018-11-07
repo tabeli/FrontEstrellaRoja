@@ -13,7 +13,7 @@
     <!--Agregar-->
       <div class = "col text-right">
         <!-- falta el link de agregar -->
-        <nuxt-link :to="{ name: '' }" replace>
+        <nuxt-link :to="{ name: 'camiones-Agregar' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
