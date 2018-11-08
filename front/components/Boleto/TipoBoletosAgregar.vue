@@ -29,7 +29,7 @@ import axios from 'axios'
     props: ['idTicket_type'],
     data: function(){
       return {
-        user: {}
+        ticket_type: {}
       }
     },
     methods: {
