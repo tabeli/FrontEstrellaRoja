@@ -1,48 +1,71 @@
 <template>
 
   <div> 
-    <form class="container setform">
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="name">Nombre</label>
+    <form class="container">
+         
+            <div class="form-group col-md-12">
+              <center>
+                <label for="name" class="letrabonita">Nombre</label>
+              </center>
+              
               <input type="text" class="form-control" id="name" placeholder="" v-model="user.name">
             </div>
-            <div class="form-group col-md-6">
-              <label for="last_name">Apellido</label>
+            <div class="form-group col-md-12">
+              <center>
+                <label for="last_name" class="letrabonita">Apellido</label>
+              </center>
+              
               <input type="text" class="form-control" id="last_name" placeholder="" v-model="user.last_name">
             </div>
-          </div>
+          
 
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <label for="email">Email</label>
+          
+            <div class="form-group col-md-12">
+              <center>
+                <label for="email" class="letrabonita">Email</label>
+              </center>
+              
               <input type="email" class="form-control" id="email" placeholder="" v-model="user.email">
             </div>
-            <div class="form-group col-md-6">
-              <label for="password">Password</label>
+            <div class="form-group col-md-12">
+              <center>
+                <label for="password" class="letrabonita">Password</label>
+              </center>
+              
               <input type="password" class="form-control" id="password" placeholder="" v-model="user.password">
             </div>
-          </div>
-          <div class="form-row">
+          
             <div>
-              <label for="start">Cumpleaños</label>
+              <center>
+                <label for="start" class="letrabonita">Fecha de nacimiento</label>
               <input class="date" type="date" id="start" name="birthdate"
-                    value="2018-07-22"
-                    min="1970-01-01" max="2018-12-31" 
+                    value="2000-01-01"
+                    min="1900-01-01" max="(currdate)" 
                     v-model="user.birthdate"/>
+              </center>
+              
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-5">
-              <label for="phone_number">Celular</label>
+
+          
+            <div class="form-group col-md-12">
+              <center>
+                 <label for="phone_number" class="letrabonita">Celular</label>
+              </center>
+             
               <input type="text" class="form-control" id="phone_number" v-model="user.phone_number">
             </div>
-            <div class="form-group col-md-3">
-              <label for="postal_code">Código Postal</label>
+            <div class="form-group col-md-12">
+              <center>
+                 <label for="postal_code" class="letrabonita">Código Postal</label>
+              </center>
+             
               <input type="text" class="form-control" id="postal_code" v-model="user.postal_code">
             </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">Tipo de Usuario</label>
+            <div class="form-group col-md-12">
+              <center>
+                <label for="inputState" class="letrabonita">Tipo de Usuario</label>
+              </center>
+              
               <select id="inputState" class="form-control" v-model="user.user_type">
                 <option v-if="user.user_type == client" value="client" selected>Cliente</option>
                 <option v-else value="client">Cliente</option>
@@ -50,7 +73,7 @@
                 <option v-else value="administrator">Administrador</option>
               </select>
             </div>
-          </div>
+          
           <center>
             <button type="submit" class="btn btn-danger" @click.stop.prevent="userFunction()">
                 <div v-if="user.id == undefined">Crea Usuario!</div>
@@ -135,7 +158,6 @@
           //alert("http://principal-arena-219118.appspot.com/api/user/" + this.idUser)
           console.log("response")
           console.log(response)
-          this.$router.push({ name: 'usuarios' })
         }.bind(this))
         .catch(function(error){
           console.log("error")
@@ -171,10 +193,8 @@
 </script>
   
 <style>
-  .setform {
-  justify-content: center;
-  max-width: 90%;
-  border: 10px solid #353535;
-  padding: 5%;
+  .letrabonita {
+    font-size: 22px;
+    font: bold
   }
 </style>

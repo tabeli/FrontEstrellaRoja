@@ -26,7 +26,6 @@
           <th scope="col">Tour</th>
           <th scope="col">Mural</th>
           <th scope="col">Capacidad</th>
-          <th scope="col">Tickets vendidos</th>
           <th scope="col">Estatus</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
@@ -38,7 +37,6 @@
             <td v-for="tour in $store.state.tours" :key='tour.id' v-if="bus.tour_id == tour.id">{{ tour.name }}</td>
             <td v-for="mural in $store.state.murals" :key='mural.id' v-if="bus.mural_id == mural.id">{{ mural.title }}</td>
             <td>{{ bus.capacity }}</td>
-            <td>{{ bus.sold_tickets}}</td>
             <td>{{ bus.status}}</td>
             <td><button class="btn btn-info" type="button" @click="editBusAction(bus.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-info" type="button" @click="deleteBusAction(bus.id)"><img src="@/static/basurero.png"></button></td>

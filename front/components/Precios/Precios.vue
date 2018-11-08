@@ -33,7 +33,7 @@
           <tr v-for="price in this.$store.state.prices" :key='price.id'>
             <th>{{ price.id }}</th>
             <th v-for="tour in $store.state.tours" :key='tour.id' v-if="price.tour_id == tour.id">{{ tour.name }}</th>
-            <td v-for="ticket_type in $store.state.ticket_types" :key='ticket_type.id' v-if="price.ticket_type_id == ticket_type.id">{{ ticket_type.name }}</td>
+            <th v-for="ticket_type in $store.state.ticket_types" :key='ticket_type.id' v-if="price.ticket_type_id == ticket_type.id">{{ ticket_type.id }}</th>
             <td>{{ price.amount }}</td>
             <td><button class="btn btn-info" type="button" @click="editPriceAction(price.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-info" type="button" @click="deletePriceAction(price.id)"><img src="@/static/basurero.png"></button></td>
@@ -85,7 +85,7 @@ export default {
           console.log(error);
         });
     },
-    async getTicket_type() {
+    async getTicket_types() {
       await axios({
         method: "get",
         url: "http://principal-arena-219118.appspot.com/api/ticket_type"
@@ -94,7 +94,7 @@ export default {
           function(response) {
             console.log(response);
             this.$store.commit({
-              type: "storeTicket_type",
+              type: "storeTicket_types",
               ticket_types: response.data
             });
           }.bind(this)
@@ -118,7 +118,7 @@ export default {
             console.log(response);
             this.getPrices();
             this.getTours();
-            this.getTicket_type();
+            this.getTicket_types();
           }.bind(this)
         )
         .catch(function(error) {
@@ -137,7 +137,7 @@ export default {
   created: function() {
     this.getPrices();
     this.getTours();
-    this.getTicket_type();
+    this.getTicket_types();
   }
 };
 </script>
