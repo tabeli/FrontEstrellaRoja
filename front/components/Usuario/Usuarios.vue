@@ -23,7 +23,7 @@
     <div>
     <table class="table mt-3 col-11">
       <thead class="bg-success">
-        <tr>
+        <tr  class="sombra">
           <th scope="col">Tipo de usuario</th>
           <th scope="col">Nombre</th>
           <th scope="col">Apellido</th>
@@ -139,15 +139,36 @@ export default {
   text-align: center;
   align-content: center;
 }
+.sombra{
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
+}
 .derecha{
   padding-right: 110px;
   margin-left:  160px;
+
 }
+
 .bg-success {
   color:#FFFFFF
 }
 
-.buttons {
+.button {
   border: solid 1px #ffffff;
+    width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+ 
 }
 </style>
