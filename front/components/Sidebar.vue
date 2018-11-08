@@ -81,7 +81,7 @@ export default {
     background-image: linear-gradient(315deg, #F99E3D 0%, #ffcc2f 74%);
     overflow-x: hidden;
     padding-top: 20px;
-    box-shadow: 0 19px 38px gray, 0 15px 12px #F99E3D;
+    box-shadow: 0 12px 20px gray, 0 15px 12px #F99E3D;
     
 }
 

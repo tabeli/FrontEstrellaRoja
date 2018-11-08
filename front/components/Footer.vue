@@ -26,7 +26,7 @@ width: 100%;
 text-align: center;
 margin: 0px 0px 0px 0px;
 overflow: auto;
-
+box-shadow: 0px 3px 6px rgba(39, 39, 39, 0.13), 0px 3px 6px rgba(39, 39, 39, 0.13);
 
 }
 </style>
