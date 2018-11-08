@@ -6,7 +6,7 @@
           </div>
           <div class="col-11">
             <Header/>
-            <Mapa/>
+            <GoogleMap/>
             <Footer/>
           </div>
       </div>
@@ -15,14 +15,15 @@
   
   <script>
 import Sidebar from "@/components/Sidebar";
-import Mapa from "@/components/Mapa/Mapa";
+import GoogleMap from "@/components/Mapa/GoogleMap";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+
 
 export default {
   components: {
     Sidebar,
-    Mapa,
+    GoogleMap,
     Footer,
     Header
   }
