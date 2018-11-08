@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <div>
-
-      <br/>
-
+    <div class="form-group mr-sm-2">
+      <label for="exampleFormControlSelect1">Tours</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+      </select>
     </div>
     <br>
     <gmap-map
