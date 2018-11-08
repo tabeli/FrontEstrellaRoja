@@ -21,13 +21,12 @@
 }
 .footer{
 clear: both;
-height: 200px;
-width: 900px;
+height: 100%;
+width: 100%;
 text-align: center;
 margin: 0px 0px 0px 0px;
-font-family: arial, helvetica;
-font-weight: bold ;
-font-size: 11px;
+overflow: auto;
+
 
 }
 </style>

@@ -81,6 +81,7 @@ export default {
     background-image: linear-gradient(315deg, #F99E3D 0%, #ffcc2f 74%);
     overflow-x: hidden;
     padding-top: 20px;
+    box-shadow: 0 19px 38px gray, 0 15px 12px #F99E3D;
     
 }
 
@@ -97,6 +98,8 @@ export default {
     color: #f1f1f1;
     background-color: black;
     border-left: 5px solid #EA1B75;
+      box-shadow: 0 3px 6px rgba(39, 39, 39, 0.13), 0 3px 6px rgba(39, 39, 39, 0.13);
+  
 }
 
 @media screen and (max-height: 450px) {
