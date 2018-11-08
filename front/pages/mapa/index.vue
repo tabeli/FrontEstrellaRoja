@@ -15,14 +15,14 @@
   
   <script>
 import Sidebar from "@/components/Sidebar";
-//import Mapa from "@/components/Mapa/Mapa";
+import Mapa from "@/components/Mapa/Mapa";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
 export default {
   components: {
     Sidebar,
-    //Mapa,
+    Mapa,
     Footer,
     Header
   }
