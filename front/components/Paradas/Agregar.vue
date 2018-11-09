@@ -131,7 +131,7 @@ export default {
       })
         .then(
           function(response) {
-            this.stop = response.stop;
+            this.stop = response.data;
             console.log(this.stop);
           }.bind(this)
         )

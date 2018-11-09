@@ -216,7 +216,7 @@ export default {
       })
         .then(
           function(response) {
-            this.ticket = response.ticket;
+            this.ticket = response.data;
             console.log(this.ticket);
           }.bind(this)
         )
