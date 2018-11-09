@@ -42,8 +42,8 @@
         Footer
       },
       created: function(){
-        console.log("id of user :D")
-        console.log(this.idUser)
+        console.log("id of user :D");
+        console.log(this.idUser);
       }
     }
   </script>

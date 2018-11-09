@@ -10,6 +10,7 @@
               
               <input type="text" class="form-control" id="name" placeholder="" v-model="user.name">
             </div>
+
             <div class="form-group col-md-12">
               <center>
                 <label for="last_name" class="letrabonita">Apellido</label>
@@ -17,9 +18,7 @@
               
               <input type="text" class="form-control" id="last_name" placeholder="" v-model="user.last_name">
             </div>
-          
-
-          
+        
             <div class="form-group col-md-12">
               <center>
                 <label for="email" class="letrabonita">Email</label>

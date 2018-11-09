@@ -90,7 +90,7 @@ export default {
     },
     editTourAction(id) {
       //send to create view
-      this.$router.push({ name: "", params: { idTour: id } });
+      this.$router.push({ name: "rutas-agregar", params: { idTour: id } });
     },
     deleteTourAction(id) {
       this.deleteTour(id);

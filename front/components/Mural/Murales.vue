@@ -92,7 +92,7 @@ export default {
     },
     editMuralAction(id) {
       //send to create view
-      this.$router.push({ name: "", params: { idMural: id } });
+      this.$router.push({ name: "mural-agregar", params: { idMural: id } });
     },
     deleteMuralAction(id) {
       this.deleteMural(id);

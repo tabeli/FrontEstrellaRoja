@@ -1,7 +1,6 @@
 <template>
     <div class="container">
     <!--Empieza la form-->
-    <p>{{this.price}}</p>
         <form>
             <!--Tipo de ticket-->
             <div class="form-group ">

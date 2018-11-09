@@ -1,27 +1,28 @@
-  <template>
-  <div>
-    <div class="row">
-    <!--Sidebar-->
-      <div class="col-sm-1">
-        <Sidebar/>
-      </div>
-    <!--Header-->
-      <div class="col-sm-11">
+<template>
+
+    <div>
+
+      <div class="Header">
         <Header/>
       </div>
-    <!--Agregar.vue-->
-      <div class="container mt-5">
-        <Agregar/>
-      </div>
-    </div>
 
-    <div class="Footer sm-11 mt-5">
+      <div class ="row">
+          <div class="col-sm-1 mt-5">
+              <Sidebar/>
+          </div>
+          <div class="col-sm-11">
+              <Agregar :idMural="idMural"/>
+          </div>
+      </div>
+
+    <div class="Footer mt-5">
       <Footer/>
     </div>
 
-  </div>
-    
-</template>
+    </div>
+  
+  </template>
+  
 
 <script>
 
@@ -31,11 +32,20 @@
   import Agregar from "@/components/Mural/Agregar"
 
   export default {
+    data: function(){
+      return {
+        idMural: this.$route.params.idMural
+      }
+    },
     components: {
       Sidebar,
       Footer,
       Header,
       Agregar
+    },
+    created: function(){
+      console.log("id of stop");
+      console.log(this.idMural);
     }
   }
 </script>

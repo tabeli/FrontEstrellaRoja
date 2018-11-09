@@ -1,7 +1,6 @@
 <template>
     <div class="container">
     <!--Empieza la form-->
-    <p>{{this.stop}}</p>
         <form>
         <!--Nombre-->
             <div class="form-group">
