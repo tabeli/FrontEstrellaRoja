@@ -1,27 +1,25 @@
-  <template>
-  <div>
-    <div class="row">
-    <!--Sidebar-->
-      <div class="col-sm-1">
-        <Sidebar/>
-      </div>
-    <!--Header-->
-      <div class="col-sm-11">
+<template>
+   <div>
+
+      <div class="Header">
         <Header/>
       </div>
-    <!--Agregar.vue-->
-      <div class="container mt-5">
-        <Agregar/>
-      </div>
-    </div>
 
-    <div class="Footer sm-11 mt-5">
+      <div class ="row">
+          <div class="col-sm-1 mt-5">
+              <Sidebar/>
+          </div>
+          <div class="col-sm-11">
+              <Agregar :idPrice="idPrice"/>
+          </div>
+      </div>
+
+    <div class="Footer mt-5">
       <Footer/>
     </div>
 
-  </div>
-    
-</template>
+    </div>
+  </template>
 
 <script>
 
@@ -31,11 +29,20 @@
   import Agregar from "@/components/Precios/Agregar"
 
   export default {
+    data: function(){
+      return{
+        idPrice: this.$route.params.idPrice
+      };
+    },
     components: {
       Sidebar,
       Footer,
       Header,
       Agregar
+    },
+    created: function(){
+      console.log("id of price: ")
+      console.log(this.idPrice)
     }
   }
 </script>

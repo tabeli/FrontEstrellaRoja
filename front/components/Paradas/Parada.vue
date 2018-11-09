@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+      
       <br>
       <div class="mt-5">
     <div class="row">
@@ -101,7 +102,7 @@ export default {
     },
     editStopAction(id) {
       //send to create view
-      this.$router.push({ name: "", params: { idStop : id } });
+      this.$router.push({ name: "paradas-agregar", params: { idStop : id } });
     },
     deleteStopAction(id) {
       this.deleteStop(id);

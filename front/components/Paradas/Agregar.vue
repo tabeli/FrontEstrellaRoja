@@ -1,6 +1,7 @@
 <template>
     <div class="container">
     <!--Empieza la form-->
+    <p>{{this.stop}}</p>
         <form>
         <!--Nombre-->
             <div class="form-group">
@@ -131,7 +132,7 @@ export default {
         .then(
           function(response) {
             this.stop = response.stop;
-            console.log(this.bus);
+            console.log(this.stop);
           }.bind(this)
         )
         .catch(function(error) {
@@ -143,7 +144,8 @@ export default {
   created: function() {
     console.log("start crea paradas");
     if (this.idStop != undefined) {
-      console.log("idStop is not defined");
+      console.log("idStop is defined");
+      this.getStop(this.idStop)
     }
   }
 };

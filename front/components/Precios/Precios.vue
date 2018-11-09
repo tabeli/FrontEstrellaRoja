@@ -33,7 +33,7 @@
           <tr v-for="price in this.$store.state.prices" :key='price.id'>
             <th>{{ price.id }}</th>
             <th v-for="tour in $store.state.tours" :key='tour.id' v-if="price.tour_id == tour.id">{{ tour.name }}</th>
-            <th v-for="ticket_type in $store.state.ticket_types" :key='ticket_type.id' v-if="price.ticket_type_id == ticket_type.id">{{ ticket_type.id }}</th>
+            <th v-for="ticket_type in $store.state.ticket_types" :key='ticket_type.id' v-if="price.ticket_type_id == ticket_type.id">{{ ticket_type.name }}</th>
             <td>{{ price.amount }}</td>
             <td><button class="btn btn-info" type="button" @click="editPriceAction(price.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-info" type="button" @click="deletePriceAction(price.id)"><img src="@/static/basurero.png"></button></td>
@@ -128,7 +128,7 @@ export default {
     },
     editPriceAction(id) {
       //send to create view
-      this.$router.push({ name: "", params: { idPrice: id } });
+      this.$router.push({ name: "precio-agregar", params: { idPrice: id } });
     },
     deletePriceAction(id) {
       this.deletePrice(id);

@@ -27,7 +27,7 @@
                 <label for="ticket_type" class="letrabonita">Escoge el ID del tipo de Ticket</label>
               </center>
                 
-                <select class="form-control" id="mural" v-model="price.ticket_type">
+                <select class="form-control" id="mural" v-model="price.ticket_type_id">
                     <option v-for="ticket_type in this.$store.state.ticket_types"  :key='ticket_type.id' >{{ticket_type.id}}</option>
                 </select>
             </div>
@@ -140,7 +140,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "precio" });
-            //alert("http://principal-arena-219118.appspot.com/api/ticket_type/" + this.idPrice)
+            //alert("http://principal-arena-219118.appspot.com/api/price/" + this.idPrice)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -210,12 +210,15 @@ export default {
     console.log("start crea precio");
     if (this.idPrice != undefined) {
       console.log("idPrice is not defined");
+      this.getPrice(this.idPrice);
     }
-    if (this.idTicket_tuype != undefined) {
+    if (this.idTicket_type != undefined) {
       console.log("idTicket_type is not defined");
+      this.getTicket_types();
     }
     if (this.idTour != undefined) {
       console.log("idTour is not defined");
+      this.getTours();
     }
     this.getTours();
     this.getTicket_types();
