@@ -18,7 +18,11 @@
       </div>
     <!--Agregar-->
       <div class = "col text-right">
+<<<<<<< HEAD
         <nuxt-link :to="{ name: '' }" replace>
+=======
+        <nuxt-link :to="{ name: 'boletos-Agregar'}" replace>
+>>>>>>> c67c53cef66056d9a350f2ae0a2687528fcb757e
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -27,6 +31,7 @@
     <table class="table mt-3">
       <thead class="bg-success">
         <tr>
+          <th scope="col">ID</th>
           <th scope="col">Nombre del cliente</th>
           <th scope="col">Apellido del cliente</th>
           <th scope="col">Fecha del tour</th>
@@ -38,11 +43,12 @@
       </thead>
         <tbody>
           <tr v-for="ticket in this.$store.state.tickets" :key='ticket.id'>
+            <th>{{ ticket.id }}</th>
             <th>{{ ticket.client_name }}</th>
-            <td>{{ ticket.client_last_name}}</td>
-            <td>{{ ticket.tour_date}}</td>
-            <td>{{ ticket.qr_code}}</td>
-            <td>{{ ticket.total}}</td>
+            <td>{{ ticket.client_last_name }}</td>
+            <td>{{ ticket.tour_date }}</td>
+            <td>{{ ticket.qr_code }}</td>
+            <td>{{ ticket.total }}</td>
             <td><button class="btn btn-info" type="button" @click="editTicketAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-info" type="button" @click="deleteTicketAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
           </tr>

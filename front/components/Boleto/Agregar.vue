@@ -1,7 +1,7 @@
 <template>
     <div class="container">
     <!--Empieza la form-->
-    <p>{{this.bus}}</p>
+    <p>{{this.ticket}}</p>
         <form>
         <!--Tour-->
             <div class="form-group ">
@@ -221,15 +221,12 @@ import axios from 'axios'
       console.log("start crea bus")
       if(this.idBus != undefined){
         console.log("idBus is not defined")
-        this.getBus(this.idBus)
       }
       if(this.idMural != undefined){
         console.log("idMural is not defined")
-        this.getMurals();
       }
       if(this.idTour != undefined){
         console.log("idTour is not defined")
-        this.getTours();
       }
       this.getTours();
       this.getMurals();
