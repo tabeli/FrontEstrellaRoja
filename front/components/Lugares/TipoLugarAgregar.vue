@@ -2,21 +2,21 @@
     <div class="container setform">
     <!--Empieza la form-->
         <form>
-        <!--Titulo-->
+        <!--Nombre-->
             <div class="form-group">
-                <label for="name">Tipo de boleto</label>
-                <input type="text" class="form-control" id="name" v-model="ticket_type.name">
+                <label for="name" class="letrabonita">Tipo de lugar</label>
+                <input type="text" class="form-control" id="name" v-model="place_type.name">
             </div>
         </form>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
     <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="ticket_typeFunction()">
-                <div v-if="ticket_type.id == undefined">Crea Tipo de Ticket</div>
-                <div v-else>Actualiza Tipo de Ticket</div>
-            </button>
-          </center>
+        <button type="submit" class="btn btn-danger" @click.stop.prevent="place_typeFunction()">
+            <div v-if="place_type.id == undefined">Crea Tipo de Lugar</div>
+            <div v-else>Actualiza Tipo de Lugar</div>
+        </button>
+    </center>
        
     </div>   
 </template>
@@ -26,36 +26,36 @@ import axios from "axios";
 
 export default {
   //props is the parameter it receives
-  props: ["idTicket_type"],
+  props: ["idPlace_type"],
   data: function() {
     return {
-      ticket_type: {}
+      place_type: {}
     };
   },
   methods: {
-    ticket_typeFunction() {
-      if (this.ticket_type.id != undefined) {
-        this.editTicket_type();
+    place_typeFunction() {
+      if (this.place_type.id != undefined) {
+        this.editPlace_type();
       } else {
-        this.createTicket_type();
+        this.createPlace_type();
       }
     },
-    async createTicket_type() {
-      //alert(JSON.stringify(this.ticket_type))
+    async createPlace_type() {
+      //alert(JSON.stringify(this.place_type))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/ticket_type",
+        url: "http://principal-arena-219118.appspot.com/api/place_type",
         headers: {
           "Content-Type": "application/json"
         },
         data: {
-          name: this.ticket_type.name
+          name: this.place_type.name
         }
       })
         .then(
           function(response) {
             //alert(JSON.stringify(response))
-            this.$router.push({ name: "boletos" });
+            this.$router.push({ name: "lugares" });
           }.bind(this)
         )
         .catch(function(error) {
@@ -63,26 +63,26 @@ export default {
           console.log(error);
         });
     },
-    async editTicket_type() {
+    async editPlace_type() {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/ticket_type/" +
-          this.idTicket_type,
+          "http://principal-arena-219118.appspot.com/api/place_type/" +
+          this.idPlace_type,
         headers: {
           "Content-Type": "application/json"
         },
         data: {
-          name: this.ticket_type.name
+          name: this.place_type.name
         }
       })
         .then(
           function(response) {
-            this.$router.push({ name: "boletos" });
-            //alert("http://principal-arena-219118.appspot.com/api/ticket_type/" + this.idTicket_type)
+            this.$router.push({ name: "lugares" });
+            //alert("http://principal-arena-219118.appspot.com/api/place_type/" + this.idPlace_type)
             console.log("response");
             console.log(response);
-            this.$router.push({ name: "boletos" });
+            this.$router.push({ name: "lugares" });
           }.bind(this)
         )
         .catch(function(error) {
@@ -90,18 +90,18 @@ export default {
           console.log(error);
         });
     },
-    async getTicket_type(id) {
+    async getPlace_type(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/ticket_type/" + id,
+        url: "http://principal-arena-219118.appspot.com/api/place_type/" + id,
         headers: {
           "Content-Type": "application/json"
         }
       })
         .then(
           function(response) {
-            this.ticket_type = response.data;
-            console.log(this.ticket_type);
+            this.place_type = response.data;
+            console.log(this.place_type);
           }.bind(this)
         )
         .catch(function(error) {
@@ -112,9 +112,9 @@ export default {
 
   created: function() {
     console.log("start crea tipo de tiket");
-    if (this.idTicket_type != undefined) {
-      console.log("idTicket_type is not defined");
-      this.getTicket_type(this.idTicket_type);
+    if (this.idPlace_type != undefined) {
+      console.log("idPlace_type is not defined");
+      this.getPlace_type(this.idPlace_type);
     }
   }
 };

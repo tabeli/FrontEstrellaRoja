@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <br>
-      <div class="mt-5">
+      <div>
     <div class="row">
     <!--Buscador-->
     <div class="col">
@@ -39,7 +39,7 @@
   </template>
   
   <script>
-  import axios from "axios";
+import axios from "axios";
 
 export default {
   methods: {
@@ -95,8 +95,7 @@ export default {
     this.getTicket_types();
   }
 };
-  </script>
+</script>
   
   <style>
-  
-  </style>
+</style>

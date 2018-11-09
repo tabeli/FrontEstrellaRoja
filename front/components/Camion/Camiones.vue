@@ -11,11 +11,10 @@
       </form>
     </div>
     <!--Agregar-->
-      <div class = "col text-right">
-        <!-- falta el link de agregar -->
+      <div class="derecha">
         <nuxt-link :to="{ name: 'camiones-Agregar' }" replace>
-        <button type="button" class="btn btn-info text-right">Agregar</button>
-        </nuxt-link> 
+          <button class="btn btn-info" type="button">Añadir camión</button>
+        </nuxt-link>
       </div>
     </div>
     <!--Tabla-->
@@ -133,7 +132,7 @@ export default {
     },
     editBusAction(id) {
       //send to create view
-      this.$router.push({ name: "camiones-Editar", params: { idBus: id } });
+      this.$router.push({ name: "camiones-Agregar", params: { idBus: id } });
     },
     deleteBusAction(id) {
       this.deleteBus(id);
@@ -145,20 +144,20 @@ export default {
     this.getTours();
   }
 };
-  </script>
+</script>
   
   <style>
-  .container {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 15px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+.container {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 15px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
 }
-.derecha{
+.derecha {
   padding-right: 110px;
-  margin-left:  160px;
+  margin-left: 160px;
 }
 .bg-success {
-  color:#FFFFFF
+  color: #ffffff;
 }
-  </style>
+</style>

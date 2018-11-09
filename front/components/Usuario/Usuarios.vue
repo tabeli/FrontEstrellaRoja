@@ -48,25 +48,6 @@
             <td><button class="btn btn-info" type="button" @click="deleteUserAction(user.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
-      
-      
-    <!--  <tbody>
-        <tr v-for="user in this.$store.state.users" :key='user.id'>
-          <td>{{ user.name }}</td>
-          <td>{{ user.last_name }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.birthdate }}</td>
-          <td>{{ user.postal_code }}</td>
-          <td>{{ user.phone_number }}</td>
-          <td>
-            <button class="btn btn-info" type="button" @click="editUserAction(user.id)" >Editar</button>
-          </td>
-          <td>
-            <button class="btn btn-danger" type="button" @click="deleteUserAction(user.id)" >Eliminar</button>
-          </td>
-        </tr>
-      </tbody>
-    -->
     </table>
     </div>
   </div>
@@ -139,24 +120,23 @@ export default {
   text-align: center;
   align-content: center;
 }
-.sombra{
+.sombra {
   box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
-.derecha{
+.derecha {
   padding-right: 110px;
-  margin-left:  160px;
-
+  margin-left: 160px;
 }
 
 .bg-success {
-  color:#FFFFFF
+  color: #ffffff;
 }
 
 .button {
   border: solid 1px #ffffff;
-    width: 140px;
+  width: 140px;
   height: 45px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -169,6 +149,5 @@ export default {
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
- 
 }
 </style>

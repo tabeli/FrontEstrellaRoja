@@ -48,6 +48,105 @@
 </template>
 
 <script>
+import axios from "axios";
+
+export default {
+  //props is the parameter it receives
+  props: ["idStop"],
+  data: function() {
+    return {
+      stop: {}
+    };
+  },
+  methods: {
+    stopFunction() {
+      if (this.stop.id != undefined) {
+        this.editStop();
+      } else {
+        this.createStop();
+      }
+    },
+    async createStop() {
+      //alert(JSON.stringify(this.stop))
+      await axios({
+        method: "post",
+        url: "http://principal-arena-219118.appspot.com/api/stop",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: {
+          name: this.stop.name,
+          longitude: this.stop.longitude,
+          latitude: this.stop.latitude,
+          description: this.stop.description
+        }
+      })
+        .then(
+          function(response) {
+            //alert(JSON.stringify(response))
+            this.$router.push({ name: "paradas" });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          /*alert(JSON.stringify(error))*/
+          console.log(error);
+        });
+    },
+    async editStop() {
+      await axios({
+        method: "put",
+        url:
+          "http://principal-arena-219118.appspot.com/api/stop/" + this.idStop,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: {
+          name: this.stop.name,
+          longitude: this.stop.longitude,
+          latitude: this.stop.latitude,
+          description: this.stop.description
+        }
+      })
+        .then(
+          function(response) {
+            this.$router.push({ name: "boletos" });
+            //alert("http://principal-arena-219118.appspot.com/api/stop/" + this.idStop)
+            console.log("response");
+            console.log(response);
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async getStop(id) {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/stop/" + id,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(
+          function(response) {
+            this.stop = response.stop;
+            console.log(this.bus);
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  },
+
+  created: function() {
+    console.log("start crea paradas");
+    if (this.idStop != undefined) {
+      console.log("idStop is not defined");
+    }
+  }
+};
 </script>
 
 <style>

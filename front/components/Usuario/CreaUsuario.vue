@@ -76,8 +76,8 @@
           
           <center>
             <button type="submit" class="btn btn-danger" @click.stop.prevent="userFunction()">
-                <div v-if="user.id == undefined">Crea Usuario!</div>
-                <div v-else>Actualiza Usuario!</div>
+                <div v-if="user.id == undefined">Crea Usuario</div>
+                <div v-else>Actualiza Usuario</div>
             </button>
           </center>
         </form>
@@ -86,115 +86,121 @@
 </template>
 
 <script>
-  import axios from 'axios'
+import axios from "axios";
 
-  export default {
-    //props is the parameter it receives
-    props: ['idUser'],
-    data: function(){
-      return {
-        user: {},
-        client: "client",
-        administrator: "administrator"
+export default {
+  //props is the parameter it receives
+  props: ["idUser"],
+  data: function() {
+    return {
+      user: {},
+      client: "client",
+      administrator: "administrator"
+    };
+  },
+  methods: {
+    userFunction() {
+      if (this.user.id != undefined) {
+        this.editUser();
+      } else {
+        this.createUser();
       }
     },
-    methods: {
-      userFunction(){
-        if(this.user.id != undefined){
-          this.editUser()
+    async createUser() {
+      //alert(JSON.stringify(this.user))
+      await axios({
+        method: "post",
+        url: "http://principal-arena-219118.appspot.com/api/user",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: {
+          user_type: this.user.user_type,
+          name: this.user.name,
+          last_name: this.user.last_name,
+          email: this.user.email,
+          birthdate: this.user.birthdate,
+          password: this.user.password,
+          postal_code: this.user.postal_code,
+          phone_number: this.user.phone_number
         }
-        else{
-          this.createUser()
-        }
-      },
-      async createUser() {  
-        //alert(JSON.stringify(this.user))
-        await axios({
-          method:"post",
-          url:"http://principal-arena-219118.appspot.com/api/user",
-          headers: { 
-            'Content-Type': 'application/json'
-          },
-          data:{
-            "user_type": this.user.user_type,
-            "name": this.user.name,
-            "last_name": this.user.last_name,
-            "email": this.user.email,
-            "birthdate": this.user.birthdate,
-            "password": this.user.password,
-            "postal_code": this.user.postal_code,
-            "phone_number": this.user.phone_number,
-          }
-        })
-        .then(function(response){
-          //alert(JSON.stringify(response))
-          this.$router.push({ name: 'usuarios' })
-        }.bind(this))
-        .catch(function(error){
+      })
+        .then(
+          function(response) {
+            //alert(JSON.stringify(response))
+            this.$router.push({ name: "usuarios" });
+          }.bind(this)
+        )
+        .catch(function(error) {
           /*alert(JSON.stringify(error))*/
-          console.log(error)
-        })
-      },
-      async editUser() {
-        await axios({
-          method:"put",
-          url:"http://principal-arena-219118.appspot.com/api/user/" + this.idUser,
-          headers: { 
-            'Content-Type': 'application/json'
-          },
-          data:{
-            "user_type": this.user.user_type,
-            "name": this.user.name,
-            "last_name": this.user.last_name,
-            "email": this.user.email,
-            "birthdate": this.user.birthdate,
-            "password": this.user.password,
-            "postal_code": this.user.postal_code,
-            "phone_number": this.user.phone_number,
-          }
-        })
-        .then(function(response){
-          this.$router.push({ name: 'usuarios' })
-          //alert("http://principal-arena-219118.appspot.com/api/user/" + this.idUser)
-          console.log("response")
-          console.log(response)
-        }.bind(this))
-        .catch(function(error){
-          console.log("error")
-          console.log(error)
-        })
-      },
-      async getUser(id){
-        await axios({
-          method:"get",
-          url:"http://principal-arena-219118.appspot.com/api/user/" + id,
-          headers: { 
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(function(response){
-          this.user = response.data
-          console.log(this.user)
-        }.bind(this))
-        .catch(function(error){
-          console.log(error)
-        })
-      }
+          console.log(error);
+        });
     },
-   
-    created: function(){
-      console.log("start crea usuario")
-      if(this.idUser != undefined){
-        console.log("idUser is not defined")
-        this.getUser(this.idUser)
-      }
+    async editUser() {
+      await axios({
+        method: "put",
+        url:
+          "http://principal-arena-219118.appspot.com/api/user/" + this.idUser,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: {
+          user_type: this.user.user_type,
+          name: this.user.name,
+          last_name: this.user.last_name,
+          email: this.user.email,
+          birthdate: this.user.birthdate,
+          password: this.user.password,
+          postal_code: this.user.postal_code,
+          phone_number: this.user.phone_number
+        }
+      })
+        .then(
+          function(response) {
+            this.$router.push({ name: "usuarios" });
+            //alert("http://principal-arena-219118.appspot.com/api/user/" + this.idUser)
+            console.log("response");
+            console.log(response);
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async getUser(id) {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/user/" + id,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(
+          function(response) {
+            this.user = response.data;
+            console.log(this.user);
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  },
+
+  created: function() {
+    console.log("start crea usuario");
+    if (this.idUser != undefined) {
+      console.log("idUser is not defined");
+      this.getUser(this.idUser);
     }
   }
+};
 </script>
   
 <style>
-  .letrabonita {
-    font-size: 22px;
-    font: bold
-  }
+.letrabonita {
+  font-size: 22px;
+  font: bold;
+}
 </style>

@@ -12,7 +12,7 @@
     </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'lugares-agregar' }" replace>
+        <nuxt-link :to="{ name: 'lugares-tipolugaragregar' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -92,10 +92,10 @@ export default {
     this.getPlace_types();
   }
 };
-  </script>
+</script>
   
   <style>
-  .switch {
+.switch {
   position: relative;
   display: inline-block;
   width: 60px;
@@ -118,8 +118,8 @@ export default {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .slider:before {
@@ -130,8 +130,8 @@ export default {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
@@ -156,4 +156,4 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
-  </style>
+</style>

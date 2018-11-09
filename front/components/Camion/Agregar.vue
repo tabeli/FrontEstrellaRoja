@@ -1,7 +1,6 @@
 <template>
     <div class="container">
     <!--Empieza la form-->
-    <p>{{this.bus}}</p>
         <form>
         <!--Tour-->
             <div class="form-group ">
@@ -41,7 +40,6 @@
               <br>
               <center>
                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
-                <!-- falta de crear el .vue de crear ruta, omaewa mou shindeiru...naniiiiiii-->
                 <nuxt-link :to="{ name: 'mural-Agregar' }" replace>
                 <button type="button" class="btn btn-info text-right">Agregar</button>
                 <br>
@@ -82,8 +80,8 @@
 
         <center>
             <button type="submit" class="btn btn-danger" @click.stop.prevent="busFunction()">
-                <div v-if="bus.id == undefined">Crea Bus</div>
-                <div v-else>Actualiza Bus</div>
+                <div v-if="bus.id == undefined">Crea Camión</div>
+                <div v-else>Actualiza Camión</div>
             </button>
           </center>
     <!--Termina la form-->
@@ -91,95 +89,102 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
-  export default {
-    //props is the parameter it receives
-    props: ['idBus','idMural','idTour'],
-    data: function(){
-      return {
-        bus: {},
-        in_service: "in_service",
-        out_of_service: "out_of_service"
+export default {
+  //props is the parameter it receives
+  props: ["idBus", "idMural", "idTour"],
+  data: function() {
+    return {
+      bus: {},
+      in_service: "in_service",
+      out_of_service: "out_of_service"
+    };
+  },
+  methods: {
+    busFunction() {
+      if (this.bus.id != undefined) {
+        this.editBus();
+      } else {
+        this.createBus();
       }
     },
-    methods: {
-      busFunction(){
-        if(this.bus.id != undefined){
-          this.editBus()
+    async createBus() {
+      //alert(JSON.stringify(this.bus))
+      await axios({
+        method: "post",
+        url: "http://principal-arena-219118.appspot.com/api/bus",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: {
+          tour_id: this.bus.tour_id,
+          mural_id: this.bus.mural_id,
+          capacity: this.bus.capacity,
+          sold_tickets: 0,
+          status: this.bus.status
         }
-        else{
-          this.createBus()
-        }
-      },
-      async createBus() {  
-        //alert(JSON.stringify(this.bus))
-        await axios({
-          method:"post",
-          url:"http://principal-arena-219118.appspot.com/api/bus",
-          headers: { 
-            'Content-Type': 'application/json'
-          },
-          data:{
-            "tour_id": this.bus.tour_id,
-            "mural_id": this.bus.mural_id,
-            "capacity": this.bus.capacity,
-            "sold_tickets": 0,
-            "status": this.bus.status
-          }
-        })
-        .then(function(response){
-          //alert(JSON.stringify(response))
-          this.$router.push({ name: 'camiones' })
-        }.bind(this))
-        .catch(function(error){
+      })
+        .then(
+          function(response) {
+            //alert(JSON.stringify(response))
+            this.$router.push({ name: "camiones" });
+          }.bind(this)
+        )
+        .catch(function(error) {
           /*alert(JSON.stringify(error))*/
-          console.log(error)
-        })
-      },
-      async editBus() {
-        await axios({
-          method:"put",
-          url:"http://principal-arena-219118.appspot.com/api/bus/" + this.idBus,
-          headers: { 
-            'Content-Type': 'application/json'
-          },
-          data:{
-            "tour_id": this.bus.tour_id,
-            "mural_id": this.bus.mural_id,
-            "capacity": this.bus.capacity,
-            "sold_tickets": this.bus.sold_tickets,
-            "status": this.bus.status
-          }
-        })
-        .then(function(response){
-          this.$router.push({ name: 'camiones' })
-          //alert("http://principal-arena-219118.appspot.com/api/bus/" + this.idBus)
-          console.log("response")
-          console.log(response)
-        }.bind(this))
-        .catch(function(error){
-          console.log("error")
-          console.log(error)
-        })
-      },
-      async getBus(id){
-        await axios({
-          method:"get",
-          url:"http://principal-arena-219118.appspot.com/api/bus/" + id,
-          headers: { 
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(function(response){
-          this.bus = response.data
-          console.log(this.bus)
-        }.bind(this))
-        .catch(function(error){
-          console.log(error)
-        })
-      },
-      async getMurals() {
+          console.log(error);
+        });
+    },
+    async editBus() {
+      await axios({
+        method: "put",
+        url: "http://principal-arena-219118.appspot.com/api/bus/" + this.idBus,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: {
+          tour_id: this.bus.tour_id,
+          mural_id: this.bus.mural_id,
+          capacity: this.bus.capacity,
+          sold_tickets: 0,
+          status: this.bus.status
+        }
+      })
+        .then(
+          function(response) {
+            this.$router.push({ name: "camiones" });
+            /*alert(
+              "http://principal-arena-219118.appspot.com/api/bus/" + this.idBus
+        );*/
+            console.log("response");
+            console.log(response);
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async getBus(id) {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/bus/" + id,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(
+          function(response) {
+            this.bus = response.data;
+            console.log(this.bus);
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    async getMurals() {
       await axios({
         method: "get",
         url: "http://principal-arena-219118.appspot.com/api/mural"
@@ -214,32 +219,32 @@ import axios from 'axios'
         .catch(function(error) {
           console.log(error);
         });
-    },
-    },
-    
-    created: function(){
-      console.log("start crea bus")
-      if(this.idBus != undefined){
-        console.log("idBus is not defined")
-        this.getBus(this.idBus)
-      }
-      if(this.idMural != undefined){
-        console.log("idMural is not defined")
-        this.getMurals();
-      }
-      if(this.idTour != undefined){
-        console.log("idTour is not defined")
-        this.getTours();
-      }
-      this.getTours();
+    }
+  },
+
+  created: function() {
+    console.log("start crea bus");
+    if (this.idBus != undefined) {
+      console.log("idBus is not defined");
+      this.getBus(this.idBus);
+    }
+    if (this.idMural != undefined) {
+      console.log("idMural is not defined");
       this.getMurals();
     }
+    if (this.idTour != undefined) {
+      console.log("idTour is not defined");
+      this.getTours();
+    }
+    this.getTours();
+    this.getMurals();
   }
+};
 </script>
 
 <style>
-  .letrabonita {
-    font-size: 22px;
-    font: bold
-  }
+.letrabonita {
+  font-size: 22px;
+  font: bold;
+}
 </style>
