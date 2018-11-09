@@ -12,13 +12,13 @@
     </div>
     <!--Tipo de boletos-->
       <div class = "col text-center">
-        <nuxt-link :to="{ name: 'boletos-tipoboleto'}" replace>     
+        <nuxt-link :to="{ name: ''}" replace>     
         <button type="button" class="btn btn-warning">Tipo de boleto</button>
         </nuxt-link> 
       </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'precio-agregar' }" replace>
+        <nuxt-link :to="{ name: '' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -114,17 +114,17 @@ export default {
 
 <style>
 .container {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 15px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 15px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
 }
-.derecha{
+.derecha {
   padding-right: 110px;
-  margin-left:  160px;
+  margin-left: 160px;
 }
 .bg-success {
-  color:#FFFFFF
+  color: #ffffff;
 }
 </style>
 

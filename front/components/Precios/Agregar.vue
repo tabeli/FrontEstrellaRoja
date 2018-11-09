@@ -16,7 +16,7 @@
               <center>
                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
                 <!-- falta de crear el .vue de crear ruta, omaewa mou shindeiru...naniiiiiii-->
-                <nuxt-link :to="{ name: 'boleto-TipoBoletosAgregar' }" replace>
+                <nuxt-link :to="{ name: '' }" replace>
                 <button type="button" class="btn btn-info text-right">Agregar</button>
                 <br>
                 </nuxt-link> 
@@ -43,7 +43,7 @@
               <br>
               <center>
                  <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
-                 <nuxt-link :to="{ name: 'ruta-Agregar' }" replace>
+                 <nuxt-link :to="{ name: '' }" replace>
                 <button type="button" class="btn btn-info text-right">Agregar</button>
                 <br>
                 </nuxt-link> 
@@ -80,89 +80,95 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
-  export default {
-    //props is the parameter it receives
-    props: ['idPrice','idTicket_type','idTour'],
-    data: function(){
-      return {
-        price: {}
+export default {
+  //props is the parameter it receives
+  props: ["idPrice", "idTicket_type", "idTour"],
+  data: function() {
+    return {
+      price: {}
+    };
+  },
+  methods: {
+    priceFunction() {
+      if (this.price.id != undefined) {
+        this.editPrice();
+      } else {
+        this.createPrice();
       }
     },
-    methods: {
-      priceFunction(){
-        if(this.price.id != undefined){
-          this.editPrice()
+    async createPrice() {
+      //alert(JSON.stringify(this.price))
+      await axios({
+        method: "post",
+        url: "http://principal-arena-219118.appspot.com/api/price",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: {
+          ticket_type_id: this.price.ticket_type_id,
+          tour_id: this.price.tour_id,
+          amount: this.price.amount
         }
-        else{
-          this.createPrice()
-        }
-      },
-      async createPrice() {  
-        //alert(JSON.stringify(this.price))
-        await axios({
-          method:"post",
-          url:"http://principal-arena-219118.appspot.com/api/price",
-          headers: { 
-            'Content-Type': 'application/json'
-          },
-          data:{
-            "ticket_type_id": this.price.ticket_type_id,
-            "tour_id": this.price.tour_id,
-            "amount": this.price.amount
-          }
-        })
-        .then(function(response){
-          //alert(JSON.stringify(response))
-          this.$router.push({ name: 'precio' })
-        }.bind(this))
-        .catch(function(error){
+      })
+        .then(
+          function(response) {
+            //alert(JSON.stringify(response))
+            this.$router.push({ name: "precio" });
+          }.bind(this)
+        )
+        .catch(function(error) {
           /*alert(JSON.stringify(error))*/
-          console.log(error)
-        })
-      },
-      async editPrice() {
-        await axios({
-          method:"put",
-          url:"http://principal-arena-219118.appspot.com/api/price/" + this.idPrice,
-          headers: { 
-            'Content-Type': 'application/json'
-          },
-          data:{
-            "ticket_type_id": this.price.ticket_type_id,
-            "tour_id": this.price.tour_id,
-            "amount": this.price.amount
-          }
-        })
-        .then(function(response){
-          this.$router.push({ name: 'precio' })
-          //alert("http://principal-arena-219118.appspot.com/api/ticket_type/" + this.idPrice)
-          console.log("response")
-          console.log(response)
-        }.bind(this))
-        .catch(function(error){
-          console.log("error")
-          console.log(error)
-        })
-      },
-      async getPrice(id){
-        await axios({
-          method:"get",
-          url:"http://principal-arena-219118.appspot.com/api/price/" + id,
-          headers: { 
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(function(response){
-          this.price = response.data
-          console.log(this.price)
-        }.bind(this))
-        .catch(function(error){
-          console.log(error)
-        })
-      },
-      async getTicket_types() {
+          console.log(error);
+        });
+    },
+    async editPrice() {
+      await axios({
+        method: "put",
+        url:
+          "http://principal-arena-219118.appspot.com/api/price/" + this.idPrice,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: {
+          ticket_type_id: this.price.ticket_type_id,
+          tour_id: this.price.tour_id,
+          amount: this.price.amount
+        }
+      })
+        .then(
+          function(response) {
+            this.$router.push({ name: "precio" });
+            //alert("http://principal-arena-219118.appspot.com/api/ticket_type/" + this.idPrice)
+            console.log("response");
+            console.log(response);
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async getPrice(id) {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/price/" + id,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(
+          function(response) {
+            this.price = response.data;
+            console.log(this.price);
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    async getTicket_types() {
       await axios({
         method: "get",
         url: "http://principal-arena-219118.appspot.com/api/ticket_type"
@@ -197,39 +203,39 @@ import axios from 'axios'
         .catch(function(error) {
           console.log(error);
         });
-    },
-    },
-    
-    created: function(){
-      console.log("start crea precio")
-      if(this.idPrice != undefined){
-        console.log("idPrice is not defined")
-      }
-      if(this.idTicket_tuype != undefined){
-        console.log("idTicket_type is not defined")
-      }
-      if(this.idTour != undefined){
-        console.log("idTour is not defined")
-      }
-      this.getTours();
-      this.getTicket_types();
     }
+  },
+
+  created: function() {
+    console.log("start crea precio");
+    if (this.idPrice != undefined) {
+      console.log("idPrice is not defined");
+    }
+    if (this.idTicket_tuype != undefined) {
+      console.log("idTicket_type is not defined");
+    }
+    if (this.idTour != undefined) {
+      console.log("idTour is not defined");
+    }
+    this.getTours();
+    this.getTicket_types();
   }
+};
 </script>
 
 <style>
 .container {
-    margin-left: 160px;
-    margin-right: 0px; /* Same as the width of the sidenav */
-    display: inline-block;
-    font-size: 20px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+  margin-left: 160px;
+  margin-right: 0px; /* Same as the width of the sidenav */
+  display: inline-block;
+  font-size: 20px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
 }
 .letrabonita {
-    font-size: 22px;
-    font: bold
-  }
+  font-size: 22px;
+  font: bold;
+}
 </style>
 
 
