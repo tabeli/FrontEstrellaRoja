@@ -225,7 +225,7 @@ export default {
   created: function() {
     console.log("start crea bus");
     if (this.idBus != undefined) {
-      console.log("idBus is not defined");
+      console.log("idBus is defined");
       this.getBus(this.idBus);
     }
     if (this.idMural != undefined) {

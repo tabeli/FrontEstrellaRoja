@@ -102,7 +102,7 @@ export default {
     },
     editTicketAction(id) {
       //send to create view
-      this.$router.push({ name: "", params: { idTicket: id } });
+      this.$router.push({ name: "boletos-agregar", params: { idTicket: id } });
     },
     deleteTicketAction(id) {
       this.deleteTicket(id);

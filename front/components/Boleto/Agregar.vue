@@ -159,7 +159,7 @@ export default {
           client_age: this.ticket.client_age,
           tour_date: this.ticket.tour_date,
           qr_code: this.ticket.qr_code,
-          total: this.total
+          total: this.ticket.total
         }
       })
         .then(
@@ -190,7 +190,7 @@ export default {
           client_age: this.ticket.client_age,
           tour_date: this.ticket.tour_date,
           qr_code: this.ticket.qr_code,
-          total: this.total
+          total: this.ticket.total
         }
       })
         .then(
@@ -217,7 +217,7 @@ export default {
         .then(
           function(response) {
             this.ticket = response.ticket;
-            console.log(this.bus);
+            console.log(this.ticket);
           }.bind(this)
         )
         .catch(function(error) {
@@ -263,15 +263,18 @@ export default {
   },
 
   created: function() {
-    console.log("start crea bus");
+    console.log("start crea ticket");
     if (this.idTicket != undefined) {
-      console.log("idTicket is not defined");
+      console.log("idTicket is defined");
+      this.getTicket(this.idTicket);
     }
     if (this.idPurchase != undefined) {
-      console.log("idPurchase is not defined");
+      console.log("idPurchase is defined");
+      this.getPurchases();
     }
     if (this.idPrice != undefined) {
-      console.log("idPrice is not defined");
+      console.log("idPrice is defined");
+      this.getPrices();
     }
     this.getPurchases();
     this.getPrices();

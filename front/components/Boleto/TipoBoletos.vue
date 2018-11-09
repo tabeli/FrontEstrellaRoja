@@ -85,7 +85,7 @@ export default {
     },
     editTicket_typeAction(id) {
       //send to create view
-      this.$router.push({ name: "", params: { idTicket_type: id } });
+      this.$router.push({ name: "boletos-tipoboletoeditar", params: { idTicket_type: id } });
     },
     deleteTicket_typeAction(id) {
       this.deleteTicket_type(id);

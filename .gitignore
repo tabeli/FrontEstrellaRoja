@@ -65,6 +65,7 @@ typings/
 # next.js build output
 .next
 
+#nuxt credentials
 .nuxt
 
 # vuepress build output

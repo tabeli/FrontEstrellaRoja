@@ -191,7 +191,7 @@ export default {
   created: function() {
     console.log("start crea usuario");
     if (this.idUser != undefined) {
-      console.log("idUser is not defined");
+      console.log("idUser is defined");
       this.getUser(this.idUser);
     }
   }
