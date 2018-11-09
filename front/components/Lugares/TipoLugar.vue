@@ -82,7 +82,7 @@ export default {
     },
     editPlace_typeAction(id) {
       //send to create view
-      this.$router.push({ name: "", params: { idPlace_type: id } });
+      this.$router.push({ name: "lugares-tipolugaragregar", params: { idPlace_type: id } });
     },
     deletePlace_typeAction(id) {
       this.deletePlace_type(id);

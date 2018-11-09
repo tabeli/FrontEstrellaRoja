@@ -41,8 +41,8 @@
       Agregar
     },
     created: function(){
-      console.log("id of price: ")
-      console.log(this.idPrice)
+      console.log("id of price: ");
+      console.log(this.idPrice);
     }
   }
 </script>

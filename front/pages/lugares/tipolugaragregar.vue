@@ -1,40 +1,46 @@
-  <template>
-  <div>
-    <div class="row">
-    <!--Sidebar-->
-      <div class="col-sm-1">
-        <Sidebar/>
-      </div>
-    <!--Header-->
-      <div class="col-sm-11">
+<template>
+    <div>
+
+      <div class="Header">
         <Header/>
       </div>
-    <!--Agregar.vue-->
-      <div class="container mt-5">
-        <Agregar/>
-      </div>
-    </div>
 
-    <div class="Footer sm-11 mt-5">
+      <div class ="row">
+          <div class="col-sm-1 mt-5">
+              <Sidebar/>
+          </div>
+          <div class="col-sm-11">
+              <TipoLugarAgregar :idPlace_type="idPlace_type"/>
+          </div>
+      </div>
+
+    <div class="Footer mt-5">
       <Footer/>
     </div>
 
-  </div>
-    
-</template>
-
+    </div>
+  </template>
 <script>
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Agregar from "@/components/Lugares/TipoLugarAgregar";
+import TipoLugarAgregar from "@/components/Lugares/TipoLugarAgregar";
 
 export default {
+  data: function(){
+    return{
+      idPlace_type: this.$route.params.idPlace_type
+    }
+  },
   components: {
     Sidebar,
     Footer,
     Header,
-    Agregar
+    TipoLugarAgregar
+  },
+  created: function(){
+    console.log("id of place type");
+    console.log(this.idPlace_type)
   }
 };
 </script>

@@ -186,7 +186,7 @@ export default {
     },
     editPlaceAction(id) {
       //send to create view
-      this.$router.push({ name: "", params: { idPlace: id } });
+      this.$router.push({ name: "lugares-agregar", params: { idPlace: id } });
     },
     deletePlaceAction(id) {
       this.deletePlace(id);

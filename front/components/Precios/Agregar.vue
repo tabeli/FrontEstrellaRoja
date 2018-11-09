@@ -14,8 +14,7 @@
               <br>
               <center>
                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
-                <!-- falta de crear el .vue de crear ruta, omaewa mou shindeiru...naniiiiiii-->
-                <nuxt-link :to="{ name: '' }" replace>
+                <nuxt-link :to="{ name: 'boletos-tipoboletoeditar' }" replace>
                 <button type="button" class="btn btn-info text-right">Agregar</button>
                 <br>
                 </nuxt-link> 
@@ -42,7 +41,7 @@
               <br>
               <center>
                  <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
-                 <nuxt-link :to="{ name: '' }" replace>
+                 <nuxt-link :to="{ name: 'rutas-agregar' }" replace>
                 <button type="button" class="btn btn-info text-right">Agregar</button>
                 <br>
                 </nuxt-link> 
