@@ -3,19 +3,19 @@
     <!--Empieza la form-->
     <p>{{this.ticket}}</p>
         <form>
-        <!--Tour-->
+        <!-- Purchase -->
             <div class="form-group ">
               <center>
-                <label for="tourSelect" class="letrabonita">Visualiza el ID del tour deseado</label>
+                <label for="purchaseSelect" class="letrabonita">Visualiza el ID de la compra</label>
               </center>
               
               <select class="form-control">
-                <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.name}} -->  ID:{{tour.id}}</option>
+                <option v-for="purchase in this.$store.state.purchases" :key='purchase.id' >ID:{{purchase.id}}</option>
               </select>
               <br>
               <center>
-                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
-                 <nuxt-link :to="{ name: 'ruta-Agregar' }" replace>
+                 <label for="option">No lo encuentras ? Puedes crear una nueva</label>
+                 <nuxt-link :to="{ name: '' }" replace>
                 <button type="button" class="btn btn-info text-right">Agregar</button>
                 <br>
                 </nuxt-link> 
@@ -23,26 +23,25 @@
             </div>
             <div class="form-group">
               <center>
-                <label for="tour" class="letrabonita">Escoge el ID del Tour</label>
+                <label for="purchase" class="letrabonita">Escoge el ID de la Compra</label>
               </center>
-                <select class="form-control" name="tour_id" id="tour_id" v-model="bus.tour_id">
-                    <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.id}}</option>
+                <select class="form-control" name="purchase_id" id="purchase_id" v-model="ticket.purchase_id">
+                    <option v-for="purchase in this.$store.state.purchases" :key='purchase.id' >{{purchase.id}}</option>
                 </select>
             </div>
-        <!-- Mural -->
+        <!-- Precio -->
             <div class="form-group ">
               <center>
-                <label for="muralSelect" class="letrabonita" >Visualiza el ID del mural deseado</label>
+                <label for="priceSelect" class="letrabonita" >Visualiza el ID del precio deseado</label>
               </center>
               
               <select class="form-control">
-                <option v-for="mural in this.$store.state.murals" :key='mural.id' >{{mural.title}} -->  ID:{{mural.id}}</option>
+                <option v-for="price in this.$store.state.prices" :key='price.id' >Precio:${{price.amount}} -->  ID:{{price.id}}</option>
               </select>
               <br>
               <center>
                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
-                <!-- falta de crear el .vue de crear ruta, omaewa mou shindeiru...naniiiiiii-->
-                <nuxt-link :to="{ name: 'mural-Agregar' }" replace>
+                <nuxt-link :to="{ name: 'precio-agregar' }" replace>
                 <button type="button" class="btn btn-info text-right">Agregar</button>
                 <br>
                 </nuxt-link> 
@@ -50,40 +49,75 @@
             </div>
             <div class="form-group">
               <center>
-                <label for="mural" class="letrabonita">Escoge el ID del Mural</label>
+                <label for="price" class="letrabonita">Escoge el ID del Precio</label>
               </center>
                 
-                <select class="form-control" id="mural" v-model="bus.mural_id">
-                    <option v-for="mural in this.$store.state.murals"  :key='mural.id' >{{mural.id}}</option>
+                <select class="form-control" id="pruce" v-model="ticket.price_id">
+                    <option v-for="price in this.$store.state.prices"  :key='price.id' >{{price.id}}</option>
                 </select>
             </div>
-        <!--Capacidad-->
+        <!--Nombre-->
             <div class="form-group">
               <center>
-                <label for="capacidad" class="letrabonita">Capacidad de pasajeros</label>
+                <label for="name" class="letrabonita">Nombre del Cliente</label>
               </center>
                 
-                <input type="text" class="form-control" id="capacity" placeholder="Cantidad" v-model="bus.capacity">
+                <input type="text" class="form-control" id="client_name" placeholder="" v-model="ticket.client_name">
             </div>
-        <!-- Status -->
+        <!--Apellido-->
             <div class="form-group">
               <center>
-                <label for="status" class="letrabonita">Status</label>
+                <label for="last_name" class="letrabonita">Apellido del Cliente</label>
               </center>
                 
-                <select class="form-control" id="status" v-model="bus.status">
-                    <option v-if="bus.status == in_service" value="in_service" selected>En servicio</option>
-                    <option v-else value="in_service">En servicio</option>
-                    <option v-if="bus.status == out_of_service" value="out_of_service" selected>Fuera de servicio</option>
-                    <option v-else value="out_of_service">Fuera de servicio</option>
-                </select>
+                <input type="text" class="form-control" id="client_last_name" placeholder="" v-model="ticket.client_last_name">
+            </div>
+        <!--Edad-->
+            <div class="form-group">
+              <center>
+                <label for="age" class="letrabonita">Edad del Cliente</label>
+              </center>
+                
+                <input type="text" class="form-control" id="client_age" placeholder="" v-model="ticket.client_age">
+            </div>
+        <!--Fecha tour-->
+            <div class="form-group">
+              <center>
+                <label for="date" class="letrabonita">Fecha del Tour</label>
+              </center>
+                
+                <div>
+                  <center>
+                    <input class="date" type="date" id="tour_date" name="tour_date" value="2018-01-01" min="2018-11-01" v-model="ticket.tour_date" />
+                  </center>
+                  
+                </div>
+            </div>
+        <!--QR-->
+            <div class="form-group">
+              <center>
+                <label for="qr_code" class="letrabonita">Código QR</label>
+              </center>
+                
+                <input type="text" class="form-control" id="qr_code" placeholder="" v-model="ticket.qr_code">
+            </div>
+        <!--Total-->
+            <div class="form-group">
+              <center>
+                <label for="total" class="letrabonita">Cantidad Total</label>
+              </center>
+                
+                <input type="text" class="form-control" id="total" placeholder="" v-model="ticket.total">
             </div>
         </form>
 
+
+
         <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="busFunction()">
-                <div v-if="bus.id == undefined">Crea Bus</div>
-                <div v-else>Actualiza Bus</div>
+            <button type="submit" class="btn btn-danger" @click.stop.prevent="ticketFunction()">
+                <div v-if="ticket.id == undefined">Crea Ticket
+                </div>
+                <div v-else>Actualiza Ticket</div>
             </button>
           </center>
     <!--Termina la form-->
@@ -91,105 +125,116 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
-  export default {
-    //props is the parameter it receives
-    props: ['idBus','idMural','idTour'],
-    data: function(){
-      return {
-        bus: {},
-        in_service: "in_service",
-        out_of_service: "out_of_service"
+export default {
+  //props is the parameter it receives
+  props: ["idTicket", "idPurchase", "idPrice"],
+  data: function() {
+    return {
+      ticket: {}
+    };
+  },
+  methods: {
+    ticketFunction() {
+      if (this.ticket.id != undefined) {
+        this.editTicket();
+      } else {
+        this.createTicket();
       }
     },
-    methods: {
-      busFunction(){
-        if(this.bus.id != undefined){
-          this.editBus()
+    async createTicket() {
+      //alert(JSON.stringify(this.ticket))
+      await axios({
+        method: "post",
+        url: "http://principal-arena-219118.appspot.com/api/ticket",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: {
+          purchase_id: this.ticket.purchase_id,
+          price_id: this.ticket.price_id,
+          client_name: this.ticket.client_name,
+          client_last_name: this.ticket.client_last_name,
+          client_age: this.ticket.client_age,
+          tour_date: this.ticket.tour_date,
+          qr_code: this.ticket.qr_code,
+          total: this.total
         }
-        else{
-          this.createBus()
-        }
-      },
-      async createBus() {  
-        //alert(JSON.stringify(this.bus))
-        await axios({
-          method:"post",
-          url:"http://principal-arena-219118.appspot.com/api/bus",
-          headers: { 
-            'Content-Type': 'application/json'
-          },
-          data:{
-            "tour_id": this.bus.tour_id,
-            "mural_id": this.bus.mural_id,
-            "capacity": this.bus.capacity,
-            "sold_tickets": 0,
-            "status": this.bus.status
-          }
-        })
-        .then(function(response){
-          //alert(JSON.stringify(response))
-          this.$router.push({ name: 'camiones' })
-        }.bind(this))
-        .catch(function(error){
+      })
+        .then(
+          function(response) {
+            //alert(JSON.stringify(response))
+            this.$router.push({ name: "boletos" });
+          }.bind(this)
+        )
+        .catch(function(error) {
           /*alert(JSON.stringify(error))*/
-          console.log(error)
-        })
-      },
-      async editBus() {
-        await axios({
-          method:"put",
-          url:"http://principal-arena-219118.appspot.com/api/bus/" + this.idBus,
-          headers: { 
-            'Content-Type': 'application/json'
-          },
-          data:{
-            "tour_id": this.bus.tour_id,
-            "mural_id": this.bus.mural_id,
-            "capacity": this.bus.capacity,
-            "sold_tickets": this.bus.sold_tickets,
-            "status": this.bus.status
-          }
-        })
-        .then(function(response){
-          this.$router.push({ name: 'camiones' })
-          //alert("http://principal-arena-219118.appspot.com/api/bus/" + this.idBus)
-          console.log("response")
-          console.log(response)
-        }.bind(this))
-        .catch(function(error){
-          console.log("error")
-          console.log(error)
-        })
-      },
-      async getBus(id){
-        await axios({
-          method:"get",
-          url:"http://principal-arena-219118.appspot.com/api/bus/" + id,
-          headers: { 
-            'Content-Type': 'application/json'
-          }
-        })
-        .then(function(response){
-          this.bus = response.data
-          console.log(this.bus)
-        }.bind(this))
-        .catch(function(error){
-          console.log(error)
-        })
-      },
-      async getMurals() {
+          console.log(error);
+        });
+    },
+    async editTicket() {
+      await axios({
+        method: "put",
+        url:
+          "http://principal-arena-219118.appspot.com/api/ticket/" +
+          this.idTicket,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: {
+          purchase_id: this.ticket.purchase_id,
+          price_id: this.ticket.price_id,
+          client_name: this.ticket.client_name,
+          client_last_name: this.ticket.client_last_name,
+          client_age: this.ticket.client_age,
+          tour_date: this.ticket.tour_date,
+          qr_code: this.ticket.qr_code,
+          total: this.total
+        }
+      })
+        .then(
+          function(response) {
+            this.$router.push({ name: "boletos" });
+            //alert("http://principal-arena-219118.appspot.com/api/ticket/" + this.idTicket)
+            console.log("response");
+            console.log(response);
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async getTicket(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/mural"
+        url: "http://principal-arena-219118.appspot.com/api/ticket/" + id,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(
+          function(response) {
+            this.ticket = response.ticket;
+            console.log(this.bus);
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    async getPurchases() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/purchase"
       })
         .then(
           function(response) {
             console.log(response);
             this.$store.commit({
-              type: "storeMurals",
-              murals: response.data
+              type: "storePurchases",
+              purchases: response.data
             });
           }.bind(this)
         )
@@ -197,46 +242,46 @@ import axios from 'axios'
           console.log(error);
         });
     },
-    async getTours() {
+    async getPrices() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour"
+        url: "http://principal-arena-219118.appspot.com/api/price"
       })
         .then(
           function(response) {
             console.log(response);
             this.$store.commit({
-              type: "storeTours",
-              tours: response.data
+              type: "storePrices",
+              prices: response.data
             });
           }.bind(this)
         )
         .catch(function(error) {
           console.log(error);
         });
-    },
-    },
-    
-    created: function(){
-      console.log("start crea bus")
-      if(this.idBus != undefined){
-        console.log("idBus is not defined")
-      }
-      if(this.idMural != undefined){
-        console.log("idMural is not defined")
-      }
-      if(this.idTour != undefined){
-        console.log("idTour is not defined")
-      }
-      this.getTours();
-      this.getMurals();
     }
+  },
+
+  created: function() {
+    console.log("start crea bus");
+    if (this.idTicket != undefined) {
+      console.log("idTicket is not defined");
+    }
+    if (this.idPurchase != undefined) {
+      console.log("idPurchase is not defined");
+    }
+    if (this.idPrice != undefined) {
+      console.log("idPrice is not defined");
+    }
+    this.getPurchases();
+    this.getPrices();
   }
+};
 </script>
 
 <style>
-  .letrabonita {
-    font-size: 22px;
-    font: bold
-  }
+.letrabonita {
+  font-size: 22px;
+  font: bold;
+}
 </style>

@@ -12,17 +12,13 @@
     </div>
     <!--Tipo de boletos-->
       <div class = "col text-center">
-        <nuxt-link :to="{ name: ''}" replace>     
+        <nuxt-link :to="{ name: 'boletos-tipoboleto'}" replace>     
         <button type="button" class="btn btn-warning">Tipo de boleto</button>
         </nuxt-link> 
       </div>
     <!--Agregar-->
       <div class = "col text-right">
-<<<<<<< HEAD
-        <nuxt-link :to="{ name: '' }" replace>
-=======
-        <nuxt-link :to="{ name: 'boletos-Agregar'}" replace>
->>>>>>> c67c53cef66056d9a350f2ae0a2687528fcb757e
+        <nuxt-link :to="{ name: 'boletos-agregar'}" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
