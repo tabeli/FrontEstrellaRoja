@@ -32,6 +32,8 @@
         :position="m.position"
         @click="center=m.position"
       ></gmap-marker>
+      <gmap-polyline v-bind:path.sync="path"  v-bind:options="{ strokeColor:'#008000'}">
+         </gmap-polyline>
     </gmap-map>
      <br>
   </div>
@@ -44,6 +46,21 @@ export default {
   data() {
     return {
       center: { lat: 19.04334, lng: -98.20193 },
+      path : [
+        {lat: 19.0380368, lng: -98.1919112},
+        {lat: 19.0442404, lng: -98.191289},
+        {lat: 19.0471625, lng: -98.1892118},
+        {lat: 19.0531589, lng: -98.1851249},
+        {lat: 19.0579336, lng: -98.1870003},
+        {lat: 19.0562241, lng: -98.1827389},
+        {lat: 19.0525066, lng: -98.179964},
+        {lat: 19.0529056, lng: -98.1891781},
+        {lat: 19.0586238, lng: -98.1810677},
+        {lat: 19.0570222, lng: -98.1815774},
+        {lat: 19.0459528, lng: -98.1951918},
+        {lat: 19.0562515, lng: -98.1818341},
+        {lat: 19.0553552, lng: -98.1879825},
+      ],
       markers: [
         {position: {lat: 19.0380368, lng: -98.1919112}},
         {position: {lat: 19.0442404, lng: -98.191289}},
@@ -84,6 +101,7 @@ export default {
         this.places.push(this.currentPlace);
         this.center = marker;
         this.currentPlace = null;
+        
       }
     },
     geolocate: function() {
