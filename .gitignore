@@ -66,7 +66,7 @@ typings/
 .next
 
 #nuxt credentials
-.nuxt
+#ctm pinche nuxt
 
 # vuepress build output
 .vuepress/dist
