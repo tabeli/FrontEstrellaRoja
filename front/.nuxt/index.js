@@ -23,7 +23,6 @@ Vue.use(VueGoogleMaps, {
   }
 });
 
-
 // Component: <no-ssr>
 Vue.component(NoSSR.name, NoSSR)
 
