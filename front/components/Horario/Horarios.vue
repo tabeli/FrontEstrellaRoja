@@ -10,6 +10,12 @@
         <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
     </div>
+    <!--Agregar horario a un tour-->
+      <div class = "col text-center">
+        <nuxt-link :to="{ name: 'horario-agregartour'}" replace>     
+        <button type="button" class="btn btn-warning">Agregar horarios al tour</button>
+        </nuxt-link> 
+      </div>
     <!--Agregar-->
       <div class = "col text-right">
         <nuxt-link :to="{ name: 'horario-agregar' }" replace>

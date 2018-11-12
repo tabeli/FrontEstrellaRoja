@@ -1,36 +1,37 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const _a56e2aa0 = () => import('../pages/usuarios/index.vue' /* webpackChunkName: "pages/usuarios/index" */).then(m => m.default || m)
-const _693e3d00 = () => import('../pages/mural/index.vue' /* webpackChunkName: "pages/mural/index" */).then(m => m.default || m)
-const _50d7e281 = () => import('../pages/paradas/index.vue' /* webpackChunkName: "pages/paradas/index" */).then(m => m.default || m)
-const _b131cd1c = () => import('../pages/camiones/index.vue' /* webpackChunkName: "pages/camiones/index" */).then(m => m.default || m)
-const _7bf0e50e = () => import('../pages/rutas/index.vue' /* webpackChunkName: "pages/rutas/index" */).then(m => m.default || m)
-const _3e2af5b1 = () => import('../pages/precio/index.vue' /* webpackChunkName: "pages/precio/index" */).then(m => m.default || m)
-const _129abe54 = () => import('../pages/Login/index.vue' /* webpackChunkName: "pages/Login/index" */).then(m => m.default || m)
-const _762a0630 = () => import('../pages/mapa/index.vue' /* webpackChunkName: "pages/mapa/index" */).then(m => m.default || m)
-const _16a7cfad = () => import('../pages/horario/index.vue' /* webpackChunkName: "pages/horario/index" */).then(m => m.default || m)
-const _047c0646 = () => import('../pages/boletos/index.vue' /* webpackChunkName: "pages/boletos/index" */).then(m => m.default || m)
-const _09cdc0b0 = () => import('../pages/lugares/index.vue' /* webpackChunkName: "pages/lugares/index" */).then(m => m.default || m)
-const _7642bd5e = () => import('../pages/lugares/tipolugar.vue' /* webpackChunkName: "pages/lugares/tipolugar" */).then(m => m.default || m)
-const _2b93bf9c = () => import('../pages/paradas/editar.vue' /* webpackChunkName: "pages/paradas/editar" */).then(m => m.default || m)
-const _676b735f = () => import('../pages/camiones/Agregar.vue' /* webpackChunkName: "pages/camiones/Agregar" */).then(m => m.default || m)
-const _d7bb3d8c = () => import('../pages/boletos/tipoboleto.vue' /* webpackChunkName: "pages/boletos/tipoboleto" */).then(m => m.default || m)
-const _2388b60e = () => import('../pages/usuarios/create.vue' /* webpackChunkName: "pages/usuarios/create" */).then(m => m.default || m)
-const _bdedac16 = () => import('../pages/boletos/tipoboletoeditar.vue' /* webpackChunkName: "pages/boletos/tipoboletoeditar" */).then(m => m.default || m)
-const _b424420c = () => import('../pages/horario/agregar.vue' /* webpackChunkName: "pages/horario/agregar" */).then(m => m.default || m)
-const _0d80d804 = () => import('../pages/precio/agregar.vue' /* webpackChunkName: "pages/precio/agregar" */).then(m => m.default || m)
-const _639b0eaf = () => import('../pages/rutas/editar.vue' /* webpackChunkName: "pages/rutas/editar" */).then(m => m.default || m)
-const _14648cce = () => import('../pages/paradas/agregar.vue' /* webpackChunkName: "pages/paradas/agregar" */).then(m => m.default || m)
-const _022aa07d = () => import('../pages/mural/editar.vue' /* webpackChunkName: "pages/mural/editar" */).then(m => m.default || m)
-const _2f31802a = () => import('../pages/boletos/agregar.vue' /* webpackChunkName: "pages/boletos/agregar" */).then(m => m.default || m)
-const _9c5994c4 = () => import('../pages/lugares/tipolugaragregar.vue' /* webpackChunkName: "pages/lugares/tipolugaragregar" */).then(m => m.default || m)
-const _10a9c80d = () => import('../pages/mural/agregar.vue' /* webpackChunkName: "pages/mural/agregar" */).then(m => m.default || m)
-const _1dbd42eb = () => import('../pages/camiones/Editar.vue' /* webpackChunkName: "pages/camiones/Editar" */).then(m => m.default || m)
-const _4571bfca = () => import('../pages/rutas/agregar.vue' /* webpackChunkName: "pages/rutas/agregar" */).then(m => m.default || m)
-const _2eb9db28 = () => import('../pages/precio/editar.vue' /* webpackChunkName: "pages/precio/editar" */).then(m => m.default || m)
-const _334b1c35 = () => import('../pages/lugares/agregar.vue' /* webpackChunkName: "pages/lugares/agregar" */).then(m => m.default || m)
-const _236ae59a = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
+const _a1644fd4 = () => import('..\\pages\\usuarios\\index.vue' /* webpackChunkName: "pages_usuarios_index" */).then(m => m.default || m)
+const _295112a4 = () => import('..\\pages\\mural\\index.vue' /* webpackChunkName: "pages_mural_index" */).then(m => m.default || m)
+const _6fb1ce03 = () => import('..\\pages\\paradas\\index.vue' /* webpackChunkName: "pages_paradas_index" */).then(m => m.default || m)
+const _0e14fcd8 = () => import('..\\pages\\camiones\\index.vue' /* webpackChunkName: "pages_camiones_index" */).then(m => m.default || m)
+const _ea7cfe54 = () => import('..\\pages\\rutas\\index.vue' /* webpackChunkName: "pages_rutas_index" */).then(m => m.default || m)
+const _8e9d7d16 = () => import('..\\pages\\precio\\index.vue' /* webpackChunkName: "pages_precio_index" */).then(m => m.default || m)
+const _6d5a5f60 = () => import('..\\pages\\Login\\index.vue' /* webpackChunkName: "pages_Login_index" */).then(m => m.default || m)
+const _2d106516 = () => import('..\\pages\\mapa\\index.vue' /* webpackChunkName: "pages_mapa_index" */).then(m => m.default || m)
+const _63df8657 = () => import('..\\pages\\horario\\index.vue' /* webpackChunkName: "pages_horario_index" */).then(m => m.default || m)
+const _600aff27 = () => import('..\\pages\\boletos\\index.vue' /* webpackChunkName: "pages_boletos_index" */).then(m => m.default || m)
+const _0d9835bc = () => import('..\\pages\\lugares\\index.vue' /* webpackChunkName: "pages_lugares_index" */).then(m => m.default || m)
+const _e1ff49fe = () => import('..\\pages\\camiones\\Agregar.vue' /* webpackChunkName: "pages_camiones_Agregar" */).then(m => m.default || m)
+const _823381b0 = () => import('..\\pages\\precio\\editar.vue' /* webpackChunkName: "pages_precio_editar" */).then(m => m.default || m)
+const _995b7f9e = () => import('..\\pages\\mural\\agregar.vue' /* webpackChunkName: "pages_mural_agregar" */).then(m => m.default || m)
+const _040841ee = () => import('..\\pages\\camiones\\Editar.vue' /* webpackChunkName: "pages_camiones_Editar" */).then(m => m.default || m)
+const _62217568 = () => import('..\\pages\\usuarios\\create.vue' /* webpackChunkName: "pages_usuarios_create" */).then(m => m.default || m)
+const _234317f4 = () => import('..\\pages\\boletos\\agregar.vue' /* webpackChunkName: "pages_boletos_agregar" */).then(m => m.default || m)
+const _bb46056e = () => import('..\\pages\\lugares\\agregar.vue' /* webpackChunkName: "pages_lugares_agregar" */).then(m => m.default || m)
+const _9206e536 = () => import('..\\pages\\lugares\\tipolugar.vue' /* webpackChunkName: "pages_lugares_tipolugar" */).then(m => m.default || m)
+const _3011774c = () => import('..\\pages\\paradas\\editar.vue' /* webpackChunkName: "pages_paradas_editar" */).then(m => m.default || m)
+const _1f713d30 = () => import('..\\pages\\boletos\\tipoboleto.vue' /* webpackChunkName: "pages_boletos_tipoboleto" */).then(m => m.default || m)
+const _293c027c = () => import('..\\pages\\precio\\agregar.vue' /* webpackChunkName: "pages_precio_agregar" */).then(m => m.default || m)
+const _371cc060 = () => import('..\\pages\\paradas\\agregar.vue' /* webpackChunkName: "pages_paradas_agregar" */).then(m => m.default || m)
+const _2eddebe7 = () => import('..\\pages\\rutas\\editar.vue' /* webpackChunkName: "pages_rutas_editar" */).then(m => m.default || m)
+const _3aa0eb7c = () => import('..\\pages\\horario\\agregartour.vue' /* webpackChunkName: "pages_horario_agregartour" */).then(m => m.default || m)
+const _7876952a = () => import('..\\pages\\boletos\\tipoboletoeditar.vue' /* webpackChunkName: "pages_boletos_tipoboletoeditar" */).then(m => m.default || m)
+const _7a5fe9e3 = () => import('..\\pages\\rutas\\agregar.vue' /* webpackChunkName: "pages_rutas_agregar" */).then(m => m.default || m)
+const _f7dad9b8 = () => import('..\\pages\\horario\\agregar.vue' /* webpackChunkName: "pages_horario_agregar" */).then(m => m.default || m)
+const _480b4b0a = () => import('..\\pages\\lugares\\tipolugaragregar.vue' /* webpackChunkName: "pages_lugares_tipolugaragregar" */).then(m => m.default || m)
+const _624093d9 = () => import('..\\pages\\mural\\editar.vue' /* webpackChunkName: "pages_mural_editar" */).then(m => m.default || m)
+const _4c79660a = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
 
 Vue.use(Router)
 
@@ -93,152 +94,157 @@ export function createRouter () {
     routes: [
 		{
 			path: "/usuarios",
-			component: _a56e2aa0,
+			component: _a1644fd4,
 			name: "usuarios"
 		},
 		{
 			path: "/mural",
-			component: _693e3d00,
+			component: _295112a4,
 			name: "mural"
 		},
 		{
 			path: "/paradas",
-			component: _50d7e281,
+			component: _6fb1ce03,
 			name: "paradas"
 		},
 		{
 			path: "/camiones",
-			component: _b131cd1c,
+			component: _0e14fcd8,
 			name: "camiones"
 		},
 		{
 			path: "/rutas",
-			component: _7bf0e50e,
+			component: _ea7cfe54,
 			name: "rutas"
 		},
 		{
 			path: "/precio",
-			component: _3e2af5b1,
+			component: _8e9d7d16,
 			name: "precio"
 		},
 		{
 			path: "/Login",
-			component: _129abe54,
+			component: _6d5a5f60,
 			name: "Login"
 		},
 		{
 			path: "/mapa",
-			component: _762a0630,
+			component: _2d106516,
 			name: "mapa"
 		},
 		{
 			path: "/horario",
-			component: _16a7cfad,
+			component: _63df8657,
 			name: "horario"
 		},
 		{
 			path: "/boletos",
-			component: _047c0646,
+			component: _600aff27,
 			name: "boletos"
 		},
 		{
 			path: "/lugares",
-			component: _09cdc0b0,
+			component: _0d9835bc,
 			name: "lugares"
 		},
 		{
-			path: "/lugares/tipolugar",
-			component: _7642bd5e,
-			name: "lugares-tipolugar"
-		},
-		{
-			path: "/paradas/editar",
-			component: _2b93bf9c,
-			name: "paradas-editar"
-		},
-		{
 			path: "/camiones/Agregar",
-			component: _676b735f,
+			component: _e1ff49fe,
 			name: "camiones-Agregar"
 		},
 		{
-			path: "/boletos/tipoboleto",
-			component: _d7bb3d8c,
-			name: "boletos-tipoboleto"
-		},
-		{
-			path: "/usuarios/create",
-			component: _2388b60e,
-			name: "usuarios-create"
-		},
-		{
-			path: "/boletos/tipoboletoeditar",
-			component: _bdedac16,
-			name: "boletos-tipoboletoeditar"
-		},
-		{
-			path: "/horario/agregar",
-			component: _b424420c,
-			name: "horario-agregar"
-		},
-		{
-			path: "/precio/agregar",
-			component: _0d80d804,
-			name: "precio-agregar"
-		},
-		{
-			path: "/rutas/editar",
-			component: _639b0eaf,
-			name: "rutas-editar"
-		},
-		{
-			path: "/paradas/agregar",
-			component: _14648cce,
-			name: "paradas-agregar"
-		},
-		{
-			path: "/mural/editar",
-			component: _022aa07d,
-			name: "mural-editar"
-		},
-		{
-			path: "/boletos/agregar",
-			component: _2f31802a,
-			name: "boletos-agregar"
-		},
-		{
-			path: "/lugares/tipolugaragregar",
-			component: _9c5994c4,
-			name: "lugares-tipolugaragregar"
+			path: "/precio/editar",
+			component: _823381b0,
+			name: "precio-editar"
 		},
 		{
 			path: "/mural/agregar",
-			component: _10a9c80d,
+			component: _995b7f9e,
 			name: "mural-agregar"
 		},
 		{
 			path: "/camiones/Editar",
-			component: _1dbd42eb,
+			component: _040841ee,
 			name: "camiones-Editar"
 		},
 		{
-			path: "/rutas/agregar",
-			component: _4571bfca,
-			name: "rutas-agregar"
+			path: "/usuarios/create",
+			component: _62217568,
+			name: "usuarios-create"
 		},
 		{
-			path: "/precio/editar",
-			component: _2eb9db28,
-			name: "precio-editar"
+			path: "/boletos/agregar",
+			component: _234317f4,
+			name: "boletos-agregar"
 		},
 		{
 			path: "/lugares/agregar",
-			component: _334b1c35,
+			component: _bb46056e,
 			name: "lugares-agregar"
 		},
 		{
+			path: "/lugares/tipolugar",
+			component: _9206e536,
+			name: "lugares-tipolugar"
+		},
+		{
+			path: "/paradas/editar",
+			component: _3011774c,
+			name: "paradas-editar"
+		},
+		{
+			path: "/boletos/tipoboleto",
+			component: _1f713d30,
+			name: "boletos-tipoboleto"
+		},
+		{
+			path: "/precio/agregar",
+			component: _293c027c,
+			name: "precio-agregar"
+		},
+		{
+			path: "/paradas/agregar",
+			component: _371cc060,
+			name: "paradas-agregar"
+		},
+		{
+			path: "/rutas/editar",
+			component: _2eddebe7,
+			name: "rutas-editar"
+		},
+		{
+			path: "/horario/agregartour",
+			component: _3aa0eb7c,
+			name: "horario-agregartour"
+		},
+		{
+			path: "/boletos/tipoboletoeditar",
+			component: _7876952a,
+			name: "boletos-tipoboletoeditar"
+		},
+		{
+			path: "/rutas/agregar",
+			component: _7a5fe9e3,
+			name: "rutas-agregar"
+		},
+		{
+			path: "/horario/agregar",
+			component: _f7dad9b8,
+			name: "horario-agregar"
+		},
+		{
+			path: "/lugares/tipolugaragregar",
+			component: _480b4b0a,
+			name: "lugares-tipolugaragregar"
+		},
+		{
+			path: "/mural/editar",
+			component: _624093d9,
+			name: "mural-editar"
+		},
+		{
 			path: "/",
-			component: _236ae59a,
+			component: _4c79660a,
 			name: "index"
 		}
     ],
