@@ -2,7 +2,32 @@
     <div class="container mt-5">
     <!--Empieza la form-->
         <form>
-        <!-- Tipo de ticket -->
+        <!-- Tipo de lugar -->
+            <div class="form-group ">
+              <center>
+                <label for="place_type" class="letrabonita" >Visualiza el ID del tipo de Lugar deseado</label>
+              </center>
+              <select class="form-control">
+                <option v-for="place_type in this.$store.state.place_types" :key='place_type.id' >{{place_type.name}} -->  ID:{{place_type.id}}</option>
+              </select>
+              <br>
+              <center>
+                <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
+                <nuxt-link :to="{ name: 'lugares-tipolugaragregar' }" replace>
+                <button type="button" class="btn btn-info text-right">Agregar</button>
+                <br>
+                </nuxt-link> 
+              </center>
+            </div>
+            <div class="form-group">
+              <center>
+                <label for="place_type" class="letrabonita">Escoge el ID del tipo de Lugar</label>
+              </center>
+                
+                <select class="form-control" id="place_type" v-model="place.place_type_id">
+                    <option v-for="place_type in this.$store.state.place_types"  :key='place_type.id' >{{place_type.id}}</option>
+                </select>
+            </div>
         <!-- Narrativa -->
         <!--Nombre-->
             <div class="form-group">
