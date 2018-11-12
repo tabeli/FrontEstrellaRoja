@@ -43,7 +43,7 @@
       </nuxt-link>
         </li>
         <li>
-      <nuxt-link :to="{ name: 'horarios'}" replace>
+      <nuxt-link :to="{ name: ''}" replace>
         <a><img src="@/static/clock.png" height="20"> Horarios</a>
       </nuxt-link>
         </li>
@@ -53,17 +53,17 @@
       </nuxt-link>
         </li>
         <li>
-      <nuxt-link :to="{ name: 'horario'}" replace>
+      <nuxt-link :to="{ name: ''}" replace>
         <a><img src="@/static/schedule.png" height="20"> Itinerarios</a>
       </nuxt-link>
         </li>
         <li>
-      <nuxt-link :to="{ name: 'horario'}" replace>
+      <nuxt-link :to="{ name: ''}" replace>
         <a><img src="@/static/speaker.png" height="20"> Narrativas</a>
       </nuxt-link>
         </li>
         <li>
-      <nuxt-link :to="{ name: 'horario'}" replace>
+      <nuxt-link :to="{ name: ''}" replace>
         <a><img src="@/static/image.png" height="20"> Imagenes</a>
       </nuxt-link>
         </li>

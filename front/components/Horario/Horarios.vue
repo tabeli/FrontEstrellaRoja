@@ -12,13 +12,13 @@
     </div>
     <!--Agregar horario a un tour-->
       <div class = "col text-center">
-        <nuxt-link :to="{ name: 'horario-agregartour'}" replace>     
+        <nuxt-link :to="{ name: 'itinerario-agregartour'}" replace>     
         <button type="button" class="btn btn-warning">Agregar horarios al tour</button>
         </nuxt-link> 
       </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'horario-agregar' }" replace>
+        <nuxt-link :to="{ name: 'itinerario-agregar' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -198,7 +198,7 @@ export default {
     },
     editScheduleAction(id) {
       //send to create view
-      this.$router.push({ name: "horario-agregar", params: { idSchedule: id } });
+      this.$router.push({ name: "itinerario-agregar", params: { idSchedule: id } });
     },
     deleteScheduleAction(id) {
       this.deleteSchedule(id);
