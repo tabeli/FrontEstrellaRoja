@@ -2,38 +2,40 @@
     <div class="container mt-5">
     <!--Empieza la form-->
         <form>
+        <!-- Tipo de ticket -->
+        <!-- Narrativa -->
         <!--Nombre-->
             <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <textarea class="form-control" id="inputPrecio" rows="1"></textarea>
-            </div>
-        <!--Tipo de lugar-->
-            <div class="form-group">
-                <label for="tipoDeLugar">Tipo de Lugar</label>
-                <select class="form-control">
-                    <option>Punto de interes</option>
-                    <option>Parada</option>
-                </select>
+                <center>
+                    <label for="name" class="letrabonita">Nombre</label>
+                </center>
+                
+                <input type="text" class="form-control" id="name" v-model="place.name">
             </div>
         <!--Longitud-->
             <div class="form-group">
-                <label for="longitud">Longitud</label>
-                <textarea class="form-control" id="inputPrecio" rows="1"></textarea>
+                <center>
+                    <label for="longitude" class="letrabonita">Longitud</label>
+                </center>
+                
+                <input type="text" class="form-control" id="longitude" v-model="place.longitude">
             </div>
         <!--Latitud-->
-            <div class="Latitud">
-                <label for="latitud">Latitud</label>
-                <textarea class="form-control" id="inputPrecio" rows="1"></textarea>
-            </div>
-        <!--Narrativa-->
             <div class="form-group">
-                <label for="narrativa">Narrativa</label>
-                <textarea class="form-control" id="inputPrecio" rows="1"></textarea>
+                <center>
+                    <label for="latitude" class="letrabonita">Latitud</label>
+                </center>
+                
+                <input type="text" class="form-control" id="latitude" v-model="place.latitude">
             </div>
+        
         <!--Descripcion-->
             <div class="form-group">
-                <label for="descripcion">Descripcion</label>
-                <textarea class="form-control" id="inputPrecio" rows="10"></textarea>
+                <center>
+                    <label for="description" class="letrabonita">Descripción</label>
+                </center>
+                
+                <input type="text" class="form-control" id="description" v-model="place.description">
             </div>
         <!--Imagen-->
              <div class="form-group">
@@ -44,7 +46,12 @@
     <!--Termina la form-->
 
     <!--Boton Agregar-->
-        <button type="button" class="btn btn-primary mt-3">Agregar</button>
+        <center>
+            <button type="submit" class="btn btn-danger" @click.stop.prevent="priceFunction()">
+                <div v-if="price.id == undefined">Crea Precio</div>
+                <div v-else>Actualiza Precio</div>
+            </button>
+        </center>
     </div>   
 </template>
 

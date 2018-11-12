@@ -7,7 +7,6 @@
               <center>
                 <label for="muralSelect" class="letrabonita" >Visualiza el ID del tipo de Ticket deseado</label>
               </center>
-              
               <select class="form-control">
                 <option v-for="ticket_type in this.$store.state.ticket_types" :key='ticket_type.id' >{{ticket_type.name}} -->  ID:{{ticket_type.id}}</option>
               </select>
@@ -19,6 +18,8 @@
                 <br>
                 </nuxt-link> 
               </center>
+
+
             </div>
             <div class="form-group">
               <center>
