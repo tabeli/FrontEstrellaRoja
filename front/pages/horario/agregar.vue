@@ -1,28 +1,25 @@
-  <template>
-  <div>
-    <div class="row">
-    <!--Sidebar-->
-      <div class="col-sm-1">
-        <Sidebar/>
-      </div>
-    <!--Header-->
-      <div class="col-sm-11">
+<template>
+   <div>
+
+      <div class="Header">
         <Header/>
       </div>
-    <!--Agregar.vue-->
-      <div class="container mt-5">
-        <Agregar/>
-      </div>
-    </div>
 
-    <div class="Footer sm-11 mt-5">
+      <div class ="row">
+          <div class="col-sm-1 mt-5">
+              <Sidebar/>
+          </div>
+          <div class="col-sm-11">
+              <Agregar :idSchedule="idSchedule"/>
+          </div>
+      </div>
+
+    <div class="Footer mt-5">
       <Footer/>
     </div>
 
-  </div>
-    
-</template>
-
+    </div>
+  </template>
 <script>
 
   import Sidebar from "@/components/Sidebar"
@@ -31,11 +28,20 @@
   import Agregar from "@/components/Horario/Agregar"
 
   export default {
+    data: function(){
+      return{
+        idSchedule: this.$route.params.idSchedule
+      };
+    },
     components: {
       Sidebar,
       Footer,
       Header,
       Agregar
+    },
+    created: function(){
+      console.log("id of schedule");
+      console.log(this.idSchedule);
     }
   }
 </script>

@@ -22,7 +22,7 @@
       <thead class="bg-success">
         <tr>
           <th scope="col">ID</th>
-          <th scope="col">Rutas</th>
+          <th scope="col">Rutas con este horario</th>
           <th scope="col">Fecha inicial</th>
           <th scope="col">Fecha final</th>
           <th scope="col">Hora inicial</th>
@@ -192,7 +192,7 @@ export default {
     },
     editScheduleAction(id) {
       //send to create view
-      this.$router.push({ name: "", params: { idSchedule: id } });
+      this.$router.push({ name: "horario-agregar", params: { idSchedule: id } });
     },
     deleteScheduleAction(id) {
       this.deleteSchedule(id);
