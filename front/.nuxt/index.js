@@ -14,7 +14,6 @@ import { createStore } from './store.js'
 import nuxt_plugin_bootstrapvue_84f6dcf0 from 'nuxt_plugin_bootstrapvue_84f6dcf0' // Source: ./bootstrap-vue.js
 import nuxt_plugin_axios_4a05c74e from 'nuxt_plugin_axios_4a05c74e' // Source: ./axios.js
 
-
 // Component: <no-ssr>
 Vue.component(NoSSR.name, NoSSR)
 
