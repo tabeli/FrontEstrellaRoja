@@ -25,39 +25,38 @@
   
 
 <script>
+import Sidebar from "@/components/Sidebar";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Agregar from "@/components/Mural/Agregar";
 
-  import Sidebar from "@/components/Sidebar"
-  import Footer from "@/components/Footer"
-  import Header from "@/components/Header"
-  import Agregar from "@/components/Mural/Agregar"
-
-  export default {
-    data: function(){
-      return {
-        idMural: this.$route.params.idMural
-      }
-    },
-    components: {
-      Sidebar,
-      Footer,
-      Header,
-      Agregar
-    },
-    created: function(){
-      console.log("id of stop");
-      console.log(this.idMural);
-    }
+export default {
+  data: function() {
+    return {
+      idMural: this.$route.params.idMural
+    };
+  },
+  components: {
+    Sidebar,
+    Footer,
+    Header,
+    Agregar
+  },
+  created: function() {
+    console.log("id of mural");
+    console.log(this.idMural);
   }
+};
 </script>
 
 <style>
-  .content {
-    display: inline-block; /* Same as the width of the sidenav */
-    font-size: 15px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-    width: 90%;
-    text-align:center;
-  }
+.content {
+  display: inline-block; /* Same as the width of the sidenav */
+  font-size: 15px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  width: 90%;
+  text-align: center;
+}
 </style>
 
 

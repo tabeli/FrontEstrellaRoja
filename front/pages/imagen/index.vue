@@ -6,7 +6,7 @@
           </div>
           <div class="col-11">
             <Header/>
-            <Murales/>
+            <Imagenes/>
             <Footer/>
           </div>
       </div>
@@ -18,14 +18,14 @@
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Murales from "@/components/Mural/Murales";
+import Imagenes from "@/components/Imagen/Imagenes";
 
 export default {
   components: {
     Sidebar,
     Header,
     Footer,
-    Murales
+    Imagenes
   }
 };
 </script>

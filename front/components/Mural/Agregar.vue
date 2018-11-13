@@ -152,12 +152,12 @@ export default {
 
 <style>
 .container {
-    margin-left: 160px;
-    margin-right: 0px; /* Same as the width of the sidenav */
-    display: inline-block;
-    font-size: 20px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+  margin-left: 160px;
+  margin-right: 0px; /* Same as the width of the sidenav */
+  display: inline-block;
+  font-size: 20px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
 }
 .letrabonita {
   font-size: 22px;

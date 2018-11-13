@@ -18,8 +18,6 @@
                 <br>
                 </nuxt-link> 
               </center>
-
-
             </div>
             <div class="form-group">
               <center>
@@ -208,15 +206,15 @@ export default {
   created: function() {
     console.log("start crea precio");
     if (this.idPrice != undefined) {
-      console.log("idPrice is not defined");
+      console.log("idPrice is defined");
       this.getPrice(this.idPrice);
     }
     if (this.idTicket_type != undefined) {
-      console.log("idTicket_type is not defined");
+      console.log("idTicket_type is defined");
       this.getTicket_types();
     }
     if (this.idTour != undefined) {
-      console.log("idTour is not defined");
+      console.log("idTour is defined");
       this.getTours();
     }
     this.getTours();

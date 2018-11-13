@@ -48,6 +48,26 @@
       </nuxt-link>
         </li>
         <li>
+      <nuxt-link :to="{ name: 'fecha'}" replace>
+        <a><img src="@/static/calendar.png" height="20"> Fechas</a>
+      </nuxt-link>
+        </li>
+        <li>
+      <nuxt-link :to="{ name: 'itinerario'}" replace>
+        <a><img src="@/static/schedule.png" height="20"> Itinerarios</a>
+      </nuxt-link>
+        </li>
+        <li>
+      <nuxt-link :to="{ name: 'narrativa'}" replace>
+        <a><img src="@/static/speaker.png" height="20"> Narrativas</a>
+      </nuxt-link>
+        </li>
+        <li>
+      <nuxt-link :to="{ name: 'imagen'}" replace>
+        <a><img src="@/static/image.png" height="20"> Imagenes</a>
+      </nuxt-link>
+        </li>
+        <li>
       <nuxt-link :to="{ name: 'mapa'}" replace>
         <a><img src="@/static/map.png" height="25"> Mapa</a>
       </nuxt-link>
@@ -59,66 +79,63 @@
 
 <script>
 export default {
-  methods: {
-  }
+  methods: {}
   /*components: {
     Logo
   }*/
-}
+};
 </script>
 
 <style>
-
-
 .sidenav {
-    height: 100%;
-    width: 10%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #F99E3D;
-    background-image: linear-gradient(315deg, #F99E3D 0%, #ffcc2f 74%);
-    overflow-x: hidden;
-    padding-top: 20px;
-    box-shadow: 0 12px 20px gray, 0 15px 12px #F99E3D;
-    
+  height: 100%;
+  width: 10%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f99e3d;
+  background-image: linear-gradient(315deg, #f99e3d 0%, #ffcc2f 74%);
+  overflow-x: hidden;
+  padding-top: 20px;
+  box-shadow: 0 12px 20px gray, 0 15px 12px #f99e3d;
 }
 
 .sidenav a {
-    padding: 6px 8px 6px 5px;
-    text-decoration: none;
-    font-size: 15px;
-    color: #ffffff;
-    display: inline-block;
-    text-align: justify;
+  padding: 6px 8px 6px 5px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #ffffff;
+  display: inline-block;
+  text-align: justify;
 }
 
 .sidenav li:hover {
-    color: #f1f1f1;
-    background-color: black;
-    border-left: 5px solid #EA1B75;
-      box-shadow: 0 3px 6px rgba(39, 39, 39, 0.13), 0 3px 6px rgba(39, 39, 39, 0.13);
-  
+  color: #f1f1f1;
+  background-color: black;
+  border-left: 5px solid #ea1b75;
+  box-shadow: 0 3px 6px rgba(39, 39, 39, 0.13), 0 3px 6px rgba(39, 39, 39, 0.13);
 }
 
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
 }
-.margen{
+.margen {
   margin-right: 5px;
 }
 
-.sidenav ul{
-  list-style:none;
-  padding:0;
+.sidenav ul {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-.sidenav li{
-  border: 1px solid #FCB600;
+.sidenav li {
+  border: 1px solid #fcb600;
 }
-
-
 </style>

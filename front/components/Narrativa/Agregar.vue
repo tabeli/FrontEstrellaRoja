@@ -1,0 +1,150 @@
+<template>
+    <div class="container">
+    <!--Empieza la form-->
+        <form>
+        <!--Path-->
+            <div class="form-group col-md-12">
+              <center>
+                <label for="audio_path" class="letrabonita">Path del audio</label>
+              </center>
+              
+              <input type="text" class="form-control" id="audio_path" placeholder="" v-model="narrative.audio_path">
+            </div>
+        
+        <!--Descripcion-->
+             <div class="form-group col-md-12">
+              <center>
+                <label for="description" class="letrabonita">Descripción</label>
+              </center>
+              
+              <input type="text" class="form-control" id="description" placeholder="" v-model="narrative.description">
+            </div>
+        </form>
+    <!--Termina la form-->
+
+    <!--Boton Agregar-->
+        <center>
+            <button type="submit" class="btn btn-danger" @click.stop.prevent="narrativeFunction()">
+                <div v-if="narrative.id == undefined">Crea Narrativa</div>
+                <div v-else>Actualiza Narrativa</div>
+            </button>
+        </center>
+    </div>   
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  //props is the parameter it receives
+  props: ["idNarrative"],
+  data: function() {
+    return {
+      narrative: {}
+    };
+  },
+  methods: {
+    narrativeFunction() {
+      if (this.narrative.id != undefined) {
+        this.editNarrative();
+      } else {
+        this.createNarrative();
+      }
+    },
+    async createNarrative() {
+      //alert(JSON.stringify(this.user))
+      await axios({
+        method: "post",
+        url: "http://principal-arena-219118.appspot.com/api/narrative",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: {
+          audio_path: this.narrative.audio_path,
+          description: this.narrative.description
+        }
+      })
+        .then(
+          function(response) {
+            //alert(JSON.stringify(response))
+            this.$router.push({ name: "narrativa" });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          /*alert(JSON.stringify(error))*/
+          console.log(error);
+        });
+    },
+    async editNarrative() {
+      await axios({
+        method: "put",
+        url:
+          "http://principal-arena-219118.appspot.com/api/narrative/" +
+          this.idNarrative,
+        headers: {
+          "Content-Type": "application/json"
+        },
+        data: {
+          audio_path: this.narrative.audio_path,
+          description: this.narrative.description
+        }
+      })
+        .then(
+          function(response) {
+            this.$router.push({ name: "narrativa" });
+            //alert("http://principal-arena-219118.appspot.com/api/narrative/" + this.idNarrative)
+            console.log("response");
+            console.log(response);
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async getNarrative(id) {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/narrative/" + id,
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(
+          function(response) {
+            this.narrative = response.data;
+            console.log(this.narrative);
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  },
+
+  created: function() {
+    console.log("start crea narrativa");
+    if (this.idNarrative != undefined) {
+      console.log("idNarrative is defined");
+      this.getNarrative(this.idNarrative);
+    }
+  }
+};
+</script>
+
+<style>
+.container {
+  margin-left: 160px;
+  margin-right: 0px; /* Same as the width of the sidenav */
+  display: inline-block;
+  font-size: 20px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
+}
+.letrabonita {
+  font-size: 22px;
+  font: bold;
+}
+</style>
+
+

@@ -106,17 +106,17 @@ export default {
 
 <style>
 .container {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 15px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 15px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
 }
-.derecha{
+.derecha {
   padding-right: 110px;
-  margin-left:  160px;
+  margin-left: 160px;
 }
 .bg-success {
-  color:#FFFFFF
+  color: #ffffff;
 }
 </style>
 

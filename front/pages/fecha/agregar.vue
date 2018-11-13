@@ -11,7 +11,7 @@
               <Sidebar/>
           </div>
           <div class="col-sm-11">
-              <Agregar :idHour_interval="idHour_interval"/>
+              <Agregar :idDate_interval="idDate_interval"/>
           </div>
       </div>
 
@@ -28,12 +28,12 @@
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Agregar from "@/components/Horario/Agregar";
+import Agregar from "@/components/Fecha/Agregar";
 
 export default {
   data: function() {
     return {
-      idHour_interval: this.$route.params.idHour_interval
+      idDate_interval: this.$route.params.idDate_interval
     };
   },
   components: {
@@ -43,8 +43,8 @@ export default {
     Agregar
   },
   created: function() {
-    console.log("id of hour interval");
-    console.log(this.idHour_interval);
+    console.log("id of date interval");
+    console.log(this.idDate_interval);
   }
 };
 </script>
