@@ -19,6 +19,8 @@
   "homepage": "https://github.com/tabeli/FrontER#readme",
   "description": "",
   "dependencies": {
-    "nuxt": "^2.2.0"
+    "lite-server": "^2.4.0",
+    "nuxt": "^2.2.0",
+    "vue2-google-maps": "^0.10.2"
   }
 }
