@@ -25,7 +25,7 @@
   import Sidebar from "@/components/Sidebar"
   import Footer from "@/components/Footer"
   import Header from "@/components/Header"
-  import Agregar from "@/components/Horario/Agregar"
+  import Agregar from "@/components/Itinerario/Agregar"
 
   export default {
     data: function(){

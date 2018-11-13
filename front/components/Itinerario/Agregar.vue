@@ -118,8 +118,8 @@
         <br/>
         <center>
             <button type="submit" class="btn btn-danger" @click.stop.prevent="scheduleFunction()">
-                <div v-if="schedule.id == undefined">Crea Horario</div>
-                <div v-else>Actualiza Horario</div>
+                <div v-if="schedule.id == undefined">Crea Itinerario</div>
+                <div v-else>Actualiza Itinerario</div>
             </button>
         </center>
     </div>   

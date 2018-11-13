@@ -6,7 +6,7 @@
           </div>
           <div class="col-11">
             <Header/>
-            <Horarios/>
+            <Itinerarios/>
             <Footer/>
           </div>
       </div>
@@ -18,13 +18,14 @@
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Itinerarios from "@/components/Itinerario/Itinerarios"
 
 export default {
   components: {
     Sidebar,
     Header,
     Footer,
-    Horarios
+    Itinerarios
   }
 };
 </script>
