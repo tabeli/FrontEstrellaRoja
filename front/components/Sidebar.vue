@@ -53,17 +53,17 @@
       </nuxt-link>
         </li>
         <li>
-      <nuxt-link :to="{ name: ''}" replace>
+      <nuxt-link :to="{ name: 'itinerario'}" replace>
         <a><img src="@/static/schedule.png" height="20"> Itinerarios</a>
       </nuxt-link>
         </li>
         <li>
-      <nuxt-link :to="{ name: ''}" replace>
+      <nuxt-link :to="{ name: 'narrativa'}" replace>
         <a><img src="@/static/speaker.png" height="20"> Narrativas</a>
       </nuxt-link>
         </li>
         <li>
-      <nuxt-link :to="{ name: ''}" replace>
+      <nuxt-link :to="{ name: 'imagen'}" replace>
         <a><img src="@/static/image.png" height="20"> Imagenes</a>
       </nuxt-link>
         </li>
