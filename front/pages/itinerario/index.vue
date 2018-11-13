@@ -15,24 +15,21 @@
   </template>
 
   <script>
+import Sidebar from "@/components/Sidebar";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
-  import Sidebar from "@/components/Sidebar"
-  import Footer from "@/components/Footer"
-  import Header from "@/components/Header"
-  import Horarios from "@/components/Horario/Horarios"
-
-  export default {
-    components: {
-      Sidebar,
-      Header,
-      Footer,
-      Horarios
-    }
+export default {
+  components: {
+    Sidebar,
+    Header,
+    Footer,
+    Horarios
   }
-  </script>
+};
+</script>
 
   <style>
-
-  </style>
+</style>
 
 

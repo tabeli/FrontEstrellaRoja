@@ -11,7 +11,7 @@
               <Sidebar/>
           </div>
           <div class="col-sm-11">
-              <Agregar :idMural="idMural"/>
+              <Agregar :idHour_interval="idHour_interval"/>
           </div>
       </div>
 
@@ -28,12 +28,12 @@
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Agregar from "@/components/Mural/Agregar";
+import Agregar from "@/components/Horario/Agregar";
 
 export default {
   data: function() {
     return {
-      idMural: this.$route.params.idMural
+      idHour_interval: this.$route.params.idHour_interval
     };
   },
   components: {
@@ -43,8 +43,8 @@ export default {
     Agregar
   },
   created: function() {
-    console.log("id of mural");
-    console.log(this.idMural);
+    console.log("id of hour interval");
+    console.log(this.idHour_interval);
   }
 };
 </script>

@@ -6,7 +6,7 @@
           </div>
           <div class="col-11">
             <Header/>
-            <AgregarTour/>
+            <Horarios/>
             <Footer/>
           </div>
       </div>
@@ -18,19 +18,18 @@
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import AgregarTour from "@/components/Itinerario/AgregarTour";
+import Horarios from "@/components/Horario/Horarios";
 
 export default {
   components: {
     Sidebar,
     Header,
     Footer,
-    AgregarTour
+    Horarios
   }
 };
 </script>
 
   <style>
 </style>
-
 
