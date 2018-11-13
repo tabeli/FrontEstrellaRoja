@@ -109,7 +109,7 @@ export default {
       //alert(JSON.stringify(this.user))
       await axios({
         method: "post",
-        url: "http://localhost:8081/api/user",
+        url: "http://principal-arena-219118.appspot.com/api/user",
         headers: {
           "Content-Type": "application/json"
         },
@@ -139,7 +139,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://localhost:8081/api/user/" + this.idUser,
+          "http://principal-arena-219118.appspot.com/api/user/" + this.idUser,
         headers: {
           "Content-Type": "application/json"
         },
