@@ -8,7 +8,7 @@
                 <label for="start_time" class="letrabonita">Horario de inicio del primer tour</label>
               </center>
               
-              <input type="text" class="form-control" id="start_time" placeholder="" v-model="hour_interval.start_time">
+              <input type="text" class="form-control" id="start_time" placeholder="00:00:00" v-model="hour_interval.start_time">
             </div>
         <!-- hora final -->
             <div class="form-group col-md-12">
@@ -16,7 +16,7 @@
                 <label for="end_time" class="letrabonita">Horario de inicio del último tour</label>
               </center>
               
-              <input type="text" class="form-control" id="end_time" placeholder="" v-model="hour_interval.end_time">
+              <input type="text" class="form-control" id="end_time" placeholder="00:00:00" v-model="hour_interval.end_time">
             </div>
         <!-- frecuencia-->
             <div class="form-group col-md-12">
@@ -24,7 +24,7 @@
                 <label for="frequency" class="letrabonita">Frecuencia de viajes (cada cuantos minutos sale un camión)</label>
               </center>
               
-              <input type="text" class="form-control" id="frequency" placeholder="" v-model="hour_interval.frequency">
+              <input type="text" class="form-control" id="frequency" placeholder="00:00:00" v-model="hour_interval.frequency">
             </div>
         <!--Descripcion-->
         </form>
@@ -96,7 +96,7 @@ export default {
         data: {
           start_time: this.hour_interval.start_time,
           end_time: this.hour_interval.end_time,
-          frequency: this.hour_interval.frequenc
+          frequency: this.hour_interval.frequency
         }
       })
         .then(

@@ -12,7 +12,7 @@
     </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'mural-agregar' }" replace>
+        <nuxt-link :to="{ name: 'fecha-agregar' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -21,22 +21,20 @@
     <table class="table mt-3">
       <thead class="bg-success">
         <tr>
-          <th scope="col">Titulo</th>
-          <th scope="col">Nombre del autor</th>
-          <th scope="col">Apellido del autor</th>
-          <th scope="col">Descripción</th>
+          <th scope="col">Primera fecha de disponibilidad</th>
+          <th scope="col">Última fecha de disponibilidad</th>
+          <th scope="col">Estatus</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
         </tr>
       </thead>
         <tbody>
-          <tr v-for="mural in this.$store.state.murals" :key='mural.id'>
-            <th>{{ mural.title }}</th>
-            <td>{{ mural.author_name }}</td>
-            <td>{{ mural.author_last_name }}</td>
-            <td>{{ mural.description }}</td>
-            <td><button class="btn btn-info" type="button" @click="editMuralAction(mural.id)"><img src="@/static/pencil.png"></button></td>
-            <td><button class="btn btn-info" type="button" @click="deleteMuralAction(mural.id)"><img src="@/static/basurero.png"></button></td>
+          <tr v-for="date_interval in this.$store.state.date_intervals" :key='date_interval.id'>
+            <th>{{ date_interval.start_date }}</th>
+            <td>{{ date_interval.end_date }}</td>
+            <td>{{ date_interval.status }}</td>
+            <td><button class="btn btn-info" type="button" @click="editDate_intervalAction(date_interval.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deleteDate_intervalAction(date_interval.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -49,18 +47,18 @@ import axios from "axios";
 
 export default {
   methods: {
-    async getMurals() {
+    async getDate_intervals() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/mural"
+        url: "http://principal-arena-219118.appspot.com/api/date_interval"
       })
         .then(
           function(response) {
             console.log("response");
             console.log(response);
             this.$store.commit({
-              type: "storeMurals",
-              murals: response.data
+              type: "storeDate_intervals",
+              date_intervals: response.data
             });
           }.bind(this)
         )
@@ -69,11 +67,12 @@ export default {
           console.log(error);
         });
     },
-    async deleteMural(id) {
-      console.log("Delete mural");
+    async deleteDate_interval(id) {
+      console.log("Delete date interval");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/mural/" + id,
+        url:
+          "http://principal-arena-219118.appspot.com/api/date_interval/" + id,
         data: {
           id: id
         }
@@ -82,7 +81,7 @@ export default {
           function(response) {
             console.log("response");
             console.log(response);
-            this.getMurals();
+            this.getDate_intervals();
           }.bind(this)
         )
         .catch(function(error) {
@@ -90,16 +89,19 @@ export default {
           console.log(error);
         });
     },
-    editMuralAction(id) {
+    editDate_intervalAction(id) {
       //send to create view
-      this.$router.push({ name: "mural-agregar", params: { idMural: id } });
+      this.$router.push({
+        name: "fecha-agregar",
+        params: { idDate_interval: id }
+      });
     },
-    deleteMuralAction(id) {
-      this.deleteMural(id);
+    deleteDate_intervalFunction(id) {
+      this.deleteDate_interval(id);
     }
   },
   created: function() {
-    this.getMurals();
+    this.getDate_intervals();
   }
 };
 </script>

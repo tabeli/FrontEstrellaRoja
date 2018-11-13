@@ -48,7 +48,7 @@
       </nuxt-link>
         </li>
         <li>
-      <nuxt-link :to="{ name: ''}" replace>
+      <nuxt-link :to="{ name: 'fecha'}" replace>
         <a><img src="@/static/calendar.png" height="20"> Fechas</a>
       </nuxt-link>
         </li>
