@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 
-import '..\\node_modules\\bootstrap\\dist\\css\\bootstrap.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 
-import _6f6c098b from '..\\layouts\\default.vue'
+import _6f6c098b from '../layouts/default.vue'
 
 const layouts = { "_default": _6f6c098b }
 
