@@ -12,8 +12,8 @@
     </div>
     <!--Agregar horario a un tour-->
       <div class = "col text-center">
-        <nuxt-link :to="{ name: 'itinerario-vinculo'}" replace>     
-        <button type="button" class="btn btn-warning">Agregar horarios al tour</button>
+        <nuxt-link :to="{ name: 'itinerario-vinculo'}" replace>
+        <button type="button" class="btn btn-warning">Agregar itinerarios al tour</button>
         </nuxt-link> 
       </div>
     <!--Agregar-->

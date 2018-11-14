@@ -18,7 +18,12 @@
             <input type="checkbox">
             <span class="slider round"></span>
         </label>
-        
+      </div>
+      <!-- Vincular parada y tour-->
+      <div class = "col text-right">
+        <nuxt-link :to="{ name: 'paradas-agregar' }" replace>
+        <button type="button" class="btn btn-info text-right">Agregar paradas al Tour</button>
+        </nuxt-link> 
       </div>
     <!--Agregar-->
       <div class = "col text-right">
