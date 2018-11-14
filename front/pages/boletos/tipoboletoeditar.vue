@@ -14,9 +14,6 @@
           </div>
       </div>
 
-    <div class="Footer mt-5">
-      <Footer/>
-    </div>
 
     </div>
   </template>
@@ -25,7 +22,6 @@
     import Sidebar from '@/components/Sidebar'
     import TipoBoletosAgregar from '@/components/Boleto/TipoBoletosAgregar'
     import Header from '@/components/Header'
-    import Footer from '@/components/Footer'
   
     export default {
       data: function(){
@@ -37,7 +33,6 @@
         Sidebar,
         TipoBoletosAgregar,
         Header,
-        Footer,
       },
       created: function(){
         console.log("id of ticket type")

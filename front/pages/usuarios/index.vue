@@ -7,7 +7,6 @@
           <div class="col-11">
             <Header/>
             <Usuarios/>
-            <Footer/>
           </div>
       </div>
     </div>
@@ -16,13 +15,11 @@
   <script>
     import Sidebar from '@/components/Sidebar'
     import Usuarios from '@/components/Usuario/Usuarios'
-    import Footer from '@/components/Footer'
     import Header from '@/components/Header'
     export default {
       components: {
         Sidebar,
         Usuarios,
-        Footer,
         Header
       }
     }

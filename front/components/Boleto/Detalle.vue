@@ -27,14 +27,13 @@
     <table class="table mt-3">
       <thead class="bg-success">
         <tr>
-          <th scope="col">ID</th>
+          <th scope="col">ID de usuario</th>
           <th scope="col">Nombre del cliente</th>
           <th scope="col">Apellido del cliente</th>
-          <th scope="col">Fecha del tour</th>
-          <th scope="col">Codigo QR</th>
+          <th scope="col">Email</th>
+          <th scope="col">Subtotal</th>
           <th scope="col">Total</th>
           <th scope="col">Detalles</th>
-          <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
         </tr>
       </thead>

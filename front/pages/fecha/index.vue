@@ -1,14 +1,20 @@
   <template>
     <div>
       <div class ="row">
-          <div class="col-sm-1">
+          <div class="col-1">
               <Sidebar/>
           </div>
           <div class="col-11">
-            <Header/>
-            <Fechas/>
-            <Footer/>
+            <div class="row">
+              <div class="col-12">
+                <Header/>
+              </div>
+              <div class="col-12">
+                <Fechas/>
+              </div>
+            </div>
           </div>
+           
       </div>
     </div>
     
@@ -16,7 +22,6 @@
 
   <script>
 import Sidebar from "@/components/Sidebar";
-import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Fechas from "@/components/Fecha/Fechas";
 
@@ -24,7 +29,6 @@ export default {
   components: {
     Sidebar,
     Header,
-    Footer,
     Fechas
   }
 };

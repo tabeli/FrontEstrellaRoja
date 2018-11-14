@@ -2,22 +2,15 @@
 
     <div>
 
-      <div class="Header">
-        <Header/>
-      </div>
-
       <div class ="row">
           <div class="col-sm-1 mt-5">
               <Sidebar/>
           </div>
           <div class="col-sm-11">
+             <Header/>
               <Agregar :idHour_interval="idHour_interval"/>
           </div>
       </div>
-
-    <div class="Footer mt-5">
-      <Footer/>
-    </div>
 
     </div>
   
@@ -26,7 +19,6 @@
 
 <script>
 import Sidebar from "@/components/Sidebar";
-import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Agregar from "@/components/Horario/Agregar";
 
@@ -38,7 +30,6 @@ export default {
   },
   components: {
     Sidebar,
-    Footer,
     Header,
     Agregar
   },

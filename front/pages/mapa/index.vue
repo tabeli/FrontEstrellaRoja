@@ -7,7 +7,6 @@
           <div class="col-11">
             <Header/>
             <GoogleMap/>
-            <Footer/>
           </div>
       </div>
     </div>
@@ -16,7 +15,6 @@
   <script>
 import Sidebar from "@/components/Sidebar";
 import GoogleMap from "@/components/Mapa/GoogleMap";
-import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
 
@@ -24,7 +22,6 @@ export default {
   components: {
     Sidebar,
     GoogleMap,
-    Footer,
     Header
   }
 };

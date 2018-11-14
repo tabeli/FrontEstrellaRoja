@@ -13,11 +13,6 @@
               <Agregar :idBus="idBus"/>
           </div>
       </div>
-
-    <div class="Footer mt-5">
-      <Footer/>
-    </div>
-
     </div>
   </template>
   
@@ -25,7 +20,6 @@
 import Sidebar from "@/components/Sidebar";
 import Agregar from "@/components/Camion/Agregar";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 export default {
   data: function() {
@@ -37,7 +31,6 @@ export default {
     Sidebar,
     Agregar,
     Header,
-    Footer
   },
   created: function() {
     console.log("id of bus: ");
