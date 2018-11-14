@@ -10,7 +10,7 @@
               <Sidebar/>
           </div>
           <div class="col-sm-11">
-              <TipoLugarAgregar :idPlace_type="idPlace_type"/>
+              <AgregarVinculo :idTour_schedule="idTour_schedule"/>
           </div>
       </div>
 
@@ -20,32 +20,33 @@
 
     </div>
   </template>
-<script>
+
+  <script>
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import TipoLugarAgregar from "@/components/Lugares/TipoLugarAgregar";
+import AgregarVinculo from "@/components/Itinerario/AgregarVinculo";
 
 export default {
   data: function() {
     return {
-      idPlace_type: this.$route.params.idPlace_type
+      idTour_schedule: this.$route.params.idTour_schedule
     };
   },
   components: {
     Sidebar,
-    Footer,
     Header,
-    TipoLugarAgregar
+    Footer,
+    AgregarVinculo
   },
   created: function() {
-    console.log("id of place type");
-    console.log(this.idPlace_type);
+    console.log("id of tour schedule");
+    console.log(this.idTour_schedule);
   }
 };
 </script>
 
-<style>
+  <style>
 .content {
   display: inline-block; /* Same as the width of the sidenav */
   font-size: 15px; /* Increased text to enable scrolling */

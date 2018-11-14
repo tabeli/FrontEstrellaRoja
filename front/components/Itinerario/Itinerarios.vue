@@ -12,7 +12,7 @@
     </div>
     <!--Agregar horario a un tour-->
       <div class = "col text-center">
-        <nuxt-link :to="{ name: 'itinerario-agregartour'}" replace>     
+        <nuxt-link :to="{ name: 'itinerario-vinculo'}" replace>     
         <button type="button" class="btn btn-warning">Agregar horarios al tour</button>
         </nuxt-link> 
       </div>
@@ -198,7 +198,10 @@ export default {
     },
     editScheduleAction(id) {
       //send to create view
-      this.$router.push({ name: "itinerario-agregar", params: { idSchedule: id } });
+      this.$router.push({
+        name: "itinerario-agregar",
+        params: { idSchedule: id }
+      });
     },
     deleteScheduleAction(id) {
       this.deleteSchedule(id);
@@ -216,17 +219,17 @@ export default {
 
 <style>
 .container {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 15px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 15px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
 }
-.derecha{
+.derecha {
   padding-right: 110px;
-  margin-left:  160px;
+  margin-left: 160px;
 }
 .bg-success {
-  color:#FFFFFF
+  color: #ffffff;
 }
 </style>
 

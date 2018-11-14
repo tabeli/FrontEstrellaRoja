@@ -1,6 +1,8 @@
 <template>
     <div class="container">
     <!--Empieza la form-->
+    <br>
+    <br>
         <form>
             <!--Tipo de ticket-->
             <div class="form-group ">

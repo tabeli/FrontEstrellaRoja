@@ -26,7 +26,7 @@
               </center>
               
               <select class="form-control">
-                <option v-for="date_interval in this.$store.state.date_intervals" :key='date_interval.id' >De {{date_interval.start_date}} hasta{{date_interval.end_date}}  -->  ID:{{date_interval.id}}</option>
+                <option v-for="date_interval in this.$store.state.date_intervals" :key='date_interval.id' >De {{date_interval.start_date}} hasta {{date_interval.end_date}}  -->  ID:{{date_interval.id}}</option>
               </select>
             </div>
             <div class="form-group">
@@ -134,7 +134,7 @@ export default {
   data: function() {
     return {
       schedule: {},
-      types: ['time']
+      types: ["time"]
     };
   },
   methods: {
@@ -173,7 +173,8 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/schedule/" + this.idSchedule,
+          "http://principal-arena-219118.appspot.com/api/schedule/" +
+          this.idSchedule,
         headers: {
           "Content-Type": "application/json"
         },
@@ -274,12 +275,12 @@ export default {
 
 <style>
 .container {
-    margin-left: 160px;
-    margin-right: 0px; /* Same as the width of the sidenav */
-    display: inline-block;
-    font-size: 20px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+  margin-left: 160px;
+  margin-right: 0px; /* Same as the width of the sidenav */
+  display: inline-block;
+  font-size: 20px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
 }
 .letrabonita {
   font-size: 22px;
