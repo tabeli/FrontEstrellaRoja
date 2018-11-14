@@ -15,10 +15,6 @@
           </div>
       </div>
 
-    <div class="Footer mt-5">
-      <Footer/>
-    </div>
-
     </div>
   
   </template>
@@ -26,7 +22,6 @@
 
 <script>
 import Sidebar from "@/components/Sidebar";
-import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Agregar from "@/components/Fecha/Agregar";
 
@@ -38,7 +33,6 @@ export default {
   },
   components: {
     Sidebar,
-    Footer,
     Header,
     Agregar
   },

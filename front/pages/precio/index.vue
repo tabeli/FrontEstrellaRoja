@@ -7,7 +7,6 @@
           <div class="col-11">
             <Header/>
             <Precios/>
-            <Footer/>
           </div>
       </div>
     </div>
@@ -17,7 +16,6 @@
   <script>
 
   import Sidebar from "@/components/Sidebar"
-  import Footer from "@/components/Footer"
   import Header from "@/components/Header"
   import Precios from "@/components/Precios/Precios"
 
@@ -25,7 +23,6 @@
     components: {
       Sidebar,
       Header,
-      Footer,
       Precios
     }
   }

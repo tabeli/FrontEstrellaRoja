@@ -15,6 +15,7 @@
           </div>
       </div>
 
+
     </div>
   
   </template>
@@ -23,7 +24,7 @@
 
   import Sidebar from "@/components/Sidebar"
   import Header from "@/components/Header"
-  import Agregar from "@/components/Boleto/Agregar"
+  import Agregar from "@/components/Boleto/Detalle"
 
   export default {
     data: function(){
@@ -35,6 +36,7 @@
       Sidebar,
       Agregar,
       Header,
+      Footer
     },
     created: function(){
       console.log("id of ticket")

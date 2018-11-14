@@ -13,14 +13,7 @@ import { createStore } from './store.js'
 /* Plugins */
 import nuxt_plugin_bootstrapvue_2be1dee2 from 'nuxt_plugin_bootstrapvue_2be1dee2' // Source: ./bootstrap-vue.js
 import nuxt_plugin_axios_7f7e9260 from 'nuxt_plugin_axios_7f7e9260' // Source: ./axios.js
-import * as VueGoogleMaps from "vue2-google-maps";
 
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: "AIzaSyDKgXjIdN-V65bA10tR1gE744LraHHZezs",
-    libraries: "places" // necessary for places input
-  }
-});
 
 // Component: <no-ssr>
 Vue.component(NoSSR.name, NoSSR)

@@ -1,28 +1,21 @@
 <template>
     <div>
 
-      <div class="Header">
-        <Header/>
-      </div>
-
       <div class ="row">
           <div class="col-sm-1 mt-5">
               <Sidebar/>
           </div>
           <div class="col-sm-11">
+            <Header/>
               <TipoLugarAgregar :idPlace_type="idPlace_type"/>
           </div>
       </div>
 
-    <div class="Footer mt-5">
-      <Footer/>
-    </div>
 
     </div>
   </template>
 <script>
 import Sidebar from "@/components/Sidebar";
-import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import TipoLugarAgregar from "@/components/Lugares/TipoLugarAgregar";
 

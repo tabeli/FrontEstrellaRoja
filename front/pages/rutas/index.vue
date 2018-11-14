@@ -7,7 +7,6 @@
           <div class="col-11">
             <Header/>
             <Rutas/>
-            <Footer/>
           </div>
       </div>
     </div>
@@ -16,14 +15,12 @@
   <script>
 import Sidebar from "@/components/Sidebar";
 import Rutas from "@/components/Ruta/Rutas";
-import Footer from "@/components/Footer"
-import Header from "@/components/Header"
+import Header from "@/components/Header";
 
 export default {
   components: {
     Sidebar,
     Rutas,
-    Footer,
     Header
   }
 };

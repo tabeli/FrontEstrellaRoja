@@ -17,14 +17,12 @@
     import Sidebar from '@/components/Sidebar'
     import TipoBoletos from '@/components/Boleto/TipoBoletos'
     import Header from '@/components/Header'
-    import Footer from '@/components/Footer'
   
     export default {
       components: {
         Sidebar,
         TipoBoletos,
         Header,
-        Footer,
       }
     }
   </script>

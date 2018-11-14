@@ -11,22 +11,17 @@
                 <label for="contr">Contraseña:</label>
                 <input type="password" class="form-control" id="contr">
             </div>
-            <div class="Footer ">
-                <Footer/>
-            </div>
                 </div>
             </template>
         
             <script>
     import Usuarios from '@/components/Login/Login'
     import Header from '@/components/Header'
-    import Footer from '@/components/Footer'
   
     export default {
       components: {
         Login,
         Header,
-        Footer
       }
     }
 </script>
