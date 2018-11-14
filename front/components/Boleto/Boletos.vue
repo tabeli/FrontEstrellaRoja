@@ -33,6 +33,7 @@
           <th scope="col">Fecha del tour</th>
           <th scope="col">Codigo QR</th>
           <th scope="col">Total</th>
+          <th scope="col">Detalles</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
         </tr>
@@ -45,6 +46,7 @@
             <td>{{ ticket.tour_date }}</td>
             <td>{{ ticket.qr_code }}</td>
             <td>{{ ticket.total }}</td>
+             <td><button class="btn btn-info" type="button" @click="ticketAction(ticket.id)"><img src="@/static/eye.png"></button></td>
             <td><button class="btn btn-info" type="button" @click="editTicketAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-info" type="button" @click="deleteTicketAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
