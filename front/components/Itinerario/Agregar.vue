@@ -37,14 +37,34 @@
                     <option v-for="date_interval in this.$store.state.date_intervals" :key='date_interval.id' >{{date_interval.id}}</option>
                 </select>
             </div>
-        <!--Boton de agregar intervalos-->
+
+
+
+
+
+
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
+     
     <div>
         <label>Añadir intervalos</label>
-     <!--Botones de intervalos-->
+   
          <b-btn :pressed="false" variant="btn btn-success" v-b-toggle.collapse2 class="m-1">Fecha</b-btn>
          <b-btn :pressed="false" variant="btn btn-success" v-b-toggle="'collapse3'" class="m-1">Hora</b-btn>
 
-     <!-- element to collapse -->
+
      <br>
         <b-collapse  id="collapse2">
             <b-card>
@@ -101,7 +121,7 @@
              <div class="col"></div>
             </div>
             <br>
-            <!-- botón -->
+     
                  <div class="row">
                      <div class="col"></div>
                      <div class="col"></div>
@@ -112,14 +132,23 @@
         </b-card>
     </b-collapse>
     </div>
+
+    -->
     <!--Termina la form-->
     </form>
+    <center>
+      <div class="letrabonita">
+        <p>
+          No se te olvide asignar este itinerario a una ruta!
+        </p>
+      </div>
+    </center>
     <!--Boton Agregar-->
         <br/>
         <center>
             <button type="submit" class="btn btn-danger" @click.stop.prevent="scheduleFunction()">
-                <div v-if="schedule.id == undefined">Crea Horario</div>
-                <div v-else>Actualiza Horario</div>
+                <div v-if="schedule.id == undefined">Crea Itinerario</div>
+                <div v-else>Actualiza Itinerario</div>
             </button>
         </center>
     </div>   

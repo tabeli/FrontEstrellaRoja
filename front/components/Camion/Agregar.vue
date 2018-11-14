@@ -14,7 +14,7 @@
               <br>
               <center>
                  <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
-                 <nuxt-link :to="{ name: 'ruta-Agregar' }" replace>
+                 <nuxt-link :to="{ name: 'rutas-agregar' }" replace>
                 <button type="button" class="btn btn-info text-right">Agregar</button>
                 <br>
                 </nuxt-link> 
@@ -40,7 +40,7 @@
               <br>
               <center>
                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
-                <nuxt-link :to="{ name: 'mural-Agregar' }" replace>
+                <nuxt-link :to="{ name: 'mural-agregar' }" replace>
                 <button type="button" class="btn btn-info text-right">Agregar</button>
                 <br>
                 </nuxt-link> 
