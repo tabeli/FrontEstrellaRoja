@@ -7,8 +7,11 @@
               <center>
                 <label for="start_date" class="letrabonita">Primera fecha de disponibilidad</label>
               </center>
+              <input class="date" type="date" id="start" name="birthdate"
+                    value="2000-01-01"
+                    min="1900-01-01" max="(currdate)" 
+                    v-model="date_interval.start_date"/>
               
-              <input type="text" class="form-control" id="start_date" placeholder="YYYY-MM-DD" v-model="date_interval.start_date">
             </div>
         <!--Ultima fecha-->
             <div class="form-group col-md-12">
@@ -16,7 +19,11 @@
                 <label for="end_date" class="letrabonita">Última fecha de disponibilidad</label>
               </center>
               
-              <input type="text" class="form-control" id="end_date" placeholder="YYYY-MM-DD" v-model="date_interval.end_date">
+              <input class="date" type="date" id="start" name="birthdate"
+                    value="2000-01-01"
+                    min="1900-01-01" max="(currdate)" 
+                    v-model="date_interval.end_date"/>
+
             </div>
         <!--status-->
             <div class="form-group">

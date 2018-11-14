@@ -7,18 +7,13 @@
               <center>
                 <label for="purchaseSelect" class="letrabonita">Visualiza el ID de la compra</label>
               </center>
+              <div v-for="purchase in this.$store.state.purchases" :key='purchase.id'>
+                <select class="form-control" v-for="user in $store.state.users" :key="user.id" v-if="purchase.user_id == user.id">
+                  <option>Nombre: {{user.name}} {{user.last_name}} Total: ${{purchase.total}} ID:{{purchase.id}}</option>
+                </select>
+              </div>
               
-              <select class="form-control">
-                <option v-for="purchase in this.$store.state.purchases" :key='purchase.id' >ID:{{purchase.id}}</option>
-              </select>
-              <br>
-              <center>
-                 <label for="option">No lo encuentras ? Puedes crear una nueva</label>
-                 <nuxt-link :to="{ name: '' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
-                <br>
-                </nuxt-link> 
-              </center>
+              
             </div>
             <div class="form-group">
               <center>
@@ -241,6 +236,24 @@ export default {
           console.log(error);
         });
     },
+    async getUsers() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/user"
+      })
+        .then(
+          function(response) {
+            console.log(response);
+            this.$store.commit({
+              type: "storeUsers",
+              users: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
     async getPrices() {
       await axios({
         method: "get",
@@ -277,6 +290,7 @@ export default {
     }
     this.getPurchases();
     this.getPrices();
+    this.getUsers();
   }
 };
 </script>

@@ -37,12 +37,13 @@
             <div>
               <center>
                 <label for="start" class="letrabonita">Fecha de nacimiento</label>
+                <br>
               <input class="date" type="date" id="start" name="birthdate"
                     value="2000-01-01"
                     min="1900-01-01" max="(currdate)" 
                     v-model="user.birthdate"/>
               </center>
-              
+              <br>
             </div>
 
           

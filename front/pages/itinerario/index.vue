@@ -18,7 +18,7 @@
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Itinerarios from "@/components/Itinerario/Itinerarios"
+import Itinerarios from "@/components/Itinerario/Itinerarios";
 
 export default {
   components: {

@@ -26,7 +26,7 @@
               </center>
               
               <select class="form-control">
-                <option v-for="date_interval in this.$store.state.date_intervals" :key='date_interval.id' >De {{date_interval.start_date}} hasta{{date_interval.end_date}}  -->  ID:{{date_interval.id}}</option>
+                <option v-for="date_interval in this.$store.state.date_intervals" :key='date_interval.id' >De {{date_interval.start_date}} hasta {{date_interval.end_date}}  -->  ID:{{date_interval.id}}</option>
               </select>
             </div>
             <div class="form-group">
@@ -37,14 +37,34 @@
                     <option v-for="date_interval in this.$store.state.date_intervals" :key='date_interval.id' >{{date_interval.id}}</option>
                 </select>
             </div>
-        <!--Boton de agregar intervalos-->
+
+
+
+
+
+
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
+     
     <div>
         <label>Añadir intervalos</label>
-     <!--Botones de intervalos-->
+   
          <b-btn :pressed="false" variant="btn btn-success" v-b-toggle.collapse2 class="m-1">Fecha</b-btn>
          <b-btn :pressed="false" variant="btn btn-success" v-b-toggle="'collapse3'" class="m-1">Hora</b-btn>
 
-     <!-- element to collapse -->
+
      <br>
         <b-collapse  id="collapse2">
             <b-card>
@@ -101,7 +121,7 @@
              <div class="col"></div>
             </div>
             <br>
-            <!-- botón -->
+     
                  <div class="row">
                      <div class="col"></div>
                      <div class="col"></div>
@@ -112,8 +132,17 @@
         </b-card>
     </b-collapse>
     </div>
+
+    -->
     <!--Termina la form-->
     </form>
+    <center>
+      <div class="letrabonita">
+        <p>
+          No se te olvide asignar este itinerario a una ruta!
+        </p>
+      </div>
+    </center>
     <!--Boton Agregar-->
         <br/>
         <center>
@@ -134,7 +163,7 @@ export default {
   data: function() {
     return {
       schedule: {},
-      types: ['time']
+      types: ["time"]
     };
   },
   methods: {
@@ -173,7 +202,8 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/schedule/" + this.idSchedule,
+          "http://principal-arena-219118.appspot.com/api/schedule/" +
+          this.idSchedule,
         headers: {
           "Content-Type": "application/json"
         },
@@ -274,12 +304,12 @@ export default {
 
 <style>
 .container {
-    margin-left: 160px;
-    margin-right: 0px; /* Same as the width of the sidenav */
-    display: inline-block;
-    font-size: 20px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+  margin-left: 160px;
+  margin-right: 0px; /* Same as the width of the sidenav */
+  display: inline-block;
+  font-size: 20px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
 }
 .letrabonita {
   font-size: 22px;

@@ -1,19 +1,68 @@
 <template>
-    <div class="container mt-5">
+    <div class="container">
+        <br>
+        <br>
     <!--Empieza la form-->
         <form>
-        <!-- Tour -->
+            <!--Horario-->
             <div class="form-group ">
               <center>
-                <label for="tour_id" class="letrabonita" >Visualiza el ID del Tour deseado</label>
+                <label for="scheduleSelect" class="letrabonita" >Visualiza el ID del Itinerario deseado</label>
               </center>
+              <!--
+
+                <div v-for="tour_schedule in this.$store.state.tour_schedules" :key="tour_schedule.id">
+                <select class="form-control" v-for="schedule in $store.state.schedules" :key='schedule.id'>
+                  <div v-for="hour_interval in $store.state.hour_intervals" :key='hour_interval.id' v-if="schedule.hour_interval_id == hour_interval.id">
+                      <option v-for="date_interval in $store.state.date_intervals" :key="date_interval.id" v-if="schedule.date_interval_id == date_interval.id">De {{date_interval.start_date}} hasta {{date_interval.end_date}} con horario de {{hour_interval.start_time}} hasta {{hour_interval.end_time}}   ID:{{tour_schedule.id}}</option>
+                  </div>
+                </select>
+              </div>
+
+              -->
+              <div v-for="tour_schedule in this.$store.state.tour_schedules" :key="tour_schedule.id">
+                <div v-for="schedule in $store.state.schedules" :key='schedule.id' v-if="tour_schedule.schedule_id == schedule.id">
+                  <div v-for="date_interval in $store.state.date_intervals" :key="date_interval.id" v-if="schedule.date_interval_id == date_interval.id">
+                    <div v-for="hour_interval in $store.state.hour_intervals" :key="hour_interval.id" v-if="schedule.hour_interval_id == hour_interval.id"> 
+                      <select class="form-control" >
+                        <option>Horario: {{hour_interval.start_time}} a {{hour_interval.end_time}} Fecha: {{date_interval.start_date}} a {{date_interval.end_date}} ---> ID: {{schedule.id}}</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <br>
+              <center>
+                <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
+                <nuxt-link :to="{ name: 'itinerario-agregar' }" replace>
+                <button type="button" class="btn btn-info text-right">Agregar</button>
+                <br>
+                </nuxt-link> 
+              </center>
+            </div>
+            <div class="form-group">
+              <center>
+                <label for="ticket_type" class="letrabonita">Escoge el ID del tipo de Ticket</label>
+              </center>
+                
+                <select class="form-control" id="mural" v-model="tour_schedule.schedule_id">
+                    <option v-for="schedule in this.$store.state.schedules"  :key='schedule.id' >{{schedule.id}}</option>
+                </select>
+            </div>
+        <!--Tours-->
+            <div class="form-group ">
+              <center>
+                <label for="tourSelect" class="letrabonita">Visualiza el ID del tour deseado</label>
+              </center>
+              
               <select class="form-control">
                 <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.name}} -->  ID:{{tour.id}}</option>
               </select>
               <br>
               <center>
-                <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
-                <nuxt-link :to="{ name: 'rutas-agregar' }" replace>
+                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
+                 <nuxt-link :to="{ name: 'rutas-agregar' }" replace>
                 <button type="button" class="btn btn-info text-right">Agregar</button>
                 <br>
                 </nuxt-link> 
@@ -21,60 +70,20 @@
             </div>
             <div class="form-group">
               <center>
-                <label for="tour_id" class="letrabonita">Escoge el ID del tipo de Lugar</label>
+                <label for="tour" class="letrabonita">Escoge el ID del Tour</label>
               </center>
-                
-                <select class="form-control" id="tour_id" v-model="tour_schedule.tour_id">
-                    <option v-for="tour in this.$store.state.tours"  :key='tour.id' >{{tour.id}}</option>
+                <select class="form-control" name="tour_id" id="tour_id" v-model="tour_schedule.tour_id">
+                    <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.id}}</option>
                 </select>
             </div>
-
-
-
-
-
-        <!-- Itinerario -->
-            <div class="form-group ">
-              <center>
-                <label for="schedule_id" class="letrabonita" >Visualiza el ID del Itinerario deseado</label>
-              </center>
-                <div v-for="schedule in this.$store.state.schedules" :key='schedule.id'>
-                  <select class="form-control" v-for="date_interval in this.$store.state.date_intervals" :key='date_interval.id' v-if="schedule.date_interval == date_interval.id">
-                    <option v-for="narrative in this.$store.state.narratives" :key='narrative.id' >{{narrative.audio_path}} -->  ID:{{narrative.id}}</option>
-                  </select>
-                </div>
-              <center>
-                <label for="option">No lo encuentras ? Puedes crear una nueva</label>
-                <!-- Falta el link para las narrativas -->
-                <nuxt-link :to="{ name: '' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
-                <br>
-                </nuxt-link> 
-              </center>
-            </div>
-            <div class="form-group">
-              <center>
-                <label for="schedule:id" class="letrabonita">Escoge el ID del Itinerario deseado</label>
-              </center>
-                
-                <select class="form-control" id="schedule_id" v-model="tour_schedule.schedule_id">
-                    <option v-for="narrative in this.$store.state.narratives"  :key='narrative.id' >{{narrative.id}}</option>
-                </select>
-            </div>
-
-
-
-
-
-
         </form>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
-        <center>
+       <center>
             <button type="submit" class="btn btn-danger" @click.stop.prevent="tour_scheduleFunction()">
-                <div v-if="tour_schedule.id == undefined">Crea Asignación de horarios</div>
-                <div v-else>Actualiza Asignación de horarios</div>
+                <div v-if="tour_schedule.id == undefined">Crea Vínculo</div>
+                <div v-else>Actualiza Vínculo</div>
             </button>
         </center>
     </div>   
@@ -85,7 +94,13 @@ import axios from "axios";
 
 export default {
   //props is the parameter it receives
-  props: ["idTour_schedule", "idSchedule", "idDate_interval","idHour_interval"],
+  props: [
+    "idTour_schedule",
+    "idSchedule",
+    "idHour_interval",
+    "idDate_interval",
+    "idTour"
+  ],
   data: function() {
     return {
       tour_schedule: {}
@@ -100,7 +115,7 @@ export default {
       }
     },
     async createTour_schedule() {
-      //alert(JSON.stringify(this.place))
+      //alert(JSON.stringify(this.tour_schedule))
       await axios({
         method: "post",
         url: "http://principal-arena-219118.appspot.com/api/tour_schedule",
@@ -127,7 +142,8 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/tour_schedule/" + this.idTour_schedule,
+          "http://principal-arena-219118.appspot.com/api/tour_schedule/" +
+          this.idTour_schedule,
         headers: {
           "Content-Type": "application/json"
         },
@@ -152,7 +168,8 @@ export default {
     async getTour_schedule(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour_schedule/" + id,
+        url:
+          "http://principal-arena-219118.appspot.com/api/tour_schedule/" + id,
         headers: {
           "Content-Type": "application/json"
         }
@@ -167,18 +184,18 @@ export default {
           console.log(error);
         });
     },
-    async getSchedule(id) {
+    async getTours() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/schedule/" + id,
-        headers: {
-          "Content-Type": "application/json"
-        }
+        url: "http://principal-arena-219118.appspot.com/api/tour"
       })
         .then(
           function(response) {
-            this.schedule = response.data;
-            console.log(this.schedule_id);
+            console.log(response);
+            this.$store.commit({
+              type: "storeTours",
+              tours: response.data
+            });
           }.bind(this)
         )
         .catch(function(error) {
@@ -238,28 +255,16 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
-    },
+    }
   },
 
   created: function() {
-    console.log("start crea horarios de tour");
+    console.log("start crea vinculo");
     if (this.idTour_schedule != undefined) {
       console.log("idTour_schedule is defined");
       this.getTour_schedule(this.idTour_schedule);
     }
-    if (this.idSchedule != undefined) {
-      console.log("idSchedule is defined");
-      this.getSchedule(this.idSchedule);
-    }
-    if (this.idDate_interval != undefined) {
-      console.log("idDate_interval is not defined");
-      this.getDate_interval();
-    }
-    if (this.idHour_interval != undefined) {
-      console.log("idHour_interval is not defined");
-      this.getHour_intervals();
-    }
-    this.getTour_schedule();
+    this.getTours();
     this.getSchedules();
     this.getDate_intervals();
     this.getHour_intervals();
@@ -269,15 +274,17 @@ export default {
 
 <style>
 .container {
-    margin-left: 160px;
-    margin-right: 0px; /* Same as the width of the sidenav */
-    display: inline-block;
-    font-size: 20px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+  margin-left: 160px;
+  margin-right: 0px; /* Same as the width of the sidenav */
+  display: inline-block;
+  font-size: 20px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
 }
 .letrabonita {
   font-size: 22px;
   font: bold;
 }
 </style>
+
+

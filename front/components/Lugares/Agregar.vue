@@ -40,7 +40,7 @@
               <center>
                 <label for="option">No lo encuentras ? Puedes crear una nueva</label>
                 <!-- Falta el link para las narrativas -->
-                <nuxt-link :to="{ name: '' }" replace>
+                <nuxt-link :to="{ name: 'narrativa-agregar' }" replace>
                 <button type="button" class="btn btn-info text-right">Agregar</button>
                 <br>
                 </nuxt-link> 
@@ -106,7 +106,7 @@ import axios from "axios";
 
 export default {
   //props is the parameter it receives
-  props: ["idPlace", "idPlace_type", "idNarrative","idPlace_image","idImage"],
+  props: ["idPlace", "idPlace_type", "idNarrative", "idPlace_image", "idImage"],
   data: function() {
     return {
       place: {}
@@ -310,12 +310,12 @@ export default {
 
 <style>
 .container {
-    margin-left: 160px;
-    margin-right: 0px; /* Same as the width of the sidenav */
-    display: inline-block;
-    font-size: 20px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+  margin-left: 160px;
+  margin-right: 0px; /* Same as the width of the sidenav */
+  display: inline-block;
+  font-size: 20px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
 }
 .letrabonita {
   font-size: 22px;

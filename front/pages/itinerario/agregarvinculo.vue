@@ -1,5 +1,5 @@
 <template>
-   <div>
+    <div>
 
       <div class="Header">
         <Header/>
@@ -10,7 +10,7 @@
               <Sidebar/>
           </div>
           <div class="col-sm-11">
-              <Agregar :idSchedule="idSchedule"/>
+              <AgregarVinculo :idTour_schedule="idTour_schedule"/>
           </div>
       </div>
 
@@ -20,32 +20,33 @@
 
     </div>
   </template>
-<script>
+
+  <script>
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Agregar from "@/components/Itinerario/Agregar";
+import AgregarVinculo from "@/components/Itinerario/AgregarVinculo";
 
 export default {
   data: function() {
     return {
-      idSchedule: this.$route.params.idSchedule
+      idTour_schedule: this.$route.params.idTour_schedule
     };
   },
   components: {
     Sidebar,
-    Footer,
     Header,
-    Agregar
+    Footer,
+    AgregarVinculo
   },
   created: function() {
-    console.log("id of schedule");
-    console.log(this.idSchedule);
+    console.log("id of tour schedule");
+    console.log(this.idTour_schedule);
   }
 };
 </script>
 
-<style>
+  <style>
 .content {
   display: inline-block; /* Same as the width of the sidenav */
   font-size: 15px; /* Increased text to enable scrolling */

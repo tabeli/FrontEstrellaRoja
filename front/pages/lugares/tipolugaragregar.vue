@@ -27,10 +27,10 @@ import Header from "@/components/Header";
 import TipoLugarAgregar from "@/components/Lugares/TipoLugarAgregar";
 
 export default {
-  data: function(){
-    return{
+  data: function() {
+    return {
       idPlace_type: this.$route.params.idPlace_type
-    }
+    };
   },
   components: {
     Sidebar,
@@ -38,9 +38,9 @@ export default {
     Header,
     TipoLugarAgregar
   },
-  created: function(){
+  created: function() {
     console.log("id of place type");
-    console.log(this.idPlace_type)
+    console.log(this.idPlace_type);
   }
 };
 </script>
