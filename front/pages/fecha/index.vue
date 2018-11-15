@@ -1,5 +1,5 @@
   <template>
-    <div>
+    <div :style="{'background-image': `url(${require('@/static/back4.png')})`}">
       <div class ="row">
           <div class="col-1">
               <Sidebar/>
@@ -16,6 +16,7 @@
           </div>
            
       </div>
+      <div :style="{'background-image': `url(${require('@/static/back4.png')})`}" class="footer"></div>
     </div>
     
   </template>

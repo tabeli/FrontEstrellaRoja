@@ -1,5 +1,5 @@
-  <template>
-    <div>
+  <template >
+    <div :style="{'background-image': `url(${require('@/static/back4.png')})`}" >  
       <div class ="row">
           <div class="col-sm-1">
               <Sidebar/>
@@ -9,6 +9,7 @@
             <Imagenes/>
           </div>
       </div>
+ 
     </div>
     
   </template>
@@ -28,6 +29,15 @@ export default {
 </script>
 
   <style>
+.background-image{
+background-image:('~/static/back4.png');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height:100%;
+}
+
 </style>
 
 

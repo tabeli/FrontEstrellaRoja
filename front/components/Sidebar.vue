@@ -1,5 +1,5 @@
 <template>
-  <div>
+ <div>
     <div id="sidenav" class="sidenav">
       <ul>
         <li>
@@ -97,15 +97,16 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #f99e3d;
-  background-image: linear-gradient(315deg, #f99e3d 0%, #ffcc2f 74%);
+  background-color: #043764;
+  background-image: linear-gradient(315deg, #043764 0%, #3C8BD8 74%);
   overflow-x: hidden;
   padding-top: 20px;
-  box-shadow: 0 12px 20px gray, 0 15px 12px #f99e3d;
+  box-shadow: 0 12px 20px gray, 0 15px 12px #043764;
 }
 
+
 .sidenav a {
-  padding: 6px 8px 6px 5px;
+  padding: 8.5px 10px 3px 8px;
   text-decoration: none;
   font-size: 15px;
   color: #ffffff;
@@ -115,7 +116,7 @@ export default {
 
 .sidenav li:hover {
   color: #f1f1f1;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.489);
   border-left: 5px solid #ea1b75;
   box-shadow: 0 3px 6px rgba(39, 39, 39, 0.13), 0 3px 6px rgba(39, 39, 39, 0.13);
 }
@@ -139,6 +140,6 @@ export default {
 }
 
 .sidenav li {
-  border: 1px solid #fcb600;
+  border: 0px solid #3C8BD8;
 }
 </style>
