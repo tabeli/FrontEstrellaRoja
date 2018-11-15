@@ -8,7 +8,7 @@
                 <label for="name" class="letrabonita">Nombre</label>
               </center>
               
-              <input type="text" class="form-control" id="name" placeholder="" v-model="user.name">
+              <input type="text" class="form-control sombra" id="name" placeholder="" v-model="user.name">
             </div>
 
             <div class="form-group col-md-12">
@@ -16,7 +16,7 @@
                 <label for="last_name" class="letrabonita">Apellido</label>
               </center>
               
-              <input type="text" class="form-control" id="last_name" placeholder="" v-model="user.last_name">
+              <input type="text" class="form-control sombra" id="last_name" placeholder="" v-model="user.last_name">
             </div>
         
             <div class="form-group col-md-12">
@@ -24,14 +24,14 @@
                 <label for="email" class="letrabonita">Email</label>
               </center>
               
-              <input type="email" class="form-control" id="email" placeholder="" v-model="user.email">
+              <input type="email" class="form-control sombra" id="email" placeholder="" v-model="user.email">
             </div>
             <div class="form-group col-md-12">
               <center>
                 <label for="password" class="letrabonita">Password</label>
               </center>
               
-              <input type="password" class="form-control" id="password" placeholder="" v-model="user.password">
+              <input type="password" class="form-control sombra" id="password" placeholder="" v-model="user.password">
             </div>
           
             <div>
@@ -52,21 +52,21 @@
                  <label for="phone_number" class="letrabonita">Celular</label>
               </center>
              
-              <input type="text" class="form-control" id="phone_number" v-model="user.phone_number">
+              <input type="text" class="form-control sombra" id="phone_number" v-model="user.phone_number">
             </div>
             <div class="form-group col-md-12">
               <center>
                  <label for="postal_code" class="letrabonita">Código Postal</label>
               </center>
              
-              <input type="text" class="form-control" id="postal_code" v-model="user.postal_code">
+              <input type="text" class="form-control sombra" id="postal_code" v-model="user.postal_code">
             </div>
             <div class="form-group col-md-12">
               <center>
                 <label for="inputState" class="letrabonita">Tipo de Usuario</label>
               </center>
               
-              <select id="inputState" class="form-control" v-model="user.user_type">
+              <select id="inputState" class="form-control sombra" v-model="user.user_type">
                 <option v-if="user.user_type == client" value="client" selected>Cliente</option>
                 <option v-else value="client">Cliente</option>
                 <option v-if="user.user_type == administrator" value="administrator" selected>Administrador</option>
@@ -75,11 +75,12 @@
             </div>
           
           <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="userFunction()">
+            <button type="submit" class="btn btn-danger sombra" @click.stop.prevent="userFunction()">
                 <div v-if="user.id == undefined">Crea Usuario</div>
                 <div v-else>Actualiza Usuario</div>
             </button>
           </center>
+          <br>
         </form>
   </div>
   
@@ -202,5 +203,8 @@ export default {
 .letrabonita {
   font-size: 22px;
   font: bold;
+}
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>
