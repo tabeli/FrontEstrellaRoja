@@ -56,7 +56,7 @@
 import axios from "axios";
 
 export default {
-  //props is the parameter it receives
+  //props is the parameter it receivess
   props: ["idDate_interval"],
   data: function() {
     return {
