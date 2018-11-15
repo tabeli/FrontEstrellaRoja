@@ -1,4 +1,4 @@
-<template>
+<template class="back">
   <div id="principal" class="container">
 
       <br>
@@ -8,14 +8,14 @@
       <div class="row">
       <div class="col">
         <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
-          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
+          <input class="form-control mr-sm-2 sombra" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
+          <button class="btn btn-light my-2 my-sm-0 sombra" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
         </form>
       </div>
 
       <div class="derecha">
         <nuxt-link :to="{ name: 'usuarios-create' }" replace>
-          <button class="btn btn-info" type="button">Añadir usuario</button>
+          <button class="btn btn-success shadow" type="button">Añadir usuario</button>
         </nuxt-link>
       </div>
       </div>
@@ -35,7 +35,7 @@
           <th scope="col">Borrar</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody class="sombra text-align">
           <tr v-for="user in this.$store.state.users" :key='user.id'>
             <td>{{ user.user_type }}</td>
             <td>{{ user.name }}</td>
@@ -44,13 +44,16 @@
             <td>{{ user.birthdate}}</td>
             <td>{{ user.postal_code}}</td>
             <td>{{ user.phone_number}}</td>
-            <td><button class="btn btn-info" type="button" @click="editUserAction(user.id)"><img src="@/static/pencil.png"></button></td>
-            <td><button class="btn btn-info" type="button" @click="deleteUserAction(user.id)"><img src="@/static/basurero.png"></button></td>
+            <td><button class="btn btn-outline-info" type="button" @click="editUserAction(user.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-outline-danger" type="button" @click="deleteUserAction(user.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
     </div>
   </div>
+  <br>
+
+
   </div>
 </template>
 
@@ -149,5 +152,8 @@ export default {
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
+}
+.back{
+  background-image: image-set('@/static/back4.png');
 }
 </style>
