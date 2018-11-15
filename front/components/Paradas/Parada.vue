@@ -21,7 +21,7 @@
       </div>
       <!-- Vincular parada y tour-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'paradas-agregar' }" replace>
+        <nuxt-link :to="{ name: 'paradas-vinculo' }" replace>
         <button type="button" class="btn btn-info text-right">Agregar paradas al Tour</button>
         </nuxt-link> 
       </div>
