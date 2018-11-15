@@ -10,15 +10,9 @@
         <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
     </div>
-    <!--Tipo de boletos-->
-      <div class = "col text-center">
-        <nuxt-link :to="{ name: 'boletos-tipoboleto'}" replace>     
-        <button type="button" class="btn btn-warning">Tipo de boleto</button>
-        </nuxt-link> 
-      </div>
     <!--Agregar-->
       <div class = "col text-right">
-        <nuxt-link :to="{ name: 'boletos-agregar'}" replace>
+        <nuxt-link :to="{ name: 'boletos-detalleagregar'}" replace>
         <button type="button" class="btn btn-info text-right">Agregar</button>
         </nuxt-link> 
       </div>
@@ -38,16 +32,15 @@
         </tr>
       </thead>
         <tbody>
-          <tr v-for="ticket in this.$store.state.tickets" :key='ticket.id'>
-            <th>{{ ticket.id }}</th>
-            <th>{{ ticket.client_name }}</th>
-            <td>{{ ticket.client_last_name }}</td>
-            <td>{{ ticket.tour_date }}</td>
-            <td>{{ ticket.qr_code }}</td>
-            <td>{{ ticket.total }}</td>
-             <td><button class="btn btn-info" type="button" @click="ticketAction(ticket.id)"><img src="@/static/eye.png"></button></td>
-            <td><button class="btn btn-info" type="button" @click="editTicketAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
-            <td><button class="btn btn-info" type="button" @click="deleteTicketAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
+          <tr v-for="purchase in this.$store.state.purchases" :key='purchase.id' >
+            <th>{{ purchase.user_id }}</th>
+            <th v-for="user in $store.state.users" :key="user.id" v-if="purchase.user_id == user.id">{{ user.name }}</th>
+            <td v-for="user in $store.state.users" :key="user.id" v-if="purchase.user_id == user.id">{{ user.last_name }}</td>
+            <td v-for="user in $store.state.users" :key="user.id" v-if="purchase.user_id == user.id">{{ user.email }}</td>
+            <td>{{ purchase.subtotal }}</td>
+            <td>{{ purchase.total }}</td>
+            <td><button class="btn btn-info" type="button" @click="editPurchaseAction(purchase.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-info" type="button" @click="deletePurchaseAction(purchase.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -60,31 +53,29 @@ import axios from "axios";
 
 export default {
   methods: {
-    async getTickets() {
+    async getPurchase(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/ticket"
+        url: "http://principal-arena-219118.appspot.com/api/purchase/" + id,
+        headers: {
+          "Content-Type": "application/json"
+        }
       })
         .then(
           function(response) {
-            console.log("response");
-            console.log(response);
-            this.$store.commit({
-              type: "storeTickets",
-              tickets: response.data
-            });
+            this.purchase = response.data;
+            console.log(this.purchase);
           }.bind(this)
         )
         .catch(function(error) {
-          console.log("error");
           console.log(error);
         });
     },
-    async deleteTicket(id) {
-      console.log("Delete ticket");
+    async deletePurchase(id) {
+      console.log("Delete purchase");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/ticket/" + id,
+        url: "http://principal-arena-219118.appspot.com/api/purchase/" + id,
         data: {
           id: id
         }
@@ -93,7 +84,6 @@ export default {
           function(response) {
             console.log("response");
             console.log(response);
-            this.getTickets();
           }.bind(this)
         )
         .catch(function(error) {
@@ -101,16 +91,16 @@ export default {
           console.log(error);
         });
     },
-    editTicketAction(id) {
+    editPurchaseAction(id) {
       //send to create view
-      this.$router.push({ name: "boletos-agregar", params: { idTicket: id } });
+      this.$router.push({ name: "boletos-detallesagregar", params: { idPurchase: id } });
     },
-    deleteTicketAction(id) {
-      this.deleteTicket(id);
+    deletePurchaseAction(id) {
+      this.deletePurchase(id);
     }
   },
   created: function() {
-    this.getTickets();
+    this.getPurchase(id);
   }
 };
 </script>

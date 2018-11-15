@@ -46,7 +46,7 @@
             <td>{{ ticket.tour_date }}</td>
             <td>{{ ticket.qr_code }}</td>
             <td>{{ ticket.total }}</td>
-             <td><button class="btn btn-info" type="button" @click="ticketAction(ticket.id)"><img src="@/static/eye.png"></button></td>
+             <td><button class="btn btn-info" type="button" @click="detailTicketAction(ticket.id)"><img src="@/static/eye.png"></button></td>
             <td><button class="btn btn-info" type="button" @click="editTicketAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-info" type="button" @click="deleteTicketAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
@@ -101,6 +101,9 @@ export default {
           console.log("error");
           console.log(error);
         });
+    },
+    detailTicketAction(id){
+      this.$router.push({ name: " boletos-detalle", params: { idTicket: id }});
     },
     editTicketAction(id) {
       //send to create view

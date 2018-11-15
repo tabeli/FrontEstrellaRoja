@@ -35,8 +35,7 @@
     components: {
       Sidebar,
       Agregar,
-      Header,
-      Footer
+      Header
     },
     created: function(){
       console.log("id of ticket")
