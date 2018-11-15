@@ -56,7 +56,7 @@ export default {
     async getPurchase(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/purchase/" + id,
+        url: "http://principal-arena-219118.appspot.com/api/purchase/" + this.idPurchase,
         headers: {
           "Content-Type": "application/json"
         }
@@ -71,13 +71,13 @@ export default {
           console.log(error);
         });
     },
-    async deletePurchase(id) {
+    async deletePurchase(idPurchase) {
       console.log("Delete purchase");
       await axios({
         method: "delete",
         url: "http://principal-arena-219118.appspot.com/api/purchase/" + id,
         data: {
-          id: id
+          idPurchase: id
         }
       })
         .then(
@@ -91,16 +91,16 @@ export default {
           console.log(error);
         });
     },
-    editPurchaseAction(id) {
+    editPurchaseAction(idPurchase) {
       //send to create view
       this.$router.push({ name: "boletos-detallesagregar", params: { idPurchase: id } });
     },
-    deletePurchaseAction(id) {
+    deletePurchaseAction(idPurchase) {
       this.deletePurchase(id);
     }
   },
   created: function() {
-    this.getPurchase(id);
+    this.getPurchase(idPurchase);
   }
 };
 </script>

@@ -11,7 +11,7 @@
               <Sidebar/>
           </div>
           <div class="col-sm-11">
-              <Agregar :idTicket="idTicket"/>
+              <Agregar :idPurchase="idPurchase"/>
           </div>
       </div>
 
@@ -29,7 +29,7 @@
   export default {
     data: function(){
       return {
-        idTicket: this.$route.params.idTicket
+        idPurchase: this.$route.params.idPurchase
       }
     },
     components: {
@@ -39,7 +39,7 @@
     },
     created: function(){
       console.log("id of ticket")
-      console.log(this.idTicket)
+      console.log(this.idPurchase)
     }
   }
   </script>
