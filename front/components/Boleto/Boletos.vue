@@ -46,17 +46,34 @@
             <td>{{ ticket.tour_date }}</td>
             <td>{{ ticket.qr_code }}</td>
             <td>{{ ticket.total }}</td>
-             <td><button v-b-modal.modal-center class="btn btn-info" type="button"><img src="@/static/file.png"></button>
+             <td><button v-b-modal.modal-center  class="btn btn-info" type="button"><img src="@/static/file.png"></button>
               <b-modal id="modal-center" title="Detalles" ok-only ok-variant="secondary" ok-title="Cerrar">
-                <p class="my-4">Muestra detalles</p>
+                <div class="modal-lg">
+                <div class="my-4">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Nombre</th> 
+                      <th scope="col">Apellido</th>
+                      <th scope="col">Correo</th>
+                      <th scope="col">Subtotal</th>
+                      <th scope="col">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody v-for="purchase in $store.state.purchases" :key="purchase.id" v-if="ticket.purchase_id == purchase.id">
+                      <tr v-for="user in $store.state.users" :key="user.id" v-if="purchase.user_id == user.id">
+                        <td>{{ purchase.id }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ purchase.sub_total }}</td>
+                        <td>{{ purchase.total }}</td>
+                      </tr>
+                  </tbody>
+                </div>
+                </div>
               </b-modal>
              </td>
- 
-             
-             
-
-             
-             
             <td><button class="btn btn-info" type="button" @click="editTicketAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-info" type="button" @click="deleteTicketAction(ticket.purchase_id)"><img src="@/static/basurero.png"></button></td>
           </tr>
@@ -83,6 +100,46 @@ export default {
             this.$store.commit({
               type: "storeTickets",
               tickets: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async getPurchases() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/purchase"
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.$store.commit({
+              type: "storePurchases",
+              purchases: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async getUsers() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/user"
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.$store.commit({
+              type: "storeUsers",
+              users: response.data
             });
           }.bind(this)
         )
@@ -123,6 +180,8 @@ export default {
   },
   created: function() {
     this.getTickets();
+    this.getPurchases();
+    this.getUsers();
   }
 };
 </script>
