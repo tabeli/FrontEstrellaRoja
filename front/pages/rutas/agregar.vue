@@ -1,21 +1,17 @@
 <template>
-
-    <div>
-
-      <div class="Header">
-        <Header/>
-      </div>
-
+    <div :style="{'background-image': `url(${require('@/static/back4.png')})`}">
       <div class ="row">
-          <div class="col-sm-1 mt-5">
+          <div class="col-sm-1">
               <Sidebar/>
           </div>
-          <div class="col-sm-11">
-              <Agregar :idTour="idTour"/>
+          <div class="col-11">
+            <Header/>
+            <br>
+            <Agregar :idTour="idTour"/>
           </div>
       </div>
     </div>
-  
+
   </template>
     
     <script>
