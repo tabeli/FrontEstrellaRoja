@@ -1,18 +1,18 @@
 <template>
-    <div>
-
+    <div :style="{'background-image': `url(${require('@/static/back4.png')})`}">
       <div class ="row">
-          <div class="col-sm-1 mt-5">
+          <div class="col-sm-1">
               <Sidebar/>
           </div>
-          <div class="col-sm-11">
-             <Header/>
-              <AgregarVinculo :idTour_stop="idTour_stop"/>
+          <div class="col-11">
+            <Header/>
+             <AgregarVinculo :idTour_stop="idTour_stop"/>
           </div>
       </div>
-
+      <div class="footer" :style="{'background-image': `url(${require('@/static/back4.png')})`}"></div>
     </div>
   </template>
+
 
   <script>
 import Sidebar from "@/components/Sidebar";

@@ -8,7 +8,7 @@
                     <label for="name" class="letrabonita">Nombre de la parada</label>
                 </center>
                 
-                <input type="text" class="form-control" id="name" placeholder="" v-model="stop.name">
+                <input type="text" class="form-control sombra" id="name" placeholder="" v-model="stop.name">
             </div>
         <!--Longitud-->
             <div class="form-group">
@@ -16,7 +16,7 @@
                     <label for="longitude" class="letrabonita">Longitud</label>
                 </center>
                 
-                <input type="text" class="form-control" id="longitude" placeholder="" v-model="stop.longitude">
+                <input type="text" class="form-control sombra" id="longitude" placeholder="" v-model="stop.longitude">
             </div>
         <!--Latitud-->
             <div class="form-group">
@@ -24,7 +24,7 @@
                     <label for="latitude" class="letrabonita">Latitud</label>
                 </center>
                 
-                <input type="text" class="form-control" id="latitude" placeholder="" v-model="stop.latitude">
+                <input type="text" class="form-control sombra" id="latitude" placeholder="" v-model="stop.latitude">
             </div>
         <!--Descripcion-->
             <div class="form-group">
@@ -32,18 +32,20 @@
                     <label for="description" class="letrabonita">Descripción</label>
                 </center>
                 
-                <input type="text" class="form-control" id="description" placeholder="" v-model="stop.description">
+                <input type="text" class="form-control sombra" id="description" placeholder="" v-model="stop.description">
             </div>
         </form>
+        <br>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
         <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="stopFunction()">
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="stopFunction()">
                 <div v-if="stop.id == undefined">Crea Parada</div>
                 <div v-else>Actualiza Parada</div>
             </button>
           </center>
+          <br><br><br><br><br>
     </div>   
 </template>
 
@@ -162,5 +164,8 @@ export default {
 .letrabonita {
   font-size: 22px;
   font: bold;
+}
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>
