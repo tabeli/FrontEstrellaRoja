@@ -2,7 +2,6 @@
     <div>
       <Header/>
       <Login/>
-      <Footer/>
     </div>
   </template>
   
