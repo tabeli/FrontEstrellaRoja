@@ -47,12 +47,14 @@ import axios from "axios";
 export default {
   methods: {
     getID(idP){
+        console.log("ya entró a getID()");
         this.getTickets();
-        var array = this.tickets;
-        console.log("this.tickets:" ,this.tickets);
+        var array = this.$store.state.tickets;
+        console.log("array: ",array);
         var returnable = [];
         console.log(array);
         array.forEach(function(ticket){
+            console.log("en el foreach de getID()");
             if(ticket.purchase_id == idP){
                 returnable.push(ticket.id);
                 console.log(ticket.id);
@@ -115,32 +117,37 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
-
     },
     async deletePurchase(id) {
       console.log("Delete purchase and all tickets associated");
-      listOfIDOfTickets = this.getID(id);
+      var listOfIDOfTickets = this.getID(id);
+      console.log("list of id of tickets: ",listOfIDOfTickets);
       listOfIDOfTickets.forEach(function(idT){
-          axios({
-            method: "delete",
-            url: "http://principal-arena-219118.appspot.com/api/purchase/" + idT,
-            data: {
-            idT: id
-            }
-          })
-          .then(
-            function(response) {
+        console.log("vamos a eliminar el ticket cuyo id de compra es: ", idT);
+        deleteTicket(idT);
+      });
+      /*
+
+        await axios({
+        method: "delete",
+        url: "http://principal-arena-219118.appspot.com/api/ticket/" + id,
+        data: {
+          id: id
+        }
+        })
+        .then(
+          function(response) {
             console.log("response");
             console.log(response);
-            this.getUsers();
-            this.getPurchases();
-            }.bind(this)
-          )
-          .catch(function(error) {
-            console.log("error");
-            console.log(error);
-          });
-      });
+            this.getTickets();
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+
+      */
     },
     async deleteTicket(id) {
       console.log("Delete ticket");
