@@ -1,26 +1,18 @@
 <template>
-  <div>
-    <div class="row">
-    <!--Sidebar-->
-      <div class="col-sm-1">
-        <Sidebar/>
+    <div :style="{'background-image': `url(${require('@/static/back4.png')})`}">
+      <div class ="row">
+          <div class="col-sm-1">
+              <Sidebar/>
+          </div>
+          <div class="col-11">
+            <Header/>
+            <Editar/>
+          </div>
       </div>
-
-  <!--Header-->
-    <div class="col-sm-11">
-      <Header/>
+      <div class="footer" :style="{'background-image': `url(${require('@/static/back4.png')})`}"></div>
     </div>
-
-  <!--Editar.vue-->
-    <div class="container mt-5">
-      <Editar/>
-    </div>
-
-    </div>
-
-  </div>
-    
-</template>
+  </template>
+  
 
 <script>
 

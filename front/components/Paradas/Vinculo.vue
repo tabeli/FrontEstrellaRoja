@@ -6,21 +6,21 @@
     <!--Buscador-->
     <div class="col">
       <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
-        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
+        <input class="form-control mr-sm-2 sombra" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
+        <button class="btn btn-light my-2 my-sm-0 sombra" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
     </div>
     <!--Agregar-->
       <div class = "col text-right">
         <nuxt-link :to="{ name: 'paradas-agregarvinculo' }" replace>
-        <button type="button" class="btn btn-info text-right">Agregar</button>
+        <button type="button" class="btn btn-success text-right shadow">Agregar</button>
         </nuxt-link> 
       </div>
     </div>
     <!--Tabla-->
     <table class="table mt-3">
       <thead class="bg-success">
-        <tr>
+        <tr class="sombra">
           <th scope="col">ID del tour</th>
           <th scope="col">Nombre del Tour</th>
           <th scope="col">ID de la Parada</th>
@@ -29,14 +29,14 @@
           <th scope="col">Borrar</th>
         </tr>
       </thead>
-        <tbody v-for="tour_stop in this.$store.state.tour_stops" :key='tour_stop.id'>
-          <tr>
+        <tbody class="sombra text-align">
+          <tr  v-for="tour_stop in this.$store.state.tour_stops" :key='tour_stop.id' >
             <td v-for="tour in $store.state.tours" :key="tour.id" v-if="tour_stop.tour_id == tour.id">{{ tour.id }}</td>
             <td v-for="tour in $store.state.tours" :key="tour.id" v-if="tour_stop.tour_id == tour.id">{{ tour.name }}</td>
             <td v-for="stop in $store.state.stops" :key="stop.id" v-if="tour_stop.stop_id == stop.id">{{ stop.id }}</td>
             <td v-for="stop in $store.state.stops" :key="stop.id" v-if="tour_stop.stop_id == stop.id">{{ stop.name }}</td>
-            <td><button class="btn btn-info" type="button" @click="editTour_stopAction(tour_stop.id)"><img src="@/static/pencil.png"></button></td>
-            <td><button class="btn btn-info" type="button" @click="deleteTour_stopAction(tour_stop.id)"><img src="@/static/basurero.png"></button></td>
+            <td><button class="btn btn-outline-info" type="button" @click="editTour_stopAction(tour_stop.id)"><img src="@/static/pencil.png"></button></td>
+            <td><button class="btn btn-outline-danger" type="button" @click="deleteTour_stopAction(tour_stop.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -150,4 +150,10 @@ export default {
 </script>
   
   <style>
+  .bg-success {
+  color: #ffffff;
+}
+  .sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
+}
 </style>

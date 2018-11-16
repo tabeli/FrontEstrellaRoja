@@ -10,14 +10,14 @@
                 <label for="stopSelect" class="letrabonita">Visualiza el ID de la Parada deseada</label>
               </center>
               
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="stop in this.$store.state.stops" :key='stop.id' >{{stop.name}} -->  ID:{{stop.id}}</option>
               </select>
               <br>
               <center>
                  <label for="option">No la encuentras ? Puedes crear una nueva</label>
                  <nuxt-link :to="{ name: 'paradas-agregar' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
+                <button type="button" class="btn btn-info text-right shadow">Agregar</button>
                 <br>
                 </nuxt-link> 
               </center>
@@ -26,7 +26,7 @@
               <center>
                 <label for="tour" class="letrabonita">Escoge el ID de la Parada</label>
               </center>
-                <select class="form-control" name="tour_id" id="tour_id" v-model="tour_stop.stop_id">
+                <select class="form-control sombra" name="tour_id" id="tour_id" v-model="tour_stop.stop_id">
                     <option v-for="stop in this.$store.state.stops" :key='stop.id' >{{stop.id}}</option>
                 </select>
             </div>
@@ -36,14 +36,14 @@
                 <label for="tourSelect" class="letrabonita">Visualiza el ID del tour deseado</label>
               </center>
               
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.name}} -->  ID:{{tour.id}}</option>
               </select>
               <br>
               <center>
                  <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
                  <nuxt-link :to="{ name: 'rutas-agregar' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
+                <button type="button" class="btn btn-info text-right shadow">Agregar</button>
                 <br>
                 </nuxt-link> 
               </center>
@@ -52,7 +52,7 @@
               <center>
                 <label for="tour" class="letrabonita">Escoge el ID del Tour</label>
               </center>
-                <select class="form-control" name="tour_id" id="tour_id" v-model="tour_stop.tour_id">
+                <select class="form-control sombra" name="tour_id" id="tour_id" v-model="tour_stop.tour_id">
                     <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.id}}</option>
                 </select>
             </div>
@@ -61,11 +61,12 @@
 
     <!--Boton Agregar-->
        <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="tour_stopFunction()">
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="tour_stopFunction()">
                 <div v-if="tour_stop.id == undefined">Crea Vínculo</div>
                 <div v-else>Actualiza Vínculo</div>
             </button>
         </center>
+        <br>
     </div>   
 </template>
 
@@ -213,6 +214,9 @@ export default {
 </script>
 
 <style>
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
+}
 .container {
   margin-left: 160px;
   margin-right: 0px; /* Same as the width of the sidenav */
