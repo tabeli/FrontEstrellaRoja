@@ -6,7 +6,7 @@
           </div>
           <div class="col-11">
             <Header/>
-            <TipoBoletos/>
+            <Compras/>
           </div>
       </div>
     </div>
@@ -14,13 +14,13 @@
   
   <script>
     import Sidebar from '@/components/Sidebar'
-    import TipoBoletos from '@/components/Boleto/TipoBoletos'
+    import Compras from '@/components/Compra/Compras'
     import Header from '@/components/Header'
   
     export default {
       components: {
         Sidebar,
-        TipoBoletos,
+        Compras,
         Header,
       }
     }

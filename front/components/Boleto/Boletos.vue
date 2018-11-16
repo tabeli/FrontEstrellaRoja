@@ -30,6 +30,7 @@
           <th scope="col">ID</th>
           <th scope="col">Nombre del cliente</th>
           <th scope="col">Apellido del cliente</th>
+          <th scope="col">Género</th>
           <th scope="col">Fecha del tour</th>
           <th scope="col">Codigo QR</th>
           <th scope="col">Total</th>
@@ -43,6 +44,7 @@
             <th>{{ ticket.id }}</th>
             <th>{{ ticket.client_name }}</th>
             <td>{{ ticket.client_last_name }}</td>
+            <td>{{ ticket.client_genre }}</td>
             <td>{{ ticket.tour_date }}</td>
             <td>{{ ticket.qr_code }}</td>
             <td>{{ ticket.total }}</td>

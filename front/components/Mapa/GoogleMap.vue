@@ -13,8 +13,11 @@
       </select>
     </div>
 
-    <div class="col-sm"></div>
-    <div class="col-sm"></div>
+    <div class = "col text-center">
+        <nuxt-link :to="{ name: 'mapa-ruta'}" replace>     
+        <button type="button" class="btn btn-warning">Puntos en el Tour</button>
+        </nuxt-link> 
+      </div>
   </div>
 </div>
 

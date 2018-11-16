@@ -1,38 +1,38 @@
 <template>
-    <div>
+   <div>
+
 
       <div class ="row">
           <div class="col-sm-1 mt-5">
               <Sidebar/>
           </div>
           <div class="col-sm-11">
-            <Header/>
-              <TipoLugarAgregar :idPlace_type="idPlace_type"/>
+             <Header/>
+              <Agregar :idTour_place="idTour_place"/>
           </div>
       </div>
-
 
     </div>
   </template>
 <script>
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
-import TipoLugarAgregar from "@/components/Lugares/TipoLugarAgregar";
+import Agregar from "@/components/Mapa/Agregar";
 
 export default {
   data: function() {
     return {
-      idPlace_type: this.$route.params.idPlace_type
+      idTour_place: this.$route.params.idTour_place
     };
   },
   components: {
     Sidebar,
     Header,
-    TipoLugarAgregar
+    Agregar
   },
   created: function() {
-    console.log("id of place type");
-    console.log(this.idPlace_type);
+    console.log("id of tour place");
+    console.log(this.idTour_place);
   }
 };
 </script>
