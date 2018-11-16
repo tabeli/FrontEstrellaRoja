@@ -12,7 +12,7 @@
           <button class="btn btn-light my-2 my-sm-0 sombra" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
         </form>
       </div>
-
+<!--Agregar-->
       <div class="derecha">
         <nuxt-link :to="{ name: 'usuarios-create' }" replace>
           <button class="btn btn-success shadow" type="button">Añadir usuario</button>
@@ -21,6 +21,7 @@
       </div>
     </div>
     <div>
+      <!--Tabla-->
     <table class="table mt-3 col-11">
       <thead class="bg-success">
         <tr  class="sombra">

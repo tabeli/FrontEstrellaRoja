@@ -75,7 +75,7 @@
             </div>
           
           <center>
-            <button type="submit" class="btn btn-danger sombra" @click.stop.prevent="userFunction()">
+            <button type="submit" class="btn btn-success sombra" @click.stop.prevent="userFunction()">
                 <div v-if="user.id == undefined">Crea Usuario</div>
                 <div v-else>Actualiza Usuario</div>
             </button>

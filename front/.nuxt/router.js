@@ -110,7 +110,7 @@ export function createRouter () {
     routes: [
 		{
 			path: "/usuarios",
-			component: _a56e2aa0,
+			component: _120f150e,
 			name: "usuarios"
 		},
 		{
@@ -120,122 +120,137 @@ export function createRouter () {
 		},
 		{
 			path: "/mural",
-			component: _693e3d00,
+			component: _252b2821,
 			name: "mural"
 		},
 		{
-			path: "/fecha",
-			component: _0eded588,
-			name: "fecha"
-		},
-		{
-			path: "/lugares",
-			component: _09cdc0b0,
-			name: "lugares"
-		},
-		{
-			path: "/compra",
-			component: _08831de9,
-			name: "compra"
-		},
-		{
-			path: "/imagen",
-			component: _5e6306c4,
-			name: "imagen"
-		},
-		{
-			path: "/rutas",
-			component: _7bf0e50e,
-			name: "rutas"
-		},
-		{
-			path: "/boletos",
-			component: _047c0646,
-			name: "boletos"
-		},
-		{
-			path: "/narrativa",
-			component: _63b10539,
-			name: "narrativa"
-		},
-		{
-			path: "/Login",
-			component: _129abe54,
-			name: "Login"
-		},
-		{
-			path: "/mapa",
-			component: _762a0630,
-			name: "mapa"
-		},
-		{
-			path: "/itinerario",
-			component: _b835c882,
-			name: "itinerario"
-		},
-		{
-			path: "/precio",
-			component: _3e2af5b1,
-			name: "precio"
-		},
-		{
-			path: "/paradas",
-			component: _50d7e281,
-			name: "paradas"
-		},
-		{
 			path: "/horario",
-			component: _16a7cfad,
+			component: _5ceb9ed8,
 			name: "horario"
 		},
 		{
+			path: "/itinerario",
+			component: _f33ed56c,
+			name: "itinerario"
+		},
+		{
+			path: "/lugares",
+			component: _7b42dff9,
+			name: "lugares"
+		},
+		{
+			path: "/precio",
+			component: _3819db98,
+			name: "precio"
+		},
+		{
+			path: "/boletos",
+			component: _6494ad38,
+			name: "boletos"
+		},
+		{
+			path: "/rutas",
+			component: _f2c8d35a,
+			name: "rutas"
+		},
+		{
+			path: "/fecha",
+			component: _516bb519,
+			name: "fecha"
+		},
+		{
+			path: "/Login",
+			component: _75a63466,
+			name: "Login"
+		},
+		{
+			path: "/narrativa",
+			component: _23279d88,
+			name: "narrativa"
+		},
+		{
+			path: "/imagen",
+			component: _0c319b6a,
+			name: "imagen"
+		},
+		{
+			path: "/paradas",
+			component: _45470f80,
+			name: "paradas"
+		},
+		{
+			path: "/camiones",
+			component: _40a01ef7,
+			name: "camiones"
+		},
+		{
+			path: "/mapa",
+			component: _9de1a80e,
+			name: "mapa"
+		},
+		{
 			path: "/narrativa/agregar",
-			component: _55003cf4,
+			component: _dc9cbbd6,
 			name: "narrativa-agregar"
 		},
 		{
-			path: "/boletos/tipoboletoeditar",
-			component: _bdedac16,
-			name: "boletos-tipoboletoeditar"
-		},
-		{
-			path: "/rutas/agregar",
-			component: _4571bfca,
-			name: "rutas-agregar"
-		},
-		{
 			path: "/boletos/agregar",
-			component: _2f31802a,
+			component: _5e27b21e,
 			name: "boletos-agregar"
 		},
 		{
+			path: "/mural/agregar",
+			component: _20fcea6e,
+			name: "mural-agregar"
+		},
+		{
+			path: "/lugares/agregar",
+			component: _50060c46,
+			name: "lugares-agregar"
+		},
+		{
 			path: "/usuarios/create",
-			component: _2388b60e,
+			component: _0fca8465,
 			name: "usuarios-create"
 		},
 		{
+			path: "/paradas/agregar",
+			component: _dbcaa266,
+			name: "paradas-agregar"
+		},
+		{
+			path: "/lugares/tipolugaragregar",
+			component: _5946c8ad,
+			name: "lugares-tipolugaragregar"
+		},
+		{
 			path: "/mural/editar",
-			component: _022aa07d,
+			component: _3cada408,
 			name: "mural-editar"
 		},
 		{
-			path: "/precio/agregar",
-			component: _0d80d804,
-			name: "precio-agregar"
+			path: "/camiones/Agregar",
+			component: _d30da8b8,
+			name: "camiones-Agregar"
 		},
 		{
-			path: "/rutas/editar",
-			component: _639b0eaf,
-			name: "rutas-editar"
+			path: "/paradas/vinculo",
+			component: _f0632a04,
+			name: "paradas-vinculo"
 		},
 		{
-			path: "/boletos/tipoboleto",
-			component: _d7bb3d8c,
-			name: "boletos-tipoboleto"
+			path: "/boletos/tipoboletoeditar",
+			component: _55ff99e4,
+			name: "boletos-tipoboletoeditar"
+		},
+		{
+			path: "/horario/agregar",
+			component: _31bba221,
+			name: "horario-agregar"
 		},
 		{
 			path: "/itinerario/agregarvinculo",
-			component: _f5dc4798,
+			component: _d16221ee,
 			name: "itinerario-agregarvinculo"
 		},
 		{
@@ -250,82 +265,77 @@ export function createRouter () {
 		},
 		{
 			path: "/precio/editar",
-			component: _2eb9db28,
+			component: _2c90e965,
 			name: "precio-editar"
 		},
 		{
-			path: "/boletos/detalle",
-			component: _ae43b37c,
-			name: "boletos-detalle"
-		},
-		{
-			path: "/camiones/Editar",
-			component: _1dbd42eb,
-			name: "camiones-Editar"
-		},
-		{
-			path: "/paradas/vinculo",
-			component: _0a1848ff,
-			name: "paradas-vinculo"
-		},
-		{
-			path: "/mural/agregar",
-			component: _10a9c80d,
-			name: "mural-agregar"
-		},
-		{
-			path: "/mapa/ruta",
-			component: _c9d943fc,
-			name: "mapa-ruta"
-		},
-		{
-			path: "/horario/agregar",
-			component: _b424420c,
-			name: "horario-agregar"
-		},
-		{
-			path: "/paradas/agregar",
-			component: _14648cce,
-			name: "paradas-agregar"
+			path: "/precio/agregar",
+			component: _330c9c25,
+			name: "precio-agregar"
 		},
 		{
 			path: "/boletos/detalleagregar",
-			component: _07126f8d,
+			component: _b98a2a34,
 			name: "boletos-detalleagregar"
 		},
 		{
 			path: "/fecha/agregar",
-			component: _6c7ada15,
+			component: _3f4e1966,
 			name: "fecha-agregar"
 		},
 		{
-			path: "/mapa/agregar",
-			component: _2dbc80bd,
-			name: "mapa-agregar"
+			path: "/rutas/editar",
+			component: _a372f3ec,
+			name: "rutas-editar"
+		},
+		{
+			path: "/boletos/detalle",
+			component: _4a98cd09,
+			name: "boletos-detalle"
+		},
+		{
+			path: "/boletos/tipoboleto",
+			component: _2bf87113,
+			name: "boletos-tipoboleto"
+		},
+		{
+			path: "/camiones/Editar",
+			component: _a8b623f4,
+			name: "camiones-Editar"
 		},
 		{
 			path: "/lugares/tipolugar",
-			component: _7642bd5e,
+			component: _c2c45dbc,
 			name: "lugares-tipolugar"
 		},
 		{
-			path: "/camiones/Agregar",
-			component: _676b735f,
-			name: "camiones-Agregar"
+			path: "/imagen/agregar",
+			component: _9241dbd0,
+			name: "imagen-agregar"
+		},
+		{
+			path: "/itinerario/vinculo",
+			component: _003f6d88,
+			name: "itinerario-vinculo"
 		},
 		{
 			path: "/paradas/editar",
-			component: _2b93bf9c,
+			component: _2fa1e1bd,
 			name: "paradas-editar"
 		},
 		{
-			path: "/lugares/tipolugaragregar",
-			component: _9c5994c4,
-			name: "lugares-tipolugaragregar"
+			path: "/paradas/agregarvinculo",
+			component: _7f2400d3,
+			name: "paradas-agregarvinculo"
+		},
+		{
+			path: "/rutas/agregar",
+			component: _2fead7c0,
+			name: "rutas-agregar"
 		},
 		{
 			path: "/itinerario/agregar",
-			component: _4def22e8,
+			component: _0a8bb157,
 			name: "itinerario-agregar"
 		},
 		{
@@ -340,7 +350,7 @@ export function createRouter () {
 		},
 		{
 			path: "/",
-			component: _236ae59a,
+			component: _5a8dba1e,
 			name: "index"
 		}
     ],
