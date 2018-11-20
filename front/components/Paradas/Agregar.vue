@@ -34,6 +34,14 @@
                 
                 <input type="text" class="form-control sombra" id="description" placeholder="" v-model="stop.description">
             </div>
+        <!--Imagen-->
+            <div class="form-group">
+                <center>
+                    <label for="image" class="letrabonita">Imágen</label>
+                </center>
+                
+                <input type="text" class="form-control sombra" id="image" placeholder="" v-model="stop.image_path">
+            </div>
         </form>
         <br>
     <!--Termina la form-->
@@ -80,7 +88,8 @@ export default {
           name: this.stop.name,
           longitude: this.stop.longitude,
           latitude: this.stop.latitude,
-          description: this.stop.description
+          description: this.stop.description,
+          image_path: this.stop.image_path
         }
       })
         .then(
@@ -106,12 +115,13 @@ export default {
           name: this.stop.name,
           longitude: this.stop.longitude,
           latitude: this.stop.latitude,
-          description: this.stop.description
+          description: this.stop.description,
+          image_path: this.stop.image_path
         }
       })
         .then(
           function(response) {
-            this.$router.push({ name: "boletos" });
+            this.$router.push({ name: "paradas" });
             //alert("http://principal-arena-219118.appspot.com/api/stop/" + this.idStop)
             console.log("response");
             console.log(response);

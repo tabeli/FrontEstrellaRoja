@@ -38,9 +38,10 @@
         <tr class="sombra">
           <th scope="col">Id</th>
           <th scope="col">Nombre</th>
-           <th scope="col">Longitud</th>
+          <th scope="col">Longitud</th>
           <th scope="col">Latitud</th>
           <th scope="col">Descripcion</th>
+          <th scope="coll">Imágen</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
         </tr>
@@ -52,6 +53,7 @@
             <td>{{ stop.longitude }}</td>
             <td>{{ stop.latitude }}</td>
             <td>{{ stop.description }}</td>
+            <td>{{ stop.image_path }}</td>
             <td><button class="btn btn-outline-info" type="button" @click="editStopAction(stop.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-outline-danger" type="button" @click="deleteStopAction(stop.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
