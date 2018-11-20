@@ -1,13 +1,15 @@
 <template>
     <div class="container">
+      
     <!--Empieza la form-->
         <form>
+          <br>
         <!--Tour-->
             <div class="form-group ">
               <center>
                 <label for="tour" class="letrabonita" >Visualiza el ID del Tour deseado</label>
               </center>
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="tour in this.$store.state.tours" :key='tour.id' >Nombre: {{tour.name}}-->  ID:{{tour.id}}</option>
               </select>
             </div>
@@ -15,7 +17,7 @@
               <center>
                 <label for="tour" class="letrabonita">Escoge el ID del Tour deseado</label>
               </center>
-                <select class="form-control" id="tour" v-model="tour_place.tour_id">
+                <select class="form-control sombra" id="tour" v-model="tour_place.tour_id">
                     <option v-for="tour in this.$store.state.tours"  :key='tour.id' >{{tour.id}}</option>
                 </select>
             </div>
@@ -25,7 +27,7 @@
                 <label for="place" class="letrabonita">Visualiza el ID del Lugar deseado</label>
               </center>
               
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="place in this.$store.state.places" :key='place.id' >Nombre: {{place.name}}  -->  ID:{{place.id}}</option>
               </select>
             </div>
@@ -33,7 +35,7 @@
               <center>
                 <label for="place" class="letrabonita">Escoge el ID del Lugar deseado</label>
               </center>
-                <select class="form-control" name="place" id="place" v-model="tour_place.place_id">
+                <select class="form-control sombra" name="place" id="place" v-model="tour_place.place_id">
                     <option v-for="place in this.$store.state.places" :key='place.id' >{{place.id}}</option>
                 </select>
             </div>
@@ -46,12 +48,12 @@
     <!--Boton Agregar-->
         <br/>
         <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="tour_placeFunction()">
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="tour_placeFunction()">
                 <div v-if="tour_place.id == undefined">Crea Vínculo</div>
                 <div v-else>Actualiza Vínculo</div>
             </button>
         </center>
-        <br> 
+        <br><br> <br><br> <br>
     </div>  
     
 </template>
@@ -207,6 +209,9 @@ export default {
 .letrabonita {
   font-size: 22px;
   font: bold;
+}
+  .sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>
 
