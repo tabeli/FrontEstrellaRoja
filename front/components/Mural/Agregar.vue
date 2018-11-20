@@ -36,6 +36,14 @@
               <b-form-textarea class="sombra"  v-model="mural.description"  placeholder="" :rows="7.5" >
               </b-form-textarea>
             </div>
+          <!--Imagen-->
+             <div class="form-group col-md-12">
+              <center>
+                <label for="image" class="letrabonita">Imágen</label>
+              </center>
+              
+              <input type="text" class="form-control" id="image" placeholder="" v-model="mural.image_path">
+            </div>
         </form>
     <!--Termina la form-->
 
@@ -81,7 +89,8 @@ export default {
           title: this.mural.title,
           author_name: this.mural.author_name,
           author_last_name: this.mural.author_last_name,
-          description: this.mural.description
+          description: this.mural.description,
+          image_path: this.mural.image_path
         }
       })
         .then(
@@ -107,7 +116,8 @@ export default {
           title: this.mural.title,
           author_name: this.mural.author_name,
           author_last_name: this.mural.author_last_name,
-          description: this.mural.description
+          description: this.mural.description,
+          image_path: this.mural.image_path
         }
       })
         .then(

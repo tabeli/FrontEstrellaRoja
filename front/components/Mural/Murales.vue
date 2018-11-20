@@ -25,6 +25,7 @@
           <th scope="col">Nombre del autor</th>
           <th scope="col">Apellido del autor</th>
           <th scope="col">Descripción</th>
+          <th scope="col">Imágen</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
         </tr>
@@ -35,6 +36,7 @@
             <td>{{ mural.author_name }}</td>
             <td>{{ mural.author_last_name }}</td>
             <td>{{ mural.description }}</td>
+            <td>{{ mural.image_path }}</td>
             <td><button class="btn btn-outline-info" type="button" @click="editMuralAction(mural.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-outline-danger" type="button" @click="deleteMuralAction(mural.id)"><img src="@/static/basurero.png"></button></td>
           </tr>

@@ -121,30 +121,33 @@ export default {
       console.log("Delete purchase and all tickets associated");
       listOfIDOfTickets = this.getID(id);
       listOfIDOfTickets.forEach(function(idT){
-          axios({
-            method: "delete",
-            url: "http://principal-arena-219118.appspot.com/api/purchase/" + idT,
-            data: {
-            idT: id
-            }
-          })
-          .then(
-            function(response) {
+        console.log("vamos a eliminar el ticket cuyo id de compra es: ", idT);
+        this.deleteTicket(idT);
+      }).then(
+        await axios({
+        method: "delete",
+        url: "http://principal-arena-219118.appspot.com/api/ticket/" + id,
+        data: {
+          id: id
+        }
+        })
+        .then(
+          function(response) {
             console.log("response");
             console.log(response);
-            this.getUsers();
-            this.getPurchases();
-            }.bind(this)
-          )
-          .catch(function(error) {
-            console.log("error");
-            console.log(error);
-          });
-      });
+            this.getTickets();
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        })
+
+      ).bind(this);
     },
     async deleteTicket(id) {
       console.log("Delete ticket");
-      await axios({
+        await axios({
         method: "delete",
         url: "http://principal-arena-219118.appspot.com/api/ticket/" + id,
         data: {
