@@ -43,7 +43,7 @@
                     this.$router.push({ name: "mapa"});
                 }.bind(this))
                 .catch(function (error) {
-                    alertService.error("Verifique su email o contraseña - " + error.message)
+                    alertService.error("Verifique su email o contraseña")
                     console.log(error);
                 });
                 /*
