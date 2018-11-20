@@ -24,7 +24,7 @@
                 <div v-for="schedule in $store.state.schedules" :key='schedule.id' v-if="tour_schedule.schedule_id == schedule.id">
                   <div v-for="date_interval in $store.state.date_intervals" :key="date_interval.id" v-if="schedule.date_interval_id == date_interval.id">
                     <div v-for="hour_interval in $store.state.hour_intervals" :key="hour_interval.id" v-if="schedule.hour_interval_id == hour_interval.id"> 
-                      <select class="form-control" >
+                      <select class="form-control sombra" >
                         <option>Horario: {{hour_interval.start_time}} a {{hour_interval.end_time}} Fecha: {{date_interval.start_date}} a {{date_interval.end_date}} ---> ID: {{schedule.id}}</option>
                       </select>
                     </div>
@@ -36,7 +36,7 @@
               <center>
                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
                 <nuxt-link :to="{ name: 'itinerario-agregar' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
+                <button type="button" class="btn btn-info text-right shadow">Agregar</button>
                 <br>
                 </nuxt-link> 
               </center>
@@ -46,7 +46,7 @@
                 <label for="ticket_type" class="letrabonita">Escoge el ID del tipo de Ticket</label>
               </center>
                 
-                <select class="form-control" id="mural" v-model="tour_schedule.schedule_id">
+                <select class="form-control sombra" id="mural" v-model="tour_schedule.schedule_id">
                     <option v-for="schedule in this.$store.state.schedules"  :key='schedule.id' >{{schedule.id}}</option>
                 </select>
             </div>
@@ -56,14 +56,14 @@
                 <label for="tourSelect" class="letrabonita">Visualiza el ID del tour deseado</label>
               </center>
               
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.name}} -->  ID:{{tour.id}}</option>
               </select>
               <br>
               <center>
                  <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
                  <nuxt-link :to="{ name: 'rutas-agregar' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
+                <button type="button" class="btn btn-info text-right shadow">Agregar</button>
                 <br>
                 </nuxt-link> 
               </center>
@@ -72,7 +72,7 @@
               <center>
                 <label for="tour" class="letrabonita">Escoge el ID del Tour</label>
               </center>
-                <select class="form-control" name="tour_id" id="tour_id" v-model="tour_schedule.tour_id">
+                <select class="form-control sombra" name="tour_id" id="tour_id" v-model="tour_schedule.tour_id">
                     <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.id}}</option>
                 </select>
             </div>
@@ -81,11 +81,12 @@
 
     <!--Boton Agregar-->
        <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="tour_scheduleFunction()">
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="tour_scheduleFunction()">
                 <div v-if="tour_schedule.id == undefined">Crea Vínculo</div>
                 <div v-else>Actualiza Vínculo</div>
             </button>
         </center>
+        <br>
     </div>   
 </template>
 
@@ -273,6 +274,9 @@ export default {
 </script>
 
 <style>
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
+}
 .container {
   margin-left: 160px;
   margin-right: 0px; /* Same as the width of the sidenav */

@@ -7,15 +7,15 @@
     <!--Buscador-->
     <div class="col">
       <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
-        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
+        <input class="form-control mr-sm-2 sombra" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
+        <button class="btn btn-light my-2 my-sm-0 sombra" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
     </div>
     </div>
     <!--Tabla-->
     <table class="table mt-3">
       <thead class="bg-success">
-        <tr>
+        <tr class="sombra">
           <th scope="col">Id</th>
           <th scope="col">Nombre</th>
           <th scope="col">Apellido</th>
@@ -25,7 +25,7 @@
           <th scope="col">Borrar</th>
         </tr>
       </thead>
-        <tbody>
+        <tbody class="sombra">
           <tr v-for="purchase in this.$store.state.purchases" :key='purchase.id'>
             <td>{{ purchase.id }}</td>
             <td v-for="user in $store.state.users" :key='user.id' v-if="purchase.user_id == user.id">{{ user.name }}</td>
@@ -33,7 +33,7 @@
             <td v-for="user in $store.state.users" :key='user.id' v-if="purchase.user_id == user.id">{{ user.email }}</td>
             <td>{{ purchase.sub_total }}</td>
             <td>{{ purchase.total}}</td>
-            <td><button class="btn btn-info" type="button" @click="deletePurchaseAction(purchase.id)"><img src="@/static/basurero.png"></button></td>
+            <td><button class="btn btn-outline-danger" type="button" @click="deletePurchaseAction(purchase.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -47,14 +47,12 @@ import axios from "axios";
 export default {
   methods: {
     getID(idP){
-        console.log("ya entró a getID()");
         this.getTickets();
-        var array = this.$store.state.tickets;
-        console.log("array: ",array);
+        var array = this.tickets;
+        console.log("this.tickets:" ,this.tickets);
         var returnable = [];
         console.log(array);
         array.forEach(function(ticket){
-            console.log("en el foreach de getID()");
             if(ticket.purchase_id == idP){
                 returnable.push(ticket.id);
                 console.log(ticket.id);
@@ -117,11 +115,11 @@ export default {
         .catch(function(error) {
           console.log(error);
         });
+
     },
     async deletePurchase(id) {
       console.log("Delete purchase and all tickets associated");
-      var listOfIDOfTickets = this.getID(id);
-      console.log("list of id of tickets: ",listOfIDOfTickets);
+      listOfIDOfTickets = this.getID(id);
       listOfIDOfTickets.forEach(function(idT){
         console.log("vamos a eliminar el ticket cuyo id de compra es: ", idT);
         this.deleteTicket(idT);
@@ -193,5 +191,8 @@ export default {
 }
 .bg-success {
   color: #ffffff;
+}
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>

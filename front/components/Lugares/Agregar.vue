@@ -85,8 +85,10 @@
                 <center>
                     <label for="description" class="letrabonita">Descripción</label>
                 </center>
+
+                <b-form-textarea class="sombra" v-model="place.description" placeholder="" :rows="7.5">
+              </b-form-textarea>
                 
-                <input type="text" class="form-control sombra" id="description" v-model="place.description">
             </div>
         </form>
     <!--Termina la form-->

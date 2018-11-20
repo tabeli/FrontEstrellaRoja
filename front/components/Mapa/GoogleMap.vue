@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <br>
     <div class="form-group mr-sm-2">
 
  <!--cambiar ruta-->     
@@ -7,7 +8,7 @@
   <div class="row">
     <div class="col-sm">
       <label for="exampleFormControlSelect1">Seleccione uno de los tours</label>
-      <select class="form-control shadow-sm p-3 mb-5 bg-white rounded" id="exampleFormControlSelect1">
+      <select class="form-control p-3 mb-5 bg-white rounded sombra" id="exampleFormControlSelect1">
         <option>Puebla fascinante</option>
         <option>Cholula</option>
       </select>
@@ -15,7 +16,7 @@
 
     <div class = "col text-center">
         <nuxt-link :to="{ name: 'mapa-ruta'}" replace>     
-        <button type="button" class="btn btn-warning">Puntos en el Tour</button>
+        <button type="button" class="btn btn-success shadow">Puntos en el Tour</button>
         </nuxt-link> 
       </div>
   </div>
@@ -301,3 +302,13 @@ export default {
   }
 };
 </script>
+<style>
+
+.letrabonita {
+  font-size: 22px;
+  font: bold;
+}
+  .sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
+}
+</style>
