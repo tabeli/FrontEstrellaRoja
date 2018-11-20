@@ -28,7 +28,8 @@
     <gmap-map
       :center="center"
       :zoom="15"
-      style="width:100%;  height: 800px;"
+      style="width:95%;  height: 800px;"
+      class="shadow text-align"
     >
       <gmap-marker
         :key="index"
