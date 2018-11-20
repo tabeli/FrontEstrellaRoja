@@ -27,7 +27,7 @@
     <br>
     <gmap-map
       :center="center"
-      :zoom="12"
+      :zoom="15"
       style="width:100%;  height: 800px;"
     >
       <gmap-marker
@@ -39,7 +39,7 @@
       <gmap-polyline v-bind:path.sync="path"  v-bind:options="{ strokeColor:'#EA1B75'}">
          </gmap-polyline>
     </gmap-map>
-     <br>
+         <br>
   </div>
  
 </template>
@@ -49,7 +49,7 @@ export default {
   name: "GoogleMap",
   data() {
     return {
-      center: { lat: 19.04334, lng: -98.20193 },
+      center: { lat: 19.048169, lng: -98.188524 },
       path: [
         { lat: 19.0380368, lng: -98.1919112 },
         //puntos
