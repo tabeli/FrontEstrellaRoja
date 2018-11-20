@@ -3,12 +3,13 @@
     <!--Empieza la form-->
         <form>
         <!--Path-->
+        <br>
             <div class="form-group col-md-12">
               <center>
                 <label for="title" class="letrabonita">Path de la Imagen</label>
               </center>
               
-              <input type="text" class="form-control" id="title" placeholder="" v-model="image.image_path">
+              <input type="text" class="form-control sombra" id="title" placeholder="" v-model="image.image_path">
             </div>
         
         <!--Descripcion-->
@@ -17,18 +18,20 @@
                 <label for="description" class="letrabonita">Descripción</label>
               </center>
               
-              <input type="text" class="form-control" id="description" placeholder="" v-model="image.description">
+              <input type="text" class="form-control sombra" id="description" placeholder="" v-model="image.description">
             </div>
+            <br>
         </form>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
         <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="imageFunction()">
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="imageFunction()">
                 <div v-if="image.id == undefined">Crea Imagen</div>
                 <div v-else>Actualiza Imagen</div>
             </button>
         </center>
+        <br><br><br><br><br><br><br><br><br><br><br>
     </div>   
 </template>
 
@@ -143,6 +146,9 @@ export default {
 .letrabonita {
   font-size: 22px;
   font: bold;
+}
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>
 

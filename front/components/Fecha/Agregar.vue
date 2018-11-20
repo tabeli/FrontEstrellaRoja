@@ -41,22 +41,19 @@
                     <option v-else value="out_of_service">Fuera de servicio</option>
                 </select>
             </div>
-             
+             <br>
         </form>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
         <center>
           <br> 
-            <button type="submit" class="btn btn-danger sombra" @click.stop.prevent="date_intervalFunction()">
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="date_intervalFunction()">
                 <div v-if="date_interval.id == undefined">Crea Intervalo de Fechas</div>
                 <div v-else>Actualiza Intervalo de Fechas</div>
             </button>
         </center>
-            <br>
-            <br>
-            <br>
-            <br>
+            <br><br><br><br><br><br><br><br><br>
 
     </div>   
 

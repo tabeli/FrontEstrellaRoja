@@ -26,7 +26,7 @@
     <!--Tabla-->
     <table class="table mt-3 col-11">
       <thead class="bg-success text-center">
-        <tr>
+        <tr class="sombra">
           <th scope="col">Id</th>
           <th scope="col">Nombre</th>
           <th scope="col">Tipo de lugar</th>
@@ -39,7 +39,7 @@
           <th scope="col">Borrar</th>
         </tr>
       </thead>
-        <tbody>
+        <tbody class="sombra">
           <tr v-for="place in this.$store.state.places" :key='place.id'>
             <td>{{ place.id }}</td>
             <td>{{ place.name }}</td>

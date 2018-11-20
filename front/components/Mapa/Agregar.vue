@@ -51,7 +51,9 @@
                 <div v-else>Actualiza Vínculo</div>
             </button>
         </center>
-    </div>   
+        <br> 
+    </div>  
+    
 </template>
 
 <script>
