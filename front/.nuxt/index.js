@@ -11,8 +11,8 @@ import { setContext, getLocation, getRouteData } from './utils'
 import { createStore } from './store.js'
 
 /* Plugins */
-import nuxt_plugin_bootstrapvue_f3ee6bf0 from 'nuxt_plugin_bootstrapvue_f3ee6bf0' // Source: ./bootstrap-vue.js
-import nuxt_plugin_axios_1581d4d9 from 'nuxt_plugin_axios_1581d4d9' // Source: ./axios.js
+import nuxt_plugin_bootstrapvue_1b5aa069 from 'nuxt_plugin_bootstrapvue_1b5aa069' // Source: ./bootstrap-vue.js
+import nuxt_plugin_axios_049c9c3a from 'nuxt_plugin_axios_049c9c3a' // Source: ./axios.js
 
 
 // Component: <no-ssr>
@@ -152,8 +152,8 @@ async function createApp (ssrContext) {
 
   // Plugin execution
   
-  if (typeof nuxt_plugin_bootstrapvue_f3ee6bf0 === 'function') await nuxt_plugin_bootstrapvue_f3ee6bf0(app.context, inject)
-  if (typeof nuxt_plugin_axios_1581d4d9 === 'function') await nuxt_plugin_axios_1581d4d9(app.context, inject)
+  if (typeof nuxt_plugin_bootstrapvue_1b5aa069 === 'function') await nuxt_plugin_bootstrapvue_1b5aa069(app.context, inject)
+  if (typeof nuxt_plugin_axios_049c9c3a === 'function') await nuxt_plugin_axios_049c9c3a(app.context, inject)
   
 
   // If server-side, wait for async component to be resolved first

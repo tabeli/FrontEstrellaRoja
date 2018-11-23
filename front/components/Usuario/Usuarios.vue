@@ -4,13 +4,13 @@
       <br>
     <div>
     <!--Buscador-->
-     <div class="mt-5">
+     <!--<div class="mt-5"> -->
       <div class="row">
       <div class="col">
         <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
+          <!--<input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
           <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
-        </form>
+        </form>-->
       </div>
 
       <div class="derecha">
@@ -51,7 +51,7 @@
     </table>
     </div>
   </div>
-  </div>
+  <!--</div>-->
 </template>
 
 <script>

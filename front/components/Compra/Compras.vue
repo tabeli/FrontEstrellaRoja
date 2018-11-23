@@ -4,12 +4,12 @@
     <div class="mt-5">
     <div class="row">
     <!--Buscador-->
-    <div class="col">
+    <!-- <div class="col">
       <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
+       <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
         <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
-    </div>
+    </div> -->
     <!--Tipo de boletos-->
       <div class = "col text-center">
         <nuxt-link :to="{ name: 'boletos-tipoboleto'}" replace>     
@@ -33,6 +33,7 @@
           <th scope="col">Fecha del tour</th>
           <th scope="col">Codigo QR</th>
           <th scope="col">Total</th>
+          <th scope="col">Detalles</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
         </tr>
@@ -45,6 +46,7 @@
             <td>{{ ticket.tour_date }}</td>
             <td>{{ ticket.qr_code }}</td>
             <td>{{ ticket.total }}</td>
+            <td><button class="btn btn-info" type="button" @click="detailsTicketAction(ticket.id)"><img src="@/static/eye.png"></button></td>
             <td><button class="btn btn-info" type="button" @click="editTicketAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-info" type="button" @click="deleteTicketAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
           </tr>

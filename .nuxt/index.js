@@ -11,7 +11,14 @@ import { setContext, getLocation, getRouteData } from './utils'
 
 
 /* Plugins */
+import * as VueGoogleMaps from "vue2-google-maps";
 
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: "AIzaSyDKgXjIdN-V65bA10tR1gE744LraHHZezs",
+    libraries: "places" // necessary for places input
+  }
+});
 
 // Component: <no-ssr>
 Vue.component(NoSSR.name, NoSSR)
