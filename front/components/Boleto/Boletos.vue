@@ -79,7 +79,7 @@
               </b-modal>
              </td>
             <td><button class="btn btn-outline-info" type="button" @click="editTicketAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
-            <td><button class="btn btn-outline-danger" type="button" @click="deleteTicketAction(ticket.purchase_id)"><img src="@/static/basurero.png"></button></td>
+            <td><button class="btn btn-outline-danger" type="button" @click="deleteTicketAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>

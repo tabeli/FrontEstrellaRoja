@@ -11,16 +11,9 @@ import { setContext, getLocation, getRouteData } from './utils'
 import { createStore } from './store.js'
 
 /* Plugins */
-import nuxt_plugin_bootstrapvue_2be1dee2 from 'nuxt_plugin_bootstrapvue_2be1dee2' // Source: ./bootstrap-vue.js
-import nuxt_plugin_axios_7f7e9260 from 'nuxt_plugin_axios_7f7e9260' // Source: ./axios.js
-import * as VueGoogleMaps from "vue2-google-maps";
+import nuxt_plugin_bootstrapvue_3e0fdcf3 from 'nuxt_plugin_bootstrapvue_3e0fdcf3' // Source: ./bootstrap-vue.js
+import nuxt_plugin_axios_7d3402c4 from 'nuxt_plugin_axios_7d3402c4' // Source: ./axios.js
 
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: "AIzaSyDKgXjIdN-V65bA10tR1gE744LraHHZezs",
-    libraries: "places" // necessary for places input
-  }
-});
 
 // Component: <no-ssr>
 Vue.component(NoSSR.name, NoSSR)
@@ -159,8 +152,8 @@ async function createApp (ssrContext) {
 
   // Plugin execution
   
-  if (typeof nuxt_plugin_bootstrapvue_2be1dee2 === 'function') await nuxt_plugin_bootstrapvue_2be1dee2(app.context, inject)
-  if (typeof nuxt_plugin_axios_7f7e9260 === 'function') await nuxt_plugin_axios_7f7e9260(app.context, inject)
+  if (typeof nuxt_plugin_bootstrapvue_3e0fdcf3 === 'function') await nuxt_plugin_bootstrapvue_3e0fdcf3(app.context, inject)
+  if (typeof nuxt_plugin_axios_7d3402c4 === 'function') await nuxt_plugin_axios_7d3402c4(app.context, inject)
   
 
   // If server-side, wait for async component to be resolved first

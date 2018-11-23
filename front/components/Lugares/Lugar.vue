@@ -34,7 +34,6 @@
           <th scope="col">Longitud</th>
           <th scope="col">Latitud</th>
           <th scope="col">Descripcion Lugar</th>
-          <th scope="col">Descripcion Imagen</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
         </tr>
@@ -48,12 +47,6 @@
             <td>{{ place.longitude }}</td>
             <td>{{ place.latitude }}</td>
             <td>{{ place.description }}</td>
-
-            <td v-for="place_image in $store.state.place_images" :key='place_image.id' v-if="place_image.place_id == place.id">
-              <div v-for="image in $store.state.images" :key='image.id' v-if="place_image.image_id == image.id">
-                {{ image.description }} 
-              </div>
-            </td>
             <td><button class="btn btn-outline-info" type="button" @click="editPlaceAction(place.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-outline-danger" type="button" @click="deletePlaceAction(place.id)"><img src="@/static/basurero.png"></button></td>
           </tr>

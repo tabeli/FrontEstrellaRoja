@@ -10,6 +10,12 @@
         <button class="btn btn-light my-2 my-sm-0 sombra" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
     </div>
+    <!-- Vincular imagen y parada-->
+      <div class = "col text-right">
+        <nuxt-link :to="{ name: 'imagen-vinculo' }" replace>
+        <button type="button" class="btn btn-success text-right shadow">Agregar imágenes al lugar</button>
+        </nuxt-link> 
+      </div>
     <!--Agregar-->
       <div class = "col text-right">
         <nuxt-link :to="{ name: 'imagen-agregar' }" replace>
@@ -21,7 +27,7 @@
     <table class="table mt-3">
       <thead class="bg-success">
         <tr class="sombra">
-          <th scope="col">Path de la espada</th>
+          <th scope="col">Path de la imagen</th>
           <th scope="col">Descripción</th>
           <th scope="col">Editar</th>
           <th scope="col">Borrar</th>
@@ -65,6 +71,46 @@ export default {
           console.log(error);
         });
     },
+    async getPlaces() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/place"
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.$store.commit({
+              type: "storePlaces",
+              places: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
+    async getPlace_image() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/place_image"
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.$store.commit({
+              type: "storePlace_image",
+              place_images: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
+    },
     async deleteImage(id) {
       console.log("Delete mural");
       await axios({
@@ -96,6 +142,8 @@ export default {
   },
   created: function() {
     this.getImages();
+    this.getPlaces();
+    this.getPlace_image();
   }
 };
 </script>

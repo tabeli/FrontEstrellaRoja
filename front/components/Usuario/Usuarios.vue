@@ -25,6 +25,7 @@
     <table class="table mt-3 col-11">
       <thead class="bg-success">
         <tr  class="sombra">
+          <th scope="col">ID</th>
           <th scope="col">Tipo de usuario</th>
           <th scope="col">Nombre</th>
           <th scope="col">Apellido</th>
@@ -38,6 +39,7 @@
         </thead>
         <tbody class="sombra text-align">
           <tr v-for="user in this.$store.state.users" :key='user.id'>
+            <th>{{ user.id }}</th>
             <td>{{ user.user_type }}</td>
             <td>{{ user.name }}</td>
             <td>{{ user.last_name}}</td>

@@ -116,7 +116,7 @@ export default {
           console.log(error);
         });
 
-    },
+    },/*
     async deletePurchase(id) {
       console.log("Delete purchase and all tickets associated");
       listOfIDOfTickets = this.getID(id);
@@ -142,8 +142,27 @@ export default {
           console.log("error");
           console.log(error);
         })
-
-      ).bind(this);
+    },*/
+    async deletePurchase(id) {
+      console.log("Delete purchase");
+      await axios({
+        method: "delete",
+        url: "http://principal-arena-219118.appspot.com/api/purchase/" + id,
+        data: {
+          id: id
+        }
+      })
+        .then(
+          function(response) {
+            console.log("response");
+            console.log(response);
+            this.getPurchases();
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log("error");
+          console.log(error);
+        });
     },
     async deleteTicket(id) {
       console.log("Delete ticket");
