@@ -1,20 +1,22 @@
 <template>
     <div class="container">
     <!--Empieza la form-->
+    <br>
+    <br>
         <form>
             <!--Tipo de ticket-->
             <div class="form-group ">
               <center>
                 <label for="muralSelect" class="letrabonita" >Visualiza el ID del tipo de Ticket deseado</label>
               </center>
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="ticket_type in this.$store.state.ticket_types" :key='ticket_type.id' >{{ticket_type.name}} -->  ID:{{ticket_type.id}}</option>
               </select>
               <br>
               <center>
                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
                 <nuxt-link :to="{ name: 'boletos-tipoboletoeditar' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
+                <button type="button" class="btn btn-info text-right shadow">Agregar</button>
                 <br>
                 </nuxt-link> 
               </center>
@@ -24,7 +26,7 @@
                 <label for="ticket_type" class="letrabonita">Escoge el ID del tipo de Ticket</label>
               </center>
                 
-                <select class="form-control" id="mural" v-model="price.ticket_type_id">
+                <select class="form-control sombra" id="mural" v-model="price.ticket_type_id">
                     <option v-for="ticket_type in this.$store.state.ticket_types"  :key='ticket_type.id' >{{ticket_type.id}}</option>
                 </select>
             </div>
@@ -34,14 +36,14 @@
                 <label for="tourSelect" class="letrabonita">Visualiza el ID del tour deseado</label>
               </center>
               
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.name}} -->  ID:{{tour.id}}</option>
               </select>
               <br>
               <center>
                  <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
                  <nuxt-link :to="{ name: 'rutas-agregar' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
+                <button type="button" class="btn btn-info text-right shadow">Agregar</button>
                 <br>
                 </nuxt-link> 
               </center>
@@ -50,7 +52,7 @@
               <center>
                 <label for="tour" class="letrabonita">Escoge el ID del Tour</label>
               </center>
-                <select class="form-control" name="tour_id" id="tour_id" v-model="price.tour_id">
+                <select class="form-control sombra" name="tour_id" id="tour_id" v-model="price.tour_id">
                     <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.id}}</option>
                 </select>
             </div>
@@ -61,18 +63,19 @@
                     <label for="precios" class="letrabonita">Precio</label>
                 </center>
                 
-                <input type="text" class="form-control" id="amount" v-model="price.amount">
+                <input type="text" class="form-control sombra" id="amount" v-model="price.amount">
             </div>
         </form>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
        <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="priceFunction()">
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="priceFunction()">
                 <div v-if="price.id == undefined">Crea Precio</div>
                 <div v-else>Actualiza Precio</div>
             </button>
         </center>
+        <br>
     </div>   
 </template>
 
@@ -235,6 +238,9 @@ export default {
 .letrabonita {
   font-size: 22px;
   font: bold;
+}
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>
 

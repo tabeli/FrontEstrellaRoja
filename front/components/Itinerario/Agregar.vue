@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+      <br>
     <!--Empieza la form-->
         <form>
         <!--Intervalo de horario-->
@@ -7,7 +8,7 @@
               <center>
                 <label for="hour_interval" class="letrabonita" >Visualiza el ID del intervalo de horarios deseado</label>
               </center>
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="hour_interval in this.$store.state.hour_intervals" :key='hour_interval.id' >De {{hour_interval.start_time}} hasta {{hour_interval.end_time}}  -->  ID:{{hour_interval.id}}</option>
               </select>
             </div>
@@ -15,7 +16,7 @@
               <center>
                 <label for="hour_interval" class="letrabonita">Escoge el ID del intervalo de horarios deseado</label>
               </center>
-                <select class="form-control" id="hour_interval" v-model="schedule.hour_interval_id">
+                <select class="form-control sombra" id="hour_interval" v-model="schedule.hour_interval_id">
                     <option v-for="hour_interval in this.$store.state.hour_intervals"  :key='hour_interval.id' >{{hour_interval.id}}</option>
                 </select>
             </div>
@@ -25,26 +26,46 @@
                 <label for="date_interval" class="letrabonita">Visualiza el ID del intervalo de fechas</label>
               </center>
               
-              <select class="form-control">
-                <option v-for="date_interval in this.$store.state.date_intervals" :key='date_interval.id' >De {{date_interval.start_date}} hasta{{date_interval.end_date}}  -->  ID:{{date_interval.id}}</option>
+              <select class="form-control sombra">
+                <option v-for="date_interval in this.$store.state.date_intervals" :key='date_interval.id' >De {{date_interval.start_date}} hasta {{date_interval.end_date}}  -->  ID:{{date_interval.id}}</option>
               </select>
             </div>
             <div class="form-group">
               <center>
                 <label for="date_interval" class="letrabonita">Escoge el ID del intervalo de fechas</label>
               </center>
-                <select class="form-control" name="date_interval" id="date_interval" v-model="schedule.date_interval_id">
+                <select class="form-control sombra" name="date_interval" id="date_interval" v-model="schedule.date_interval_id">
                     <option v-for="date_interval in this.$store.state.date_intervals" :key='date_interval.id' >{{date_interval.id}}</option>
                 </select>
             </div>
-        <!--Boton de agregar intervalos-->
+
+
+
+
+
+
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
+     
     <div>
         <label>Añadir intervalos</label>
-     <!--Botones de intervalos-->
+   
          <b-btn :pressed="false" variant="btn btn-success" v-b-toggle.collapse2 class="m-1">Fecha</b-btn>
          <b-btn :pressed="false" variant="btn btn-success" v-b-toggle="'collapse3'" class="m-1">Hora</b-btn>
 
-     <!-- element to collapse -->
+
      <br>
         <b-collapse  id="collapse2">
             <b-card>
@@ -101,7 +122,7 @@
              <div class="col"></div>
             </div>
             <br>
-            <!-- botón -->
+     
                  <div class="row">
                      <div class="col"></div>
                      <div class="col"></div>
@@ -112,16 +133,26 @@
         </b-card>
     </b-collapse>
     </div>
+
+    -->
     <!--Termina la form-->
     </form>
+    <center>
+      <div class="letrabonita">
+        <p>
+          No se te olvide asignar este itinerario a una ruta!
+        </p>
+      </div>
+    </center>
     <!--Boton Agregar-->
         <br/>
         <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="scheduleFunction()">
-                <div v-if="schedule.id == undefined">Crea Horario</div>
-                <div v-else>Actualiza Horario</div>
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="scheduleFunction()">
+                <div v-if="schedule.id == undefined">Crea Itinerario</div>
+                <div v-else>Actualiza Itinerario</div>
             </button>
         </center>
+        <br><br><br>
     </div>   
 </template>
 
@@ -134,7 +165,7 @@ export default {
   data: function() {
     return {
       schedule: {},
-      types: ['time']
+      types: ["time"]
     };
   },
   methods: {
@@ -173,7 +204,8 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/schedule/" + this.idSchedule,
+          "http://principal-arena-219118.appspot.com/api/schedule/" +
+          this.idSchedule,
         headers: {
           "Content-Type": "application/json"
         },
@@ -274,12 +306,12 @@ export default {
 
 <style>
 .container {
-    margin-left: 160px;
-    margin-right: 0px; /* Same as the width of the sidenav */
-    display: inline-block;
-    font-size: 20px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+  margin-left: 160px;
+  margin-right: 0px; /* Same as the width of the sidenav */
+  display: inline-block;
+  font-size: 20px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
 }
 .letrabonita {
   font-size: 22px;

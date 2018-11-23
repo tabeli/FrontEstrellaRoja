@@ -1,5 +1,6 @@
-<template>
+<template >
     <div class="container">
+      <br>
     <!--Empieza la form-->
         <form>
         <!--Primera fecha-->
@@ -7,49 +8,62 @@
               <center>
                 <label for="start_date" class="letrabonita">Primera fecha de disponibilidad</label>
               </center>
+              <input class="date" type="date" id="start" name="birthdate"
+                    value="2000-01-01"
+                    min="1900-01-01" max="(currdate)" 
+                    v-model="date_interval.start_date"/>
               
-              <input type="text" class="form-control" id="start_date" placeholder="YYYY-MM-DD" v-model="date_interval.start_date">
             </div>
         <!--Ultima fecha-->
+        <br>
             <div class="form-group col-md-12">
               <center>
                 <label for="end_date" class="letrabonita">Última fecha de disponibilidad</label>
               </center>
               
-              <input type="text" class="form-control" id="end_date" placeholder="YYYY-MM-DD" v-model="date_interval.end_date">
+              <input class="date " type="date" id="start" name="birthdate"
+                    value="2000-01-01"
+                    min="1900-01-01" max="(currdate)" 
+                    v-model="date_interval.end_date"/>
+
             </div>
+            <br>
         <!--status-->
             <div class="form-group">
               <center>
                 <label for="status" class="letrabonita">Estatus</label>
               </center>
                 
-                <select class="form-control" id="status" v-model="date_interval.status">
+                <select class="form-control sombra" id="status" v-model="date_interval.status">
                     <option v-if="date_interval.status == in_service" value="in_service" selected>En servicio</option>
                     <option v-else value="in_service">En servicio</option>
                     <option v-if="date_interval.status == out_of_service" value="out_of_service" selected>Fuera de servicio</option>
                     <option v-else value="out_of_service">Fuera de servicio</option>
                 </select>
             </div>
-             
+             <br>
         </form>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
         <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="date_intervalFunction()">
+          <br> 
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="date_intervalFunction()">
                 <div v-if="date_interval.id == undefined">Crea Intervalo de Fechas</div>
                 <div v-else>Actualiza Intervalo de Fechas</div>
             </button>
         </center>
+            <br><br><br><br><br><br><br><br><br>
+
     </div>   
+
 </template>
 
 <script>
 import axios from "axios";
 
 export default {
-  //props is the parameter it receives
+  //props is the parameter it receivess
   props: ["idDate_interval"],
   data: function() {
     return {
@@ -150,16 +164,21 @@ export default {
 
 <style>
 .container {
-  margin-left: 160px;
-  margin-right: 0px; /* Same as the width of the sidenav */
+  margin-left: 160px; /* Same as the width of the sidenav */
   display: inline-block;
   font-size: 20px; /* Increased text to enable scrolling */
   text-align: center;
   align-content: center;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .letrabonita {
   font-size: 22px;
   font: bold;
+}
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>
 

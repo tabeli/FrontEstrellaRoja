@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+      <br>
     <!--Empieza la form-->
         <form>
         <!--Titulo-->
@@ -8,7 +9,7 @@
                 <label for="title" class="letrabonita">Título</label>
               </center>
               
-              <input type="text" class="form-control" id="title" placeholder="" v-model="mural.title">
+              <input type="text" class="form-control sombra" id="title" placeholder="" v-model="mural.title">
             </div>
         <!--Nombre del autor-->
             <div class="form-group col-md-12">
@@ -16,7 +17,7 @@
                 <label for="author_name" class="letrabonita">Nombre del Autor</label>
               </center>
               
-              <input type="text" class="form-control" id="author_name" placeholder="" v-model="mural.author_name">
+              <input type="text" class="form-control sombra" id="author_name" placeholder="" v-model="mural.author_name">
             </div>
         <!--Apellido del autor-->
             <div class="form-group col-md-12">
@@ -24,7 +25,7 @@
                 <label for="author_last_name" class="letrabonita">Apellido del Autor</label>
               </center>
               
-              <input type="text" class="form-control" id="author_last_name" placeholder="" v-model="mural.author_last_name">
+              <input type="text" class="form-control sombra" id="author_last_name" placeholder="" v-model="mural.author_last_name">
             </div>
         <!--Descripcion-->
              <div class="form-group col-md-12">
@@ -32,18 +33,28 @@
                 <label for="description" class="letrabonita">Descripción</label>
               </center>
               
-              <input type="text" class="form-control" id="description" placeholder="" v-model="mural.description">
+              <b-form-textarea class="sombra"  v-model="mural.description"  placeholder="" :rows="7.5" >
+              </b-form-textarea>
+            </div>
+          <!--Imagen-->
+             <div class="form-group col-md-12">
+              <center>
+                <label for="image" class="letrabonita">Imágen</label>
+              </center>
+              
+              <input type="text" class="form-control" id="image" placeholder="" v-model="mural.image_path">
             </div>
         </form>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
         <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="muralFunction()">
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="muralFunction()">
                 <div v-if="mural.id == undefined">Crea Mural</div>
                 <div v-else>Actualiza Mural</div>
             </button>
         </center>
+        <br>
     </div>   
 </template>
 
@@ -78,7 +89,8 @@ export default {
           title: this.mural.title,
           author_name: this.mural.author_name,
           author_last_name: this.mural.author_last_name,
-          description: this.mural.description
+          description: this.mural.description,
+          image_path: this.mural.image_path
         }
       })
         .then(
@@ -104,7 +116,8 @@ export default {
           title: this.mural.title,
           author_name: this.mural.author_name,
           author_last_name: this.mural.author_last_name,
-          description: this.mural.description
+          description: this.mural.description,
+          image_path: this.mural.image_path
         }
       })
         .then(
@@ -151,6 +164,9 @@ export default {
 </script>
 
 <style>
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
+}
 .container {
   margin-left: 160px;
   margin-right: 0px; /* Same as the width of the sidenav */

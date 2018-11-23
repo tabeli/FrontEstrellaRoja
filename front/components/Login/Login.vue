@@ -1,4 +1,6 @@
     <template>
+  
+
         <form class="form" @submit.prevent="login()">
             <div class="container text-center mt-5">
                 <div class="form-group">
@@ -41,7 +43,7 @@
                     this.$router.push({ name: "mapa"});
                 }.bind(this))
                 .catch(function (error) {
-                    alertService.error("Verifique su email o contraseña - " + error.message)
+                    alertService.error("Verifique su email o contraseña")
                     console.log(error);
                 });
                 /*
@@ -69,9 +71,11 @@
     body,html {
     margin: 0;
     padding: 0;
+    
     }
 
-    body {
+    .body {
     font-family: 'Source Sans Pro', sans-serif;
+    background: url("/static/back.png");
     }
     </style>

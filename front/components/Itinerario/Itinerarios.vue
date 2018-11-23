@@ -6,27 +6,27 @@
     <!--Buscador-->
     <!--<div class="col">
       <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
-        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
+        <input class="form-control mr-sm-2 sombra" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
+        <button class="btn btn-light my-2 my-sm-0 sombra" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
     </div>-->
     <!--Agregar horario a un tour-->
       <div class = "col text-center">
-        <nuxt-link :to="{ name: 'itinerario-agregartour'}" replace>     
-        <button type="button" class="btn btn-warning">Agregar horarios al tour</button>
+        <nuxt-link :to="{ name: 'itinerario-vinculo'}" replace>
+        <button type="button" class="btn btn-success shadow">Agregar itinerarios al tour</button>
         </nuxt-link> 
       </div>
     <!--Agregar-->
       <div class = "col text-right">
         <nuxt-link :to="{ name: 'itinerario-agregar' }" replace>
-        <button type="button" class="btn btn-info text-right">Agregar</button>
+        <button type="button" class="btn btn-success text-right shadow">Agregar</button>
         </nuxt-link> 
       </div>
     </div>
     <!--Tabla-->
     <table class="table mt-3">
       <thead class="bg-success">
-        <tr>
+        <tr class="sombra">
           <th scope="col">ID</th>
           <th scope="col">Rutas con este horario</th>
           <th scope="col">Fecha inicial</th>
@@ -39,7 +39,7 @@
           <th scope="col">Borrar</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="sombra">
         <tr v-for="schedule in this.$store.state.schedules" :key='schedule.id'>
           <td>{{ schedule.id }}</td>
           <td v-for="tour_schedule in $store.state.tour_schedules" :key='tour_schedule.id' v-if="tour_schedule.schedule_id == schedule.id">
@@ -65,8 +65,8 @@
           <td v-for="date_interval in $store.state.date_intervals" :key='date_interval.id' v-if="schedule.date_interval_id == date_interval.id">
             {{date_interval.status}}
           </td>
-          <td><button class="btn btn-info" type="button" @click="editScheduleAction(schedule.id)"><img src="@/static/pencil.png"></button></td>
-          <td><button class="btn btn-info" type="button" @click="deleteScheduleAction(schedule.id)"><img src="@/static/basurero.png"></button></td>
+          <td><button class="btn btn-outline-info" type="button" @click="editScheduleAction(schedule.id)"><img src="@/static/pencil.png"></button></td>
+          <td><button class="btn btn-outline-danger" type="button" @click="deleteScheduleAction(schedule.id)"><img src="@/static/basurero.png"></button></td>
          </tr>
       </tbody>
     </table>
@@ -198,7 +198,10 @@ export default {
     },
     editScheduleAction(id) {
       //send to create view
-      this.$router.push({ name: "itinerario-agregar", params: { idSchedule: id } });
+      this.$router.push({
+        name: "itinerario-agregar",
+        params: { idSchedule: id }
+      });
     },
     deleteScheduleAction(id) {
       this.deleteSchedule(id);
@@ -215,18 +218,21 @@ export default {
 </script>
 
 <style>
-.container {
-    margin-left: 160px; /* Same as the width of the sidenav */
-    font-size: 15px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
-.derecha{
+.container {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 15px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
+}
+.derecha {
   padding-right: 110px;
-  margin-left:  160px;
+  margin-left: 160px;
 }
 .bg-success {
-  color:#FFFFFF
+  color: #ffffff;
 }
 </style>
 

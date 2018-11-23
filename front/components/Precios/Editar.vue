@@ -3,7 +3,7 @@
     <!--Empieza la form-->
         <form>
         <!--Tours-->
-            <div class="form-group">
+            <div class="form-group sombra">
                 <label for="tours">Tours</label>
                 <select class="form-control" id="toursOpciones">
                     <option>Puebla Fascinante</option>
@@ -11,7 +11,7 @@
                 </select>
             </div>
         <!--Tipo de ticket-->
-            <div class="form-group">
+            <div class="form-group sombra">
                 <label for="tickets">Tipo de tickets</label>
                 <select class="form-control" id="tipoTickets">
                     <option>Adulto</option>
@@ -20,7 +20,7 @@
                 </select>
             </div>
         <!--Precio-->
-            <div class="form-group">
+            <div class="form-group sombra">
                 <label for="precios">Precio</label>
                 <textarea class="form-control" id="inputPrecio" rows="1"></textarea>
             </div>
@@ -45,6 +45,9 @@ export default {
     padding: 0px 10px;
     width: 90%;
     text-align:center;
+}
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>
 

@@ -152,8 +152,13 @@ async function createApp (ssrContext) {
 
   // Plugin execution
   
+<<<<<<< HEAD
   if (typeof nuxt_plugin_bootstrapvue_1b5aa069 === 'function') await nuxt_plugin_bootstrapvue_1b5aa069(app.context, inject)
   if (typeof nuxt_plugin_axios_049c9c3a === 'function') await nuxt_plugin_axios_049c9c3a(app.context, inject)
+=======
+  if (typeof nuxt_plugin_bootstrapvue_3e0fdcf3 === 'function') await nuxt_plugin_bootstrapvue_3e0fdcf3(app.context, inject)
+  if (typeof nuxt_plugin_axios_7d3402c4 === 'function') await nuxt_plugin_axios_7d3402c4(app.context, inject)
+>>>>>>> 5790715379f5391af2a3bf01735e77cf78f6608c
   
 
   // If server-side, wait for async component to be resolved first

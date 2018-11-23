@@ -3,12 +3,13 @@
     <!--Empieza la form-->
         <form>
         <!--Nombre-->
+        <br>
             <div class="form-group col-md-12">
               <center>
                 <label for="name" class="letrabonita">Nombre</label>
               </center>
               
-              <input type="text" class="form-control" id="name" placeholder="" v-model="tour.name">
+              <input type="text" class="form-control sombra" id="name" placeholder="" v-model="tour.name">
             </div>
         <!--Path de la imagen-->
             <div class="form-group col-md-12">
@@ -16,26 +17,31 @@
                 <label for="image_path" class="letrabonita">Path de la Imagen</label>
               </center>
               
-              <input type="text" class="form-control" id="image_path" placeholder="" v-model="tour.image_path">
+              <input type="text" class="form-control sombra" id="image_path" placeholder="" v-model="tour.image_path">
             </div>
         <!--Descripciòn-->
             <div class="form-group col-md-12">
               <center>
-                <label for="author_last_name" class="letrabonita">Descripción de la ruta</label>
+                <label for="author_last_name" class="letrabonita ">Descripción de la ruta</label>
               </center>
               
-              <input type="text" class="form-control" id="description" placeholder="" v-model="tour.description">
+              <b-form-textarea class="sombra" v-model="tour.description" placeholder="" :rows="7.5">
+
+              </b-form-textarea>
             </div>
+            <br>
         </form>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
         <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="tourFunction()">
+          <br>
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="tourFunction()">
                 <div v-if="tour.id == undefined">Crea Tour</div>
                 <div v-else>Actualiza Tour</div>
             </button>
         </center>
+        <br>
     </div>   
 </template>
 
@@ -141,6 +147,9 @@ export default {
 </script>
 
 <style>
+  .sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
+}
 .container {
     margin-left: 160px;
     margin-right: 0px; /* Same as the width of the sidenav */

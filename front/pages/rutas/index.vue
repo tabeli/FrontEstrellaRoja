@@ -1,5 +1,5 @@
   <template>
-     <div>
+    <div :style="{'background-image': `url(${require('@/static/back4.png')})`}">
       <div class ="row">
           <div class="col-sm-1">
               <Sidebar/>
@@ -7,23 +7,21 @@
           <div class="col-11">
             <Header/>
             <Rutas/>
-            <Footer/>
           </div>
       </div>
+      <div class="footer" :style="{'background-image': `url(${require('@/static/back4.png')})`}"></div>
     </div>
   </template>
   
   <script>
 import Sidebar from "@/components/Sidebar";
 import Rutas from "@/components/Ruta/Rutas";
-import Footer from "@/components/Footer"
-import Header from "@/components/Header"
+import Header from "@/components/Header";
 
 export default {
   components: {
     Sidebar,
     Rutas,
-    Footer,
     Header
   }
 };

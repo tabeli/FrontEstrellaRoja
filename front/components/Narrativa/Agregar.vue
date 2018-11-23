@@ -2,13 +2,14 @@
     <div class="container">
     <!--Empieza la form-->
         <form>
+          <br><br>
         <!--Path-->
             <div class="form-group col-md-12">
               <center>
                 <label for="audio_path" class="letrabonita">Path del audio</label>
               </center>
               
-              <input type="text" class="form-control" id="audio_path" placeholder="" v-model="narrative.audio_path">
+              <input type="text" class="form-control sombra" id="audio_path" placeholder="" v-model="narrative.audio_path">
             </div>
         
         <!--Descripcion-->
@@ -16,19 +17,21 @@
               <center>
                 <label for="description" class="letrabonita">Descripción</label>
               </center>
+              <b-form-textarea class="sombra" v-model="narrative.description" placeholder="" :rows="7.5">
+              </b-form-textarea>
               
-              <input type="text" class="form-control" id="description" placeholder="" v-model="narrative.description">
             </div>
         </form>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
         <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="narrativeFunction()">
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="narrativeFunction()">
                 <div v-if="narrative.id == undefined">Crea Narrativa</div>
                 <div v-else>Actualiza Narrativa</div>
             </button>
         </center>
+         <br><br> <br><br> <br><br>
     </div>   
 </template>
 
@@ -133,6 +136,9 @@ export default {
 </script>
 
 <style>
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
+}
 .container {
   margin-left: 160px;
   margin-right: 0px; /* Same as the width of the sidenav */

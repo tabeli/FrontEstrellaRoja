@@ -7,14 +7,14 @@
               <center>
                 <label for="place_type" class="letrabonita" >Visualiza el ID del tipo de Lugar deseado</label>
               </center>
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="place_type in this.$store.state.place_types" :key='place_type.id' >{{place_type.name}} -->  ID:{{place_type.id}}</option>
               </select>
               <br>
               <center>
                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
                 <nuxt-link :to="{ name: 'lugares-tipolugaragregar' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
+                <button type="button" class="btn btn-info text-right shadow">Agregar</button>
                 <br>
                 </nuxt-link> 
               </center>
@@ -24,7 +24,7 @@
                 <label for="place_type" class="letrabonita">Escoge el ID del tipo de Lugar</label>
               </center>
                 
-                <select class="form-control" id="place_type" v-model="place.place_type_id">
+                <select class="form-control sombra" id="place_type" v-model="place.place_type_id">
                     <option v-for="place_type in this.$store.state.place_types"  :key='place_type.id' >{{place_type.id}}</option>
                 </select>
             </div>
@@ -33,15 +33,15 @@
               <center>
                 <label for="narrative_id" class="letrabonita" >Visualiza el ID de la narrativa deseada</label>
               </center>
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="narrative in this.$store.state.narratives" :key='narrative.id' >{{narrative.audio_path}} -->  ID:{{narrative.id}}</option>
               </select>
               <br>
               <center>
                 <label for="option">No lo encuentras ? Puedes crear una nueva</label>
                 <!-- Falta el link para las narrativas -->
-                <nuxt-link :to="{ name: '' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
+                <nuxt-link :to="{ name: 'narrativa-agregar' }" replace>
+                <button type="button" class="btn btn-info text-right shadow">Agregar</button>
                 <br>
                 </nuxt-link> 
               </center>
@@ -51,7 +51,7 @@
                 <label for="narrative" class="letrabonita">Escoge el ID de la narrativa</label>
               </center>
                 
-                <select class="form-control" id="mural" v-model="place.narrative_id">
+                <select class="form-control sombra" id="mural" v-model="place.narrative_id">
                     <option v-for="narrative in this.$store.state.narratives"  :key='narrative.id' >{{narrative.id}}</option>
                 </select>
             </div>
@@ -61,7 +61,7 @@
                     <label for="name" class="letrabonita">Nombre</label>
                 </center>
                 
-                <input type="text" class="form-control" id="name" v-model="place.name">
+                <input type="text" class="form-control sombra" id="name" v-model="place.name">
             </div>
         <!--Longitud-->
             <div class="form-group">
@@ -69,7 +69,7 @@
                     <label for="longitude" class="letrabonita">Longitud</label>
                 </center>
                 
-                <input type="text" class="form-control" id="longitude" v-model="place.longitude">
+                <input type="text" class="form-control sombra" id="longitude" v-model="place.longitude">
             </div>
         <!--Latitud-->
             <div class="form-group">
@@ -77,7 +77,7 @@
                     <label for="latitude" class="letrabonita">Latitud</label>
                 </center>
                 
-                <input type="text" class="form-control" id="latitude" v-model="place.latitude">
+                <input type="text" class="form-control sombra" id="latitude" v-model="place.latitude">
             </div>
         
         <!--Descripcion-->
@@ -85,19 +85,22 @@
                 <center>
                     <label for="description" class="letrabonita">Descripción</label>
                 </center>
+
+                <b-form-textarea class="sombra" v-model="place.description" placeholder="" :rows="7.5">
+              </b-form-textarea>
                 
-                <input type="text" class="form-control" id="description" v-model="place.description">
             </div>
         </form>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
         <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="placeFunction()">
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="placeFunction()">
                 <div v-if="place.id == undefined">Crea Lugar</div>
                 <div v-else>Actualiza Lugar</div>
             </button>
         </center>
+        <br>
     </div>   
 </template>
 
@@ -106,7 +109,7 @@ import axios from "axios";
 
 export default {
   //props is the parameter it receives
-  props: ["idPlace", "idPlace_type", "idNarrative","idPlace_image","idImage"],
+  props: ["idPlace", "idPlace_type", "idNarrative", "idPlace_image", "idImage"],
   data: function() {
     return {
       place: {}
@@ -310,15 +313,18 @@ export default {
 
 <style>
 .container {
-    margin-left: 160px;
-    margin-right: 0px; /* Same as the width of the sidenav */
-    display: inline-block;
-    font-size: 20px; /* Increased text to enable scrolling */
-    text-align: center;
-    align-content: center;
+  margin-left: 160px;
+  margin-right: 0px; /* Same as the width of the sidenav */
+  display: inline-block;
+  font-size: 20px; /* Increased text to enable scrolling */
+  text-align: center;
+  align-content: center;
 }
 .letrabonita {
   font-size: 22px;
   font: bold;
+}
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>

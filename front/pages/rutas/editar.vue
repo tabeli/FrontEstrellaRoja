@@ -28,10 +28,6 @@
 
 
       </div>
-      
-    <div class="Footer">
-      <Footer/>
-    </div>
 
       </div>
       </div>
@@ -41,14 +37,12 @@
       import Sidebar from '@/components/Sidebar'
       import Rutas from '@/components/Ruta/Rutas'
       import Header from '@/components/Header'
-      import Footer from '@/components/Footer'
     
       export default {
         components: {
           Sidebar,
           Rutas,
           Header,
-          Footer
         }
       }
     </script>

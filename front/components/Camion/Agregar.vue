@@ -8,14 +8,14 @@
                 <label for="tourSelect" class="letrabonita">Visualiza el ID del tour deseado</label>
               </center>
               
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.name}} -->  ID:{{tour.id}}</option>
               </select>
               <br>
               <center>
                  <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
-                 <nuxt-link :to="{ name: 'ruta-Agregar' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
+                 <nuxt-link :to="{ name: 'rutas-agregar' }" replace>
+                <button type="button" class="btn btn-info text-right shadow">Agregar</button>
                 <br>
                 </nuxt-link> 
               </center>
@@ -24,7 +24,7 @@
               <center>
                 <label for="tour" class="letrabonita">Escoge el ID del Tour</label>
               </center>
-                <select class="form-control" name="tour_id" id="tour_id" v-model="bus.tour_id">
+                <select class="form-control sombra" name="tour_id" id="tour_id" v-model="bus.tour_id">
                     <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.id}}</option>
                 </select>
             </div>
@@ -34,14 +34,14 @@
                 <label for="muralSelect" class="letrabonita" >Visualiza el ID del mural deseado</label>
               </center>
               
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="mural in this.$store.state.murals" :key='mural.id' >{{mural.title}} -->  ID:{{mural.id}}</option>
               </select>
               <br>
               <center>
                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
-                <nuxt-link :to="{ name: 'mural-Agregar' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
+                <nuxt-link :to="{ name: 'mural-agregar' }" replace>
+                <button type="button" class="btn btn-info text-right shadow">Agregar</button>
                 <br>
                 </nuxt-link> 
               </center>
@@ -51,7 +51,7 @@
                 <label for="mural" class="letrabonita">Escoge el ID del Mural</label>
               </center>
                 
-                <select class="form-control" id="mural" v-model="bus.mural_id">
+                <select class="form-control sombra" id="mural" v-model="bus.mural_id">
                     <option v-for="mural in this.$store.state.murals"  :key='mural.id' >{{mural.id}}</option>
                 </select>
             </div>
@@ -61,7 +61,7 @@
                 <label for="capacidad" class="letrabonita">Capacidad de pasajeros</label>
               </center>
                 
-                <input type="text" class="form-control" id="capacity" placeholder="Cantidad" v-model="bus.capacity">
+                <input type="text" class="form-control sombra" id="capacity" placeholder="Cantidad" v-model="bus.capacity">
             </div>
         <!-- Status -->
             <div class="form-group">
@@ -69,7 +69,7 @@
                 <label for="status" class="letrabonita">Status</label>
               </center>
                 
-                <select class="form-control" id="status" v-model="bus.status">
+                <select class="form-control sombra" id="status" v-model="bus.status">
                     <option v-if="bus.status == in_service" value="in_service" selected>En servicio</option>
                     <option v-else value="in_service">En servicio</option>
                     <option v-if="bus.status == out_of_service" value="out_of_service" selected>Fuera de servicio</option>
@@ -79,11 +79,12 @@
         </form>
 
         <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="busFunction()">
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="busFunction()">
                 <div v-if="bus.id == undefined">Crea Camión</div>
                 <div v-else>Actualiza Camión</div>
             </button>
           </center>
+          <br>
     <!--Termina la form-->
     </div>   
 </template>
@@ -243,6 +244,9 @@ export default {
 </script>
 
 <style>
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
+}
 .letrabonita {
   font-size: 22px;
   font: bold;

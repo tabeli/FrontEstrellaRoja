@@ -1,23 +1,26 @@
 <template>
+
     <div class="container setform">
+      <br>
     <!--Empieza la form-->
         <form>
         <!--Nombre-->
             <div class="form-group">
                 <label for="name" class="letrabonita">Tipo de lugar</label>
-                <input type="text" class="form-control" id="name" v-model="place_type.name">
+                <input type="text" class="form-control sombra" id="name" v-model="place_type.name">
             </div>
         </form>
+        <br>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
     <center>
-        <button type="submit" class="btn btn-danger" @click.stop.prevent="place_typeFunction()">
+        <button type="submit" class="btn btn-success shadow" @click.stop.prevent="place_typeFunction()">
             <div v-if="place_type.id == undefined">Crea Tipo de Lugar</div>
             <div v-else>Actualiza Tipo de Lugar</div>
         </button>
     </center>
-       
+       <br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>   
 </template>
 
@@ -132,5 +135,8 @@ export default {
 .letrabonita {
   font-size: 22px;
   font: bold;
+}
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>

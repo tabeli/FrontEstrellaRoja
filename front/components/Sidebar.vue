@@ -1,5 +1,5 @@
 <template>
-  <div>
+ <div>
     <div id="sidenav" class="sidenav">
       <ul>
         <li>
@@ -18,8 +18,18 @@
       </nuxt-link>
         </li>
         <li>
+<<<<<<< HEAD
       <nuxt-link :to="{ name: 'compras'}" replace>
         <a><img src="@/static/ticket.png" height="25"> Compras</a>
+=======
+      <nuxt-link :to="{ name: 'compra'}" replace>
+        <a><img src="@/static/compra.png" height="25"> Compras</a>
+      </nuxt-link>
+        </li>        
+        <li>
+      <nuxt-link :to="{ name: 'boletos'}" replace>
+        <a><img src="@/static/ticket.png" height="25"> Boletos</a>
+>>>>>>> 5790715379f5391af2a3bf01735e77cf78f6608c
       </nuxt-link>
         </li>
         <li>
@@ -89,20 +99,19 @@ export default {
 <style>
 .sidenav {
   height: 100%;
-  width: 10%;
   position: fixed;
-  z-index: 1;
   top: 0;
   left: 0;
-  background-color: #f99e3d;
-  background-image: linear-gradient(315deg, #f99e3d 0%, #ffcc2f 74%);
+  background-color: #043764;
+  background-image: linear-gradient(315deg, #043764 0%, #3C8BD8 74%);
   overflow-x: hidden;
   padding-top: 20px;
-  box-shadow: 0 12px 20px gray, 0 15px 12px #f99e3d;
+  box-shadow: 0 12px 20px gray, 0 15px 12px #043764;
 }
 
+
 .sidenav a {
-  padding: 6px 8px 6px 5px;
+  padding: 8.5px 10px 3px 8px;
   text-decoration: none;
   font-size: 15px;
   color: #ffffff;
@@ -112,7 +121,7 @@ export default {
 
 .sidenav li:hover {
   color: #f1f1f1;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.489);
   border-left: 5px solid #ea1b75;
   box-shadow: 0 3px 6px rgba(39, 39, 39, 0.13), 0 3px 6px rgba(39, 39, 39, 0.13);
 }
@@ -136,6 +145,6 @@ export default {
 }
 
 .sidenav li {
-  border: 1px solid #fcb600;
+  border: 0px solid #3C8BD8;
 }
 </style>
