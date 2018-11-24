@@ -38,7 +38,7 @@
               <center>
                 <label for="start" class="letrabonita">Fecha de nacimiento</label>
                 <br>
-              <input class="date" type="date" id="start" name="birthdate"
+              <input class="date" type="date" id="birth" name="birthdate"
                     value="2000-01-01"
                     min="1900-01-01" max="(currdate)" 
                     v-model="user.birthdate"/>
@@ -66,10 +66,10 @@
                 <label for="inputState" class="letrabonita">Tipo de Usuario</label>
               </center>
               
-              <select id="inputState" class="form-control sombra" v-model="user.user_type">
-                <option v-if="user.user_type == client" value="client" selected>Cliente</option>
+              <select id="usertype" class="form-control sombra" v-model="user.user_type">
+                <option v-if="user.user_type == client" value="client" selected id="cli">Cliente</option>
                 <option v-else value="client">Cliente</option>
-                <option v-if="user.user_type == administrator" value="administrator" selected>Administrador</option>
+                <option v-if="user.user_type == administrator" value="administrator" selected id="adm">Administrador</option>
                 <option v-else value="administrator">Administrador</option>
               </select>
             </div>

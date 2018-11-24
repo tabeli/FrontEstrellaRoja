@@ -17,7 +17,7 @@
               <center>
                 <label for="description" class="letrabonita">Descripción</label>
               </center>
-              <b-form-textarea class="sombra" v-model="narrative.description" placeholder="" :rows="7.5">
+              <b-form-textarea class="sombra" id="desc" v-model="narrative.description" placeholder="" :rows="7.5">
               </b-form-textarea>
               
             </div>

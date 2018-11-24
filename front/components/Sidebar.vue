@@ -29,7 +29,7 @@
         </li>
         <li>
       <nuxt-link :to="{ name: 'precio'}" replace>
-        <a><img src="@/static/money.png" height="20"> Precios</a>
+        <a id="precio"><img src="@/static/money.png" height="20"> Precios</a>
       </nuxt-link>
         </li>
         <li>

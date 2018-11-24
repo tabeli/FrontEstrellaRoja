@@ -20,17 +20,20 @@
               </div>
 
               -->
-              <div v-for="tour_schedule in this.$store.state.tour_schedules" :key="tour_schedule.id">
+              <div>
+                <div v-for="tour_schedule in this.$store.state.tour_schedules" :key="tour_schedule.id">
                 <div v-for="schedule in $store.state.schedules" :key='schedule.id' v-if="tour_schedule.schedule_id == schedule.id">
                   <div v-for="date_interval in $store.state.date_intervals" :key="date_interval.id" v-if="schedule.date_interval_id == date_interval.id">
                     <div v-for="hour_interval in $store.state.hour_intervals" :key="hour_interval.id" v-if="schedule.hour_interval_id == hour_interval.id"> 
-                      <select class="form-control sombra" >
+                      <select class="form-control sombra">
                         <option>Horario: {{hour_interval.start_time}} a {{hour_interval.end_time}} Fecha: {{date_interval.start_date}} a {{date_interval.end_date}} ---> ID: {{schedule.id}}</option>
                       </select>
                     </div>
                   </div>
                 </div>
               </div>
+              </div>
+              
               
               <br>
               <center>
@@ -43,10 +46,10 @@
             </div>
             <div class="form-group">
               <center>
-                <label for="ticket_type" class="letrabonita">Escoge el ID del tipo de Ticket</label>
+                <label for="ticket_type" class="letrabonita">Escoge el ID del Itinerario</label>
               </center>
                 
-                <select class="form-control sombra" id="mural" v-model="tour_schedule.schedule_id">
+                <select class="form-control sombra" id="schedule" v-model="tour_schedule.schedule_id">
                     <option v-for="schedule in this.$store.state.schedules"  :key='schedule.id' >{{schedule.id}}</option>
                 </select>
             </div>
@@ -203,6 +206,24 @@ export default {
           console.log(error);
         });
     },
+    async getTour_schedules() {
+      await axios({
+        method: "get",
+        url: "http://principal-arena-219118.appspot.com/api/tour_schedule"
+      })
+        .then(
+          function(response) {
+            console.log(response);
+            this.$store.commit({
+              type: "storeTour_schedules",
+              tour_schedules: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
     async getSchedules() {
       await axios({
         method: "get",
@@ -265,6 +286,7 @@ export default {
       console.log("idTour_schedule is defined");
       this.getTour_schedule(this.idTour_schedule);
     }
+    this.getTour_schedules();
     this.getTours();
     this.getSchedules();
     this.getDate_intervals();

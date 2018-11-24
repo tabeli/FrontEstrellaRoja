@@ -51,7 +51,7 @@
                 <label for="narrative" class="letrabonita">Escoge el ID de la narrativa</label>
               </center>
                 
-                <select class="form-control sombra" id="mural" v-model="place.narrative_id">
+                <select class="form-control sombra" id="narrative" v-model="place.narrative_id">
                     <option v-for="narrative in this.$store.state.narratives"  :key='narrative.id' >{{narrative.id}}</option>
                 </select>
             </div>
@@ -86,7 +86,7 @@
                     <label for="description" class="letrabonita">Descripción</label>
                 </center>
 
-                <b-form-textarea class="sombra" v-model="place.description" placeholder="" :rows="7.5">
+                <b-form-textarea class="sombra" id="desc" v-model="place.description" placeholder="" :rows="7.5">
               </b-form-textarea>
                 
             </div>

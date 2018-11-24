@@ -26,7 +26,7 @@
                 <label for="ticket_type" class="letrabonita">Escoge el ID del tipo de Ticket</label>
               </center>
                 
-                <select class="form-control sombra" id="mural" v-model="price.ticket_type_id">
+                <select class="form-control sombra" id="ticket" v-model="price.ticket_type_id">
                     <option v-for="ticket_type in this.$store.state.ticket_types"  :key='ticket_type.id' >{{ticket_type.id}}</option>
                 </select>
             </div>
@@ -52,7 +52,7 @@
               <center>
                 <label for="tour" class="letrabonita">Escoge el ID del Tour</label>
               </center>
-                <select class="form-control sombra" name="tour_id" id="tour_id" v-model="price.tour_id">
+                <select class="form-control sombra" name="tour" id="tour" v-model="price.tour_id">
                     <option v-for="tour in this.$store.state.tours" :key='tour.id' >{{tour.id}}</option>
                 </select>
             </div>

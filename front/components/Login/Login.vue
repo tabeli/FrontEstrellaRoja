@@ -8,7 +8,7 @@
                 <br>
                 <br>
                     <label for="usr">Email:</label>
-                    <input type="text" class="form-control" id="usr" v-model="email">
+                    <input type="text" class="form-control" id="email" v-model="email" placeholder="admin user">
                 </div>
                 <br>
                 <div class="form-group">

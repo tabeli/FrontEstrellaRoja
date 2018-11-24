@@ -25,7 +25,7 @@
                 <label for="author_last_name" class="letrabonita ">Descripción de la ruta</label>
               </center>
               
-              <b-form-textarea class="sombra" v-model="tour.description" placeholder="" :rows="7.5">
+              <b-form-textarea class="sombra" id="desc" v-model="tour.description" placeholder="" :rows="7.5">
 
               </b-form-textarea>
             </div>
