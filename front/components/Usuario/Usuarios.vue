@@ -8,15 +8,9 @@
       <div class="row">
       <div class="col">
         <form class="form-inline">
-<<<<<<< HEAD
-          <!--<input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
-          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
-        </form>-->
-=======
           <input class="form-control mr-sm-2 sombra" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
           <button class="btn btn-light my-2 my-sm-0 sombra" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
         </form>
->>>>>>> 5790715379f5391af2a3bf01735e77cf78f6608c
       </div>
 <!--Agregar-->
       <div class="derecha">
@@ -60,14 +54,6 @@
     </table>
     </div>
   </div>
-<<<<<<< HEAD
-  <!--</div>-->
-=======
-  <br>
-
-
-  </div>
->>>>>>> 5790715379f5391af2a3bf01735e77cf78f6608c
 </template>
 
 <script>
