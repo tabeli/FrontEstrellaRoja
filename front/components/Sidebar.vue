@@ -18,6 +18,10 @@
       </nuxt-link>
         </li>
         <li>
+<<<<<<< HEAD
+      <nuxt-link :to="{ name: 'compras'}" replace>
+        <a><img src="@/static/ticket.png" height="25"> Compras</a>
+=======
       <nuxt-link :to="{ name: 'compra'}" replace>
         <a><img src="@/static/compra.png" height="25"> Compras</a>
       </nuxt-link>
@@ -25,6 +29,7 @@
         <li>
       <nuxt-link :to="{ name: 'boletos'}" replace>
         <a><img src="@/static/ticket.png" height="25"> Boletos</a>
+>>>>>>> 5790715379f5391af2a3bf01735e77cf78f6608c
       </nuxt-link>
         </li>
         <li>

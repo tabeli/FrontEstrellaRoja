@@ -4,11 +4,14 @@
     <div class="mt-5">
     <div class="row">
     <!--Buscador-->
-    <div class="col">
+    <!--<div class="col">
       <form class="form-inline">
         <input class="form-control mr-sm-2 sombra" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
         <button class="btn btn-light my-2 my-sm-0 sombra" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
+<<<<<<< HEAD
+    </div>-->
+=======
     </div>
     <!-- Vincular imagen y parada-->
       <div class = "col text-right">
@@ -16,6 +19,7 @@
         <button type="button" class="btn btn-success text-right shadow">Agregar imágenes al lugar</button>
         </nuxt-link> 
       </div>
+>>>>>>> 5790715379f5391af2a3bf01735e77cf78f6608c
     <!--Agregar-->
       <div class = "col text-right">
         <nuxt-link :to="{ name: 'imagen-agregar' }" replace>

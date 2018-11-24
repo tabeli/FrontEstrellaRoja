@@ -5,12 +5,12 @@
       <div class="mt-5">
     <div class="row">
     <!--Buscador-->
-    <div class="col">
+    <!--<div class="col">
       <form class="form-inline">
         <input class="form-control mr-sm-1 sombra" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
         <button class="btn btn-light my-2 my-sm-0 sombra " type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
-    </div>
+    </div>-->
     <!--Activar/Desactivar paradas-->
       <div id="switch" class="col text-center ">
         <label>Paradas Desactivadas/Activadas</label>

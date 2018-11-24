@@ -24,7 +24,7 @@
 
   import Sidebar from "@/components/Sidebar"
   import Header from "@/components/Header"
-  import Boletos from "@/components/Boleto/Boletos"
+  import Boletos from "@/components/Compra/Compras"
 
   export default {
     components: {
