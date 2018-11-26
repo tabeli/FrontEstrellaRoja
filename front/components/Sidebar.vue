@@ -77,6 +77,12 @@
         <a><img src="@/static/map.png" height="25"> Mapa</a>
       </nuxt-link>
         </li>
+        <li>
+      <nuxt-link :to="{ name: 'mapa'}" replace>
+        <a><img src="@/static/analysis.png" height="25"> Analitica</a>
+      </nuxt-link>
+        </li>
+
     </ul>
     </div>
   </div>
@@ -106,7 +112,7 @@ export default {
 
 
 .sidenav a {
-  padding: 8.5px 10px 3px 8px;
+  padding: 7px 10px 3px 8px;
   text-decoration: none;
   font-size: 15px;
   color: #ffffff;

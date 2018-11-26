@@ -8,7 +8,7 @@
                 <label for="purchaseSelect" class="letrabonita">Visualiza el ID de la compra</label>
               </center>
               <div v-for="purchase in this.$store.state.purchases" :key='purchase.id'>
-                <select class="form-control" v-for="user in $store.state.users" :key="user.id" v-if="purchase.user_id == user.id">
+                <select class="form-control sombra" v-for="user in $store.state.users" :key="user.id" v-if="purchase.user_id == user.id">
                   <option>Nombre: {{user.name}} {{user.last_name}} Total: ${{purchase.total}} ID:{{purchase.id}}</option>
                 </select>
               </div>
@@ -19,7 +19,7 @@
               <center>
                 <label for="purchase" class="letrabonita">Escoge el ID de la Compra</label>
               </center>
-                <select class="form-control" name="purchase_id" id="purchase_id" v-model="ticket.purchase_id">
+                <select class="form-control sombra" name="purchase_id" id="purchase_id" v-model="ticket.purchase_id">
                     <option v-for="purchase in this.$store.state.purchases" :key='purchase.id' >{{purchase.id}}</option>
                 </select>
             </div>
@@ -29,14 +29,14 @@
                 <label for="priceSelect" class="letrabonita" >Visualiza el ID del precio deseado</label>
               </center>
               
-              <select class="form-control">
+              <select class="form-control sombra">
                 <option v-for="price in this.$store.state.prices" :key='price.id' >Precio:${{price.amount}} -->  ID:{{price.id}}</option>
               </select>
               <br>
               <center>
                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>
                 <nuxt-link :to="{ name: 'precio-agregar' }" replace>
-                <button type="button" class="btn btn-info text-right">Agregar</button>
+                <button type="button" class="btn btn-info text-right shadow">Agregar</button>
                 <br>
                 </nuxt-link> 
               </center>
@@ -46,7 +46,7 @@
                 <label for="price" class="letrabonita">Escoge el ID del Precio</label>
               </center>
                 
-                <select class="form-control" id="pruce" v-model="ticket.price_id">
+                <select class="form-control sombra" id="pruce" v-model="ticket.price_id">
                     <option v-for="price in this.$store.state.prices"  :key='price.id' >{{price.id}}</option>
                 </select>
             </div>
@@ -56,7 +56,7 @@
                 <label for="name" class="letrabonita">Nombre del Cliente</label>
               </center>
                 
-                <input type="text" class="form-control" id="client_name" placeholder="" v-model="ticket.client_name">
+                <input type="text" class="form-control sombra" id="client_name" placeholder="" v-model="ticket.client_name">
             </div>
         <!--Apellido-->
             <div class="form-group">
@@ -64,7 +64,7 @@
                 <label for="last_name" class="letrabonita">Apellido del Cliente</label>
               </center>
                 
-                <input type="text" class="form-control" id="client_last_name" placeholder="" v-model="ticket.client_last_name">
+                <input type="text" class="form-control sombra" id="client_last_name" placeholder="" v-model="ticket.client_last_name">
             </div>
         <!--Edad-->
             <div class="form-group">
@@ -72,7 +72,7 @@
                 <label for="age" class="letrabonita">Edad del Cliente</label>
               </center>
                 
-                <input type="text" class="form-control" id="client_age" placeholder="" v-model="ticket.client_age">
+                <input type="text" class="form-control sombra" id="client_age" placeholder="" v-model="ticket.client_age">
             </div>
         <!--Fecha tour-->
             <div class="form-group">
@@ -93,7 +93,7 @@
                 <label for="qr_code" class="letrabonita">Código QR</label>
               </center>
                 
-                <input type="text" class="form-control" id="qr_code" placeholder="" v-model="ticket.qr_code">
+                <input type="text" class="form-control sombra" id="qr_code" placeholder="" v-model="ticket.qr_code">
             </div>
         <!--Total-->
             <div class="form-group">
@@ -101,19 +101,20 @@
                 <label for="total" class="letrabonita">Cantidad Total</label>
               </center>
                 
-                <input type="text" class="form-control" id="total" placeholder="" v-model="ticket.total">
+                <input type="text" class="form-control sombra" id="total" placeholder="" v-model="ticket.total">
             </div>
         </form>
 
 
 
         <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="ticketFunction()">
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="ticketFunction()">
                 <div v-if="ticket.id == undefined">Crea Ticket
                 </div>
                 <div v-else>Actualiza Ticket</div>
             </button>
           </center>
+          <br>
     <!--Termina la form-->
     </div>   
 </template>
@@ -299,5 +300,8 @@ export default {
 .letrabonita {
   font-size: 22px;
   font: bold;
+}
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>

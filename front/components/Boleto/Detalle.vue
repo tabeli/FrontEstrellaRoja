@@ -6,20 +6,20 @@
     <!--Buscador-->
     <div class="col">
       <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
-        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
+        <input class="form-control mr-sm-2 sombra" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
+        <button class="btn btn-light my-2 my-sm-0 sombra" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
     </div>
     <!--Agregar-->
       <div class = "col text-right">
         <nuxt-link :to="{ name: 'boletos-detalleagregar'}" replace>
-        <button type="button" class="btn btn-info text-right">Agregar</button>
+        <button type="button" class="btn btn-success text-right shadow">Agregar</button>
         </nuxt-link> 
       </div>
     </div>
     <!--Tabla-->
     <table class="table mt-3">
-      <thead class="bg-success">
+      <thead class="bg-success sombra">
         <tr>
           <th scope="col">ID de usuario</th>
           <th scope="col">Nombre del cliente</th>
@@ -31,7 +31,7 @@
           <th scope="col">Borrar</th>
         </tr>
       </thead>
-        <tbody>
+        <tbody class="sombra">
           <tr v-for="purchase in this.$store.state.purchases" :key='purchase.id' >
             <th>{{ purchase.user_id }}</th>
             <th v-for="user in $store.state.users" :key="user.id" v-if="purchase.user_id == user.id">{{ user.name }}</th>
@@ -118,6 +118,9 @@ export default {
 }
 .bg-success {
   color: #ffffff;
+}
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>
 
