@@ -71,7 +71,7 @@ export default {
     async getStops() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/stop"
+        url: "https://adsoft-01.appspot.com/api/stop"
       })
         .then(
           function(response) {
@@ -92,7 +92,7 @@ export default {
       console.log("Delete stop");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/stop/" + id,
+        url: "https://adsoft-01.appspot.com/api/stop/" + id,
         data: {
           id: id
         }

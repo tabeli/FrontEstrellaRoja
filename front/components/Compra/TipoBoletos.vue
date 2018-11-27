@@ -47,7 +47,7 @@ export default {
     async getTicket_types() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/ticket_type"
+        url: "https://adsoft-01.appspot.com/api/ticket_type"
       })
         .then(
           function(response) {
@@ -68,7 +68,7 @@ export default {
       console.log("Delete ticket type");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/ticket_type/" + id,
+        url: "https://adsoft-01.appspot.com/api/ticket_type/" + id,
         data: {
           id: id
         }

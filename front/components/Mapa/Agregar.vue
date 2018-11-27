@@ -79,7 +79,7 @@ export default {
       //alert(JSON.stringify(this.tour_place))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/tour_place",
+        url: "https://adsoft-01.appspot.com/api/tour_place",
         headers: {
           "Content-Type": "application/json"
         },
@@ -103,7 +103,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/tour_place/" +
+          "https://adsoft-01.appspot.com/api/tour_place/" +
           this.idTour_place,
         headers: {
           "Content-Type": "application/json"
@@ -116,7 +116,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "mapa-ruta" });
-            //alert("http://principal-arena-219118.appspot.com/api/tour_place/" + this.idTour_place)
+            //alert("https://adsoft-01.appspot.com/api/tour_place/" + this.idTour_place)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -129,7 +129,7 @@ export default {
     async getTour_place(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour_place/" + id,
+        url: "https://adsoft-01.appspot.com/api/tour_place/" + id,
         headers: {
           "Content-Type": "application/json"
         }
@@ -147,7 +147,7 @@ export default {
     async getTours() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour"
+        url: "https://adsoft-01.appspot.com/api/tour"
       })
         .then(
           function(response) {
@@ -165,7 +165,7 @@ export default {
     async getPlaces() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place"
+        url: "https://adsoft-01.appspot.com/api/place"
       })
         .then(
           function(response) {

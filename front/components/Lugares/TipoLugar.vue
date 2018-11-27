@@ -46,7 +46,7 @@ export default {
     async getPlace_types() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place_type"
+        url: "https://adsoft-01.appspot.com/api/place_type"
       })
         .then(
           function(response) {
@@ -65,7 +65,7 @@ export default {
       console.log("Delete place type");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/place_type/" + id,
+        url: "https://adsoft-01.appspot.com/api/place_type/" + id,
         data: {
           id: id
         }

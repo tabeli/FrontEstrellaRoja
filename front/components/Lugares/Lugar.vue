@@ -64,7 +64,7 @@ export default {
     async getPlaces() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place"
+        url: "https://adsoft-01.appspot.com/api/place"
       })
         .then(
           function(response) {
@@ -82,7 +82,7 @@ export default {
     async getPlace_types() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place_type"
+        url: "https://adsoft-01.appspot.com/api/place_type"
       })
         .then(
           function(response) {
@@ -99,7 +99,7 @@ export default {
     async getNarratives() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/narrative"
+        url: "https://adsoft-01.appspot.com/api/narrative"
       })
         .then(
           function(response) {
@@ -116,7 +116,7 @@ export default {
     async getPlace_images() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place_image"
+        url: "https://adsoft-01.appspot.com/api/place_image"
       })
         .then(
           function(response) {
@@ -133,7 +133,7 @@ export default {
     async getImages() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/image"
+        url: "https://adsoft-01.appspot.com/api/image"
       })
         .then(
           function(response) {
@@ -151,7 +151,7 @@ export default {
       console.log("Delete schedule");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/place/" + id,
+        url: "https://adsoft-01.appspot.com/api/place/" + id,
         data: {
           id: id
         }

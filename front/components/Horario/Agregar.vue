@@ -67,7 +67,7 @@ export default {
       //alert(JSON.stringify(this.hour_interval))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/hour_interval",
+        url: "https://adsoft-01.appspot.com/api/hour_interval",
         headers: {
           "Content-Type": "application/json"
         },
@@ -92,7 +92,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/hour_interval/" +
+          "https://adsoft-01.appspot.com/api/hour_interval/" +
           this.idHour_interval,
         headers: {
           "Content-Type": "application/json"
@@ -106,7 +106,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "horario" });
-            //alert("http://principal-arena-219118.appspot.com/api/horario/" + this.idHour_interval)
+            //alert("https://adsoft-01.appspot.com/api/horario/" + this.idHour_interval)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -120,7 +120,7 @@ export default {
       await axios({
         method: "get",
         url:
-          "http://principal-arena-219118.appspot.com/api/hour_interval/" + id,
+          "https://adsoft-01.appspot.com/api/hour_interval/" + id,
         headers: {
           "Content-Type": "application/json"
         }

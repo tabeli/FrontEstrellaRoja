@@ -125,7 +125,7 @@ export async function setContext(app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"apiURL":"http://principal-arena-219118.appspot.com/api/"}
+      env: {"apiURL":"https://adsoft-01.appspot.com/api/"}
     }
     // Only set once
     if (context.req) app.context.req = context.req

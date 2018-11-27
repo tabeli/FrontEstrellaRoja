@@ -111,7 +111,7 @@ export default {
       //alert(JSON.stringify(this.user))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/user",
+        url: "https://adsoft-01.appspot.com/api/user",
         headers: {
           "Content-Type": "application/json"
         },
@@ -141,7 +141,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/user/" + this.idUser,
+          "https://adsoft-01.appspot.com/api/user/" + this.idUser,
         headers: {
           "Content-Type": "application/json"
         },
@@ -159,7 +159,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "usuarios" });
-            //alert("http://principal-arena-219118.appspot.com/api/user/" + this.idUser)
+            //alert("https://adsoft-01.appspot.com/api/user/" + this.idUser)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -172,7 +172,7 @@ export default {
     async getUser(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/user/" + id,
+        url: "https://adsoft-01.appspot.com/api/user/" + id,
         headers: {
           "Content-Type": "application/json"
         }

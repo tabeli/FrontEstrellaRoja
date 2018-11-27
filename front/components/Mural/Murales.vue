@@ -54,7 +54,7 @@ export default {
     async getMurals() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/mural"
+        url: "https://adsoft-01.appspot.com/api/mural"
       })
         .then(
           function(response) {
@@ -75,7 +75,7 @@ export default {
       console.log("Delete mural");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/mural/" + id,
+        url: "https://adsoft-01.appspot.com/api/mural/" + id,
         data: {
           id: id
         }

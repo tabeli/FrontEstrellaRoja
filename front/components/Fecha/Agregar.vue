@@ -82,7 +82,7 @@ export default {
       //alert(JSON.stringify(this.user))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/date_interval",
+        url: "https://adsoft-01.appspot.com/api/date_interval",
         headers: {
           "Content-Type": "application/json"
         },
@@ -107,7 +107,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/date_interval/" +
+          "https://adsoft-01.appspot.com/api/date_interval/" +
           this.idDate_interval,
         headers: {
           "Content-Type": "application/json"
@@ -121,7 +121,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "fecha" });
-            //alert("http://principal-arena-219118.appspot.com/api/date_interval/" + this.idDate_interval)
+            //alert("https://adsoft-01.appspot.com/api/date_interval/" + this.idDate_interval)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -135,7 +135,7 @@ export default {
       await axios({
         method: "get",
         url:
-          "http://principal-arena-219118.appspot.com/api/date_interval/" + id,
+          "https://adsoft-01.appspot.com/api/date_interval/" + id,
         headers: {
           "Content-Type": "application/json"
         }

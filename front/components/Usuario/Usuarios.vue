@@ -64,7 +64,7 @@ export default {
     async getUsers() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/user"
+        url: "https://adsoft-01.appspot.com/api/user"
       })
         .then(
           function(response) {
@@ -85,7 +85,7 @@ export default {
       console.log("Delete user");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/user/" + id,
+        url: "https://adsoft-01.appspot.com/api/user/" + id,
         data: {
           id: id
         }

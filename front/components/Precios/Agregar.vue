@@ -102,7 +102,7 @@ export default {
       //alert(JSON.stringify(this.price))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/price",
+        url: "https://adsoft-01.appspot.com/api/price",
         headers: {
           "Content-Type": "application/json"
         },
@@ -127,7 +127,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/price/" + this.idPrice,
+          "https://adsoft-01.appspot.com/api/price/" + this.idPrice,
         headers: {
           "Content-Type": "application/json"
         },
@@ -140,7 +140,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "precio" });
-            //alert("http://principal-arena-219118.appspot.com/api/price/" + this.idPrice)
+            //alert("https://adsoft-01.appspot.com/api/price/" + this.idPrice)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -153,7 +153,7 @@ export default {
     async getPrice(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/price/" + id,
+        url: "https://adsoft-01.appspot.com/api/price/" + id,
         headers: {
           "Content-Type": "application/json"
         }
@@ -171,7 +171,7 @@ export default {
     async getTicket_types() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/ticket_type"
+        url: "https://adsoft-01.appspot.com/api/ticket_type"
       })
         .then(
           function(response) {
@@ -189,7 +189,7 @@ export default {
     async getTours() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour"
+        url: "https://adsoft-01.appspot.com/api/tour"
       })
         .then(
           function(response) {

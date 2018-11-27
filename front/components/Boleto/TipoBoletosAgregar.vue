@@ -44,7 +44,7 @@ export default {
       //alert(JSON.stringify(this.ticket_type))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/ticket_type",
+        url: "https://adsoft-01.appspot.com/api/ticket_type",
         headers: {
           "Content-Type": "application/json"
         },
@@ -67,7 +67,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/ticket_type/" +
+          "https://adsoft-01.appspot.com/api/ticket_type/" +
           this.idTicket_type,
         headers: {
           "Content-Type": "application/json"
@@ -79,7 +79,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "boletos" });
-            //alert("http://principal-arena-219118.appspot.com/api/ticket_type/" + this.idTicket_type)
+            //alert("https://adsoft-01.appspot.com/api/ticket_type/" + this.idTicket_type)
             console.log("response");
             console.log(response);
             this.$router.push({ name: "boletos" });
@@ -93,7 +93,7 @@ export default {
     async getTicket_type(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/ticket_type/" + id,
+        url: "https://adsoft-01.appspot.com/api/ticket_type/" + id,
         headers: {
           "Content-Type": "application/json"
         }

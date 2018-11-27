@@ -3,7 +3,7 @@ const pkg = require('./package')
 module.exports = {
   mode: 'spa',
   env:{
-    apiURL: "http://principal-arena-219118.appspot.com/api/"
+    apiURL: "https://adsoft-01.appspot.com/api/"
   },
   /*
   ** Headers of the page

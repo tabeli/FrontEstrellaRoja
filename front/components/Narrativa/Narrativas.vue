@@ -48,7 +48,7 @@ export default {
     async getNarratives() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/narrative"
+        url: "https://adsoft-01.appspot.com/api/narrative"
       })
         .then(
           function(response) {
@@ -69,7 +69,7 @@ export default {
       console.log("Delete narrative");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/narrative/" + id,
+        url: "https://adsoft-01.appspot.com/api/narrative/" + id,
         data: {
           id: id
         }

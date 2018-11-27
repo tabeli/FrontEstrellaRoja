@@ -52,7 +52,7 @@ export default {
     async getPrices() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/price"
+        url: "https://adsoft-01.appspot.com/api/price"
       })
         .then(
           function(response) {
@@ -70,7 +70,7 @@ export default {
     async getTours() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour"
+        url: "https://adsoft-01.appspot.com/api/tour"
       })
         .then(
           function(response) {
@@ -88,7 +88,7 @@ export default {
     async getTicket_types() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/ticket_type"
+        url: "https://adsoft-01.appspot.com/api/ticket_type"
       })
         .then(
           function(response) {
@@ -107,7 +107,7 @@ export default {
       console.log("Delete price");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/price/" + id,
+        url: "https://adsoft-01.appspot.com/api/price/" + id,
         data: {
           id: id
         }

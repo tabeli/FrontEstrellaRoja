@@ -35,7 +35,7 @@
         },
         methods: {
             login() {
-                axios.post('http://principal-arena-219118.appspot.com/api/auth/login', {
+                axios.post('https://adsoft-01.appspot.com/api/auth/login', {
                     email: this.email,
                     password: this.password
                 })

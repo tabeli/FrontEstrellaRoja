@@ -95,7 +95,7 @@ export default {
     async getTickets() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/ticket"
+        url: "https://adsoft-01.appspot.com/api/ticket"
       })
         .then(
           function(response) {
@@ -115,7 +115,7 @@ export default {
     async getPurchases() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/purchase"
+        url: "https://adsoft-01.appspot.com/api/purchase"
       })
         .then(
           function(response) {
@@ -135,7 +135,7 @@ export default {
     async getUsers() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/user"
+        url: "https://adsoft-01.appspot.com/api/user"
       })
         .then(
           function(response) {
@@ -156,7 +156,7 @@ export default {
       console.log("Delete ticket");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/ticket/" + id,
+        url: "https://adsoft-01.appspot.com/api/ticket/" + id,
         data: {
           id: id
         }

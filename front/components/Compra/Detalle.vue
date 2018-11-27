@@ -56,7 +56,7 @@ export default {
     async getPurchase(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/purchase/" + this.idPurchase,
+        url: "https://adsoft-01.appspot.com/api/purchase/" + this.idPurchase,
         headers: {
           "Content-Type": "application/json"
         }
@@ -75,7 +75,7 @@ export default {
       console.log("Delete purchase");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/purchase/" + id,
+        url: "https://adsoft-01.appspot.com/api/purchase/" + id,
         data: {
           idPurchase: id
         }

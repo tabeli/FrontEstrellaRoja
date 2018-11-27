@@ -50,7 +50,7 @@ export default {
     async getHour_intervals() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/hour_interval"
+        url: "https://adsoft-01.appspot.com/api/hour_interval"
       })
         .then(
           function(response) {
@@ -72,7 +72,7 @@ export default {
       await axios({
         method: "delete",
         url:
-          "http://principal-arena-219118.appspot.com/api/hour_interval/" + id,
+          "https://adsoft-01.appspot.com/api/hour_interval/" + id,
         data: {
           id: id
         }

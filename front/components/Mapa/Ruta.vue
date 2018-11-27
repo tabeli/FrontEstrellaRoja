@@ -48,7 +48,7 @@ export default {
     async getTour_places() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour_place"
+        url: "https://adsoft-01.appspot.com/api/tour_place"
       })
         .then(
           function(response) {
@@ -68,7 +68,7 @@ export default {
     async getTours() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour"
+        url: "https://adsoft-01.appspot.com/api/tour"
       })
         .then(
           function(response) {
@@ -88,7 +88,7 @@ export default {
     async getPlaces() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place"
+        url: "https://adsoft-01.appspot.com/api/place"
       })
         .then(
           function(response) {
@@ -109,7 +109,7 @@ export default {
       console.log("Delete ticket type");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/tour_place/" + id,
+        url: "https://adsoft-01.appspot.com/api/tour_place/" + id,
         data: {
           id: id
         }

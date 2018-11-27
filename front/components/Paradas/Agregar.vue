@@ -80,7 +80,7 @@ export default {
       //alert(JSON.stringify(this.stop))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/stop",
+        url: "https://adsoft-01.appspot.com/api/stop",
         headers: {
           "Content-Type": "application/json"
         },
@@ -107,7 +107,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/stop/" + this.idStop,
+          "https://adsoft-01.appspot.com/api/stop/" + this.idStop,
         headers: {
           "Content-Type": "application/json"
         },
@@ -122,7 +122,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "paradas" });
-            //alert("http://principal-arena-219118.appspot.com/api/stop/" + this.idStop)
+            //alert("https://adsoft-01.appspot.com/api/stop/" + this.idStop)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -135,7 +135,7 @@ export default {
     async getStop(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/stop/" + id,
+        url: "https://adsoft-01.appspot.com/api/stop/" + id,
         headers: {
           "Content-Type": "application/json"
         }

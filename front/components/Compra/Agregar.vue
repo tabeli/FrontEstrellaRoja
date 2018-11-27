@@ -140,7 +140,7 @@ export default {
       //alert(JSON.stringify(this.ticket))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/ticket",
+        url: "https://adsoft-01.appspot.com/api/ticket",
         headers: {
           "Content-Type": "application/json"
         },
@@ -170,7 +170,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/ticket/" +
+          "https://adsoft-01.appspot.com/api/ticket/" +
           this.idTicket,
         headers: {
           "Content-Type": "application/json"
@@ -189,7 +189,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "boletos" });
-            //alert("http://principal-arena-219118.appspot.com/api/ticket/" + this.idTicket)
+            //alert("https://adsoft-01.appspot.com/api/ticket/" + this.idTicket)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -202,7 +202,7 @@ export default {
     async getTicket(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/ticket/" + id,
+        url: "https://adsoft-01.appspot.com/api/ticket/" + id,
         headers: {
           "Content-Type": "application/json"
         }
@@ -220,7 +220,7 @@ export default {
     async getPurchases() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/purchase"
+        url: "https://adsoft-01.appspot.com/api/purchase"
       })
         .then(
           function(response) {
@@ -238,7 +238,7 @@ export default {
     async getUsers() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/user"
+        url: "https://adsoft-01.appspot.com/api/user"
       })
         .then(
           function(response) {
@@ -256,7 +256,7 @@ export default {
     async getPrices() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/price"
+        url: "https://adsoft-01.appspot.com/api/price"
       })
         .then(
           function(response) {

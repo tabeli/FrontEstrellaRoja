@@ -47,7 +47,7 @@ export default {
       //alert(JSON.stringify(this.place_type))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/place_type",
+        url: "https://adsoft-01.appspot.com/api/place_type",
         headers: {
           "Content-Type": "application/json"
         },
@@ -70,7 +70,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/place_type/" +
+          "https://adsoft-01.appspot.com/api/place_type/" +
           this.idPlace_type,
         headers: {
           "Content-Type": "application/json"
@@ -82,7 +82,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "lugares" });
-            //alert("http://principal-arena-219118.appspot.com/api/place_type/" + this.idPlace_type)
+            //alert("https://adsoft-01.appspot.com/api/place_type/" + this.idPlace_type)
             console.log("response");
             console.log(response);
             this.$router.push({ name: "lugares" });
@@ -96,7 +96,7 @@ export default {
     async getPlace_type(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place_type/" + id,
+        url: "https://adsoft-01.appspot.com/api/place_type/" + id,
         headers: {
           "Content-Type": "application/json"
         }

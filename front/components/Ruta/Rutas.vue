@@ -50,7 +50,7 @@ export default {
     async getTours() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour"
+        url: "https://adsoft-01.appspot.com/api/tour"
       })
         .then(
           function(response) {
@@ -71,7 +71,7 @@ export default {
       console.log("Delete tour");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/tour/" + id,
+        url: "https://adsoft-01.appspot.com/api/tour/" + id,
         data: {
           id: id
         }

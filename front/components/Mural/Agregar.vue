@@ -81,7 +81,7 @@ export default {
       //alert(JSON.stringify(this.user))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/mural",
+        url: "https://adsoft-01.appspot.com/api/mural",
         headers: {
           "Content-Type": "application/json"
         },
@@ -108,7 +108,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/mural/" + this.idMural,
+          "https://adsoft-01.appspot.com/api/mural/" + this.idMural,
         headers: {
           "Content-Type": "application/json"
         },
@@ -123,7 +123,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "mural" });
-            //alert("http://principal-arena-219118.appspot.com/api/mural/" + this.idMural)
+            //alert("https://adsoft-01.appspot.com/api/mural/" + this.idMural)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -136,7 +136,7 @@ export default {
     async getMural(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/mural/" + id,
+        url: "https://adsoft-01.appspot.com/api/mural/" + id,
         headers: {
           "Content-Type": "application/json"
         }

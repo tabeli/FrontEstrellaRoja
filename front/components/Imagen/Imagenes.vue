@@ -54,7 +54,7 @@ export default {
     async getImages() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/image"
+        url: "https://adsoft-01.appspot.com/api/image"
       })
         .then(
           function(response) {
@@ -74,7 +74,7 @@ export default {
     async getPlaces() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place"
+        url: "https://adsoft-01.appspot.com/api/place"
       })
         .then(
           function(response) {
@@ -94,7 +94,7 @@ export default {
     async getPlace_image() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place_image"
+        url: "https://adsoft-01.appspot.com/api/place_image"
       })
         .then(
           function(response) {
@@ -115,7 +115,7 @@ export default {
       console.log("Delete mural");
       await axios({
         method: "delete",
-        url: "http://principal-arena-219118.appspot.com/api/image/" + id,
+        url: "https://adsoft-01.appspot.com/api/image/" + id,
         data: {
           id: id
         }

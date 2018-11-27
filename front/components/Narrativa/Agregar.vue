@@ -58,7 +58,7 @@ export default {
       //alert(JSON.stringify(this.user))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/narrative",
+        url: "https://adsoft-01.appspot.com/api/narrative",
         headers: {
           "Content-Type": "application/json"
         },
@@ -82,7 +82,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/narrative/" +
+          "https://adsoft-01.appspot.com/api/narrative/" +
           this.idNarrative,
         headers: {
           "Content-Type": "application/json"
@@ -95,7 +95,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "narrativa" });
-            //alert("http://principal-arena-219118.appspot.com/api/narrative/" + this.idNarrative)
+            //alert("https://adsoft-01.appspot.com/api/narrative/" + this.idNarrative)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -108,7 +108,7 @@ export default {
     async getNarrative(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/narrative/" + id,
+        url: "https://adsoft-01.appspot.com/api/narrative/" + id,
         headers: {
           "Content-Type": "application/json"
         }

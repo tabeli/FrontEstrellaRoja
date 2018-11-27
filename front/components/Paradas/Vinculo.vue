@@ -52,7 +52,7 @@ export default {
     async getTour_stops() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour_stop"
+        url: "https://adsoft-01.appspot.com/api/tour_stop"
       })
         .then(
           function(response) {
@@ -72,7 +72,7 @@ export default {
     async getStops() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/stop"
+        url: "https://adsoft-01.appspot.com/api/stop"
       })
         .then(
           function(response) {
@@ -92,7 +92,7 @@ export default {
     async getTours() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour"
+        url: "https://adsoft-01.appspot.com/api/tour"
       })
         .then(
           function(response) {
@@ -114,7 +114,7 @@ export default {
       await axios({
         method: "delete",
         url:
-          "http://principal-arena-219118.appspot.com/api/tour_stop/" + id,
+          "https://adsoft-01.appspot.com/api/tour_stop/" + id,
         data: {
           id: id
         }

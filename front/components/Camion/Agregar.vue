@@ -114,7 +114,7 @@ export default {
       //alert(JSON.stringify(this.bus))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/bus",
+        url: "https://adsoft-01.appspot.com/api/bus",
         headers: {
           "Content-Type": "application/json"
         },
@@ -140,7 +140,7 @@ export default {
     async editBus() {
       await axios({
         method: "put",
-        url: "http://principal-arena-219118.appspot.com/api/bus/" + this.idBus,
+        url: "https://adsoft-01.appspot.com/api/bus/" + this.idBus,
         headers: {
           "Content-Type": "application/json"
         },
@@ -156,7 +156,7 @@ export default {
           function(response) {
             this.$router.push({ name: "camiones" });
             /*alert(
-              "http://principal-arena-219118.appspot.com/api/bus/" + this.idBus
+              "https://adsoft-01.appspot.com/api/bus/" + this.idBus
         );*/
             console.log("response");
             console.log(response);
@@ -170,7 +170,7 @@ export default {
     async getBus(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/bus/" + id,
+        url: "https://adsoft-01.appspot.com/api/bus/" + id,
         headers: {
           "Content-Type": "application/json"
         }
@@ -188,7 +188,7 @@ export default {
     async getMurals() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/mural"
+        url: "https://adsoft-01.appspot.com/api/mural"
       })
         .then(
           function(response) {
@@ -206,7 +206,7 @@ export default {
     async getTours() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour"
+        url: "https://adsoft-01.appspot.com/api/tour"
       })
         .then(
           function(response) {

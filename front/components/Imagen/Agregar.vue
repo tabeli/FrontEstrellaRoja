@@ -58,7 +58,7 @@ export default {
       //alert(JSON.stringify(this.user))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/image",
+        url: "https://adsoft-01.appspot.com/api/image",
         headers: {
           "Content-Type": "application/json"
         },
@@ -82,7 +82,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/image/" + this.idImage,
+          "https://adsoft-01.appspot.com/api/image/" + this.idImage,
         headers: {
           "Content-Type": "application/json"
         },
@@ -94,7 +94,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "imagen" });
-            //alert("http://principal-arena-219118.appspot.com/api/image/" + this.idImage)
+            //alert("https://adsoft-01.appspot.com/api/image/" + this.idImage)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -107,7 +107,7 @@ export default {
     async getImage(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/image/" + id,
+        url: "https://adsoft-01.appspot.com/api/image/" + id,
         headers: {
           "Content-Type": "application/json"
         }

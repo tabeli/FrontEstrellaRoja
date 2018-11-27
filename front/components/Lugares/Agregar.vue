@@ -127,7 +127,7 @@ export default {
       //alert(JSON.stringify(this.place))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/place",
+        url: "https://adsoft-01.appspot.com/api/place",
         headers: {
           "Content-Type": "application/json"
         },
@@ -155,7 +155,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/place/" + this.idPlace,
+          "https://adsoft-01.appspot.com/api/place/" + this.idPlace,
         headers: {
           "Content-Type": "application/json"
         },
@@ -171,7 +171,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "lugares" });
-            //alert("http://principal-arena-219118.appspot.com/api/place/" + this.idPlace)
+            //alert("https://adsoft-01.appspot.com/api/place/" + this.idPlace)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -184,7 +184,7 @@ export default {
     async getPlace(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place/" + id,
+        url: "https://adsoft-01.appspot.com/api/place/" + id,
         headers: {
           "Content-Type": "application/json"
         }
@@ -202,7 +202,7 @@ export default {
     async getPlace_image(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place_image/" + id,
+        url: "https://adsoft-01.appspot.com/api/place_image/" + id,
         headers: {
           "Content-Type": "application/json"
         }
@@ -220,7 +220,7 @@ export default {
     async getPlace_types() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place_type"
+        url: "https://adsoft-01.appspot.com/api/place_type"
       })
         .then(
           function(response) {
@@ -238,7 +238,7 @@ export default {
     async getNarratives() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/narrative"
+        url: "https://adsoft-01.appspot.com/api/narrative"
       })
         .then(
           function(response) {
@@ -256,7 +256,7 @@ export default {
     async getPlace_image() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/place_image"
+        url: "https://adsoft-01.appspot.com/api/place_image"
       })
         .then(
           function(response) {
@@ -274,7 +274,7 @@ export default {
     async getImages() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/image"
+        url: "https://adsoft-01.appspot.com/api/image"
       })
         .then(
           function(response) {

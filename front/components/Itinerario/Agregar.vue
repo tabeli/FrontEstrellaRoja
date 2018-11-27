@@ -180,7 +180,7 @@ export default {
       //alert(JSON.stringify(this.schedule))
       await axios({
         method: "post",
-        url: "http://principal-arena-219118.appspot.com/api/schedule",
+        url: "https://adsoft-01.appspot.com/api/schedule",
         headers: {
           "Content-Type": "application/json"
         },
@@ -204,7 +204,7 @@ export default {
       await axios({
         method: "put",
         url:
-          "http://principal-arena-219118.appspot.com/api/schedule/" +
+          "https://adsoft-01.appspot.com/api/schedule/" +
           this.idSchedule,
         headers: {
           "Content-Type": "application/json"
@@ -217,7 +217,7 @@ export default {
         .then(
           function(response) {
             this.$router.push({ name: "itinerario" });
-            //alert("http://principal-arena-219118.appspot.com/api/schedule/" + this.idSchedule)
+            //alert("https://adsoft-01.appspot.com/api/schedule/" + this.idSchedule)
             console.log("response");
             console.log(response);
           }.bind(this)
@@ -230,7 +230,7 @@ export default {
     async getSchedule(id) {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/schedule/" + id,
+        url: "https://adsoft-01.appspot.com/api/schedule/" + id,
         headers: {
           "Content-Type": "application/json"
         }
@@ -248,7 +248,7 @@ export default {
     async getDate_intervals() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/date_interval"
+        url: "https://adsoft-01.appspot.com/api/date_interval"
       })
         .then(
           function(response) {
@@ -266,7 +266,7 @@ export default {
     async getHour_intervals() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/hour_interval"
+        url: "https://adsoft-01.appspot.com/api/hour_interval"
       })
         .then(
           function(response) {

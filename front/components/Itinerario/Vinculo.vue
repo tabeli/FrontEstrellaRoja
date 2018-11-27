@@ -50,7 +50,7 @@ export default {
     async getTour_schedules() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour_schedule"
+        url: "https://adsoft-01.appspot.com/api/tour_schedule"
       })
         .then(
           function(response) {
@@ -70,7 +70,7 @@ export default {
     async getSchedules() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/schedule"
+        url: "https://adsoft-01.appspot.com/api/schedule"
       })
         .then(
           function(response) {
@@ -90,7 +90,7 @@ export default {
     async getTours() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/tour"
+        url: "https://adsoft-01.appspot.com/api/tour"
       })
         .then(
           function(response) {
@@ -110,7 +110,7 @@ export default {
     async getDate_intervals() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/date_interval"
+        url: "https://adsoft-01.appspot.com/api/date_interval"
       })
         .then(
           function(response) {
@@ -130,7 +130,7 @@ export default {
     async getHour_intervals() {
       await axios({
         method: "get",
-        url: "http://principal-arena-219118.appspot.com/api/hour_interval"
+        url: "https://adsoft-01.appspot.com/api/hour_interval"
       })
         .then(
           function(response) {
@@ -152,7 +152,7 @@ export default {
       await axios({
         method: "delete",
         url:
-          "http://principal-arena-219118.appspot.com/api/tour_schedule/" + id,
+          "https://adsoft-01.appspot.com/api/tour_schedule/" + id,
         data: {
           id: id
         }
