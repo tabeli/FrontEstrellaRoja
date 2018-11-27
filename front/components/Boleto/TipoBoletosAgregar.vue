@@ -1,23 +1,25 @@
 <template>
     <div class="container setform">
+      <br>
     <!--Empieza la form-->
         <form>
         <!--Titulo-->
             <div class="form-group">
                 <label for="name">Tipo de boleto</label>
-                <input type="text" class="form-control" id="name" v-model="ticket_type.name">
+                <input type="text" class="form-control sombra" id="name" v-model="ticket_type.name">
             </div>
         </form>
     <!--Termina la form-->
 
     <!--Boton Agregar-->
     <center>
-            <button type="submit" class="btn btn-danger" @click.stop.prevent="ticket_typeFunction()">
+      <br>
+            <button type="submit" class="btn btn-success shadow" @click.stop.prevent="ticket_typeFunction()">
                 <div v-if="ticket_type.id == undefined">Crea Tipo de Ticket</div>
                 <div v-else>Actualiza Tipo de Ticket</div>
             </button>
           </center>
-       
+       <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div>   
 </template>
 
@@ -132,5 +134,8 @@ export default {
 .letrabonita {
   font-size: 22px;
   font: bold;
+}
+.sombra {
+  box-shadow: 0 2px 6px rgba(39, 39, 39, 0.13), 0 2px 6px rgba(39, 39, 39, 0.13);
 }
 </style>
