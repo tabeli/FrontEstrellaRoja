@@ -8,7 +8,7 @@
                 <br>
                 <br>
                     <label for="usr">Email:</label>
-                    <input type="text" class="form-control" id="email" v-model="email" placeholder="admin user">
+                    <input type="text" class="form-control" id="email" v-model="email" placeholder="Admin Users Only">
                 </div>
                 <br>
                 <div class="form-group">
@@ -40,7 +40,10 @@
                     password: this.password
                 })
                 .then(function (response) {
-                    this.$router.push({ name: "mapa"});
+                    //if(response.user_type == 'administrator')
+                        this.$router.push({ name: "mapa"});
+                   // else
+                     //   alertService.error("Verifique su email o contraseña")
                 }.bind(this))
                 .catch(function (error) {
                     alertService.error("Verifique su email o contraseña")

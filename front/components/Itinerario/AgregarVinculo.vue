@@ -9,32 +9,15 @@
               <center>
                 <label for="scheduleSelect" class="letrabonita" >Visualiza el ID del Itinerario deseado</label>
               </center>
-              <!--
-
-                <div v-for="tour_schedule in this.$store.state.tour_schedules" :key="tour_schedule.id">
-                <select class="form-control" v-for="schedule in $store.state.schedules" :key='schedule.id'>
-                  <div v-for="hour_interval in $store.state.hour_intervals" :key='hour_interval.id' v-if="schedule.hour_interval_id == hour_interval.id">
-                      <option v-for="date_interval in $store.state.date_intervals" :key="date_interval.id" v-if="schedule.date_interval_id == date_interval.id">De {{date_interval.start_date}} hasta {{date_interval.end_date}} con horario de {{hour_interval.start_time}} hasta {{hour_interval.end_time}}   ID:{{tour_schedule.id}}</option>
-                  </div>
-                </select>
-              </div>
-
-              -->
-              <div>
-                <div v-for="tour_schedule in this.$store.state.tour_schedules" :key="tour_schedule.id">
-                <div v-for="schedule in $store.state.schedules" :key='schedule.id' v-if="tour_schedule.schedule_id == schedule.id">
-                  <div v-for="date_interval in $store.state.date_intervals" :key="date_interval.id" v-if="schedule.date_interval_id == date_interval.id">
-                    <div v-for="hour_interval in $store.state.hour_intervals" :key="hour_interval.id" v-if="schedule.hour_interval_id == hour_interval.id"> 
-                      <select class="form-control sombra">
-                        <option>Horario: {{hour_interval.start_time}} a {{hour_interval.end_time}} Fecha: {{date_interval.start_date}} a {{date_interval.end_date}} ---> ID: {{schedule.id}}</option>
+      
+                <div v-for="schedule in this.$store.state.schedules" :key="schedule.id">
+                  <div v-for="tour_schedule in $store.state.tour_schedules" :key='tour_schedule.id' v-if="tour_schedule.schedule_id == schedule.id">
+                      <select class="form-control sombra" v-for="date_interval in $store.state.date_intervals" :key="date_interval.id" v-if="schedule.date_interval_id == date_interval.id">
+                        <option v-for="hour_interval in $store.state.hour_intervals" :key="hour_interval.id" v-if="schedule.hour_interval_id == hour_interval.id">Horario: {{hour_interval.start_time}} a {{hour_interval.end_time}} Fecha: {{date_interval.start_date}} a {{date_interval.end_date}} ---> ID: {{schedule.id}}</option>
                       </select>
-                    </div>
                   </div>
                 </div>
-              </div>
-              </div>
-              
-              
+            
               <br>
               <center>
                 <label for="option">No lo encuentras ? Puedes crear uno nuevo</label>

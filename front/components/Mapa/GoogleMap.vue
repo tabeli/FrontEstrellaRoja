@@ -9,9 +9,12 @@
     <div class="col-sm">
       <label for="exampleFormControlSelect1">Seleccione uno de los tours</label>
       <select class="form-control p-3 mb-5 bg-white rounded sombra" id="exampleFormControlSelect1">
-        <option>Puebla fascinante</option>
-        <option>Cholula</option>
+        <option value="2">Puebla Fascinante</option>
+        <option value="1">Africam Safari</option>
+        <option value="4">Cholula Milenaria</option>
+        <option value="3">Puebla Nocturana</option>
       </select>
+      
     </div>
 
     <div class = "col text-center">
@@ -316,6 +319,28 @@ export default {
           lng: position.coords.longitude
         };
       });
+    },
+
+    getTours() {
+      axios({
+        method: "get",
+        url: "https://adsoft-01.appspot.com/api/tour"
+      })
+        .then(
+          function(response) {
+            console.log(response);
+            this.$store.commit({
+              type: "storeTours",
+              tours: response.data
+            });
+          }.bind(this)
+        )
+        .catch(function(error) {
+          console.log(error);
+        });
+    },
+    created: function(){
+      this.getTours();
     }
   }
 };

@@ -78,7 +78,7 @@
       </nuxt-link>
         </li>
         <li>
-      <nuxt-link :to="{ name: 'mapa'}" replace>
+      <nuxt-link :to="{ name: 'analitica'}" replace>
         <a><img src="@/static/analysis.png" height="25"> Analitica</a>
       </nuxt-link>
         </li>
