@@ -95,7 +95,7 @@
         </li>
         <!--
         <li>
-          <!--Analitica-->
+        
       <nuxt-link :to="{ name: 'analitica'}" replace>
         <a><img src="@/static/analysis.png" height="25"> Analitica</a>
       </nuxt-link>
