@@ -39,25 +39,7 @@
                 </select>
             </div>
 
-
-
-
-
-
-
 <!--
-
-
-
-
-
-
-
-
-
-
-
-
      
     <div>
         <label>Añadir intervalos</label>

@@ -29,10 +29,8 @@
         <tr class="sombra">
           <th scope="col">ID</th>
           <th scope="col">Nombre del cliente</th>
-          <th scope="col">Apellido del cliente</th>
           <th scope="col">Género</th>
           <th scope="col">Fecha del tour</th>
-          <th scope="col">Codigo QR</th>
           <th scope="col">Total</th>
           <th scope="col">Detalles</th>
           <th scope="col">Editar</th>
@@ -43,41 +41,10 @@
           <tr v-for="ticket in this.$store.state.tickets" :key='ticket.id'>
             <th>{{ ticket.id }}</th>
             <th>{{ ticket.client_name }}</th>
-            <td>{{ ticket.client_last_name }}</td>
             <td>{{ ticket.client_genre }}</td>
             <td>{{ ticket.tour_date }}</td>
-            <td>{{ ticket.qr_code }}</td>
             <td>{{ ticket.total }}</td>
-             <td><button v-b-modal.modal-center  class="btn btn-info" type="button"><img src="@/static/file.png"></button>
-        
-              <b-modal  size="lg" id="modal-center" title="Detalles de compra" ok-only ok-variant="primary" ok-title="Cerrar">
-
-                <div class="center">
-                  <center>
-                  <thead class="bg-success">
-                    <tr class="sombra">
-                      <th scope="col">ID</th>
-                      <th scope="col">Nombre</th> 
-                      <th scope="col">Apellido</th>
-                      <th scope="col">Correo</th>
-                      <th scope="col">Subtotal</th>
-                      <th scope="col">Total</th>
-                    </tr>
-                  </thead>
-                  <tbody class="sombra text-align" v-for="purchase in $store.state.purchases" :key="purchase.id" v-if="ticket.purchase_id == purchase.id">
-                      <tr v-for="user in $store.state.users" :key="user.id" v-if="purchase.user_id == user.id">
-                        <td>{{ purchase.id }}</td>
-                        <td>{{ user.name }}</td>
-                        <td>{{ user.last_name }}</td>
-                        <td>{{ user.email }}</td>
-                        <td>{{ purchase.sub_total }}</td>
-                        <td>{{ purchase.total }}</td>
-                      </tr>
-                  </tbody>
-                  </center>
-                </div>
-              </b-modal>
-             </td>
+             <td><button class="btn btn-outline-info" type="button" @click="details(ticket.purchase_id)"><img src="@/static/file.png"></button></td>
             <td><button class="btn btn-outline-info" type="button" @click="editTicketAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
             <td><button class="btn btn-outline-danger" type="button" @click="deleteTicketAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
           </tr>

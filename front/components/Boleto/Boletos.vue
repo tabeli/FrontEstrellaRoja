@@ -29,9 +29,7 @@
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Nombre del cliente</th>
-          <th scope="col">Apellido del cliente</th>
           <th scope="col">Fecha del tour</th>
-          <th scope="col">Codigo QR</th>
           <th scope="col">Total</th>
           <th scope="col">Detalles</th>
           <th scope="col">Editar</th>
@@ -42,11 +40,9 @@
           <tr v-for="ticket in this.$store.state.tickets" :key='ticket.id'>
             <th>{{ ticket.id }}</th>
             <th>{{ ticket.client_name }}</th>
-            <td>{{ ticket.client_last_name }}</td>
             <td>{{ ticket.tour_date }}</td>
-            <td>{{ ticket.qr_code }}</td>
             <td>{{ ticket.total }}</td>
-             <td><button v-b-modal.modal-center  class="btn btn-info" type="button"><img src="@/static/file.png"></button>
+             <!--<td><button v-b-modal.modal-center  class="btn btn-info" type="button"><img src="@/static/file.png"></button>
               <b-modal id="modal-center" title="Detalles" ok-only ok-variant="secondary" ok-title="Cerrar">
                 <div class="modal-lg">
                 <div class="my-4">
@@ -73,9 +69,10 @@
                 </div>
                 </div>
               </b-modal>
-             </td>
+             </td>-->
+            <td><button class="btn btn-outline-info" type="button" @click="details(ticket.purchase_id)"><img src="@/static/file.png"></button></td>
             <td><button class="btn btn-outline-info" type="button" @click="editTicketAction(ticket.id)"><img src="@/static/pencil.png"></button></td>
-            <td><button class="btn btn-outline-danger" type="button" @click="deleteTicketAction(ticket.purchase_id)"><img src="@/static/basurero.png"></button></td>
+            <td><button class="btn btn-outline-danger" type="button" @click="deleteTicketAction(ticket.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
@@ -169,7 +166,9 @@ export default {
           console.log(error);
         });
     },
-
+    details(id){
+      this.$router.push({ name: "boletos-detalle", params: { idPurchase: id}});
+    },
     editTicketAction(id) {
       //send to create view
       this.$router.push({ name: "boletos-agregar", params: { idTicket: id } });

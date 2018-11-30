@@ -3,48 +3,32 @@
     <br>
     <div class="mt-5">
     <div class="row">
-    <!--Buscador-->
-    <div class="col">
-      <form class="form-inline">
-        <input class="form-control mr-sm-2 sombra" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
-        <button class="btn btn-light my-2 my-sm-0 sombra" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
-      </form>
-    </div>
-    <!--Agregar-->
-      <div class = "col text-right">
-        <nuxt-link :to="{ name: 'boletos-detalleagregar'}" replace>
-        <button type="button" class="btn btn-success text-right shadow">Agregar</button>
-        </nuxt-link> 
-      </div>
-    </div>
     <!--Tabla-->
     <table class="table mt-3">
       <thead class="bg-success sombra">
         <tr>
           <th scope="col">ID de usuario</th>
-          <th scope="col">Nombre del cliente</th>
-          <th scope="col">Apellido del cliente</th>
+          <th scope="col">Nombre del comprador</th>
+          <th scope="col">Apellido del comprador</th>
           <th scope="col">Email</th>
           <th scope="col">Subtotal</th>
           <th scope="col">Total</th>
-          <th scope="col">Detalles</th>
           <th scope="col">Borrar</th>
         </tr>
       </thead>
         <tbody class="sombra">
-          <tr v-for="purchase in this.$store.state.purchases" :key='purchase.id' >
+          <tr v-for="purchase in this.$store.state.purchases" :key='purchase.id' v-if="purchase.id == thid.idPurchase">
             <th>{{ purchase.user_id }}</th>
             <th v-for="user in $store.state.users" :key="user.id" v-if="purchase.user_id == user.id">{{ user.name }}</th>
             <td v-for="user in $store.state.users" :key="user.id" v-if="purchase.user_id == user.id">{{ user.last_name }}</td>
             <td v-for="user in $store.state.users" :key="user.id" v-if="purchase.user_id == user.id">{{ user.email }}</td>
             <td>{{ purchase.subtotal }}</td>
             <td>{{ purchase.total }}</td>
-            <td><button class="btn btn-info" type="button" @click="editPurchaseAction(purchase.id)"><img src="@/static/pencil.png"></button></td>
-            <td><button class="btn btn-info" type="button" @click="deletePurchaseAction(purchase.id)"><img src="@/static/basurero.png"></button></td>
           </tr>
         </tbody>
     </table>
   </div> 
+  </div>
   </div>
 </template>
 

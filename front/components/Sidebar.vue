@@ -77,12 +77,13 @@
         <a><img src="@/static/map.png" height="25"> Mapa</a>
       </nuxt-link>
         </li>
+        <!--
         <li>
       <nuxt-link :to="{ name: 'analitica'}" replace>
         <a><img src="@/static/analysis.png" height="25"> Analitica</a>
       </nuxt-link>
         </li>
-
+-->
     </ul>
     </div>
   </div>

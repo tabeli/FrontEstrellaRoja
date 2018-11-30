@@ -6,7 +6,7 @@
           </div>
           <div class="col-11">
             <Header/>
-            <Agregar :idPurchase="idPurchase"/>
+          <Detalle :idPurchase="idPurchase"/>
           </div>
       </div>
       <div class="footer" :style="{'background-image': `url(${require('@/static/back4.png')})`}"></div>
@@ -16,7 +16,7 @@
 
   import Sidebar from "@/components/Sidebar"
   import Header from "@/components/Header"
-  import Agregar from "@/components/Boleto/Detalle"
+  import Detalle from "@/components/Boleto/Detalle"
 
   export default {
     data: function(){
@@ -26,11 +26,10 @@
     },
     components: {
       Sidebar,
-      Agregar,
+      Detalle,
       Header
     },
     created: function(){
-      console.log("id of ticket")
       console.log(this.idPurchase)
     }
   }
