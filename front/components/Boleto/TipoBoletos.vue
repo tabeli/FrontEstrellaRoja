@@ -1,3 +1,4 @@
+<!--Componente de tipoboletos de boleto-->
 <template>
     <div class="container">
       <br>

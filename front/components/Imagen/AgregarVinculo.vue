@@ -73,6 +73,7 @@ export default {
         this.createPlace_image();
       }
     },
+    //crear imagen en la base de datos
     async createPlace_image() {
       //alert(JSON.stringify(this.place_image))
       await axios({
@@ -97,6 +98,7 @@ export default {
           console.log(error);
         });
     },
+    //editar imagen de un place
     async editPlace_image() {
       await axios({
         method: "put",
@@ -124,6 +126,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener la imagen de un place
     async getPlace_image(id) {
       await axios({
         method: "get",
@@ -142,6 +145,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener places de la base de datos
     async getPlaces() {
       await axios({
         method: "get",
@@ -160,6 +164,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener imagenes
     async getImages() {
       await axios({
         method: "get",

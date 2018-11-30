@@ -103,6 +103,7 @@ export default {
     };
   },
   methods: {
+    //funcion de bus
     busFunction() {
       if (this.bus.id != undefined) {
         this.editBus();
@@ -110,6 +111,7 @@ export default {
         this.createBus();
       }
     },
+    //crear autobus
     async createBus() {
       //alert(JSON.stringify(this.bus))
       await axios({
@@ -137,6 +139,7 @@ export default {
           console.log(error);
         });
     },
+    //editar autobus
     async editBus() {
       await axios({
         method: "put",
@@ -167,6 +170,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener autobus
     async getBus(id) {
       await axios({
         method: "get",
@@ -185,6 +189,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener murales
     async getMurals() {
       await axios({
         method: "get",
@@ -203,6 +208,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener tours
     async getTours() {
       await axios({
         method: "get",

@@ -36,6 +36,7 @@ export default {
     };
   },
   methods: {
+    //funcion de place type
     place_typeFunction() {
       if (this.place_type.id != undefined) {
         this.editPlace_type();
@@ -43,6 +44,7 @@ export default {
         this.createPlace_type();
       }
     },
+    //crear place type
     async createPlace_type() {
       //alert(JSON.stringify(this.place_type))
       await axios({
@@ -66,6 +68,7 @@ export default {
           console.log(error);
         });
     },
+    //editar place type
     async editPlace_type() {
       await axios({
         method: "put",
@@ -93,6 +96,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener place type
     async getPlace_type(id) {
       await axios({
         method: "get",

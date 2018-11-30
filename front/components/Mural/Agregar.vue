@@ -70,6 +70,7 @@ export default {
     };
   },
   methods: {
+    //funcion de mural
     muralFunction() {
       if (this.mural.id != undefined) {
         this.editMural();
@@ -77,6 +78,7 @@ export default {
         this.createMural();
       }
     },
+    //crear mural
     async createMural() {
       //alert(JSON.stringify(this.user))
       await axios({
@@ -104,6 +106,7 @@ export default {
           console.log(error);
         });
     },
+    //editar mural
     async editMural() {
       await axios({
         method: "put",
@@ -133,6 +136,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener mural
     async getMural(id) {
       await axios({
         method: "get",

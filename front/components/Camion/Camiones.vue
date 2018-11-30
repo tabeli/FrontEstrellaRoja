@@ -5,12 +5,14 @@
       <div class="mt-5">
     <div class="row">
     <!--Buscador-->
+    <!--
     <div class="col">
       <form class="form-inline">
         <input class="form-control mr-sm-2 sombra" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
         <button class="btn btn-light my-2 my-sm-0 sombra" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
       </form>
     </div>
+    -->
     <!--Agregar-->
       <div class="derecha">
         <nuxt-link :to="{ name: 'camiones-Agregar' }" replace>
@@ -52,6 +54,7 @@ import axios from "axios";
 
 export default {
   methods: {
+    //obtener autobuses
     async getBuses() {
       await axios({
         method: "get",
@@ -72,6 +75,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener murales
     async getMurals() {
       await axios({
         method: "get",
@@ -90,6 +94,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener tours
     async getTours() {
       await axios({
         method: "get",
@@ -108,6 +113,7 @@ export default {
           console.log(error);
         });
     },
+    //borrar autobuses
     async deleteBus(id) {
       console.log("Delete bus");
       await axios({
@@ -131,10 +137,12 @@ export default {
           console.log(error);
         });
     },
+    //editar accion de autobus
     editBusAction(id) {
       //send to create view
       this.$router.push({ name: "camiones-Agregar", params: { idBus: id } });
     },
+    //borrar accion de autobus
     deleteBusAction(id) {
       this.deleteBus(id);
     }

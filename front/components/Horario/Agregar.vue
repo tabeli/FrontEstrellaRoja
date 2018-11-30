@@ -56,6 +56,7 @@ export default {
     };
   },
   methods: {
+    //funcion de intervalo de horas
     hour_intervalFunction() {
       if (this.hour_interval.id != undefined) {
         this.editHour_interval();
@@ -88,6 +89,7 @@ export default {
           console.log(error);
         });
     },
+    //editar intervalo de horas
     async editHour_interval() {
       await axios({
         method: "put",
@@ -116,6 +118,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener intervalos de horas
     async getHour_interval(id) {
       await axios({
         method: "get",

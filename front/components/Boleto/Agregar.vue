@@ -1,3 +1,4 @@
+<!--Component de Agregar de boleto-->
 <template>
     <div class="container">
     <!--Empieza la form-->

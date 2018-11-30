@@ -1,3 +1,4 @@
+<!--Componente de tipoboletosagregar de boleto-->
 <template>
     <div class="container setform">
       <br>

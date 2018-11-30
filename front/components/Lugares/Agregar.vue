@@ -123,6 +123,7 @@ export default {
         this.createPlace();
       }
     },
+    //crear place
     async createPlace() {
       //alert(JSON.stringify(this.place))
       await axios({
@@ -151,6 +152,7 @@ export default {
           console.log(error);
         });
     },
+    //editar place
     async editPlace() {
       await axios({
         method: "put",
@@ -181,6 +183,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener place
     async getPlace(id) {
       await axios({
         method: "get",
@@ -199,6 +202,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener place image
     async getPlace_image(id) {
       await axios({
         method: "get",
@@ -217,6 +221,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener place type
     async getPlace_types() {
       await axios({
         method: "get",
@@ -235,6 +240,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener narrativas
     async getNarratives() {
       await axios({
         method: "get",
@@ -253,7 +259,8 @@ export default {
           console.log(error);
         });
     },
-    async getPlace_image() {
+    //obtener place image
+    async getPlace_images() {
       await axios({
         method: "get",
         url: "https://adsoft-01.appspot.com/api/place_image"
@@ -271,6 +278,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener imagenes
     async getImages() {
       await axios({
         method: "get",
@@ -307,6 +315,7 @@ export default {
     }
     this.getNarratives();
     this.getPlace_types();
+    this.getPlace_images();
   }
 };
 </script>

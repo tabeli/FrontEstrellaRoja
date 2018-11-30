@@ -47,6 +47,7 @@ export default {
     };
   },
   methods: {
+    //funcion de narrative
     narrativeFunction() {
       if (this.narrative.id != undefined) {
         this.editNarrative();
@@ -54,6 +55,7 @@ export default {
         this.createNarrative();
       }
     },
+    //crear narrative
     async createNarrative() {
       //alert(JSON.stringify(this.user))
       await axios({
@@ -78,6 +80,7 @@ export default {
           console.log(error);
         });
     },
+    //editar narrativa
     async editNarrative() {
       await axios({
         method: "put",
@@ -105,6 +108,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener narrative
     async getNarrative(id) {
       await axios({
         method: "get",

@@ -51,6 +51,7 @@ import axios from "axios";
 
 export default {
   methods: {
+    //obtener murales
     async getMurals() {
       await axios({
         method: "get",
@@ -71,6 +72,7 @@ export default {
           console.log(error);
         });
     },
+    //borrar mural
     async deleteMural(id) {
       console.log("Delete mural");
       await axios({
@@ -92,10 +94,12 @@ export default {
           console.log(error);
         });
     },
+    //ediat mural action
     editMuralAction(id) {
       //send to create view
       this.$router.push({ name: "mural-agregar", params: { idMural: id } });
     },
+    //borrar mural action
     deleteMuralAction(id) {
       this.deleteMural(id);
     }

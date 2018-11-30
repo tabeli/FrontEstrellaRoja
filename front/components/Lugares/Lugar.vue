@@ -61,6 +61,7 @@ import axios from "axios";
 
 export default {
   methods: {
+    //obtener places
     async getPlaces() {
       await axios({
         method: "get",
@@ -79,6 +80,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener type place
     async getPlace_types() {
       await axios({
         method: "get",
@@ -96,6 +98,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener narrativas
     async getNarratives() {
       await axios({
         method: "get",
@@ -113,6 +116,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener place image
     async getPlace_images() {
       await axios({
         method: "get",
@@ -130,6 +134,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener imagenes
     async getImages() {
       await axios({
         method: "get",
@@ -147,6 +152,7 @@ export default {
           console.log(error);
         });
     },
+    //borra place
     async deletePlace(id) {
       console.log("Delete schedule");
       await axios({
@@ -170,10 +176,12 @@ export default {
           console.log(error);
         });
     },
+    //editar place action
     editPlaceAction(id) {
       //send to create view
       this.$router.push({ name: "lugares-agregar", params: { idPlace: id } });
     },
+    //borrar place action
     deletePlaceAction(id) {
       this.deletePlace(id);
     }

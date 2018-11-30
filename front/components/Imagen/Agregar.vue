@@ -78,6 +78,7 @@ export default {
           console.log(error);
         });
     },
+    //editar imagen
     async editImage() {
       await axios({
         method: "put",
@@ -104,6 +105,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener imagen
     async getImage(id) {
       await axios({
         method: "get",

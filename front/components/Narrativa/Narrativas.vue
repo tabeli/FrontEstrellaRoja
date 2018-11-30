@@ -36,6 +36,7 @@
           </tr>
         </tbody>
     </table>
+    <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   </div> 
   </div>
 </template>
@@ -45,6 +46,7 @@ import axios from "axios";
 
 export default {
   methods: {
+    //obtener narratives
     async getNarratives() {
       await axios({
         method: "get",
@@ -65,6 +67,7 @@ export default {
           console.log(error);
         });
     },
+    //borrar narrativa
     async deleteNarrative(id) {
       console.log("Delete narrative");
       await axios({
@@ -86,6 +89,7 @@ export default {
           console.log(error);
         });
     },
+    //editar narrative action
     editNarrativeAction(id) {
       //send to create view
       this.$router.push({
