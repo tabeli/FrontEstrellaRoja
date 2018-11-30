@@ -8,7 +8,6 @@
               <center>
                 <label for="audio_path" class="letrabonita">Path del audio</label>
               </center>
-              
               <input type="text" class="form-control sombra" id="audio_path" placeholder="" v-model="narrative.audio_path">
             </div>
         
@@ -19,7 +18,6 @@
               </center>
               <b-form-textarea class="sombra" id="desc" v-model="narrative.description" placeholder="" :rows="7.5">
               </b-form-textarea>
-              
             </div>
         </form>
     <!--Termina la form-->

@@ -1,83 +1,100 @@
 <template>
  <div>
+   <!--Sidenav-->
     <div id="sidenav" class="sidenav">
       <ul>
         <li>
+          <!--Usuarios-->
       <nuxt-link :to="{ name: 'usuarios'}" replace>
         <a><img src="@/static/user_white.png" height="20"> Usuarios</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Tours-->
       <nuxt-link :to="{ name: 'rutas'}" replace>
         <a><img src="@/static/tour_white.png" height="25"> Tours</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Camiones-->
       <nuxt-link :to="{ name: 'camiones'}" replace>
         <a><img src="@/static/bus.png" height="20"> Camiones</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Compras-->
       <nuxt-link :to="{ name: 'compra'}" replace>
         <a><img src="@/static/compra.png" height="25"> Compras</a>
       </nuxt-link>
         </li>        
         <li>
+          <!--Boletos-->
       <nuxt-link :to="{ name: 'boletos'}" replace>
         <a><img src="@/static/ticket.png" height="25"> Boletos</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Precios-->
       <nuxt-link :to="{ name: 'precio'}" replace>
         <a id="precio"><img src="@/static/money.png" height="20"> Precios</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Paradas-->
       <nuxt-link :to="{ name: 'paradas'}" replace>
         <a><img src="@/static/placeholder.png" height="25"> Paradas</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Lugares-->
       <nuxt-link :to="{ name: 'lugares'}" replace>
         <a><img src="@/static/placeholderInterest.png" height="25"> Lugares</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Murales-->
       <nuxt-link :to="{ name: 'mural'}" replace>
         <a><img src="@/static/paint.png" height="25"> Murales</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Horarios-->
       <nuxt-link :to="{ name: 'horario'}" replace>
         <a><img src="@/static/clock.png" height="20"> Horarios</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Fechas-->
       <nuxt-link :to="{ name: 'fecha'}" replace>
         <a><img src="@/static/calendar.png" height="20"> Fechas</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Itinerarios-->
       <nuxt-link :to="{ name: 'itinerario'}" replace>
         <a><img src="@/static/schedule.png" height="20"> Itinerarios</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Narrativas-->
       <nuxt-link :to="{ name: 'narrativa'}" replace>
         <a><img src="@/static/speaker.png" height="20"> Narrativas</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Imagenes-->
       <nuxt-link :to="{ name: 'imagen'}" replace>
         <a><img src="@/static/image.png" height="20"> Imagenes</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Mapa-->
       <nuxt-link :to="{ name: 'mapa'}" replace>
         <a><img src="@/static/map.png" height="25"> Mapa</a>
       </nuxt-link>
         </li>
         <li>
+          <!--Analitica-->
       <nuxt-link :to="{ name: 'analitica'}" replace>
         <a><img src="@/static/analysis.png" height="25"> Analitica</a>
       </nuxt-link>
