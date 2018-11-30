@@ -71,6 +71,7 @@ export default {
     };
   },
   methods: {
+    //funcion del date interval
     date_intervalFunction() {
       if (this.date_interval.id != undefined) {
         this.editDate_interval();

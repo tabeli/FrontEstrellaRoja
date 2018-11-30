@@ -98,6 +98,7 @@ export default {
     };
   },
   methods: {
+    //funcion de schedule de tour
     tour_scheduleFunction() {
       if (this.tour_schedule.id != undefined) {
         this.editTour_schedule();
@@ -105,6 +106,7 @@ export default {
         this.createTour_schedule();
       }
     },
+    //crear un schedule para un tour
     async createTour_schedule() {
       //alert(JSON.stringify(this.tour_schedule))
       await axios({
@@ -129,6 +131,7 @@ export default {
           console.log(error);
         });
     },
+    //editar schedule
     async editTour_schedule() {
       await axios({
         method: "put",
@@ -156,6 +159,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener tour de schedule
     async getTour_schedule(id) {
       await axios({
         method: "get",
@@ -193,6 +197,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener schedules de tour
     async getTour_schedules() {
       await axios({
         method: "get",
@@ -211,6 +216,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener schedules
     async getSchedules() {
       await axios({
         method: "get",
@@ -247,6 +253,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener intervalo de horas
     async getHour_intervals() {
       await axios({
         method: "get",

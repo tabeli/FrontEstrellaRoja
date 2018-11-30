@@ -49,6 +49,7 @@ import axios from "axios";
 
 export default {
   methods: {
+    //Obtener los place image de la base de datos
     async getPlace_images() {
       await axios({
         method: "get",
@@ -69,6 +70,7 @@ export default {
           console.log(error);
         });
     },
+    //Obtener los places de la base de datos
     async getPlaces() {
       await axios({
         method: "get",
@@ -89,6 +91,7 @@ export default {
           console.log(error);
         });
     },
+    //Obtener imagenes de la base de datos
     async getImages() {
       await axios({
         method: "get",
@@ -109,6 +112,7 @@ export default {
           console.log(error);
         });
     },
+    //Eliminar imagenes de los places
     async deletePlace_image(id) {
       console.log("Delete place image");
       await axios({

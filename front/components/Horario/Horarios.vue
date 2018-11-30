@@ -47,6 +47,7 @@ import axios from "axios";
 
 export default {
   methods: {
+    //obtener intervalos de horas
     async getHour_intervals() {
       await axios({
         method: "get",
@@ -67,6 +68,7 @@ export default {
           console.log(error);
         });
     },
+    //borrar intervalos de horas
     async deleteHour_interval(id) {
       console.log("Delete hour interval");
       await axios({
@@ -89,6 +91,7 @@ export default {
           console.log(error);
         });
     },
+    //editar intervalos de hora
     editHour_invervalAction(id) {
       //send to create view
       this.$router.push({
@@ -96,6 +99,7 @@ export default {
         params: { idHour_interval: id }
       });
     },
+    //borrar intervalo de horas
     deleteHour_intervalAction(id) {
       this.deleteHour_interval(id);
     }

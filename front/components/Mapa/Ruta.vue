@@ -45,6 +45,7 @@ import axios from "axios";
 
 export default {
   methods: {
+    //obtener tour places
     async getTour_places() {
       await axios({
         method: "get",
@@ -65,6 +66,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener tours
     async getTours() {
       await axios({
         method: "get",
@@ -85,6 +87,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener places
     async getPlaces() {
       await axios({
         method: "get",
@@ -105,6 +108,7 @@ export default {
           console.log(error);
         });
     },
+    //borrar tour place
     async deleteTour_place(id) {
       console.log("Delete ticket type");
       await axios({
@@ -125,10 +129,12 @@ export default {
           console.log(error);
         });
     },
+    //editar tour place action
     editTour_placeAction(id) {
       //send to create view
       this.$router.push({ name: "mapa-agregar", params: { idTour_place: id } });
     },
+    //borrar tour place action
     deleteTour_placeAction(id) {
       this.deleteTour_place(id);
     }

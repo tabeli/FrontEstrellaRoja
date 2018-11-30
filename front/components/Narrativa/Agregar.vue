@@ -8,7 +8,6 @@
               <center>
                 <label for="audio_path" class="letrabonita">Path del audio</label>
               </center>
-              
               <input type="text" class="form-control sombra" id="audio_path" placeholder="" v-model="narrative.audio_path">
             </div>
         
@@ -19,7 +18,6 @@
               </center>
               <b-form-textarea class="sombra" id="desc" v-model="narrative.description" placeholder="" :rows="7.5">
               </b-form-textarea>
-              
             </div>
         </form>
     <!--Termina la form-->
@@ -47,6 +45,7 @@ export default {
     };
   },
   methods: {
+    //funcion de narrative
     narrativeFunction() {
       if (this.narrative.id != undefined) {
         this.editNarrative();
@@ -54,6 +53,7 @@ export default {
         this.createNarrative();
       }
     },
+    //crear narrative
     async createNarrative() {
       //alert(JSON.stringify(this.user))
       await axios({
@@ -78,6 +78,7 @@ export default {
           console.log(error);
         });
     },
+    //editar narrativa
     async editNarrative() {
       await axios({
         method: "put",
@@ -105,6 +106,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener narrative
     async getNarrative(id) {
       await axios({
         method: "get",

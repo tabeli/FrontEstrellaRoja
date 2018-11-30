@@ -12,13 +12,13 @@
       </form>
     </div>-->
     <!--Activar/Desactivar paradas-->
-      <div id="switch" class="col text-center ">
+      <!--<div id="switch" class="col text-center ">
         <label>Paradas Desactivadas/Activadas</label>
         <label class="switch">
             <input type="checkbox">
             <span class="slider round shadow"></span>
         </label>
-      </div>
+      </div>-->
       <!-- Vincular parada y tour-->
       <div class = "col text-right">
         <nuxt-link :to="{ name: 'paradas-vinculo' }" replace>

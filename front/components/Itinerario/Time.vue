@@ -12,6 +12,7 @@
                 </div>
             </div>
         </div>
+        <!--date time picker-->
         <script type="text/javascript">
             $(function () {
                 $('#datetimepicker3').datetimepicker({

@@ -1,6 +1,4 @@
     <template>
-  
-
         <form class="form" @submit.prevent="login()">
             <div class="container text-center mt-5">
                 <div class="form-group">
@@ -27,6 +25,7 @@
     const alertService = require('~/static/js/alertService.js')
 
     export default {
+        //funcion de data
         data() {
             return {
                 email: "",
@@ -34,6 +33,7 @@
             }
         },
         methods: {
+            //funcion de tour
             login() {
                 axios.post('https://adsoft-01.appspot.com/api/auth/login', {
                     email: this.email,

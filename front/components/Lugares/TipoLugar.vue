@@ -43,6 +43,7 @@ import axios from "axios";
 
 export default {
   methods: {
+    //obtener type place
     async getPlace_types() {
       await axios({
         method: "get",
@@ -61,6 +62,7 @@ export default {
           console.log(error);
         });
     },
+    //borrar type place
     async deletePlace_type(id) {
       console.log("Delete place type");
       await axios({
@@ -80,10 +82,12 @@ export default {
           console.log(error);
         });
     },
+    //editar place type
     editPlace_typeAction(id) {
       //send to create view
       this.$router.push({ name: "lugares-tipolugaragregar", params: { idPlace_type: id } });
     },
+    //borrar place type
     deletePlace_typeAction(id) {
       this.deletePlace_type(id);
     }

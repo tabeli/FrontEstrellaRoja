@@ -151,6 +151,7 @@ export default {
     };
   },
   methods: {
+    //funcion de schedule
     scheduleFunction() {
       if (this.schedule.id != undefined) {
         this.editSchedule();
@@ -158,6 +159,7 @@ export default {
         this.createSchedule();
       }
     },
+    //crear schedule
     async createSchedule() {
       //alert(JSON.stringify(this.schedule))
       await axios({
@@ -182,6 +184,7 @@ export default {
           console.log(error);
         });
     },
+    //editar schedule
     async editSchedule() {
       await axios({
         method: "put",
@@ -209,6 +212,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener schedule
     async getSchedule(id) {
       await axios({
         method: "get",
@@ -227,6 +231,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener intervalo de fechas
     async getDate_intervals() {
       await axios({
         method: "get",
@@ -245,6 +250,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener intervalo de horas
     async getHour_intervals() {
       await axios({
         method: "get",

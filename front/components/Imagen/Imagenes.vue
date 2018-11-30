@@ -51,6 +51,7 @@ import axios from "axios";
 
 export default {
   methods: {
+    //Obtener imagenes de la base de datos
     async getImages() {
       await axios({
         method: "get",
@@ -71,6 +72,7 @@ export default {
           console.log(error);
         });
     },
+    //Obtener places de la base de datos
     async getPlaces() {
       await axios({
         method: "get",
@@ -91,6 +93,7 @@ export default {
           console.log(error);
         });
     },
+    //Obtener imagenes de places
     async getPlace_image() {
       await axios({
         method: "get",
@@ -111,6 +114,7 @@ export default {
           console.log(error);
         });
     },
+    //Eliminar imagenes de la base de datos
     async deleteImage(id) {
       console.log("Delete mural");
       await axios({

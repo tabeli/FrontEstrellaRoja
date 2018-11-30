@@ -89,6 +89,7 @@ export default {
           console.log(error);
         });
     },
+    //editar un date
     editDate_intervalAction(id) {
       //send to create view
       this.$router.push({
@@ -96,6 +97,7 @@ export default {
         params: { idDate_interval: id }
       });
     },
+    //borrar un date
     deleteDate_intervalFunction(id) {
       this.deleteDate_interval(id);
     }

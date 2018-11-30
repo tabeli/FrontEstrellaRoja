@@ -47,6 +47,7 @@ import axios from "axios";
 
 export default {
   methods: {
+    //obtener tour schedules
     async getTour_schedules() {
       await axios({
         method: "get",
@@ -67,6 +68,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener schedules
     async getSchedules() {
       await axios({
         method: "get",
@@ -87,6 +89,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener tours
     async getTours() {
       await axios({
         method: "get",
@@ -107,6 +110,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener intervalo de fechas
     async getDate_intervals() {
       await axios({
         method: "get",
@@ -127,6 +131,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener intervalo de horas
     async getHour_intervals() {
       await axios({
         method: "get",
@@ -147,6 +152,7 @@ export default {
           console.log(error);
         });
     },
+    //borrar schedule de tour
     async deleteTour_schedule(id) {
       console.log("Delete tour schedule");
       await axios({
@@ -168,6 +174,7 @@ export default {
           console.log(error);
         });
     },
+    //editar schedule de tour
     editTour_scheduleAction(id) {
       //send to create view
       this.$router.push({

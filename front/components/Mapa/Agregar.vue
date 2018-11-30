@@ -68,6 +68,7 @@ export default {
     };
   },
   methods: {
+    //funcion de tour place
     tour_placeFunction() {
       if (this.tour_place.id != undefined) {
         this.editTour_place();
@@ -75,6 +76,7 @@ export default {
         this.createTour_place();
       }
     },
+    //crear un tour place
     async createTour_place() {
       //alert(JSON.stringify(this.tour_place))
       await axios({
@@ -99,6 +101,7 @@ export default {
           console.log(error);
         });
     },
+    //editar un tour place
     async editTour_place() {
       await axios({
         method: "put",
@@ -126,6 +129,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener tour place
     async getTour_place(id) {
       await axios({
         method: "get",
@@ -144,6 +148,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener tours
     async getTours() {
       await axios({
         method: "get",
@@ -162,6 +167,7 @@ export default {
           console.log(error);
         });
     },
+    //obtener places
     async getPlaces() {
       await axios({
         method: "get",

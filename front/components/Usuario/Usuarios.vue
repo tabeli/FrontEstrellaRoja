@@ -7,10 +7,10 @@
      <!--<div class="mt-5"> -->
       <div class="row">
       <div class="col">
-        <form class="form-inline">
+        <!--<form class="form-inline">
           <input class="form-control mr-sm-2 sombra" type="search" placeholder="Ingrese texto a buscar" aria-label="Search">
           <button class="btn btn-light my-2 my-sm-0 sombra" type="submit"><img src="@/static/magnifier.png" width="20" height="20"></button> 
-        </form>
+        </form>-->
       </div>
 <!--Agregar-->
       <div class="derecha">
